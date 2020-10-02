@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad6c62a0676816a5f80163071b4d2b83",
+    "content-hash": "7c83dc19f66a619ef8e2cc4ca1de8010",
     "packages": [
         {
             "name": "10up/elasticpress",
@@ -881,16 +881,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.0",
+            "version": "3.158.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "59345aa45161a8f83c3a0027a7df9567ae72cc85"
+                "reference": "55ae8bdf2eb2f9774193fa79c6fc436835c42db4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/59345aa45161a8f83c3a0027a7df9567ae72cc85",
-                "reference": "59345aa45161a8f83c3a0027a7df9567ae72cc85",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/55ae8bdf2eb2f9774193fa79c6fc436835c42db4",
+                "reference": "55ae8bdf2eb2f9774193fa79c6fc436835c42db4",
                 "shasum": ""
             },
             "require": {
@@ -962,7 +962,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-10-01T18:41:53+00:00"
+            "time": "2020-10-02T18:16:40+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -5343,55 +5343,27 @@
                 "wordpress"
             ],
             "time": "2020-04-01T14:35:27+00:00"
-        }
-    ],
-    "packages-dev": [
+        },
         {
-            "name": "altis/local-chassis",
-            "version": "4.0.1",
+            "name": "wpackagist-plugin/cmb2",
+            "version": "2.7.0",
             "source": {
-                "type": "git",
-                "url": "https://github.com/humanmade/altis-local-chassis.git",
-                "reference": "b693c46257f9ffb1b78fc68526e0cb1009f09ed7"
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cmb2/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-local-chassis/zipball/b693c46257f9ffb1b78fc68526e0cb1009f09ed7",
-                "reference": "b693c46257f9ffb1b78fc68526e0cb1009f09ed7",
-                "shasum": ""
+                "url": "https://downloads.wordpress.org/plugin/cmb2.zip?timestamp=1579634658"
             },
             "require": {
-                "composer-plugin-api": "^1.1",
-                "php": ">=7.0",
-                "symfony/yaml": "^4.2"
+                "composer/installers": "~1.0"
             },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Altis\\Local_Chassis\\ComposerPlugin",
-                "altis": []
-            },
-            "autoload": {
-                "files": [
-                    "inc/namespace.php",
-                    "wp-config.php"
-                ],
-                "classmap": [
-                    "inc/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Human Made",
-                    "email": "hello@humanmade.com"
-                }
-            ],
-            "description": "Chassis module for Altis",
-            "time": "2020-07-02T16:30:19+00:00"
-        },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cmb2/"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "altis/local-server",
             "version": "4.0.5",
@@ -5436,65 +5408,6 @@
             ],
             "description": "Local Server module for Altis",
             "time": "2020-08-28T15:20:30+00:00"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v4.4.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "c7885964b1eceb70b0981556d0a9b01d2d97c8d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c7885964b1eceb70b0981556d0a9b01d2d97c8d1",
-                "reference": "c7885964b1eceb70b0981556d0a9b01d2d97c8d1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "conflict": {
-                "symfony/console": "<3.4"
-            },
-            "require-dev": {
-                "symfony/console": "^3.4|^4.0|^5.0"
-            },
-            "suggest": {
-                "symfony/console": "For validating YAML files using the lint command"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2020-09-27T03:36:23+00:00"
         }
     ],
     "aliases": [],
