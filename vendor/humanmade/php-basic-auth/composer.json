@@ -1,0 +1,34 @@
+{
+    "name": "humanmade/php-basic-auth",
+    "description": "Basic PHP authentication for HM Dev and Staging environments.",
+    "type": "wordpress-muplugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Chris Reynolds",
+            "email": "chris@humanmade.com"
+        }
+    ],
+    "homepage": "https://github.com/humanmade/PHPBasicAuth",
+    "support": {
+        "issues": "https://github.com/humanmade/PHPBasicAuth/issues"
+    },
+    "scripts": {
+        "lint": [
+            "vendor/bin/phpcs --standard=./phpcs.ruleset.xml -p -s -v --extensions=php"
+        ],
+        "test": [
+            "php vendor/bin/phpunit"
+        ],
+        "setup": [
+            "bash .bin/install-wp-tests.sh \"wp_tests\" \"root\" \"\" \"127.0.0.1\" latest"
+        ]
+    },
+    "require": {
+        "composer/installers": "^1.7.0"
+    },
+    "require-dev": {
+        "humanmade/coding-standards": "^0.7.0",
+        "phpunit/phpunit": "~7.5"
+    }
+}

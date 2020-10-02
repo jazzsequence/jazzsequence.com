@@ -1,0 +1,26 @@
+{
+	"name": "altis/sso",
+	"description": "Single Sign-On module for Altis",
+	"type": "library",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Human Made",
+			"email": "hello@humanmade.com"
+		}
+	],
+	"autoload": {
+		"files": [
+			"inc/saml/namespace.php",
+			"inc/wordpress/namespace.php"
+		]
+	},
+	"require": {
+		"php": ">=7.1",
+		"humanmade/wp-simple-saml": "0.4.1",
+		"humanmade/delegated-oauth": "^1.0.2"
+	},
+	"extra": {
+		"altis": {}
+	}
+}

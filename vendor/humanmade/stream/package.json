@@ -1,0 +1,44 @@
+{
+  "name": "wp-stream",
+  "version": "3.3.0",
+  "description": "Stream tracks logged-in user activity so you can monitor every change made on your WordPress site in beautifully organized detail. All activity is organized by context, action and IP address for easy filtering. Developers can extend Stream with custom connectors to log any kind of action.",
+  "main": "stream.php",
+  "author": "XWP",
+  "license": "GPLv2+",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xwp/stream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xwp/stream/issues"
+  },
+  "homepage": "https://github.com/xwp/stream#readme",
+  "keywords": [
+    "wp",
+    "stream",
+    "stream",
+    "activity",
+    "logs",
+    "track"
+  ],
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "~1.1.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-cssmin": "~2.2.1",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-uglify": "~3.0.1",
+    "grunt-shell": "~2.1.0",
+    "grunt-wp-deploy": "^2.0.0",
+    "jscs": "^3.0.7",
+    "jshint": "^2.10.2",
+    "wp-dev-lib": "github:xwp/wp-dev-lib#1.1.2"
+  },
+  "scripts": {
+    "postinstall": "composer install && npm run build",
+    "build": "grunt default && npm run readme",
+    "readme": "./node_modules/wp-dev-lib/scripts/generate-markdown-readme",
+    "deploy": "npm run build && grunt deploy",
+    "lint": "DIFF_BASE=master ./node_modules/wp-dev-lib/scripts/pre-commit"
+  }
+}

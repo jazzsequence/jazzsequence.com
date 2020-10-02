@@ -1,0 +1,12 @@
+.idea
+.DS_Store
+/node_modules/
+/vendor/
+npm-debug.log
+package.lock
+
+# Grunt
+/build/
+/node_modules/
+npm-debug.log
+

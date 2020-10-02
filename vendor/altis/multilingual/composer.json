@@ -1,0 +1,17 @@
+{
+	"name": "altis/multilingual",
+	"description": "Multilingual module for Altis",
+	"type": "library",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Human Made",
+			"email": "hello@humanmade.com"
+		}
+	],
+	"require": {
+	},
+	"extra": {
+		"altis": {}
+	}
+}
