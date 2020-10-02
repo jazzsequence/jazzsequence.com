@@ -204,7 +204,29 @@
         }
     ],
     "extra": {
-        "altis": {},
+        "altis": {
+            "modules": {
+                "cloud": {
+                    "xray": false,
+                    "ludicrousdb": false,
+                    "s3-uploads": false,
+                    "email-from-address": "hello@chrisreynolds.io"
+                },
+                "cms": {
+                    "default-theme": "twentyseventeen",
+                    "remove-emoji": false
+                },
+                "media": {
+                    "tachyon": false
+                },
+                "multilingual": false,
+                "search": false,
+                "security": {
+                    "require-login": false,
+                    "audit-log": false
+                }
+            }
+        },
         "installer-paths": {
             "content/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
