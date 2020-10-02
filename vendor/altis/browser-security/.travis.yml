@@ -1,8 +1,0 @@
-services:
-  - docker
-
-before_script:
-  - composer install
-
-script:
-  composer test
