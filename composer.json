@@ -195,6 +195,10 @@
         {
             "name": "Human Made",
             "email": "hello@humanmade.com"
+        },
+        {
+            "name": "Chris Reynolds",
+            "email": "me@chrisreynolds.io"
         }
     ],
     "extra": {
