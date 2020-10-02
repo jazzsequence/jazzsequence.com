@@ -185,7 +185,8 @@
 		"wpackagist-plugin/wp-syntax": "^1.1",
 		"wpackagist-plugin/yourls-link-creator": "^2.1.1",
 		"wpackagist-plugin/yourls-wordpress-to-twitter": "^1.6.1",
-		"wpackagist-theme/twentyseventeen": "^2.4",
+        "wpackagist-theme/twentyseventeen": "^2.4",
+        "wpackagist-theme/twentytwenty": "^1.5",
 		"wpackagist-theme/museum-core": "^2.1.6"
     },
     "require-dev": {
