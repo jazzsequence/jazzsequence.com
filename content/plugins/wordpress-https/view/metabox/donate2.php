@@ -1,0 +1,2 @@
+<script type="text/javascript">jQuery(document).ready(function($) { $('label[for="wordpress-https_donate2-hide"]').contents().filter(function(){ return this.nodeType != 1; }).wrap('<span class="label"/>'); $('#wordpress-https_donate2 h3 span, label[for="wordpress-https_donate2-hide"] .label').text('Need an SSL Certificate?'); });</script>
+<p style="text-align: center;">Enter promo code <strong>WPSSL</strong> to recieve a <strong style="color: #F00;">10%</strong> discount at <a <a href="https://www.certs4less.com/1071.html">certs4less.com</a>!</p>

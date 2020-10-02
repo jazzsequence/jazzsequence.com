@@ -1,0 +1,436 @@
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/yourls-wordpress-to-twitter\n"
+"POT-Creation-Date: 2011-06-17 14:59:19+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-02-06 13:58+0200\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: Romania\n"
+"Language-Team: Web Geeks\n"
+"Last-Translator: \n"
+
+#: inc/buddypress/bp-members.php:82
+#: inc/buddypress/bp-groups.php:95
+msgid "Short URL: <code>%s</code>"
+msgstr "URL-ul scurt: <code>%s</code>"
+
+#: inc/buddypress/bp-members.php:167
+#: inc/buddypress/bp-groups.php:177
+msgid "Edit"
+msgstr "Editare"
+
+#: inc/buddypress/bp-members.php:188
+#: inc/buddypress/bp-members.php:233
+#: inc/options.php:492
+msgid "Short URL"
+msgstr "URL-ul scurt"
+
+#: inc/buddypress/bp-members.php:228
+msgid "Changes Saved."
+msgstr "Modificările salvate."
+
+#: inc/buddypress/bp-members.php:235
+#: inc/buddypress/bp-groups.php:201
+msgid "Short URL: "
+msgstr "URL-ul scurt: "
+
+#: inc/buddypress/bp-members.php:237
+#: inc/buddypress/bp-groups.php:203
+msgid "Letters and numbers only."
+msgstr "Litere şi numere numai."
+
+#: inc/buddypress/bp-members.php:240
+#: inc/options.php:438
+msgid "Save Changes"
+msgstr "Salvaţi modificările"
+
+#: inc/buddypress/bp-members.php:285
+#: inc/buddypress/bp-members.php:289
+#: inc/buddypress/bp-groups.php:240
+#: inc/buddypress/bp-groups.php:244
+msgid "That URL is unavailable. Please choose another."
+msgstr "Că URL-ul este disponibil. Vă rugăm să selectaţi un alt."
+
+#: inc/buddypress/bp-members.php:310
+#: inc/buddypress/bp-groups.php:266
+msgid "That URL is unavailable. Please choose another.tt"
+msgstr "Că URL-ul este disponibil. Vă rugăm să alegeţi another.tt"
+
+#: inc/buddypress/bp-admin.php:38
+msgid "Members"
+msgstr "Membrii"
+
+#: inc/buddypress/bp-admin.php:43
+msgid "Each member gets a short URL"
+msgstr "Fiecare membru devine un URL-ul scurt"
+
+#: inc/buddypress/bp-admin.php:46
+msgid "Each short URL will be created automatically the next time the member profile is viewed"
+msgstr "Fiecare URL-ul scurt, va fi creat automat la următoarea profilul membru este vizualizat"
+
+#: inc/buddypress/bp-admin.php:52
+msgid "Create short URLs from usernames"
+msgstr "Creaţi scurt URL-uri de utilizator"
+
+#: inc/buddypress/bp-admin.php:55
+msgid "When checked, member short URLs will look like <code>%s<strong>username</strong></code>, rather than a random string"
+msgstr "Când este bifat, URL-uri scurte membru va arata ca numele de utilizator <strong> <code>% s </ strong> </ code>, mai degrabă decât un şir aleator"
+
+#: inc/buddypress/bp-admin.php:60
+#: inc/buddypress/bp-admin.php:93
+msgid "Users can edit their short URLs"
+msgstr "Utilizatorii pot edita lor scurt URL-uri"
+
+#: inc/buddypress/bp-admin.php:63
+#: inc/buddypress/bp-admin.php:96
+msgid "You must set <code>define( 'YOURLS_UNIQUE_URLS', false );</code> in <a href=\"http://yourls.org/#Config\">your YOURLS configuration file."
+msgstr "Trebuie să setaţi <code> define ('YOURLS_UNIQUE_URLS \", false); </ code> în href=\"http://yourls.org/#Config\"> <a fişierul YOURLS de configurare."
+
+#: inc/buddypress/bp-admin.php:71
+msgid "Groups"
+msgstr "Grupuri"
+
+#: inc/buddypress/bp-admin.php:76
+msgid "Each group gets a short URL"
+msgstr "Fiecare grup devine un URL-ul scurt"
+
+#: inc/buddypress/bp-admin.php:79
+msgid "Each short URL will be created automatically the next time the group page is viewed"
+msgstr "Fiecare URL-ul scurt, va fi creat automat la următoarea grup de pagini este vizualizat"
+
+#: inc/buddypress/bp-admin.php:85
+msgid "Create short URLs from group slugs"
+msgstr "Creaţi scurt URL-uri de grup de melci"
+
+#: inc/buddypress/bp-admin.php:88
+msgid "When checked, group short URLs will look like <code>%s<strong>group-name</strong></code>, rather than a random string"
+msgstr "Când este bifat, URL-uri scurte de grup va arata% <code> s <strong> grup de nume </ strong> </ code>, mai degrabă decât un şir aleator"
+
+#: inc/options.php:7
+msgid "<strong>YOURLS - WordPress to Twitter</strong> configuration incomplete"
+msgstr "<strong>YOURLS - WordPress Twitter</strong> configurare incomplete"
+
+#: inc/options.php:10
+msgid "Please configure <strong>YOURLS - WordPress to Twitter</strong> <a href=\"%s\">settings</a> now"
+msgstr "Vă rugăm să configuraţi YOURLS <strong> - WordPress la Twitter </ strong> <a href=\"%s\"> setările </ a> acum"
+
+#: inc/options.php:21
+msgid "YOURLS: WordPress to Twitter"
+msgstr "YOURLS: WordPress stare de nervozitate"
+
+#: inc/options.php:200
+msgid "YOURLS - WordPress to Twitter"
+msgstr "YOURLS - WordPress Twitter"
+
+#: inc/options.php:207
+msgid "<a href=\"http://yourls.org/\">YOURLS</a> is a free URL shortener service you can run on your webhost to have your own personal TinyURL."
+msgstr "<a href=\"http://yourls.org/\"> YOURLS </ a> este un serviciu gratuit Shortener URL-ul poate rula pe gazda dvs. să aveţi TinyURL personal."
+
+#: inc/options.php:208
+msgid "This plugin is a bridge between <a href=\"http://yourls.org/\">YOURLS</a>, <a href=\"http://twitter.com/\">Twitter</a> and your blog: when you submit a new post or page, your blog will tap into YOURLS to generate a short URL for it, and will then tweet it."
+msgstr "Acest plugin este o punte de legătură între <a href=\"http://yourls.org/\"> YOURLS </ a>, <a href=\"http://twitter.com/\"> Twitter </ a > si un blog: când trimiteţi un mesaj nou sau o pagină, pe blog-ul dvs. va atingeţi în YOURLS pentru a genera un URL scurt pentru el, şi apoi va tweet-l."
+
+#: inc/options.php:209
+msgid "Note that, for maximum fun, this plugin also supports a few other public URL shortener services: is.gd, tinyURL and bit.ly"
+msgstr "Reţineţi că, pentru distractie maxima, acest plugin sprijină, de asemenea, alte cateva servicii publice URL Shortener: is.gd TinyURL, Bit.ly si"
+
+#: inc/options.php:216
+msgid "URL Shortener Settings"
+msgstr "URL-ul Shortener setările"
+
+#: inc/options.php:222
+msgid "URL Shortener Service"
+msgstr "URL-ul Shortener Service"
+
+#: inc/options.php:225
+msgid "You are using:"
+msgstr "Utilizaţi:"
+
+#: inc/options.php:227
+msgid "Please select.."
+msgstr "Vă rugăm să selectaţi.."
+
+#: inc/options.php:228
+msgid "your own YOURLS install"
+msgstr "propriile YOURLS a instala"
+
+#: inc/options.php:229
+msgid "another public service such as TinyURL or bit.ly"
+msgstr "un alt serviciu public, cum ar fi TinyURL sau bit.ly"
+
+#: inc/options.php:234
+msgid "Your YOURLS installation is"
+msgstr "Instalarea YOURLS este"
+
+#: inc/options.php:236
+#: inc/options.php:264
+msgid "Please select..."
+msgstr "Vă rugăm să selectaţi..."
+
+#: inc/options.php:237
+msgid "local, on the same webserver"
+msgstr "locale, pe acelaşi server"
+
+#: inc/options.php:238
+msgid "remote, on another webserver"
+msgstr "la distanţă, pe un alt webserver"
+
+#: inc/options.php:244
+#: inc/options.php:250
+msgid "Example:"
+msgstr "Exemplu:"
+
+#: inc/options.php:249
+msgid "URL to the YOURLS API"
+msgstr "URL-ul YOURLS API"
+
+#: inc/options.php:251
+msgid "YOURLS Login"
+msgstr "YOURLS Login"
+
+#: inc/options.php:252
+msgid "YOURLS Password"
+msgstr "YOURLS parola"
+
+#: inc/options.php:262
+msgid "Public service"
+msgstr "Serviciul public"
+
+#: inc/options.php:273
+msgid "API Login"
+msgstr "API Login"
+
+#: inc/options.php:273
+msgid "(case sensitive!)"
+msgstr "(minuscule!)"
+
+#: inc/options.php:274
+msgid "API Key"
+msgstr "API-cheie"
+
+#: inc/options.php:275
+msgid "If you have a <a href=\"http://bit.ly/account/\">bit.ly</a> account, entering your credentials will link the short URLs to it"
+msgstr "Dacă aveţi un <a href=\"http://bit.ly/account/\"> bit.ly </ a> cont, introducerea acreditările dvs. va lega adresele URL scurt pentru a se"
+
+#: inc/options.php:280
+msgid "Web Key"
+msgstr "Web cheie"
+
+#: inc/options.php:281
+msgid "If you have a <a href=\"http://ping.fm/\">ping.fm</a> account, enter your private <a href=\"http://ping.fm/key/\">Web Key</a>"
+msgstr "If you have a <a href=\"http://ping.fm/\">ping.fm</a> account, enter your private <a href=\"http://ping.fm/key/\">Web Key</a>"
+
+#: inc/options.php:286
+#: inc/options.php:292
+msgid "(this service needs no authentication)"
+msgstr "(acest serviciu are nevoie nici o autentificare)"
+
+#: inc/options.php:302
+msgid "Twitter Settings"
+msgstr "Setări de stare de nervozitate"
+
+#: inc/options.php:312
+msgid "To connect your site to Twitter, you need to register your blog as a <strong>Twitter Application</strong> and get a <strong>Consumer Key</strong>, a <strong>Consumer Secret</strong>, an <strong>Access Token</strong> and an <strong>Access Token Secret</strong>. Phew. Complicated? Blame Twitter :)"
+msgstr "Pentru a vă conecta la site-ul Twitter, trebuie să vă înregistraţi blog-ul dvs. ca o cerere de <strong> Twitter </ strong> şi a obţine o cheie de consum <strong> </ strong>, un consumator Secret <strong> </ strong>, o <strong> Token de acces </ strong> şi un acces la secretul de <strong> Token </ strong>. Ufff. Complicat? Vina pe Twitter :)"
+
+#: inc/options.php:313
+msgid "Already registered? Find your keys on <a href=\"http://dev.twitter.com/apps\">Twitter Application List</a>"
+msgstr "Deja inregistrat? Găsiţi cheile pe <a lista de aplicaţii href=\"http://dev.twitter.com/apps\"> Twitter </ a>"
+
+#: inc/options.php:314
+msgid "Need to register? <a href=\"http://dev.twitter.com/apps/new\">Register an Application</a> and fill the form as <a title=\"Register your app like this\" href=\"<?php echo $help_url; ?>\" class=\"thickbox\">in this help screen</a> to get your keys and tokens"
+msgstr "Need to register? <a href=\"http://dev.twitter.com/apps/new\">Register an Application</a> and fill the form as <a title=\"Register your app like this\" href=\"<?php echo $help_url; ?>\" class=\"thickbox\">in this help screen</a> to get your keys and tokens"
+
+#: inc/options.php:316
+msgid "Set <strong>Application Type</strong> to <strong>Browser</strong>"
+msgstr "Seta <strong>tipul de cerere</strong> <strong>browser-ul</strong>"
+
+#: inc/options.php:317
+msgid "Set <strong>Callback URL</strong> to <strong><?php echo $blogurl; ?></strong>"
+msgstr "Setaţi Callback URL <strong> </ strong> pentru a <strong> <php echo $ blogurl;?> </ Strong>"
+
+#: inc/options.php:318
+msgid "Set <strong>Default Access type</strong> to <strong>Read & Write</strong>"
+msgstr "Set de acces implicit <strong> de tip </ strong> pentru a <strong> Read & Write </ strong>"
+
+#: inc/options.php:324
+msgid "Consumer Key"
+msgstr "Cheie de consum"
+
+#: inc/options.php:329
+msgid "Consumer Secret"
+msgstr "Secret de consum"
+
+#: inc/options.php:333
+msgid "On the right hand column of your application page, click on 'My Access Token' for the following values:"
+msgstr "Pe coloana din dreapta paginii cererea dumneavoastră, faceţi clic pe \"Token accesul meu\", pentru următoarele valori:"
+
+#: inc/options.php:336
+msgid "Access Token"
+msgstr "Simbolul de acces"
+
+#: inc/options.php:341
+msgid "Access Token Secret"
+msgstr "Acces simbolul Secret"
+
+#: inc/options.php:360
+msgid "WordPress settings"
+msgstr "Setări WordPress"
+
+#: inc/options.php:364
+msgid "When to generate a short URL and tweet it"
+msgstr "Atunci când pentru a genera un URL-ul scurt şi tweet-l"
+
+#: inc/options.php:377
+msgid "New <strong>%s</strong> published"
+msgstr "Noi <strong>%s</strong> publicate"
+
+#: inc/options.php:379
+msgid "Generate short URL"
+msgstr "Genera URL-ul scurt"
+
+#: inc/options.php:383
+msgid "Send a tweet with the short URL"
+msgstr "Trimite un tweet cu URL-ul scurt"
+
+#: inc/options.php:392
+msgid "What to tweet"
+msgstr "Ce să tweet"
+
+#: inc/options.php:397
+msgid "Tweet message"
+msgstr "Tweet mesajul"
+
+#: inc/options.php:399
+msgid ""
+"This is your tweet template. The plugin will replace <tt>%T</tt> with the post title and <tt>%U</tt> with its short URL, with as much text as possible so it fits in the 140 character limit<br/>\r\n"
+"\tExamples (click one to copy)"
+msgstr ""
+"This is your tweet template. The plugin will replace <tt>%T</tt> with the post title and <tt>%U</tt> with its short URL, with as much text as possible so it fits in the 140 character limit<br/>\r\n"
+"\tExamples (click one to copy)"
+
+#: inc/options.php:402
+msgid "Fresh on %s"
+msgstr "Proaspete pe %s"
+
+#: inc/options.php:403
+msgid "Just posted:"
+msgstr "Postat doar:"
+
+#: inc/options.php:406
+msgid "Tip: Keep the tweet message template short!"
+msgstr "Sfat: Păstraţi tweet şablonul mesaj scurt!"
+
+#: inc/options.php:407
+msgid "Advanced template"
+msgstr "Şablon avansate"
+
+#: inc/options.php:409
+msgid "You can use all of the following tokens in your tweet template:"
+msgstr "Utilizaţi toate jetoanele următoarele în şablonul tweet:"
+
+#: inc/options.php:411
+msgid "shorturl"
+msgstr "shorturl"
+
+#: inc/options.php:412
+msgid "post title"
+msgstr "post titlu"
+
+#: inc/options.php:413
+msgid "author's display name"
+msgstr "Nume afişat autorului"
+
+#: inc/options.php:414
+#: inc/options.php:415
+msgid "something"
+msgstr "ceva"
+
+#: inc/options.php:414
+msgid "author's 'something' as stored in the database. Example: %A{first_name}. See <a href=\"http://codex.wordpress.org/Function_Reference/get_userdata\">get_userdata()</a>."
+msgstr "autorului \"ceva\", aşa cum este stocată în baza de date. Exemplu: Un% {} FIRST_NAME. Vezi <a href=\"http://codex.wordpress.org/Function_Reference/get_userdata\"> get_userdata () </ a>."
+
+#: inc/options.php:415
+msgid "custom post field 'something'. See <a href=\"http://codex.wordpress.org/Function_Reference/get_post_meta\">get_post_meta()</a>."
+msgstr "câmpul mesaj personalizat \"ceva\". Vezi <a href=\"http://codex.wordpress.org/Function_Reference/get_post_meta\"> get_post_meta () </ a>."
+
+#: inc/options.php:416
+msgid "tags as plaintext and lowercase (space separated if more than one, up to 3 tags)"
+msgstr "Tag-uri ca plaintext şi litere mici (spaţiu separat în cazul în care mai mult de unul, de până la trei tag-uri)"
+
+#: inc/options.php:417
+msgid "tags as #hashtags and lowercase (space separated if more than one, up to 3 tags)"
+msgstr "Tag-uri ar fi # hashtags şi mici (spaţiu separat în cazul în care mai mult de unul, de până la trei tag-uri)"
+
+#: inc/options.php:418
+msgid "categories as plaintext and lowercase (space separated if more than one, up to 3 categories)"
+msgstr "categoriile ca text clar şi mici (spaţiu separat în cazul în care mai mult de unul, de până la 3 categorii)"
+
+#: inc/options.php:419
+msgid "categories as #hashtags and lowercase (space separated if more than one, up to 3 categories)"
+msgstr "categorii ar fi # hashtags şi mici (separate prin spaţiu dacă mai mult de una, de până la 3 categorii)"
+
+#: inc/options.php:421
+msgid "Remember that you only have 140 characters! The title will be added last, so if you put too many tokens like hashtags and stuff, the title might get trimmed hard!"
+msgstr "Amintiţi-vă că aveţi doar 140 de caractere!Titlul va fi adăugată trecut, asa ca daca ai pus prea multe token-uri, cum ar fi hashtags si alte chestii, titlul ar putea să te împodobite greu!"
+
+#: inc/options.php:442
+msgid "<span class=\"mandatory\">*</span> denotes a mandatory field. A green check<img src=\"%1$s/res/accept.png\" /> indicates the section main parameters are <em>filled</em>, not necessarily <em>correct</em>. Click on the <img src=\"%1$s/res/expand.png\" /> to expand a setting section."
+msgstr "<span class=\"mandatory\"> * </ span> denotă un câmp obligatoriu. O verificare verde <img src=\"%1$s/res/accept.png\" /> indică parametrii de secţiunea principală sunt <em> umplute </ em>, nu neapărat <em> corect </ em>. Faceţi clic pe <img src=\"%1$s/res/expand.png\" /> pentru a extinde o secţiune setare."
+
+#: inc/options.php:473
+msgid "<p>Depending on <a href=\"options-general.php?page=ozh_yourls\">configuration</a>, a short URL will be generated and/or a tweet will be sent.</p>"
+msgstr "<p> funcţie de <a href=\"options-general.php?page=ozh_yourls\"> de configurare </ a>, un URL scurt va fi generat şi / sau un tweet va fi trimis </ p>."
+
+#: inc/options.php:481
+msgid "<p>Bleh. The URL shortening service you configured could not be reached as of now. This might be a temporary problem, please try again later!</p>"
+msgstr "<p> Bleh.Scurtarea URL serviciu ai configurat nu a putut fi atins, de-acum. Acest lucru ar putea fi o problemă temporară, vă rugăm să încercaţi din nou mai tarziu! </ P>"
+
+#: inc/options.php:495
+msgid "This %1$s's short URL: <strong><a href=\"%2$s\">%2$s</a></strong>"
+msgstr ">%2$s</a></strong>"
+
+#: inc/options.php:496
+msgid "You can click Reset to generate another short URL if you picked another URL shortening service in the <a href='options-general.php?page=ozh_yourls'>plugin options</a>"
+msgstr "Aveţi posibilitatea să faceţi clic pe Resetare pentru a genera un alt URL-ul scurt, dacă aţi ales un alt serviciu de scurtare URL-ul în <a href='options-general.php?page=ozh_yourls'> opţiunile de plugin-ul </ a>"
+
+#: inc/options.php:497
+msgid "Reset short URL"
+msgstr "Reiniţializare URL-ul scurt"
+
+#: inc/options.php:505
+msgid "Tweet this"
+msgstr "Tweet acest"
+
+#: inc/options.php:512
+msgid "Retweet this"
+msgstr "Retweet acest lucru"
+
+#: inc/options.php:514
+msgid "<em>Note:</em> this post has already been tweeted. Not that there's something wrong to promote it again, of course :)"
+msgstr "<em> Notă: </ em> acest post a fost deja Twitter. Nu că nu este ceva greşit să-l promoveze din nou, desigur :)"
+
+#: inc/core.php:48
+msgid "Bleh. Could not generate short URL. Maybe the URL shortening service is down? Please try again later!"
+msgstr "Bleh. Nu ar putea genera URL-ul scurt. Poate că serviciul scurtarea URL-ul este jos? Vă rugăm să încercaţi din nou mai târziu!"
+
+#: inc/core.php:68
+msgid "OK !"
+msgstr "ok!"
+
+#: inc/core.php:68
+msgid "Not found"
+msgstr "Nu a fost găsit"
+
+#: inc/core.php:174
+msgid "Plugin not configured: cannot find which URL shortening service to use"
+msgstr "Plugin-ul nu este configurată: nu poate găsi care URL shortening serviciu pentru a utiliza"
+
+#: inc/core.php:222
+msgid "Cannot find YOURLS. Please check your config."
+msgstr "Imposibil de găsit YOURLS. Vă rugăm să verificaţi dumneavoastră config."
+

@@ -1,0 +1,143 @@
+#num_pages {
+  width: 50px;
+}
+
+#title {
+  width: 22%;
+}
+
+#page_order {
+  width: 3.2em;
+}
+
+#the_list {
+  cursor: move;
+}
+
+p.search-box {
+  width: 30%;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+#post-search-input {
+  width: 100%;
+}
+
+#poststuff .story-pages-wrap h2 {
+  width: 30%;
+  float: left;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.new-story-page-h2, #poststuff .new-story-page-h2 {
+  margin-bottom: -5px;
+  padding-bottom: 0;
+}
+
+.add-new-h2.dashicons-plus:before {
+  margin: .45em 0 0 -.2em;
+}
+
+.status-trash {
+  opacity: .5;
+}
+.status-trash:hover {
+  opacity: 1;
+}
+
+.cmb2-id--storyftw-footer-logo {
+  padding: 0;
+}
+
+.postbox-container .cmb2-wrap > .cmb-field-list > .cmb-row.cmb2-id--storyftw-title {
+  padding-top: 0;
+}
+
+#side-sortables .cmb-row.cmb2-id--storyftw-palettes .cmb-td .cmb2-metabox-description {
+  padding: 0 0 1em;
+}
+
+#cmb2-metabox-storyftw_story_colors_box .advanced-toggle .inside .cmb-row {
+  padding: 1.8em 0 .8em;
+}
+
+#side-sortables .postbox:after {
+  content: '';
+  display: block;
+  clear: both;
+  width: 100%;
+  background: red;
+  position: relative;
+}
+#side-sortables .cmb2-wrap > ul > .cmb-row {
+  padding: 10px;
+}
+#side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row.cmb2-id--thumbnail {
+  padding-top: 0;
+}
+#side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row.cmb2-id--storyftw-footer-logo {
+  padding: 0;
+}
+#side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row.cmb2-id--storyftw-footer-logo .cmb2-metabox-description {
+  margin-top: 10px;
+}
+#side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row.cmb2-id--storyftw-footer-logo .img-status {
+  margin: 0;
+}
+#side-sortables .cmb2-wrap > .cmb-field-list > .cmb-row.cmb-type-file {
+  padding-bottom: 10px;
+}
+#side-sortables .cmb-row.cmb-type-file {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+#side-sortables .cmb-row.cmb-type-file .cmb2-upload-button.button {
+  width: 100%;
+  margin: 8px auto 10px;
+}
+#side-sortables .cmb-row .cmb-td .cmb2-metabox-description {
+  padding-bottom: .2em;
+}
+#side-sortables .img-status {
+  width: 100%;
+  height: auto;
+  margin: 15px 0 0 0;
+  padding: 0;
+  float: none;
+  display: block;
+}
+#side-sortables .postbox .cmb2-media-status .img-status img {
+  max-width: 95%;
+}
+
+.advanced-toggle .toggle-label {
+  cursor: pointer;
+  display: block;
+  line-height: 3em;
+  border-bottom: 1px solid #e9e9e9;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  padding-left: .8em;
+}
+.advanced-toggle .inside .cmb-row {
+  padding: 1.4em 0;
+}
+.advanced-toggle:before {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+#normal-sortables .advanced-toggle .inside {
+  padding-top: 1em;
+}
+#normal-sortables .advanced-toggle .inside .cmb-row {
+  padding: 1.8em 0;
+}
+
+.js .meta-box-sortables .postbox .advanced-toggle.closed .handlediv:before {
+  content: '\f140';
+}

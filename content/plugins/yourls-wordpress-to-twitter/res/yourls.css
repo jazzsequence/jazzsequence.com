@@ -1,0 +1,36 @@
+div.y_hidden {display:none;}
+
+#tw_msg_sample{list-style-type:disc;padding-left:2em}
+.tw_msg_sample {cursor:pointer;}
+
+.y_level2 {padding-left:1em;padding-top:1em;}
+.y_level3 {padding-left:2em;padding-top:1em;}
+
+.y_longfield {width:35em};
+
+.y_adjustlabels {background:red;}
+
+#y_logo {overflow:hidden}
+.y_logo {float:right;padding-left:100px;}
+
+.wrap h3 {border-bottom:1px solid #ccc;margin-top:3em;}
+
+h3 span { display:inline-block; text-indent:-9999px; width:16px; height:16px; }
+h3 span.h3_toggle{ cursor:pointer; }
+h3 span.ok { background: transparent url(accept.png) center center no-repeat; }
+h3 span.notok { background: transparent url(exclamation.png) center center no-repeat; }
+h3 span.folded{ background: transparent url(expand.png) center center no-repeat; }
+h3 span.expanded{ background: transparent url(collapse.png) center center no-repeat; }
+
+#reset-yourls { margin-left:200px; color:red; }
+#unlink-yourls { color:red; }
+
+span.mandatory { color:red; }
+
+a.twitter_profile {text-decoration:none;}
+a.twitter_profile img {vertical-align:-32px; padding:1px 5px;}
+
+#appdetails {
+	list-style-type:disc;
+	margin-left:30px;
+}

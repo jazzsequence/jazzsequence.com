@@ -1,0 +1,490 @@
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/yourls-wordpress-to-twitter\n"
+"POT-Creation-Date: 2011-06-17 14:59:19+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: inc/buddypress/bp-members.php:82 inc/buddypress/bp-groups.php:95
+msgid "Short URL: <code>%s</code>"
+msgstr ""
+
+#: inc/buddypress/bp-members.php:167 inc/buddypress/bp-groups.php:177
+msgid "Edit"
+msgstr ""
+
+#: inc/buddypress/bp-members.php:188 inc/buddypress/bp-members.php:233
+#: inc/options.php:492
+msgid "Short URL"
+msgstr ""
+
+#: inc/buddypress/bp-members.php:228
+msgid "Changes Saved."
+msgstr ""
+
+#: inc/buddypress/bp-members.php:235 inc/buddypress/bp-groups.php:201
+msgid "Short URL: "
+msgstr ""
+
+#: inc/buddypress/bp-members.php:237 inc/buddypress/bp-groups.php:203
+msgid "Letters and numbers only."
+msgstr ""
+
+#: inc/buddypress/bp-members.php:240 inc/options.php:438
+msgid "Save Changes"
+msgstr ""
+
+#: inc/buddypress/bp-members.php:285 inc/buddypress/bp-members.php:289
+#: inc/buddypress/bp-groups.php:240 inc/buddypress/bp-groups.php:244
+msgid "That URL is unavailable. Please choose another."
+msgstr ""
+
+#: inc/buddypress/bp-members.php:310 inc/buddypress/bp-groups.php:266
+msgid "That URL is unavailable. Please choose another.tt"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:38
+msgid "Members"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:43
+msgid "Each member gets a short URL"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:46
+msgid ""
+"Each short URL will be created automatically the next time the member "
+"profile is viewed"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:52
+msgid "Create short URLs from usernames"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:55
+msgid ""
+"When checked, member short URLs will look like <code>%s<strong>username</"
+"strong></code>, rather than a random string"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:60 inc/buddypress/bp-admin.php:93
+msgid "Users can edit their short URLs"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:63 inc/buddypress/bp-admin.php:96
+msgid ""
+"You must set <code>define( 'YOURLS_UNIQUE_URLS', false );</code> in <a href="
+"\"http://yourls.org/#Config\">your YOURLS configuration file."
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:71
+msgid "Groups"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:76
+msgid "Each group gets a short URL"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:79
+msgid ""
+"Each short URL will be created automatically the next time the group page is "
+"viewed"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:85
+msgid "Create short URLs from group slugs"
+msgstr ""
+
+#: inc/buddypress/bp-admin.php:88
+msgid ""
+"When checked, group short URLs will look like <code>%s<strong>group-name</"
+"strong></code>, rather than a random string"
+msgstr ""
+
+#: inc/options.php:7
+msgid "<strong>YOURLS - WordPress to Twitter</strong> configuration incomplete"
+msgstr ""
+
+#: inc/options.php:10
+msgid ""
+"Please configure <strong>YOURLS - WordPress to Twitter</strong> <a href=\"%s"
+"\">settings</a> now"
+msgstr ""
+
+#: inc/options.php:21
+msgid "YOURLS: WordPress to Twitter"
+msgstr ""
+
+#: inc/options.php:200
+msgid "YOURLS - WordPress to Twitter"
+msgstr ""
+
+#: inc/options.php:207
+msgid ""
+"<a href=\"http://yourls.org/\">YOURLS</a> is a free URL shortener service "
+"you can run on your webhost to have your own personal TinyURL."
+msgstr ""
+
+#: inc/options.php:208
+msgid ""
+"This plugin is a bridge between <a href=\"http://yourls.org/\">YOURLS</a>, "
+"<a href=\"http://twitter.com/\">Twitter</a> and your blog: when you submit a "
+"new post or page, your blog will tap into YOURLS to generate a short URL for "
+"it, and will then tweet it."
+msgstr ""
+
+#: inc/options.php:209
+msgid ""
+"Note that, for maximum fun, this plugin also supports a few other public URL "
+"shortener services: is.gd, tinyURL and bit.ly"
+msgstr ""
+
+#: inc/options.php:216
+msgid "URL Shortener Settings"
+msgstr ""
+
+#: inc/options.php:222
+msgid "URL Shortener Service"
+msgstr ""
+
+#: inc/options.php:225
+msgid "You are using:"
+msgstr ""
+
+#: inc/options.php:227
+msgid "Please select.."
+msgstr ""
+
+#: inc/options.php:228
+msgid "your own YOURLS install"
+msgstr ""
+
+#: inc/options.php:229
+msgid "another public service such as TinyURL or bit.ly"
+msgstr ""
+
+#: inc/options.php:234
+msgid "Your YOURLS installation is"
+msgstr ""
+
+#: inc/options.php:236 inc/options.php:264
+msgid "Please select..."
+msgstr ""
+
+#: inc/options.php:237
+msgid "local, on the same webserver"
+msgstr ""
+
+#: inc/options.php:238
+msgid "remote, on another webserver"
+msgstr ""
+
+#: inc/options.php:244 inc/options.php:250
+msgid "Example:"
+msgstr ""
+
+#: inc/options.php:249
+msgid "URL to the YOURLS API"
+msgstr ""
+
+#: inc/options.php:251
+msgid "YOURLS Login"
+msgstr ""
+
+#: inc/options.php:252
+msgid "YOURLS Password"
+msgstr ""
+
+#: inc/options.php:262
+msgid "Public service"
+msgstr ""
+
+#: inc/options.php:273
+msgid "API Login"
+msgstr ""
+
+#: inc/options.php:273
+msgid "(case sensitive!)"
+msgstr ""
+
+#: inc/options.php:274
+msgid "API Key"
+msgstr ""
+
+#: inc/options.php:275
+msgid ""
+"If you have a <a href=\"http://bit.ly/account/\">bit.ly</a> account, "
+"entering your credentials will link the short URLs to it"
+msgstr ""
+
+#: inc/options.php:280
+msgid "Web Key"
+msgstr ""
+
+#: inc/options.php:281
+msgid ""
+"If you have a <a href=\"http://ping.fm/\">ping.fm</a> account, enter your "
+"private <a href=\"http://ping.fm/key/\">Web Key</a>"
+msgstr ""
+
+#: inc/options.php:286 inc/options.php:292
+msgid "(this service needs no authentication)"
+msgstr ""
+
+#: inc/options.php:302
+msgid "Twitter Settings"
+msgstr ""
+
+#: inc/options.php:312
+msgid ""
+"To connect your site to Twitter, you need to register your blog as a "
+"<strong>Twitter Application</strong> and get a <strong>Consumer Key</"
+"strong>, a <strong>Consumer Secret</strong>, an <strong>Access Token</"
+"strong> and an <strong>Access Token Secret</strong>. Phew. Complicated? "
+"Blame Twitter :)"
+msgstr ""
+
+#: inc/options.php:313
+msgid ""
+"Already registered? Find your keys on <a href=\"http://dev.twitter.com/apps"
+"\">Twitter Application List</a>"
+msgstr ""
+
+#: inc/options.php:314
+msgid ""
+"Need to register? <a href=\"http://dev.twitter.com/apps/new\">Register an "
+"Application</a> and fill the form as <a title=\"Register your app like this"
+"\" href=\"<?php echo $help_url; ?>\" class=\"thickbox\">in this help screen</"
+"a> to get your keys and tokens"
+msgstr ""
+
+#: inc/options.php:316
+msgid "Set <strong>Application Type</strong> to <strong>Browser</strong>"
+msgstr ""
+
+#: inc/options.php:317
+msgid ""
+"Set <strong>Callback URL</strong> to <strong><?php echo $blogurl; ?></strong>"
+msgstr ""
+
+#: inc/options.php:318
+msgid ""
+"Set <strong>Default Access type</strong> to <strong>Read &amp; Write</strong>"
+msgstr ""
+
+#: inc/options.php:324
+msgid "Consumer Key"
+msgstr ""
+
+#: inc/options.php:329
+msgid "Consumer Secret"
+msgstr ""
+
+#: inc/options.php:333
+msgid ""
+"On the right hand column of your application page, click on 'My Access "
+"Token' for the following values:"
+msgstr ""
+
+#: inc/options.php:336
+msgid "Access Token"
+msgstr ""
+
+#: inc/options.php:341
+msgid "Access Token Secret"
+msgstr ""
+
+#: inc/options.php:360
+msgid "WordPress settings"
+msgstr ""
+
+#: inc/options.php:364
+msgid "When to generate a short URL and tweet it"
+msgstr ""
+
+#: inc/options.php:377
+msgid "New <strong>%s</strong> published"
+msgstr ""
+
+#: inc/options.php:379
+msgid "Generate short URL"
+msgstr ""
+
+#: inc/options.php:383
+msgid "Send a tweet with the short URL"
+msgstr ""
+
+#: inc/options.php:392
+msgid "What to tweet"
+msgstr ""
+
+#: inc/options.php:397
+msgid "Tweet message"
+msgstr ""
+
+#: inc/options.php:399
+msgid ""
+"This is your tweet template. The plugin will replace <tt>%T</tt> with the "
+"post title and <tt>%U</tt> with its short URL, with as much text as possible "
+"so it fits in the 140 character limit<br/>\r\n"
+"\tExamples (click one to copy)"
+msgstr ""
+
+#: inc/options.php:402
+msgid "Fresh on %s"
+msgstr ""
+
+#: inc/options.php:403
+msgid "Just posted:"
+msgstr ""
+
+#: inc/options.php:406
+msgid "Tip: Keep the tweet message template short!"
+msgstr ""
+
+#: inc/options.php:407
+msgid "Advanced template"
+msgstr ""
+
+#: inc/options.php:409
+msgid "You can use all of the following tokens in your tweet template:"
+msgstr ""
+
+#: inc/options.php:411
+msgid "shorturl"
+msgstr ""
+
+#: inc/options.php:412
+msgid "post title"
+msgstr ""
+
+#: inc/options.php:413
+msgid "author's display name"
+msgstr ""
+
+#: inc/options.php:414 inc/options.php:415
+msgid "something"
+msgstr ""
+
+#: inc/options.php:414
+msgid ""
+"author's 'something' as stored in the database. Example: %A{first_name}. See "
+"<a href=\"http://codex.wordpress.org/Function_Reference/get_userdata"
+"\">get_userdata()</a>."
+msgstr ""
+
+#: inc/options.php:415
+msgid ""
+"custom post field 'something'. See <a href=\"http://codex.wordpress.org/"
+"Function_Reference/get_post_meta\">get_post_meta()</a>."
+msgstr ""
+
+#: inc/options.php:416
+msgid ""
+"tags as plaintext and lowercase (space separated if more than one, up to 3 "
+"tags)"
+msgstr ""
+
+#: inc/options.php:417
+msgid ""
+"tags as #hashtags and lowercase (space separated if more than one, up to 3 "
+"tags)"
+msgstr ""
+
+#: inc/options.php:418
+msgid ""
+"categories as plaintext and lowercase (space separated if more than one, up "
+"to 3 categories)"
+msgstr ""
+
+#: inc/options.php:419
+msgid ""
+"categories as #hashtags and lowercase (space separated if more than one, up "
+"to 3 categories)"
+msgstr ""
+
+#: inc/options.php:421
+msgid ""
+"Remember that you only have 140 characters! The title will be added last, so "
+"if you put too many tokens like hashtags and stuff, the title might get "
+"trimmed hard!"
+msgstr ""
+
+#: inc/options.php:442
+msgid ""
+"<span class=\"mandatory\">*</span> denotes a mandatory field. A green "
+"check<img src=\"%1$s/res/accept.png\" /> indicates the section main "
+"parameters are <em>filled</em>, not necessarily <em>correct</em>. Click on "
+"the <img src=\"%1$s/res/expand.png\" /> to expand a setting section."
+msgstr ""
+
+#: inc/options.php:473
+msgid ""
+"<p>Depending on <a href=\"options-general.php?page=ozh_yourls"
+"\">configuration</a>, a short URL will be generated and/or a tweet will be "
+"sent.</p>"
+msgstr ""
+
+#: inc/options.php:481
+msgid ""
+"<p>Bleh. The URL shortening service you configured could not be reached as "
+"of now. This might be a temporary problem, please try again later!</p>"
+msgstr ""
+
+#: inc/options.php:495
+msgid "This %1$s's short URL: <strong><a href=\"%2$s\">%2$s</a></strong>"
+msgstr ""
+
+#: inc/options.php:496
+msgid ""
+"You can click Reset to generate another short URL if you picked another URL "
+"shortening service in the <a href='options-general.php?"
+"page=ozh_yourls'>plugin options</a>"
+msgstr ""
+
+#: inc/options.php:497
+msgid "Reset short URL"
+msgstr ""
+
+#: inc/options.php:505
+msgid "Tweet this"
+msgstr ""
+
+#: inc/options.php:512
+msgid "Retweet this"
+msgstr ""
+
+#: inc/options.php:514
+msgid ""
+"<em>Note:</em> this post has already been tweeted. Not that there's "
+"something wrong to promote it again, of course :)"
+msgstr ""
+
+#: inc/core.php:48
+msgid ""
+"Bleh. Could not generate short URL. Maybe the URL shortening service is "
+"down? Please try again later!"
+msgstr ""
+
+#: inc/core.php:68
+msgid "OK !"
+msgstr ""
+
+#: inc/core.php:68
+msgid "Not found"
+msgstr ""
+
+#: inc/core.php:174
+msgid "Plugin not configured: cannot find which URL shortening service to use"
+msgstr ""
+
+#: inc/core.php:222
+msgid "Cannot find YOURLS. Please check your config."
+msgstr ""
