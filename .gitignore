@@ -1,6 +1,14 @@
 # ignore the uploads folder
 content/uploads
 
+# ignore the content folders that are managed by Composer
+content/mu-plugins/*
+!content/mu-plugins/loader.php
+content/plugins/*
+!content/plugins/js-*
+content/themes*
+!content/themes/artbox/*
+
 # ignore random other shit
 audio/
 images/
