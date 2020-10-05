@@ -206,12 +206,7 @@
     "extra": {
         "altis": {
             "modules": {
-                "cloud": {
-                    "xray": false,
-                    "ludicrousdb": false,
-                    "s3-uploads": false,
-                    "email-from-address": "hello@chrisreynolds.io"
-                },
+                "cloud": false,
                 "cms": {
                     "default-theme": "twentyseventeen",
                     "remove-emoji": false
