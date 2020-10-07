@@ -3,5 +3,5 @@
 version: ~> 1.0
 import:
   # Commit reference is updated during composer dump-autoload
-  - humanmade/altis-dev-tools:travis/altis.yml@5.0.0-beta1
+  - humanmade/altis-dev-tools:travis/altis.yml@5.0.0-beta2
   - .config/travis.yml
