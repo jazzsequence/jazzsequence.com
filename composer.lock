@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "548506af35250b5ba35a4fdd6407b455",
+    "content-hash": "1251aa42051484edca35a67a8498fb9c",
     "packages": [
         {
             "name": "10up/elasticpress",
@@ -69,32 +69,32 @@
         },
         {
             "name": "altis/altis",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis.git",
-                "reference": "54f973377d3f0f1ee38b52f23ee735c2603953ca"
+                "reference": "6ed374bd81aea4f8a5e0feb925b12fb9163a255a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis/zipball/54f973377d3f0f1ee38b52f23ee735c2603953ca",
-                "reference": "54f973377d3f0f1ee38b52f23ee735c2603953ca",
+                "url": "https://api.github.com/repos/humanmade/altis/zipball/6ed374bd81aea4f8a5e0feb925b12fb9163a255a",
+                "reference": "6ed374bd81aea4f8a5e0feb925b12fb9163a255a",
                 "shasum": ""
             },
             "require": {
-                "altis/analytics": "5.0.0-beta1",
-                "altis/cloud": "5.0.0-beta1",
-                "altis/cms": "5.0.0-beta1",
-                "altis/core": "5.0.0-beta1",
-                "altis/dev-tools": "5.0.0-beta1",
-                "altis/documentation": "5.0.0-beta1",
-                "altis/enhanced-search": "5.0.0-beta1",
-                "altis/media": "5.0.0-beta1",
-                "altis/multilingual": "5.0.0-beta1",
-                "altis/security": "5.0.0-beta1",
-                "altis/seo": "5.0.0-beta1",
-                "altis/sso": "5.0.0-beta1",
-                "altis/workflow": "5.0.0-beta1",
+                "altis/analytics": "5.0.0-beta2",
+                "altis/cloud": "5.0.0-beta2",
+                "altis/cms": "5.0.0-beta2",
+                "altis/core": "5.0.0-beta2",
+                "altis/dev-tools": "5.0.0-beta2",
+                "altis/documentation": "5.0.0-beta2",
+                "altis/enhanced-search": "5.0.0-beta2",
+                "altis/media": "5.0.0-beta2",
+                "altis/multilingual": "5.0.0-beta2",
+                "altis/security": "5.0.0-beta2",
+                "altis/seo": "5.0.0-beta2",
+                "altis/sso": "5.0.0-beta2",
+                "altis/workflow": "5.0.0-beta2",
                 "php": ">=7.1"
             },
             "type": "metapackage",
@@ -109,11 +109,11 @@
                 }
             ],
             "description": "Altis DXP",
-            "time": "2020-09-17T11:41:05+00:00"
+            "time": "2020-10-06T18:56:50+00:00"
         },
         {
             "name": "altis/analytics",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-analytics.git",
@@ -228,7 +228,7 @@
         },
         {
             "name": "altis/cloud",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cloud.git",
@@ -282,7 +282,7 @@
         },
         {
             "name": "altis/cms",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
@@ -380,16 +380,16 @@
         },
         {
             "name": "altis/core",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-core.git",
-                "reference": "47c21cdc82b834e4442b432d313f46a10d3619dd"
+                "reference": "5f67c9818874d54a9b84a41263555d2b793dcaaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-core/zipball/47c21cdc82b834e4442b432d313f46a10d3619dd",
-                "reference": "47c21cdc82b834e4442b432d313f46a10d3619dd",
+                "url": "https://api.github.com/repos/humanmade/altis-core/zipball/5f67c9818874d54a9b84a41263555d2b793dcaaf",
+                "reference": "5f67c9818874d54a9b84a41263555d2b793dcaaf",
                 "shasum": ""
             },
             "require": {
@@ -423,20 +423,20 @@
                 }
             ],
             "description": "Core module for Altis",
-            "time": "2020-09-08T09:42:17+00:00"
+            "time": "2020-10-06T18:08:56+00:00"
         },
         {
             "name": "altis/dev-tools",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-dev-tools.git",
-                "reference": "b045e5397e1136662c99d73408f168afaf30659f"
+                "reference": "db81ded690ac8e6e45bb74431306e2fafb993415"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-dev-tools/zipball/b045e5397e1136662c99d73408f168afaf30659f",
-                "reference": "b045e5397e1136662c99d73408f168afaf30659f",
+                "url": "https://api.github.com/repos/humanmade/altis-dev-tools/zipball/db81ded690ac8e6e45bb74431306e2fafb993415",
+                "reference": "db81ded690ac8e6e45bb74431306e2fafb993415",
                 "shasum": ""
             },
             "require": {
@@ -468,7 +468,7 @@
                 }
             ],
             "description": "Developer Tools module for Altis",
-            "time": "2020-09-08T15:17:53+00:00"
+            "time": "2020-10-06T18:12:13+00:00"
         },
         {
             "name": "altis/dev-tools-command",
@@ -511,16 +511,16 @@
         },
         {
             "name": "altis/documentation",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-documentation.git",
-                "reference": "9320699d9ce1e5fad8a1d58ce0f9bdb0a1f73a2d"
+                "reference": "c3aea421ca5730bdf4d6e2cffef4e07c5b5f49c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-documentation/zipball/9320699d9ce1e5fad8a1d58ce0f9bdb0a1f73a2d",
-                "reference": "9320699d9ce1e5fad8a1d58ce0f9bdb0a1f73a2d",
+                "url": "https://api.github.com/repos/humanmade/altis-documentation/zipball/c3aea421ca5730bdf4d6e2cffef4e07c5b5f49c3",
+                "reference": "c3aea421ca5730bdf4d6e2cffef4e07c5b5f49c3",
                 "shasum": ""
             },
             "require": {
@@ -552,20 +552,20 @@
                 }
             ],
             "description": "Documentation module for Altis",
-            "time": "2020-08-12T14:41:08+00:00"
+            "time": "2020-10-06T18:17:36+00:00"
         },
         {
             "name": "altis/enhanced-search",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-enhanced-search.git",
-                "reference": "3b859644e9d1b5d4c09a4e179625798049fb3f02"
+                "reference": "2877743bf6b8e08cc7d3c075d638ccc759759ca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-enhanced-search/zipball/3b859644e9d1b5d4c09a4e179625798049fb3f02",
-                "reference": "3b859644e9d1b5d4c09a4e179625798049fb3f02",
+                "url": "https://api.github.com/repos/humanmade/altis-enhanced-search/zipball/2877743bf6b8e08cc7d3c075d638ccc759759ca8",
+                "reference": "2877743bf6b8e08cc7d3c075d638ccc759759ca8",
                 "shasum": ""
             },
             "require": {
@@ -594,7 +594,7 @@
                 }
             ],
             "description": "Enhanced Search module for Altis",
-            "time": "2020-09-10T14:30:18+00:00"
+            "time": "2020-10-06T18:39:22+00:00"
         },
         {
             "name": "altis/experiments",
@@ -630,7 +630,7 @@
         },
         {
             "name": "altis/media",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-media.git",
@@ -674,7 +674,7 @@
         },
         {
             "name": "altis/multilingual",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-multilingual.git",
@@ -705,7 +705,7 @@
         },
         {
             "name": "altis/security",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-security.git",
@@ -758,22 +758,21 @@
         },
         {
             "name": "altis/seo",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-seo.git",
-                "reference": "67a3ffc133fdb8ed49f5962af016b762b872f652"
+                "reference": "43efa85c39442354f90ac1452920969c2732fe5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-seo/zipball/67a3ffc133fdb8ed49f5962af016b762b872f652",
-                "reference": "67a3ffc133fdb8ed49f5962af016b762b872f652",
+                "url": "https://api.github.com/repos/humanmade/altis-seo/zipball/43efa85c39442354f90ac1452920969c2732fe5a",
+                "reference": "43efa85c39442354f90ac1452920969c2732fe5a",
                 "shasum": ""
             },
             "require": {
                 "humanmade/hm-redirects": "~0.5.1",
                 "humanmade/meta-tags": "^0.1.6",
-                "humanmade/msm-sitemap": "1.4.1",
                 "humanmade/wp-seo": "0.14.0",
                 "php": ">=7.1"
             },
@@ -798,11 +797,11 @@
                 }
             ],
             "description": "SEO module for Altis",
-            "time": "2020-08-04T14:22:25+00:00"
+            "time": "2020-10-06T18:44:36+00:00"
         },
         {
             "name": "altis/sso",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-sso.git",
@@ -844,7 +843,7 @@
         },
         {
             "name": "altis/workflow",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
@@ -889,16 +888,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.2",
+            "version": "3.158.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b80957465d94c127254e36061dd3d0c3ccc94cc1"
+                "reference": "c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b80957465d94c127254e36061dd3d0c3ccc94cc1",
-                "reference": "b80957465d94c127254e36061dd3d0c3ccc94cc1",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2",
+                "reference": "c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2",
                 "shasum": ""
             },
             "require": {
@@ -970,7 +969,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-10-05T18:13:27+00:00"
+            "time": "2020-10-07T18:12:22+00:00"
         },
         {
             "name": "bjeavons/zxcvbn-php",
@@ -1144,6 +1143,16 @@
                 "zend",
                 "zikula"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-04-07T06:57:05+00:00"
         },
         {
@@ -1230,6 +1239,20 @@
             "keywords": [
                 "constructor",
                 "instantiate"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finstantiator",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-05-29T17:27:14+00:00"
         },
@@ -1891,32 +1914,6 @@
             "time": "2020-09-07T14:07:22+00:00"
         },
         {
-            "name": "humanmade/msm-sitemap",
-            "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humanmade/msm-sitemap.git",
-                "reference": "fa4fff265d435b6185f1d1a0dc803b9b5ff52e4e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/msm-sitemap/zipball/fa4fff265d435b6185f1d1a0dc803b9b5ff52e4e",
-                "reference": "fa4fff265d435b6185f1d1a0dc803b9b5ff52e4e",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Comprehensive sitemaps for your WordPress.com VIP site.",
-            "homepage": "https://vip.wordpress.com/plugins/msm-sitemap/",
-            "time": "2019-03-05T18:34:59+00:00"
-        },
-        {
             "name": "humanmade/php-basic-auth",
             "version": "1.1.6",
             "source": {
@@ -2421,11 +2418,6 @@
                 "type": "git",
                 "url": "https://github.com/jazzsequence/hello-ziggy",
                 "reference": "tags/2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/jazzsequence/hello-ziggy/archive/2.1.zip",
-                "reference": "2.1"
             },
             "type": "wordpress-plugin"
         },
@@ -2948,6 +2940,12 @@
                 "duplicate",
                 "object",
                 "object graph"
+            ],
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-06-29T13:22:24+00:00"
         },
@@ -3760,6 +3758,12 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2020-09-11T19:18:05+00:00"
         },
@@ -4644,6 +4648,20 @@
                 "polyfill",
                 "portable"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -4715,6 +4733,20 @@
                 "portable",
                 "shim"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-08-04T06:02:08+00:00"
         },
         {
@@ -4782,6 +4814,20 @@
                 "portable",
                 "shim"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -4844,6 +4890,20 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-07-14T12:35:20+00:00"
         },
@@ -4908,6 +4968,20 @@
                 "portable",
                 "shim"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -4967,6 +5041,20 @@
                 "portable",
                 "shim"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-07-14T12:35:20+00:00"
         },
         {
@@ -5007,6 +5095,12 @@
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
+            "funding": [
+                {
+                    "url": "https://github.com/theseer",
+                    "type": "github"
+                }
+            ],
             "time": "2020-07-12T23:59:07+00:00"
         },
         {
@@ -5537,16 +5631,16 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "5.0.0-beta1",
+            "version": "5.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
-                "reference": "29b905cc225fa3fe406116dc81069644d1ab0de2"
+                "reference": "d01ae2ded473a38635934b9af3d8fec0bfc28f1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/29b905cc225fa3fe406116dc81069644d1ab0de2",
-                "reference": "29b905cc225fa3fe406116dc81069644d1ab0de2",
+                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/d01ae2ded473a38635934b9af3d8fec0bfc28f1c",
+                "reference": "d01ae2ded473a38635934b9af3d8fec0bfc28f1c",
                 "shasum": ""
             },
             "require": {
@@ -5578,15 +5672,12 @@
                 }
             ],
             "description": "Local Server module for Altis",
-            "time": "2020-08-28T15:19:47+00:00"
+            "time": "2020-10-06T18:42:01+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "beta",
-    "stability-flags": {
-        "altis/altis": 10,
-        "altis/local-server": 10
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
@@ -5594,5 +5685,6 @@
     "platform-overrides": {
         "php": "7.2",
         "ext-mbstring": "7.2.30"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
