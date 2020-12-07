@@ -1,9 +1,7 @@
 <?php
-if ( ! Altis\get_environment_type() === 'local' ) {
-	define( 'DB_NAME', 'wordpress' );
-	define( 'DB_USER', 'root' );
-	define( 'DB_PASSWORD', 'd0d469444e274531cba5a67ffb8d70df432cad20b26f52ec' );
-	define( 'DB_HOST', 'localhost' );
-	define( 'DB_CHARSET', 'utf8' );
-	define( 'DB_COLLATE', '' );
-}
+define( 'DB_NAME', 'db' );
+define( 'DB_USER', 'db' );
+define( 'DB_PASSWORD', 'dkbbmc73utuu1h8a' );
+define( 'DB_HOST', 'app-e3c2cafb-3e7d-46e6-92cf-552921225a1c-do-user-2522501-0.b.db.ondigitalocean.com:25060' );
+define( 'DB_CHARSET', 'utf8' );
+define( 'DB_COLLATE', '' );
