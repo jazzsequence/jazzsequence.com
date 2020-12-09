@@ -1,13 +1,23 @@
 # ignore the uploads folder
-content/uploads
+wp-content/uploads
 
 # ignore the content folders that are managed by Composer
-content/mu-plugins/*
+wp-content/mu-plugins/*
 !content/mu-plugins/loader.php
-content/plugins/*
+wp-content/plugins/*
 !content/plugins/js-*
-content/themes*
+wp-content/themes*
 !content/themes/artbox/*
+
+# Ignore core WordPress. We'll let those auto update
+wp-admin/*
+wp-includes/*
+wp-content/sunrise.php
+wp-content/index.php
+license.txt
+README.md
+wp-*.php
+/index.php
 
 # ignore random other shit
 audio/
