@@ -3,11 +3,11 @@ wp-content/uploads
 
 # ignore the content folders that are managed by Composer
 wp-content/mu-plugins/*
-!content/mu-plugins/loader.php
+!wp-content/mu-plugins/loader.php
 wp-content/plugins/*
-!content/plugins/js-*
+!wp-content/plugins/js-*
 wp-content/themes*
-!content/themes/artbox/*
+!wp-content/themes/artbox/*
 
 # Ignore core WordPress. We'll let those auto update
 wp-admin/*
