@@ -15,7 +15,6 @@ wp-includes/*
 wp-content/sunrise.php
 wp-content/index.php
 license.txt
-README.md
 wp-*.php
 /index.php
 
