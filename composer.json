@@ -207,7 +207,7 @@
 					"large-network": false,
 					"default-theme": "twentytwentyone",
 					"xmlrpc": false,
-					"cloner": false,
+					"cloner": false
 				}
 			}
 		}
