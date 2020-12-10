@@ -49,10 +49,6 @@
                 }
             ],
             "description": "Workflow module for Altis",
-            "support": {
-                "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/5.0.0"
-            },
             "time": "2020-09-17T11:06:47+00:00"
         },
         {
@@ -190,10 +186,6 @@
                 "zend",
                 "zikula"
             ],
-            "support": {
-                "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.9.0"
-            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -241,11 +233,6 @@
                 "plugin",
                 "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/humanmade/Gaussholder/issues",
-                "source": "https://github.com/humanmade/Gaussholder/releases",
-                "wiki": "https://github.com/humanmade/Gaussholder/wiki"
-            },
             "time": "2019-05-13T10:17:03+00:00"
         },
         {
@@ -277,10 +264,6 @@
                 }
             ],
             "description": "Run checks and enforce conditions before posts are published.",
-            "support": {
-                "issues": "https://github.com/humanmade/publication-checklist/issues",
-                "source": "https://github.com/humanmade/publication-checklist/tree/0.2.2--branch"
-            },
             "time": "2020-09-08T16:13:47+00:00"
         },
         {
@@ -309,10 +292,6 @@
                 }
             ],
             "description": "Smart Media features for HM Cloud",
-            "support": {
-                "issues": "https://github.com/humanmade/smart-media/issues",
-                "source": "https://github.com/humanmade/smart-media/tree/0.3.4"
-            },
             "time": "2020-12-01T18:42:57+00:00"
         },
         {
@@ -347,10 +326,6 @@
                 }
             ],
             "description": "Workflow management for WordPress, an extensible event and notification system.",
-            "support": {
-                "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.3.11"
-            },
             "time": "2020-09-02T16:53:40+00:00"
         },
         {
@@ -552,10 +527,6 @@
             ],
             "description": "A library which provides extended functionality to WordPress custom post types and taxonomies.",
             "homepage": "https://github.com/johnbillion/extended-cpts/",
-            "support": {
-                "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/4.4.1"
-            },
             "funding": [
                 {
                     "url": "https://github.com/johnbillion",
@@ -656,15 +627,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "8.9.1",
+            "version": "9.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/8.9.1"
+                "reference": "tags/9.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.8.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.2.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -969,5 +940,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
