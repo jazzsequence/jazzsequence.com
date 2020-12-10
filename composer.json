@@ -157,17 +157,17 @@
 			"type": "package",
 			"package": {
 				"name": "jazzsequence/altis-cms",
-				"version": "5.1.0",
+				"version": "5.1.1",
 				"source": {
 					"type": "git",
 					"url": "https://github.com/jazzsequence/altis-cms",
-					"reference": "tags/5.1.0"
+					"reference": "tags/5.1.1"
 				}
 			}
 		}
 	],
 	"require": {
-		"jazzsequence/altis-cms": "5.1.0",
+		"jazzsequence/altis-cms": "5.1.1",
 		"humanmade/smart-media": "^0.3.0",
 		"humanmade/gaussholder": "^1.1.3",
 		"altis/workflow": "^5.0.0",

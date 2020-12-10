@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cbae91cd8cf4933915823565066afcad",
+    "content-hash": "0cfed3dea6e5714cf4d3a5a3e39f4c55",
     "packages": [
         {
             "name": "altis/workflow",
@@ -365,11 +365,11 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/5.1.0"
+                "reference": "tags/5.1.1"
             },
             "type": "library"
         },
