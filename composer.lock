@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cfed3dea6e5714cf4d3a5a3e39f4c55",
+    "content-hash": "7088565f74db3aad0184fe5634c07941",
     "packages": [
         {
             "name": "altis/workflow",
@@ -365,13 +365,13 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "5.1.1",
+            "version": "5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/5.1.1"
+                "reference": "tags/5.1.2"
             },
-            "type": "library"
+            "type": "wordpress-muplugin"
         },
         {
             "name": "jazzsequence/artists",
