@@ -200,7 +200,6 @@
 		"wpackagist-plugin/wordpress-mu-domain-mapping": "^0.5.5",
 		"wpackagist-plugin/wordpress-seo": "^15.2",
 		"wpackagist-plugin/wp-syntax": "^1.1",
-		"wpackagist-plugin/yourls-wordpress-to-twitter": "^1.6.1",
 		"wpackagist-theme/twentyseventeen": "^2.4",
 		"wpackagist-theme/museum-core": "^2.1.6"
 	},

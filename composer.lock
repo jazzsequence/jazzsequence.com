@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42f51dd335dee4be4c0a5c355144ce4d",
+    "content-hash": "d8de207333166c4f23008c7a2e00aa92",
     "packages": [
         {
             "name": "altis/workflow",
