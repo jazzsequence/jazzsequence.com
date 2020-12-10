@@ -200,6 +200,16 @@
 			"wp-content/mu-plugins/{$name}": ["type:wordpress-muplugin"],
 			"wp-content/plugins/{$name}": ["type:wordpress-plugin"],
 			"wp-content/themes/{$name}": ["type:wordpress-theme"]
+		},
+		"altis": {
+			"modules": {
+				"cms": {
+					"large-network": false,
+					"default-theme": "twentytwentyone",
+					"xmlrpc": false,
+					"cloner": false,
+				}
+			}
 		}
 	}
 }
