@@ -74,3 +74,9 @@ add_action( 'network_admin_plugin_action_links', function( $actions, $plugin_fil
 
 	return $actions;
 }, 10, 4 );
+
+add_filter( 'jazzsequence.get_config', function( $config ) {
+	$config['login-logo'] = 'mu-plugins/altis-cms/assets/logo.svg';
+
+	return $config;
+}, 1, 1 );
