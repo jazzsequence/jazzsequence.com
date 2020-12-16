@@ -11,6 +11,7 @@
 * `main` auto-deploys to production.
 * 🎉
 
+## Technologies
 jazzsequence.com is powered by the following technologies:
 
 * WordPress
