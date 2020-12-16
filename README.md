@@ -5,7 +5,7 @@
 ## Workflow
 
 * `dev` is the default branch.  
-* New features branch off `dev`.
+* New features branch off `dev` or are pushed straight to `dev`.
 * `main` is the production branch.
 * When a release is ready, `dev` merges into `main`.
 * `main` auto-deploys to production.
