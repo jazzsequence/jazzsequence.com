@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e15d8fbae3131ba7791e64d2ccc251d8",
+    "content-hash": "006e0f52f9b11494de86a9ba0a49c2b5",
     "packages": [
+        {
+            "name": "altis/browser-security",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-browser-security.git",
+                "reference": "71e5b743fe78b87d94d59630485877b50ea559a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-browser-security/zipball/71e5b743fe78b87d94d59630485877b50ea559a7",
+                "reference": "71e5b743fe78b87d94d59630485877b50ea559a7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "files": [
+                    "inc/namespace.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made Limited",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Browser security utilities for WordPress/Altis",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-browser-security/issues",
+                "source": "https://github.com/humanmade/altis-browser-security/tree/master"
+            },
+            "time": "2020-07-10T14:39:50+00:00"
+        },
         {
             "name": "altis/workflow",
             "version": "5.0.0",
@@ -49,6 +92,10 @@
                 }
             ],
             "description": "Workflow module for Altis",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-workflow/issues",
+                "source": "https://github.com/humanmade/altis-workflow/tree/5.0.0"
+            },
             "time": "2020-09-17T11:06:47+00:00"
         },
         {
@@ -186,6 +233,10 @@
                 "zend",
                 "zikula"
             ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v1.9.0"
+            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -233,7 +284,85 @@
                 "plugin",
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/humanmade/Gaussholder/issues",
+                "source": "https://github.com/humanmade/Gaussholder/releases",
+                "wiki": "https://github.com/humanmade/Gaussholder/wiki"
+            },
             "time": "2019-05-13T10:17:03+00:00"
+        },
+        {
+            "name": "humanmade/hm-redirects",
+            "version": "0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/hm-redirects.git",
+                "reference": "67fab45496ddf9a0b9290ac76f0aecf0776c872c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/hm-redirects/zipball/67fab45496ddf9a0b9290ac76f0aecf0776c872c",
+                "reference": "67fab45496ddf9a0b9290ac76f0aecf0776c872c",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "humanmade/coding-standards": "^0.5.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Simple plugin for handling WordPress redirects in a scalable manner.",
+            "homepage": "https://github.com/humanmade/hm-redirects",
+            "keywords": [
+                "redirects",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/humanmade/hm-redirects/issues",
+                "source": "https://github.com/humanmade/hm-redirects/tree/master"
+            },
+            "time": "2020-05-25T11:38:39+00:00"
+        },
+        {
+            "name": "humanmade/meta-tags",
+            "version": "0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/meta-tags.git",
+                "reference": "cbb3f2fa33def0d90deba7de4343224be5c48117"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/meta-tags/zipball/cbb3f2fa33def0d90deba7de4343224be5c48117",
+                "reference": "cbb3f2fa33def0d90deba7de4343224be5c48117",
+                "shasum": ""
+            },
+            "require-dev": {
+                "composer/installers": "^1.6"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Meta tag generator for Opengraph, Twitter & JSON+LD",
+            "support": {
+                "issues": "https://github.com/humanmade/meta-tags/issues",
+                "source": "https://github.com/humanmade/meta-tags/tree/master"
+            },
+            "time": "2020-09-07T14:07:22+00:00"
         },
         {
             "name": "humanmade/publication-checklist",
@@ -264,35 +393,36 @@
                 }
             ],
             "description": "Run checks and enforce conditions before posts are published.",
+            "support": {
+                "issues": "https://github.com/humanmade/publication-checklist/issues",
+                "source": "https://github.com/humanmade/publication-checklist/tree/0.2.2--branch"
+            },
             "time": "2020-09-08T16:13:47+00:00"
         },
         {
-            "name": "humanmade/smart-media",
-            "version": "0.3.4",
+            "name": "humanmade/two-factor",
+            "version": "0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/humanmade/smart-media.git",
-                "reference": "5faafb3e74ab3ebdca349a1d37a9c4bbb3e69408"
+                "url": "https://github.com/humanmade/two-factor.git",
+                "reference": "7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/smart-media/zipball/5faafb3e74ab3ebdca349a1d37a9c4bbb3e69408",
-                "reference": "5faafb3e74ab3ebdca349a1d37a9c4bbb3e69408",
+                "url": "https://api.github.com/repos/humanmade/two-factor/zipball/7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac",
+                "reference": "7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac",
                 "shasum": ""
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^1.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Robert O'Rourke",
-                    "email": "rob@humanmade.com"
-                }
-            ],
-            "description": "Smart Media features for HM Cloud",
-            "time": "2020-12-01T18:42:57+00:00"
+            "description": "Two-Factor Authentication for WordPress.",
+            "support": {
+                "source": "https://github.com/humanmade/two-factor/tree/0.2"
+            },
+            "time": "2018-09-17T23:01:41+00:00"
         },
         {
             "name": "humanmade/workflows",
@@ -326,7 +456,44 @@
                 }
             ],
             "description": "Workflow management for WordPress, an extensible event and notification system.",
+            "support": {
+                "issues": "https://github.com/humanmade/Workflows/issues",
+                "source": "https://github.com/humanmade/Workflows/tree/0.3.11"
+            },
             "time": "2020-09-02T16:53:40+00:00"
+        },
+        {
+            "name": "humanmade/wp-seo",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/wp-seo.git",
+                "reference": "1038d3a86f5fe734e0345f93a2a0e62a8c0c815f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/wp-seo/zipball/1038d3a86f5fe734e0345f93a2a0e62a8c0c815f",
+                "reference": "1038d3a86f5fe734e0345f93a2a0e62a8c0c815f",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "WP SEO is designed for professionals who want to build a solid foundation for an SEO-friendly website.",
+            "keywords": [
+                "plugin",
+                "seo",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/humanmade/wp-seo/tree/0.14.0"
+            },
+            "time": "2019-03-22T14:10:47+00:00"
         },
         {
             "name": "jazzsequence/address-book",
@@ -527,6 +694,10 @@
             ],
             "description": "A library which provides extended functionality to WordPress custom post types and taxonomies.",
             "homepage": "https://github.com/johnbillion/extended-cpts/",
+            "support": {
+                "issues": "https://github.com/johnbillion/extended-cpts/issues",
+                "source": "https://github.com/johnbillion/extended-cpts/tree/4.4.1"
+            },
             "funding": [
                 {
                     "url": "https://github.com/johnbillion",
@@ -716,24 +887,6 @@
             "homepage": "https://wordpress.org/plugins/plugins-garbage-collector/"
         },
         {
-            "name": "wpackagist-plugin/quick-pagepost-redirect-plugin",
-            "version": "5.2.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/quick-pagepost-redirect-plugin/",
-                "reference": "tags/5.2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/quick-pagepost-redirect-plugin.5.2.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/quick-pagepost-redirect-plugin/"
-        },
-        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "3.1.4",
             "source": {
@@ -750,24 +903,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
-        },
-        {
-            "name": "wpackagist-plugin/ssl-insecure-content-fixer",
-            "version": "2.7.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ssl-insecure-content-fixer/",
-                "reference": "tags/2.7.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ssl-insecure-content-fixer.2.7.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ssl-insecure-content-fixer/"
         },
         {
             "name": "wpackagist-plugin/storyftw",
@@ -788,60 +923,6 @@
             "homepage": "https://wordpress.org/plugins/storyftw/"
         },
         {
-            "name": "wpackagist-plugin/wordpress-https",
-            "version": "3.4.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-https/",
-                "reference": "tags/3.4.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-https.3.4.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-https/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-mu-domain-mapping",
-            "version": "0.5.5.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-mu-domain-mapping/",
-                "reference": "tags/0.5.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-mu-domain-mapping.0.5.5.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-mu-domain-mapping/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-seo",
-            "version": "15.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/15.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.15.5.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
             "name": "wpackagist-plugin/wp-syntax",
             "version": "1.1",
             "source": {
@@ -858,42 +939,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-syntax/"
-        },
-        {
-            "name": "wpackagist-plugin/yourls-link-creator",
-            "version": "2.1.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/yourls-link-creator/",
-                "reference": "tags/2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/yourls-link-creator.2.1.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/yourls-link-creator/"
-        },
-        {
-            "name": "wpackagist-plugin/yourls-wordpress-to-twitter",
-            "version": "1.6.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/yourls-wordpress-to-twitter/",
-                "reference": "tags/1.6.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/yourls-wordpress-to-twitter.1.6.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/yourls-wordpress-to-twitter/"
         },
         {
             "name": "wpackagist-theme/museum-core",
@@ -940,5 +985,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
