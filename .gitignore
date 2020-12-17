@@ -4,6 +4,7 @@ wp-content/uploads
 # ignore the content folders that are managed by Composer
 wp-content/mu-plugins/*
 !wp-content/mu-plugins/loader.php
+!wp-content/mu-plugins/not-so-autoload.php
 wp-content/plugins/*
 !wp-content/plugins/js-*
 wp-content/themes/*
