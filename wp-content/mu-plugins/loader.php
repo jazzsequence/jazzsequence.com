@@ -14,6 +14,7 @@ if ( ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) ) {
 $hm_mu_plugins = array(
 	'cmb2/init.php',
 	'altis-cms/plugin.php',
+	WP_PLUGIN_DIR . '/browser-security/inc/namespace.php',
 );
 
 foreach ( $hm_mu_plugins as $file ) {
