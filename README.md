@@ -12,13 +12,11 @@
 * 🎉
 
 ## Technologies
-jazzsequence.com is powered by the following technologies:
+[jazzsequence.com](https://jazzsequence.com) is powered by the following technologies:
 
-* WordPress
-* Altis DXP
-* Composer
-* Litespeed
-* Digital Ocean
-* Deploy HQ
-
-...if you can read this, you should be a developer.
+* [WordPress](https://wordpress.org)
+* [Altis DXP](https://altis-dxp.com)
+* [Composer](https://getcomposer.org/)
+* [Open LiteSpeed](https://openlitespeed.org/)
+* [Digital Ocean](https://m.do.co/c/36c3e7160e43)
+* [Deploy HQ](https://www.deployhq.com/r/8hnhpr)
