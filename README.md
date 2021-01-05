@@ -4,7 +4,7 @@
 
 ## Workflow
 
-* `dev` is the default branch.  
+* `dev` is the default branch.
 * New features branch off `dev` or are pushed straight to `dev`.
 * `main` is the production branch.
 * When a release is ready, `dev` merges into `main`.
@@ -21,4 +21,4 @@ jazzsequence.com is powered by the following technologies:
 * Digital Ocean
 * Deploy HQ
 
-...if you can read this, you need to get a life.
+...if you can read this, you should be a developer.
