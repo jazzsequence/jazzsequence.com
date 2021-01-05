@@ -12,7 +12,7 @@
 * 🎉
 
 ## Technologies
-jazzsequence.com is powered by the following technologies:
+[jazzsequence.com](https://jazzsequence.com) is powered by the following technologies:
 
 * [WordPress](https://wordpress.org)
 * [Altis DXP](https://altis-dxp.com)
