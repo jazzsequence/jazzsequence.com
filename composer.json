@@ -176,6 +176,7 @@
 		"humanmade/meta-tags": "^0.1.6",
 		"humanmade/two-factor": "^0.2",
 		"humanmade/wp-seo": "^0.14.0",
+		"humanmade/wordpress-importer": "dev-master",
 		"jazzsequence/address-book": "^0.3.2",
 		"jazzsequence/altis-cms": "5.1.2",
 		"jazzsequence/artists": "^1.0.1",
