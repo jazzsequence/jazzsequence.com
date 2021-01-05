@@ -17,6 +17,10 @@ wp-content/sunrise.php
 wp-content/index.php
 license.txt
 wp-*.php
+!wp-config.php
+xmlrpc.php
+index.php
+server-config.php
 /index.php
 
 # ignore random other shit
