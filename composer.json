@@ -203,7 +203,11 @@
 		"wpackagist-plugin/storyftw": "^0.1.4",
 		"wpackagist-plugin/wp-syntax": "^1.1",
 		"wpackagist-theme/twentyseventeen": "^2.4",
-		"wpackagist-theme/museum-core": "^2.1.6"
+		"wpackagist-theme/twentytwentyone": "^1.1",
+		"wpackagist-theme/twentytwenty": "^1.6",
+		"wpackagist-theme/twentynineteen": "^1.9",
+		"wpackagist-theme/museum-core": "^2.1.6",
+		"wpackagist-theme/ryu": "^1.4"
 	},
 	"extra": {
 		"installer-paths": {
