@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6710516ab4fd3bba197404675a84c27e",
+    "content-hash": "f7d96c54389dd21511b7e082c7de97a2",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -423,6 +423,64 @@
                 "source": "https://github.com/humanmade/two-factor/tree/0.2"
             },
             "time": "2018-09-17T23:01:41+00:00"
+        },
+        {
+            "name": "humanmade/wordpress-importer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/WordPress-Importer.git",
+                "reference": "140a53eb597de87d786cf942c8fe74fc97432f14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/WordPress-Importer/zipball/140a53eb597de87d786cf942c8fe74fc97432f14",
+                "reference": "140a53eb597de87d786cf942c8fe74fc97432f14",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "fig-r/psr2r-sniffer": "~0.4",
+                "squizlabs/php_codesniffer": "~2.9",
+                "wp-coding-standards/wpcs": "dev-master"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-dev": "0.1.x-dev"
+                },
+                "installer-paths": {
+                    "vendor/{$name}": [
+                        "type:wordpress-plugin"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/humanmade/WordPress-Importer/graphs/contributors"
+                }
+            ],
+            "description": "WordPress importer plugin",
+            "keywords": [
+                "importer",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/humanmade/WordPress-Importer/issues",
+                "source": "https://github.com/humanmade/WordPress-Importer/releases",
+                "wiki": "https://github.com/humanmade/WordPress-Importer/wiki"
+            },
+            "time": "2017-07-18T12:14:46+00:00"
         },
         {
             "name": "humanmade/workflows",
@@ -1052,7 +1110,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "humanmade/wordpress-importer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
