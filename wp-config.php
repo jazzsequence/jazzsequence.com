@@ -30,6 +30,13 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
 define( 'SUNRISE', 'on' );
 
 /**
+ * Define Dashboard Changelog repository.
+ *
+ * @see https://github.com/jazzsequence/dashboard-changelog#jsdc_repository
+ */
+define( 'JSDC_REPOSITORY', 'jazzsequence/jazzsequence.com' );
+
+/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
