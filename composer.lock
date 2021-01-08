@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3bebb19b198328bfeb1740cbf8e2ebd",
+    "content-hash": "3ac52cd142f874216c27282d6f36a063",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -599,7 +599,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/dashboard-changelog",
-                "reference": "tags/1.0.1"
+                "reference": "tags/1.0.2"
             },
             "type": "wordpress-muplugin"
         },
