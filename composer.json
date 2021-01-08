@@ -175,7 +175,7 @@
 				"source": {
 					"type": "git",
 					"url": "https://github.com/jazzsequence/dashboard-changelog",
-					"reference": "tags/1.0.1"
+					"reference": "tags/1.0.2"
 				}
 			}
 		}
