@@ -87,6 +87,9 @@ add_action( 'network_admin_plugin_action_links', function( $actions, $plugin_fil
 	return $actions;
 }, 10, 4 );
 
+/**
+ * Use the Altis logo on the login page.
+ */
 add_filter( 'jazzsequence.get_config', function( $config ) {
 	$config['login-logo'] = 'wp-content/mu-plugins/altis-cms/assets/logo.svg';
 
