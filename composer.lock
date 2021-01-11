@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ac52cd142f874216c27282d6f36a063",
+    "content-hash": "382b2a475f56fe83cbc8b73245d0c395",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -363,6 +363,16 @@
                 "source": "https://github.com/humanmade/meta-tags/tree/master"
             },
             "time": "2020-09-07T14:07:22+00:00"
+        },
+        {
+            "name": "humanmade/orphan-command",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/orphan-command",
+                "reference": "tags/1.0.0-rc1"
+            },
+            "type": "wordpress-muplugin"
         },
         {
             "name": "humanmade/publication-checklist",
@@ -1121,6 +1131,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "humanmade/orphan-command": 5,
         "humanmade/wordpress-importer": 20
     },
     "prefer-stable": false,
