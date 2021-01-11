@@ -11,6 +11,17 @@ if ( ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) ) {
 	return;
 }
 
+/**
+ * Fix cookie domain stuff.
+ */
+add_action( 'muplugins_loaded', function() {
+	global $current_blog, $current_site;
+
+	if ( false === stripos( $current_blog->domain, $current_site->cookie_domain ) ) {
+		$current_site->cookie_domain = $current_blog->domain;
+	}
+} );
+
 $hm_mu_plugins = array(
 	'cmb2/init.php',
 	'altis-cms/plugin.php',
