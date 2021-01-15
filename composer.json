@@ -178,19 +178,6 @@
 					"reference": "tags/1.0.2"
 				}
 			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "humanmade/orphan-command",
-				"version": "1.0.0-rc1",
-				"type": "wordpress-muplugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/humanmade/orphan-command",
-					"reference": "tags/1.0.0-rc1"
-				}
-			}
 		}
 	],
 	"require": {
