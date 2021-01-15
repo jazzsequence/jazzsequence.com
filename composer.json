@@ -2,6 +2,7 @@
 	"name": "jazzsequence/www",
 	"description": "Main jazzsequence network",
 	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"repositories": [
 		{
 			"type": "composer",
