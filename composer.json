@@ -1,6 +1,7 @@
 {
 	"name": "jazzsequence/www",
 	"description": "Main jazzsequence network",
+	"minimum-stability": "dev",
 	"repositories": [
 		{
 			"type": "composer",
