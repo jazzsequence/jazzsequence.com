@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c38bc759186d1de3ac03373f9b7727bd",
+    "content-hash": "f37efb7af4ded9d8f9045e2fc74c767a",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1543,7 +1543,57 @@
             "homepage": "https://wordpress.org/themes/twentytwentyone/"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "altis/local-server",
+            "version": "5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-local-server.git",
+                "reference": "2ed3cb6715e9d50d4b8ab9076e1f981a2d232668"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/2ed3cb6715e9d50d4b8ab9076e1f981a2d232668",
+                "reference": "2ed3cb6715e9d50d4b8ab9076e1f981a2d232668",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": ">=7.1"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Altis\\Local_Server\\Composer\\Plugin",
+                "altis": []
+            },
+            "autoload": {
+                "classmap": [
+                    "inc/"
+                ],
+                "files": [
+                    "wp-config.php",
+                    "inc/namespace.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Local Server module for Altis",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-local-server/issues",
+                "source": "https://github.com/humanmade/altis-local-server/tree/5.0.2"
+            },
+            "time": "2020-12-27T19:11:24+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {

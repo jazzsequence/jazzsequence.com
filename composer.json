@@ -233,5 +233,8 @@
 			"wp-content/plugins/{$name}": ["type:wordpress-plugin"],
 			"wp-content/themes/{$name}": ["type:wordpress-theme"]
 		}
+	},
+	"require-dev": {
+		"altis/local-server": "^6.0"
 	}
 }
