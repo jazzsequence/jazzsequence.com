@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cdf7ef6aa22fdc8eab7a34974f71c00",
+    "content-hash": "3d1ef7efe21edc900aed83111544cdbc",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -792,16 +792,16 @@
         },
         {
             "name": "johnbillion/extended-cpts",
-            "version": "4.5.0",
+            "version": "4.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "da72234393818600f1eecbcb7d6e651dfeca6f75"
+                "reference": "b8aef5ef64335d51784e391c9393145f50482fb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/da72234393818600f1eecbcb7d6e651dfeca6f75",
-                "reference": "da72234393818600f1eecbcb7d6e651dfeca6f75",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/b8aef5ef64335d51784e391c9393145f50482fb4",
+                "reference": "b8aef5ef64335d51784e391c9393145f50482fb4",
                 "shasum": ""
             },
             "require": {
@@ -849,7 +849,7 @@
             "homepage": "https://github.com/johnbillion/extended-cpts/",
             "support": {
                 "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/4.5.0"
+                "source": "https://github.com/johnbillion/extended-cpts/tree/4.5.1"
             },
             "funding": [
                 {
@@ -857,7 +857,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-01-12T23:27:05+00:00"
+            "time": "2021-01-26T10:10:55+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -1433,6 +1433,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-syntax/"
+        },
+        {
+            "name": "wpackagist-plugin/wpmovielibrary",
+            "version": "2.1.4.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wpmovielibrary/",
+                "reference": "tags/2.1.4.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpmovielibrary.2.1.4.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpmovielibrary/"
         },
         {
             "name": "wpackagist-theme/museum-core",
