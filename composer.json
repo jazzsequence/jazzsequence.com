@@ -219,6 +219,7 @@
 		"wpackagist-plugin/plugins-garbage-collector": "^0.12",
 		"wpackagist-plugin/regenerate-thumbnails": "^3.1.3",
 		"wpackagist-plugin/storyftw": "^0.1.4",
+		"wpackagist-plugin/term-management-tools": "^2.0.1",
 		"wpackagist-plugin/wpmovielibrary": "^2.1",
 		"wpackagist-plugin/wp-syntax": "^1.1",
 		"wpackagist-theme/museum-core": "^2.1.6",
