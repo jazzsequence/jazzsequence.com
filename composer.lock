@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d1ef7efe21edc900aed83111544cdbc",
+    "content-hash": "7041c36deda250c4633b3b803c20af9a",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1274,15 +1274,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "9.8.2",
+            "version": "9.8.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/9.8.2"
+                "reference": "tags/9.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.9.8.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.9.8.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1415,6 +1415,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/storyftw/"
+        },
+        {
+            "name": "wpackagist-plugin/term-management-tools",
+            "version": "2.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/term-management-tools/",
+                "reference": "tags/2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/term-management-tools.2.0.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/term-management-tools/"
         },
         {
             "name": "wpackagist-plugin/wp-syntax",
@@ -1564,7 +1582,7 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "6.0.0-rc",
+            "version": "6.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
@@ -1608,7 +1626,7 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0-rc"
+                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0-rc2"
             },
             "time": "2021-01-19T20:37:55+00:00"
         },
