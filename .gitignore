@@ -22,6 +22,7 @@ xmlrpc.php
 index.php
 server-config.php
 /index.php
+readme.html
 
 # ignore random other shit
 audio/
