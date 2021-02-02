@@ -2,24 +2,15 @@
 /**
  * The base configuration for WordPress
  *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
  * @link https://wordpress.org/support/article/editing-wp-config-php/
  *
  * @package WordPress
  */
 
+// Load public and local server stuff.
 require_once __DIR__ . '/server-config.php';
 
+// Define WordPress constants.
 define( 'WP_CACHE', true ) ;
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', true );
