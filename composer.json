@@ -159,12 +159,12 @@
 			"type": "package",
 			"package": {
 				"name": "jazzsequence/altis-cms",
-				"version": "6.0.0-rc",
+				"version": "6.0.0",
 				"type": "wordpress-muplugin",
 				"source": {
 					"type": "git",
 					"url": "https://github.com/jazzsequence/altis-cms",
-					"reference": "tags/6.0.0-rc"
+					"reference": "tags/6.0.0"
 				}
 			}
 		},
