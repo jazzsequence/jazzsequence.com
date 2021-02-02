@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7041c36deda250c4633b3b803c20af9a",
+    "content-hash": "e23787723adf8b48bc30d3af75f8f26e",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -651,11 +651,11 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "6.0.0-rc",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/6.0.0-rc"
+                "reference": "tags/6.0.0"
             },
             "type": "wordpress-muplugin"
         },
@@ -1134,12 +1134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b"
+                "reference": "110ad40104996be87c5c7fc40be15b0f094ae5c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b",
-                "reference": "760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/110ad40104996be87c5c7fc40be15b0f094ae5c9",
+                "reference": "110ad40104996be87c5c7fc40be15b0f094ae5c9",
                 "shasum": ""
             },
             "require": {
@@ -1198,7 +1198,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2020-12-08T18:52:39+00:00"
+            "time": "2021-02-02T17:59:38+00:00"
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
@@ -1292,15 +1292,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.3.2",
+            "version": "9.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.3.2"
+                "reference": "tags/9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1582,7 +1582,7 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "6.0.0-rc2",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
@@ -1626,7 +1626,7 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0-rc2"
+                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0"
             },
             "time": "2021-01-19T20:37:55+00:00"
         },
