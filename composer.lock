@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e23787723adf8b48bc30d3af75f8f26e",
+    "content-hash": "31c08ab24e503ca6c10da8458c5eaea2",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -51,16 +51,16 @@
         },
         {
             "name": "altis/workflow",
-            "version": "5.0.0",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "b64ef0a792a40be40166c797d97bce5f165cd2d6"
+                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/b64ef0a792a40be40166c797d97bce5f165cd2d6",
-                "reference": "b64ef0a792a40be40166c797d97bce5f165cd2d6",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/f4be8c086c8559081353ef836df9f7e04cd3f5aa",
+                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa",
                 "shasum": ""
             },
             "require": {
@@ -70,7 +70,12 @@
             },
             "type": "package",
             "extra": {
-                "altis": []
+                "altis": {
+                    "install-overrides": [
+                        "humanmade/workflows",
+                        "humanmade/publication-checklist"
+                    ]
+                }
             },
             "autoload": {
                 "classmap": [
@@ -94,9 +99,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/5.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/6.0.0"
             },
-            "time": "2020-09-17T11:06:47+00:00"
+            "time": "2021-02-01T11:42:15+00:00"
         },
         {
             "name": "cmb2/cmb2",
