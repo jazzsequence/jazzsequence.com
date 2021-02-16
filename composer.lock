@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a39f07644c167a6f8bca528db8ad549e",
+    "content-hash": "0dcc2cb17be4d727267a03c39e1aed41",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -735,11 +735,11 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "6.0.0",
+            "version": "6.0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/6.0.0"
+                "reference": "tags/6.0.1.1"
             },
             "type": "wordpress-muplugin"
         },
@@ -1376,15 +1376,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.4",
+            "version": "9.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.4"
+                "reference": "tags/9.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.4.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1783,7 +1783,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.22.0",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -1842,7 +1842,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
             },
             "funding": [
                 {
