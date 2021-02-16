@@ -39,3 +39,4 @@ _misc/
 *.log
 *.sql
 *.sqlite
+.vscode/settings.json
