@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d1ef7efe21edc900aed83111544cdbc",
+    "content-hash": "a39f07644c167a6f8bca528db8ad549e",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -51,16 +51,16 @@
         },
         {
             "name": "altis/workflow",
-            "version": "5.0.0",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "b64ef0a792a40be40166c797d97bce5f165cd2d6"
+                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/b64ef0a792a40be40166c797d97bce5f165cd2d6",
-                "reference": "b64ef0a792a40be40166c797d97bce5f165cd2d6",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/f4be8c086c8559081353ef836df9f7e04cd3f5aa",
+                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa",
                 "shasum": ""
             },
             "require": {
@@ -70,7 +70,12 @@
             },
             "type": "package",
             "extra": {
-                "altis": []
+                "altis": {
+                    "install-overrides": [
+                        "humanmade/workflows",
+                        "humanmade/publication-checklist"
+                    ]
+                }
             },
             "autoload": {
                 "classmap": [
@@ -94,9 +99,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/5.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/6.0.0"
             },
-            "time": "2020-09-17T11:06:47+00:00"
+            "time": "2021-02-01T11:42:15+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -255,6 +260,85 @@
                 }
             ],
             "time": "2021-01-14T11:07:16+00:00"
+        },
+        {
+            "name": "humanmade/amf-unsplash",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/amf-unsplash.git",
+                "reference": "d0965f551338fcddef60c26ee51ceb957392beb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/d0965f551338fcddef60c26ee51ceb957392beb4",
+                "reference": "d0965f551338fcddef60c26ee51ceb957392beb4",
+                "shasum": ""
+            },
+            "require": {
+                "humanmade/asset-manager-framework": "~0.6",
+                "php": ">=7.2"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "homepage": "https://humanmade.com/"
+                }
+            ],
+            "description": "Bring Unsplash directly into your WordPress media library.",
+            "support": {
+                "issues": "https://github.com/humanmade/amf-unsplash/issues",
+                "source": "https://github.com/humanmade/amf-unsplash/tree/master"
+            },
+            "time": "2020-04-18T14:11:32+00:00"
+        },
+        {
+            "name": "humanmade/asset-manager-framework",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/asset-manager-framework.git",
+                "reference": "342fd5d83845cae9cbf5c7516477b4d8a0b50516"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/342fd5d83845cae9cbf5c7516477b4d8a0b50516",
+                "reference": "342fd5d83845cae9cbf5c7516477b4d8a0b50516",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "automattic/phpcs-neutron-ruleset": "^3.2",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6.0",
+                "phpcompatibility/phpcompatibility-wp": "~2.1.0",
+                "wp-coding-standards/wpcs": "~2.2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "homepage": "https://humanmade.com/"
+                }
+            ],
+            "description": "A framework for overriding the WordPress media library with an external asset provider.",
+            "homepage": "https://github.com/humanmade/asset-manager-framework/",
+            "support": {
+                "issues": "https://github.com/humanmade/asset-manager-framework/issues",
+                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.8.1"
+            },
+            "time": "2020-09-30T12:39:15+00:00"
         },
         {
             "name": "humanmade/gaussholder",
@@ -651,11 +735,11 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "6.0.0-rc",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/6.0.0-rc"
+                "reference": "tags/6.0.0"
             },
             "type": "wordpress-muplugin"
         },
@@ -964,16 +1048,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "196f45723b5e618bf0e23b97e96d11652696ea9e"
+                "reference": "4adc8d172d602008c204c2e16956f99257248e03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/196f45723b5e618bf0e23b97e96d11652696ea9e",
-                "reference": "196f45723b5e618bf0e23b97e96d11652696ea9e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/4adc8d172d602008c204c2e16956f99257248e03",
+                "reference": "4adc8d172d602008c204c2e16956f99257248e03",
                 "shasum": ""
             },
             "require": {
@@ -1005,7 +1089,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.2.2"
+                "source": "https://github.com/symfony/finder/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -1021,7 +1105,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T10:01:46+00:00"
+            "time": "2021-01-28T22:06:19+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -1134,12 +1218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b"
+                "reference": "110ad40104996be87c5c7fc40be15b0f094ae5c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b",
-                "reference": "760cc6effd86cc4a4f96e0bfaee6f7f01b62c42b",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/110ad40104996be87c5c7fc40be15b0f094ae5c9",
+                "reference": "110ad40104996be87c5c7fc40be15b0f094ae5c9",
                 "shasum": ""
             },
             "require": {
@@ -1198,7 +1282,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2020-12-08T18:52:39+00:00"
+            "time": "2021-02-02T17:59:38+00:00"
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
@@ -1274,15 +1358,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "9.8.2",
+            "version": "9.9.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/9.8.2"
+                "reference": "tags/9.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.9.8.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.9.9.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1292,15 +1376,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.3.2",
+            "version": "9.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.3.2"
+                "reference": "tags/9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1310,15 +1394,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.4.34",
+            "version": "3.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.4.34"
+                "reference": "tags/3.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.4.34.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.5.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1415,6 +1499,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/storyftw/"
+        },
+        {
+            "name": "wpackagist-plugin/term-management-tools",
+            "version": "2.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/term-management-tools/",
+                "reference": "tags/2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/term-management-tools.2.0.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/term-management-tools/"
         },
         {
             "name": "wpackagist-plugin/wp-syntax",
@@ -1564,7 +1666,7 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "6.0.0-rc",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
@@ -1608,7 +1710,7 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0-rc"
+                "source": "https://github.com/humanmade/altis-local-server/tree/6.0.0"
             },
             "time": "2021-01-19T20:37:55+00:00"
         },
@@ -1760,16 +1862,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "6bb8b36c6dea8100268512bf46e858c8eb5c545e"
+                "reference": "338cddc6d74929f6adf19ca5682ac4b8e109cdb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/6bb8b36c6dea8100268512bf46e858c8eb5c545e",
-                "reference": "6bb8b36c6dea8100268512bf46e858c8eb5c545e",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/338cddc6d74929f6adf19ca5682ac4b8e109cdb0",
+                "reference": "338cddc6d74929f6adf19ca5682ac4b8e109cdb0",
                 "shasum": ""
             },
             "require": {
@@ -1815,7 +1917,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.2.2"
+                "source": "https://github.com/symfony/yaml/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -1831,7 +1933,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T10:01:46+00:00"
+            "time": "2021-02-03T04:42:09+00:00"
         }
     ],
     "aliases": [],
