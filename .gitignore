@@ -8,7 +8,7 @@ wp-content/mu-plugins/*
 wp-content/plugins/*
 !wp-content/plugins/js-*
 wp-content/themes/*
-!wp-content/themes/artbox/*
+!wp-content/themes/artbox
 
 # Ignore core WordPress. We'll let those auto update
 wp-admin/*
