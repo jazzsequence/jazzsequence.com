@@ -209,7 +209,6 @@
 		"jazzsequence/wp-show-tracker": "^0.6",
 		"johnbillion/extended-cpts": "^4.4.1",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.4.4",
-		"wpackagist-plugin/fix-rss-feed": "^3.1",
 		"wpackagist-plugin/glotpress": "^2.3.1",
 		"wpackagist-plugin/google-analyticator": "^6.5.5",
 		"wpackagist-plugin/gutenberg": "^10.0.2",
