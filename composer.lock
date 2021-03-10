@@ -1628,15 +1628,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwenty",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "1.6"
+                "reference": "1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.6.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
