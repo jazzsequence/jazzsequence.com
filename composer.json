@@ -211,7 +211,7 @@
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.4.4",
 		"wpackagist-plugin/glotpress": "^2.3.1",
 		"wpackagist-plugin/google-analyticator": "^6.5.5",
-		"wpackagist-plugin/gutenberg": "^9.5.0",
+		"wpackagist-plugin/gutenberg": "^10.0.2",
 		"wpackagist-plugin/jetpack": "^9.2.0",
 		"wpackagist-plugin/ninja-forms": "^3.4.30",
 		"wpackagist-plugin/organize-series": "^2.5.13",
@@ -224,7 +224,7 @@
 		"wpackagist-plugin/wp-syntax": "^1.1",
 		"wpackagist-theme/museum-core": "^2.1.6",
 		"wpackagist-theme/ryu": "^1.4",
-		"wpackagist-theme/twentynineteen": "^1.9",
+		"wpackagist-theme/twentynineteen": "^2.0",
 		"wpackagist-theme/twentyseventeen": "^2.4",
 		"wpackagist-theme/twentytwentyone": "^1.1",
 		"wpackagist-theme/twentytwenty": "^1.6"
