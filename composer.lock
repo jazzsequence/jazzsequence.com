@@ -1646,15 +1646,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "1.1"
+                "reference": "1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.1.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
