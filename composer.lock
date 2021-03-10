@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a121b4f0fdd7b7a245c7fa57294929a",
+    "content-hash": "6f5e3ef91217d4893f7702b29a9aa9ab",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1592,15 +1592,15 @@
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "1.9",
+            "version": "2.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "1.9"
+                "reference": "2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.1.9.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
