@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dcc2cb17be4d727267a03c39e1aed41",
+    "content-hash": "6f5e3ef91217d4893f7702b29a9aa9ab",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1286,39 +1286,21 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "2.5.2",
+            "version": "2.5.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/2.5.2"
+                "reference": "tags/2.5.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.5.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.5.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
-        },
-        {
-            "name": "wpackagist-plugin/fix-rss-feed",
-            "version": "3.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/fix-rss-feed/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fix-rss-feed.zip?timestamp=1312994351"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/fix-rss-feed/"
         },
         {
             "name": "wpackagist-plugin/glotpress",
@@ -1358,15 +1340,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "9.9.3",
+            "version": "10.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/9.9.3"
+                "reference": "tags/10.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.9.9.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.10.1.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1376,15 +1358,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.4.1",
+            "version": "9.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.4.1"
+                "reference": "tags/9.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.4.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.5.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1394,15 +1376,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.5.0"
+                "reference": "tags/3.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.5.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1466,15 +1448,15 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/3.1.4"
+                "reference": "tags/3.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.1.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.1.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1592,15 +1574,15 @@
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "1.9",
+            "version": "2.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "1.9"
+                "reference": "2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.1.9.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1610,15 +1592,15 @@
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "2.5",
+            "version": "2.6",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "2.5"
+                "reference": "2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.5.zip"
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1628,15 +1610,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwenty",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "1.6"
+                "reference": "1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.6.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1646,15 +1628,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "1.1",
+            "version": "1.2",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "1.1"
+                "reference": "1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.1.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
