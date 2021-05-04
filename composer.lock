@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbbd56bd7c0c72a8cb0c607cd0c84213",
+    "content-hash": "5216cb24a5f01acaec709d6b1ee29695",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -51,16 +51,16 @@
         },
         {
             "name": "altis/workflow",
-            "version": "6.0.0",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa"
+                "reference": "fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/f4be8c086c8559081353ef836df9f7e04cd3f5aa",
-                "reference": "f4be8c086c8559081353ef836df9f7e04cd3f5aa",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3",
+                "reference": "fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3",
                 "shasum": ""
             },
             "require": {
@@ -99,9 +99,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/6.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/7.0.0"
             },
-            "time": "2021-02-01T11:42:15+00:00"
+            "time": "2021-02-01T11:41:55+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -654,16 +654,16 @@
         },
         {
             "name": "humanmade/workflows",
-            "version": "0.3.11",
+            "version": "0.3.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/Workflows.git",
-                "reference": "cd324b27603d7b6db53ad7006efad248ff39c945"
+                "reference": "fce0cf62cd15a4da0761f67a97e034747bf2b0b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/cd324b27603d7b6db53ad7006efad248ff39c945",
-                "reference": "cd324b27603d7b6db53ad7006efad248ff39c945",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/fce0cf62cd15a4da0761f67a97e034747bf2b0b4",
+                "reference": "fce0cf62cd15a4da0761f67a97e034747bf2b0b4",
                 "shasum": ""
             },
             "require": {
@@ -686,9 +686,9 @@
             "description": "Workflow management for WordPress, an extensible event and notification system.",
             "support": {
                 "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.3.11"
+                "source": "https://github.com/humanmade/Workflows/tree/0.3.16"
             },
-            "time": "2020-09-02T16:53:40+00:00"
+            "time": "2021-04-30T18:38:37+00:00"
         },
         {
             "name": "humanmade/wp-seo",
