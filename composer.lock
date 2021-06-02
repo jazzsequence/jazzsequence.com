@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "altis/browser-security",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-browser-security.git",
-                "reference": "71e5b743fe78b87d94d59630485877b50ea559a7"
+                "reference": "a5b99dfb99d5177a621117a317e3ceecb54e9c3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-browser-security/zipball/71e5b743fe78b87d94d59630485877b50ea559a7",
-                "reference": "71e5b743fe78b87d94d59630485877b50ea559a7",
+                "url": "https://api.github.com/repos/humanmade/altis-browser-security/zipball/a5b99dfb99d5177a621117a317e3ceecb54e9c3c",
+                "reference": "a5b99dfb99d5177a621117a317e3ceecb54e9c3c",
                 "shasum": ""
             },
             "require": {
@@ -45,9 +45,9 @@
             "description": "Browser security utilities for WordPress/Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-browser-security/issues",
-                "source": "https://github.com/humanmade/altis-browser-security/tree/master"
+                "source": "https://github.com/humanmade/altis-browser-security/tree/1.1.1"
             },
-            "time": "2020-07-10T14:39:50+00:00"
+            "time": "2021-06-01T13:49:35+00:00"
         },
         {
             "name": "altis/workflow",
