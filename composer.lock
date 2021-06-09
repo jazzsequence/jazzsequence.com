@@ -1367,15 +1367,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.8",
+            "version": "9.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.8"
+                "reference": "tags/9.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.8.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -1936,5 +1936,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
