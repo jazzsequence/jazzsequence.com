@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07b26cdabff03e8b761fe6b791565bf4",
+    "content-hash": "b97e921ceefb52fe92228c231da28558",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1349,15 +1349,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "10.7.3",
+            "version": "11.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/10.7.3"
+                "reference": "tags/11.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.10.7.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.0.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
