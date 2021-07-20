@@ -1657,22 +1657,22 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
-                "reference": "430e59309641420a10e2597da50d2b8c2bf703a2"
+                "reference": "e12bcbaf0e14e8dc5397b3701984f5a8fbe8d460"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/430e59309641420a10e2597da50d2b8c2bf703a2",
-                "reference": "430e59309641420a10e2597da50d2b8c2bf703a2",
+                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/e12bcbaf0e14e8dc5397b3701984f5a8fbe8d460",
+                "reference": "e12bcbaf0e14e8dc5397b3701984f5a8fbe8d460",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.1 || ^2.0",
                 "php": ">=7.1",
-                "symfony/yaml": "~5.3.0"
+                "symfony/yaml": "~5.3.3"
             },
             "type": "composer-plugin",
             "extra": {
@@ -1701,9 +1701,9 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/7.0.1"
+                "source": "https://github.com/humanmade/altis-local-server/tree/7.0.2"
             },
-            "time": "2021-06-09T14:59:46+00:00"
+            "time": "2021-07-19T17:56:39+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1853,16 +1853,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.3.0",
+            "version": "v5.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11"
+                "reference": "485c83a2fb5893e2ff21bf4bfc7fdf48b4967229"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11",
-                "reference": "3bbcf262fceb3d8f48175302e6ba0ac96e3a5a11",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/485c83a2fb5893e2ff21bf4bfc7fdf48b4967229",
+                "reference": "485c83a2fb5893e2ff21bf4bfc7fdf48b4967229",
                 "shasum": ""
             },
             "require": {
@@ -1908,7 +1908,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.3.0"
+                "source": "https://github.com/symfony/yaml/tree/v5.3.3"
             },
             "funding": [
                 {
@@ -1924,7 +1924,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-26T17:43:10+00:00"
+            "time": "2021-06-24T08:13:00+00:00"
         }
     ],
     "aliases": [],
