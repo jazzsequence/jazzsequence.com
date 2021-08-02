@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c55312d39cdcaa3ed7b38631bb53694a",
+    "content-hash": "113a16e09b62eaed912a283197bc911a",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -576,28 +576,30 @@
         },
         {
             "name": "humanmade/two-factor",
-            "version": "0.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/two-factor.git",
-                "reference": "7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac"
+                "reference": "93fd2b2aa2da9c0da2b8a71c1ba72f1a42b8fafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/two-factor/zipball/7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac",
-                "reference": "7b4cce30d48b7c90591fe4991dd20ea7f92eb7ac",
+                "url": "https://api.github.com/repos/humanmade/two-factor/zipball/93fd2b2aa2da9c0da2b8a71c1ba72f1a42b8fafb",
+                "reference": "93fd2b2aa2da9c0da2b8a71c1ba72f1a42b8fafb",
                 "shasum": ""
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "^1.0"
+                "php-coveralls/php-coveralls": "^1.0",
+                "wp-coding-standards/wpcs": "^1.0",
+                "xwp/wp-dev-lib": "dev-master"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "description": "Two-Factor Authentication for WordPress.",
             "support": {
-                "source": "https://github.com/humanmade/two-factor/tree/0.2"
+                "source": "https://github.com/humanmade/two-factor/tree/0.2.1"
             },
-            "time": "2018-09-17T23:01:41+00:00"
+            "time": "2021-07-21T17:54:25+00:00"
         },
         {
             "name": "humanmade/wordpress-importer",
