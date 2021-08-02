@@ -237,6 +237,6 @@
 		}
 	},
 	"require-dev": {
-		"altis/local-server": "^7.0"
+		"altis/local-server": "^8.0"
 	}
 }
