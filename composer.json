@@ -184,7 +184,7 @@
 	],
 	"require": {
 		"altis/browser-security": "^1.1.0",
-		"altis/workflow": "^7.0.0",
+		"altis/workflow": "^8.0.0",
 		"cmb2/cmb2": "^v2.7.0",
 		"humanmade/amf-unsplash": "^0.1.1",
 		"humanmade/gaussholder": "^1.1.3",

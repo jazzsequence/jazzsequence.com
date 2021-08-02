@@ -51,29 +51,31 @@
         },
         {
             "name": "altis/workflow",
-            "version": "7.0.0",
+            "version": "8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3"
+                "reference": "4d95e5fc87c5e11d16ccdea10e9108a25858aa63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3",
-                "reference": "fdacaecf0cd81b8ba3ac5c00cf12b6875778fcb3",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/4d95e5fc87c5e11d16ccdea10e9108a25858aa63",
+                "reference": "4d95e5fc87c5e11d16ccdea10e9108a25858aa63",
                 "shasum": ""
             },
             "require": {
-                "humanmade/publication-checklist": "~0.2.0",
-                "humanmade/workflows": "~0.3.11",
-                "php": ">=7.1"
+                "humanmade/publication-checklist": "~0.3.0",
+                "humanmade/workflows": "~0.3.17",
+                "php": ">=7.1",
+                "yoast/duplicate-post": "~4.1.2"
             },
             "type": "package",
             "extra": {
                 "altis": {
                     "install-overrides": [
                         "humanmade/workflows",
-                        "humanmade/publication-checklist"
+                        "humanmade/publication-checklist",
+                        "yoast/duplicate-post"
                     ]
                 }
             },
@@ -83,7 +85,8 @@
                 ],
                 "files": [
                     "inc/namespace.php",
-                    "inc/notifications/namespace.php"
+                    "inc/notifications/namespace.php",
+                    "inc/clone-amend/namespace.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -99,9 +102,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/7.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/8.0.0"
             },
-            "time": "2021-02-01T11:41:55+00:00"
+            "time": "2021-07-22T10:21:03+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -538,16 +541,16 @@
         },
         {
             "name": "humanmade/publication-checklist",
-            "version": "0.2.2",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/publication-checklist.git",
-                "reference": "f82cb5933595502a0b7a004a758778d6b510c409"
+                "reference": "b5a63a7884a0717675d2e4536b7419ea22d9fc9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/publication-checklist/zipball/f82cb5933595502a0b7a004a758778d6b510c409",
-                "reference": "f82cb5933595502a0b7a004a758778d6b510c409",
+                "url": "https://api.github.com/repos/humanmade/publication-checklist/zipball/b5a63a7884a0717675d2e4536b7419ea22d9fc9d",
+                "reference": "b5a63a7884a0717675d2e4536b7419ea22d9fc9d",
                 "shasum": ""
             },
             "require": {
@@ -567,9 +570,9 @@
             "description": "Run checks and enforce conditions before posts are published.",
             "support": {
                 "issues": "https://github.com/humanmade/publication-checklist/issues",
-                "source": "https://github.com/humanmade/publication-checklist/tree/0.2.2--branch"
+                "source": "https://github.com/humanmade/publication-checklist/tree/0.3.0"
             },
-            "time": "2020-09-08T16:13:47+00:00"
+            "time": "2021-06-21T16:52:06+00:00"
         },
         {
             "name": "humanmade/two-factor",
@@ -656,16 +659,16 @@
         },
         {
             "name": "humanmade/workflows",
-            "version": "0.3.16",
+            "version": "0.3.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/Workflows.git",
-                "reference": "fce0cf62cd15a4da0761f67a97e034747bf2b0b4"
+                "reference": "96f8d98f9eb1650388a42a0c5de84a8fdc7ff112"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/fce0cf62cd15a4da0761f67a97e034747bf2b0b4",
-                "reference": "fce0cf62cd15a4da0761f67a97e034747bf2b0b4",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/96f8d98f9eb1650388a42a0c5de84a8fdc7ff112",
+                "reference": "96f8d98f9eb1650388a42a0c5de84a8fdc7ff112",
                 "shasum": ""
             },
             "require": {
@@ -688,9 +691,9 @@
             "description": "Workflow management for WordPress, an extensible event and notification system.",
             "support": {
                 "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.3.16"
+                "source": "https://github.com/humanmade/Workflows/tree/0.3.17"
             },
-            "time": "2021-04-30T18:38:37+00:00"
+            "time": "2021-06-02T09:45:40+00:00"
         },
         {
             "name": "humanmade/wp-seo",
@@ -1652,6 +1655,64 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentyone/"
+        },
+        {
+            "name": "yoast/duplicate-post",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Yoast-dist/duplicate-post.git",
+                "reference": "92fd35b2a494555166470e0906a3463d0b897687"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/92fd35b2a494555166470e0906a3463d0b897687",
+                "reference": "92fd35b2a494555166470e0906a3463d0b897687",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.9.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "automattic/vipwpcs": "^2.0",
+                "brain/monkey": "^2.5",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "phpcompatibility/phpcompatibility-wp": "^2.1.0",
+                "phpunit/phpunit": "^5.7",
+                "wp-coding-standards/wpcs": "^2.1"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Enrico Battocchi & Team Yoast",
+                    "email": "support@yoast.com",
+                    "homepage": "https://yoast.com"
+                }
+            ],
+            "description": "The go-to tool for cloning posts and pages, including the powerful Rewrite & Republish feature.",
+            "homepage": "https://wordpress.org/plugins/duplicate-post/",
+            "keywords": [
+                "clone",
+                "copy",
+                "post",
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://wordpress.org/support/plugin/duplicate-post",
+                "issues": "https://github.com/Yoast/duplicate-post/issues",
+                "source": "https://github.com/Yoast/duplicate-post"
+            },
+            "time": "2021-05-26T09:13:56+00:00"
         }
     ],
     "packages-dev": [
