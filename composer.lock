@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d414d65044ad09b9c5f708c1ad29ce26",
+    "content-hash": "e658c75e4bce5e62e2d13b20bae810ab",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -1372,15 +1372,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.8",
+            "version": "10.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.8"
+                "reference": "tags/10.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.10.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
