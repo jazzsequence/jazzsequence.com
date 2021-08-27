@@ -1408,15 +1408,15 @@
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.5.13",
+            "version": "2.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.5.13"
+                "reference": "tags/2.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.5.13.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.6.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
