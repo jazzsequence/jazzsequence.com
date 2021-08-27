@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e658c75e4bce5e62e2d13b20bae810ab",
+    "content-hash": "6cc1ed67119f88b2f4363c57b6239eed",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -268,20 +268,20 @@
         },
         {
             "name": "humanmade/amf-unsplash",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/amf-unsplash.git",
-                "reference": "d0965f551338fcddef60c26ee51ceb957392beb4"
+                "reference": "779c370fd6e936432ca2576a1081851712d224c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/d0965f551338fcddef60c26ee51ceb957392beb4",
-                "reference": "d0965f551338fcddef60c26ee51ceb957392beb4",
+                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/779c370fd6e936432ca2576a1081851712d224c8",
+                "reference": "779c370fd6e936432ca2576a1081851712d224c8",
                 "shasum": ""
             },
             "require": {
-                "humanmade/asset-manager-framework": "~0.6",
+                "humanmade/asset-manager-framework": "^0.12",
                 "php": ">=7.2"
             },
             "type": "wordpress-plugin",
@@ -298,22 +298,22 @@
             "description": "Bring Unsplash directly into your WordPress media library.",
             "support": {
                 "issues": "https://github.com/humanmade/amf-unsplash/issues",
-                "source": "https://github.com/humanmade/amf-unsplash/tree/master"
+                "source": "https://github.com/humanmade/amf-unsplash/tree/0.2.0"
             },
-            "time": "2020-04-18T14:11:32+00:00"
+            "time": "2021-08-26T15:01:47+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
-            "version": "0.8.1",
+            "version": "0.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-manager-framework.git",
-                "reference": "342fd5d83845cae9cbf5c7516477b4d8a0b50516"
+                "reference": "58d08f19e55d67a4fc8b9b0351a00058f4cb482c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/342fd5d83845cae9cbf5c7516477b4d8a0b50516",
-                "reference": "342fd5d83845cae9cbf5c7516477b4d8a0b50516",
+                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/58d08f19e55d67a4fc8b9b0351a00058f4cb482c",
+                "reference": "58d08f19e55d67a4fc8b9b0351a00058f4cb482c",
                 "shasum": ""
             },
             "require": {
@@ -327,6 +327,11 @@
                 "wp-coding-standards/wpcs": "~2.2.0"
             },
             "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "AssetManagerFramework\\": "inc/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
@@ -341,9 +346,9 @@
             "homepage": "https://github.com/humanmade/asset-manager-framework/",
             "support": {
                 "issues": "https://github.com/humanmade/asset-manager-framework/issues",
-                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.8.1"
+                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.12.5"
             },
-            "time": "2020-09-30T12:39:15+00:00"
+            "time": "2021-08-05T08:37:01+00:00"
         },
         {
             "name": "humanmade/gaussholder",
