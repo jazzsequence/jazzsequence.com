@@ -51,16 +51,16 @@
         },
         {
             "name": "altis/workflow",
-            "version": "8.0.0",
+            "version": "8.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "4d95e5fc87c5e11d16ccdea10e9108a25858aa63"
+                "reference": "638cd4028e776b37421c9390de2d8e18d3ac57f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/4d95e5fc87c5e11d16ccdea10e9108a25858aa63",
-                "reference": "4d95e5fc87c5e11d16ccdea10e9108a25858aa63",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/638cd4028e776b37421c9390de2d8e18d3ac57f3",
+                "reference": "638cd4028e776b37421c9390de2d8e18d3ac57f3",
                 "shasum": ""
             },
             "require": {
@@ -102,9 +102,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/8.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/8.0.1"
             },
-            "time": "2021-07-22T10:21:03+00:00"
+            "time": "2021-08-06T13:03:33+00:00"
         },
         {
             "name": "cmb2/cmb2",
