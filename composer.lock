@@ -268,16 +268,16 @@
         },
         {
             "name": "humanmade/amf-unsplash",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/amf-unsplash.git",
-                "reference": "779c370fd6e936432ca2576a1081851712d224c8"
+                "reference": "97bcdc10c9ce3d9a58c1dafe941befa59473917a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/779c370fd6e936432ca2576a1081851712d224c8",
-                "reference": "779c370fd6e936432ca2576a1081851712d224c8",
+                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/97bcdc10c9ce3d9a58c1dafe941befa59473917a",
+                "reference": "97bcdc10c9ce3d9a58c1dafe941befa59473917a",
                 "shasum": ""
             },
             "require": {
@@ -298,9 +298,9 @@
             "description": "Bring Unsplash directly into your WordPress media library.",
             "support": {
                 "issues": "https://github.com/humanmade/amf-unsplash/issues",
-                "source": "https://github.com/humanmade/amf-unsplash/tree/0.2.0"
+                "source": "https://github.com/humanmade/amf-unsplash/tree/0.2.1"
             },
-            "time": "2021-08-26T15:01:47+00:00"
+            "time": "2021-08-31T10:04:17+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
