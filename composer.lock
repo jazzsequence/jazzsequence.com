@@ -1359,18 +1359,18 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "11.4.0",
+            "version": "11.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/11.4.0"
+                "reference": "tags/11.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.4.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "~1.0 || ~2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/gutenberg/"
