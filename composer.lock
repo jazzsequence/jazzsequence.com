@@ -1593,15 +1593,15 @@
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "2.0",
+            "version": "2.1",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "2.0"
+                "reference": "2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.0.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
