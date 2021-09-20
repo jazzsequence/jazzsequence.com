@@ -1725,16 +1725,16 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "8.0.1",
+            "version": "8.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
-                "reference": "6899e23f252065cad70fd2b98665d25edfca09b1"
+                "reference": "3c4aac2a897f780b6aed9332433d1b47d6598ce4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/6899e23f252065cad70fd2b98665d25edfca09b1",
-                "reference": "6899e23f252065cad70fd2b98665d25edfca09b1",
+                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/3c4aac2a897f780b6aed9332433d1b47d6598ce4",
+                "reference": "3c4aac2a897f780b6aed9332433d1b47d6598ce4",
                 "shasum": ""
             },
             "require": {
@@ -1769,9 +1769,9 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/8.0.1"
+                "source": "https://github.com/humanmade/altis-local-server/tree/8.0.2"
             },
-            "time": "2021-08-04T17:16:46+00:00"
+            "time": "2021-09-17T13:13:47+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
