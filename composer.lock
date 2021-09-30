@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cc1ed67119f88b2f4363c57b6239eed",
+    "content-hash": "fc21d838fdcbe138c3834001a517e507",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -269,20 +269,20 @@
         },
         {
             "name": "humanmade/amf-unsplash",
-            "version": "0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/amf-unsplash.git",
-                "reference": "97bcdc10c9ce3d9a58c1dafe941befa59473917a"
+                "reference": "95b1cacb852a0a46178301c8757e1c985ca3a350"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/97bcdc10c9ce3d9a58c1dafe941befa59473917a",
-                "reference": "97bcdc10c9ce3d9a58c1dafe941befa59473917a",
+                "url": "https://api.github.com/repos/humanmade/amf-unsplash/zipball/95b1cacb852a0a46178301c8757e1c985ca3a350",
+                "reference": "95b1cacb852a0a46178301c8757e1c985ca3a350",
                 "shasum": ""
             },
             "require": {
-                "humanmade/asset-manager-framework": "^0.12",
+                "humanmade/asset-manager-framework": "^0.13.0",
                 "php": ">=7.2"
             },
             "type": "wordpress-plugin",
@@ -299,22 +299,22 @@
             "description": "Bring Unsplash directly into your WordPress media library.",
             "support": {
                 "issues": "https://github.com/humanmade/amf-unsplash/issues",
-                "source": "https://github.com/humanmade/amf-unsplash/tree/0.2.1"
+                "source": "https://github.com/humanmade/amf-unsplash/tree/0.3.0"
             },
-            "time": "2021-08-31T10:04:17+00:00"
+            "time": "2021-09-27T14:31:52+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
-            "version": "0.12.5",
+            "version": "0.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-manager-framework.git",
-                "reference": "58d08f19e55d67a4fc8b9b0351a00058f4cb482c"
+                "reference": "ecc88f2d501aaf8957cb1ac8d6972d8e0f4b3101"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/58d08f19e55d67a4fc8b9b0351a00058f4cb482c",
-                "reference": "58d08f19e55d67a4fc8b9b0351a00058f4cb482c",
+                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/ecc88f2d501aaf8957cb1ac8d6972d8e0f4b3101",
+                "reference": "ecc88f2d501aaf8957cb1ac8d6972d8e0f4b3101",
                 "shasum": ""
             },
             "require": {
@@ -347,9 +347,9 @@
             "homepage": "https://github.com/humanmade/asset-manager-framework/",
             "support": {
                 "issues": "https://github.com/humanmade/asset-manager-framework/issues",
-                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.12.5"
+                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.13.1"
             },
-            "time": "2021-08-05T08:37:01+00:00"
+            "time": "2021-09-29T10:56:18+00:00"
         },
         {
             "name": "humanmade/gaussholder",
