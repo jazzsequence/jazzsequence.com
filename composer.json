@@ -180,6 +180,19 @@
 					"reference": "tags/1.0.2"
 				}
 			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "markjaquith/gifdrop",
+				"version": "master",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/markjaquith/gifdrop/archive/refs/heads/master.zip",
+					"reference": "master"
+				}
+			}
 		}
 	],
 	"require": {
@@ -208,6 +221,7 @@
 		"jazzsequence/reviews": "^2.0",
 		"jazzsequence/wp-show-tracker": "^0.6",
 		"johnbillion/extended-cpts": "^4.4.1",
+		"markjaquith/gifdrop": "dev-master",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.4.4",
 		"wpackagist-plugin/glotpress": "^2.3.1",
 		"wpackagist-plugin/google-analyticator": "^6.5.5",
