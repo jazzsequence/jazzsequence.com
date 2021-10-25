@@ -171,19 +171,6 @@
 		{
 			"type": "package",
 			"package": {
-				"name": "jazzsequence/dashboard-changelog",
-				"version": "1.0.1",
-				"type": "wordpress-muplugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/dashboard-changelog",
-					"reference": "tags/1.0.2"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
 				"name": "markjaquith/gifdrop",
 				"version": "master",
 				"type": "wordpress-plugin",
