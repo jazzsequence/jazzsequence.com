@@ -22,6 +22,9 @@ add_action( 'muplugins_loaded', function() {
 	}
 } );
 
+// Require the Composer autoloader.
+require_once dirname( __FILE__, 3 ) . '/vendor/autoload.php';
+
 $hm_mu_plugins = array(
 	'cmb2/init.php',
 	'altis-cms/plugin.php',
