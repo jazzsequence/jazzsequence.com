@@ -242,5 +242,7 @@
 	},
 	"require-dev": {
 		"altis/local-server": "^9.0",
+        "johnbillion/wp-crontrol": "^2.0.0-beta4",
+        "johnbillion/query-monitor": "^3.7.0"
 	}
 }
