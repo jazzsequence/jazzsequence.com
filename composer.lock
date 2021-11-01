@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da95f4a2e6a4fa9a0cb8c8a50311444b",
+    "content-hash": "2ea3ba4f6f4c2d34982a6d2b11d96475",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -828,7 +828,7 @@
         },
         {
             "name": "jazzsequence/dashboard-changelog",
-            "version": "dev-main",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/dashboard-changelog.git",
@@ -849,7 +849,6 @@
                 "roots/wordpress": "^5.0",
                 "wp-phpunit/wp-phpunit": "^5.8"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -864,7 +863,7 @@
             "description": "Adds a GitHub release widget to your WordPress dashboard for a public GitHub repository.",
             "support": {
                 "issues": "https://github.com/jazzsequence/dashboard-changelog/issues",
-                "source": "https://github.com/jazzsequence/dashboard-changelog/tree/main"
+                "source": "https://github.com/jazzsequence/dashboard-changelog/tree/1.1.0"
             },
             "time": "2021-11-01T17:55:11+00:00"
         },
@@ -2280,7 +2279,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wordpress-importer": 20,
-        "jazzsequence/dashboard-changelog": 20,
         "markjaquith/gifdrop": 20
     },
     "prefer-stable": true,
