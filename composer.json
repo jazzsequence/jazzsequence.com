@@ -87,6 +87,10 @@
 			"url": "git@github.com:jazzsequence/jz-222.git"
 		},
 		{
+			"type": "vcs",
+			"url": "git@github.com:jazzsequence/altis-cms.git"
+		},
+		{
 			"type": "package",
 			"package": {
 				"name": "jazzsequence/releases",
@@ -141,19 +145,6 @@
 		{
 			"type": "package",
 			"package": {
-				"name": "jazzsequence/altis-cms",
-				"version": "6.0.1.1",
-				"type": "wordpress-muplugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/altis-cms",
-					"reference": "tags/6.0.1.1"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
 				"name": "markjaquith/gifdrop",
 				"version": "master",
 				"type": "wordpress-plugin",
@@ -178,7 +169,7 @@
 		"humanmade/wp-seo": "^0.14.0",
 		"humanmade/wordpress-importer": "dev-master",
 		"jazzsequence/address-book": "^0.3.2",
-		"jazzsequence/altis-cms": "^6.0.1.1",
+		"jazzsequence/altis-cms": "^9.0.4.2",
 		"jazzsequence/artists": "^1.0.1",
 		"jazzsequence/cat-signal": "^1.1.3",
 		"jazzsequence/dashboard-changelog": "^1.1.0",
@@ -194,10 +185,10 @@
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.4.4",
 		"wpackagist-plugin/glotpress": "^2.3.1",
 		"wpackagist-plugin/google-analyticator": "^6.5.5",
-		"wpackagist-plugin/gutenberg": "^11.1.0",
-		"wpackagist-plugin/jetpack": "^10.0",
-		"wpackagist-plugin/ninja-forms": "^3.4.30",
-		"wpackagist-plugin/organize-series": "^2.5.13",
+		"wpackagist-plugin/gutenberg": "^12.4",
+		"wpackagist-plugin/jetpack": "^10.2",
+		"wpackagist-plugin/ninja-forms": "^3.6",
+		"wpackagist-plugin/organize-series": "^2.7",
 		"wpackagist-plugin/p3-profiler": "^1.5.3",
 		"wpackagist-plugin/plugins-garbage-collector": "^0.12",
 		"wpackagist-plugin/progress-bar": "^2.1.4",
