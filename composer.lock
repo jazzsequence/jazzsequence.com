@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4a574082145359381088d1250079cb6",
+    "content-hash": "89abff7eaf232b84664104b31090aa63",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -876,6 +876,38 @@
                 "reference": "tags/1.3.4"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "jazzsequence/jz-222",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jazzsequence/jz-222.git",
+                "reference": "ea4de73b220b7cd72987066513b8135682a4865e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jazzsequence/jz-222/zipball/ea4de73b220b7cd72987066513b8135682a4865e",
+                "reference": "ea4de73b220b7cd72987066513b8135682a4865e",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "wordpress-theme",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "chris@jazzsequence.com"
+                }
+            ],
+            "description": "Experimental child theme for Twenty Twenty-Two",
+            "support": {
+                "source": "https://github.com/jazzsequence/jz-222/tree/main",
+                "issues": "https://github.com/jazzsequence/jz-222/issues"
+            },
+            "time": "2022-01-28T22:32:27+00:00"
         },
         {
             "name": "jazzsequence/notifications",
@@ -2236,6 +2268,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wordpress-importer": 20,
+        "jazzsequence/jz-222": 20,
         "markjaquith/gifdrop": 20
     },
     "prefer-stable": true,
