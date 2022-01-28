@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89abff7eaf232b84664104b31090aa63",
+    "content-hash": "18555652af3c617b6467992413755dd4",
     "packages": [
+        {
+            "name": "10up/simple-local-avatars",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/simple-local-avatars.git",
+                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/simple-local-avatars/zipball/46aba1b51bbd35dac333f9eca87071f2a80a3336",
+                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "10up/phpcs-composer": "dev-master",
+                "10up/wp_mock": "0.4.2",
+                "10up/wpacceptance": "dev-master"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "10up",
+                    "homepage": "https://10up.com/"
+                }
+            ],
+            "description": "Adds an avatar upload field to user profiles. Generates requested sizes on demand just like Gravatar!",
+            "homepage": "https://github.com/10up/simple-local-avatars",
+            "keywords": [
+                "10up",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/10up/simple-local-avatars/issues",
+                "source": "https://github.com/10up/simple-local-avatars"
+            },
+            "time": "2020-10-26T19:07:29+00:00"
+        },
         {
             "name": "altis/browser-security",
             "version": "1.1.1",
@@ -318,6 +363,46 @@
             "time": "2019-12-30T22:54:17+00:00"
         },
         {
+            "name": "humanmade/altis-reusable-blocks",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-reusable-blocks.git",
+                "reference": "556d5cb3e29beae39d1efbf97d0bf217e0d21aa5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-reusable-blocks/zipball/556d5cb3e29beae39d1efbf97d0bf217e0d21aa5",
+                "reference": "556d5cb3e29beae39d1efbf97d0bf217e0d21aa5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.7",
+                "humanmade/asset-loader": "^0.5.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "automattic/vipwpcs": "^2.0",
+                "brain/monkey": "^2.3",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "mockery/mockery": "^1.2",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpunit/phpunit": "^7.5",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Adds functionality to reusable blocks to enhance their usage.",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-reusable-blocks/issues",
+                "source": "https://github.com/humanmade/altis-reusable-blocks/tree/v0.2.1"
+            },
+            "time": "2022-01-04T13:15:37+00:00"
+        },
+        {
             "name": "humanmade/amf-unsplash",
             "version": "0.3.0",
             "source": {
@@ -352,6 +437,40 @@
                 "source": "https://github.com/humanmade/amf-unsplash/tree/0.3.0"
             },
             "time": "2021-09-27T14:31:52+00:00"
+        },
+        {
+            "name": "humanmade/asset-loader",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/asset-loader.git",
+                "reference": "717ebc20e999affe7c601015221fe76037c011c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/717ebc20e999affe7c601015221fe76037c011c4",
+                "reference": "717ebc20e999affe7c601015221fe76037c011c4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "require-dev": {
+                "10up/wp_mock": "^0.4.2",
+                "humanmade/coding-standards": "^1.1.0",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
+            "support": {
+                "issues": "https://github.com/humanmade/asset-loader/issues",
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0"
+            },
+            "time": "2021-01-27T15:20:46+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
@@ -400,6 +519,97 @@
                 "source": "https://github.com/humanmade/asset-manager-framework/tree/0.13.1"
             },
             "time": "2021-09-29T10:56:18+00:00"
+        },
+        {
+            "name": "humanmade/authorship",
+            "version": "0.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/authorship.git",
+                "reference": "f870ff54497ff6b8f63a24af7c6e634893952866"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/authorship/zipball/f870ff54497ff6b8f63a24af7c6e634893952866",
+                "reference": "f870ff54497ff6b8f63a24af7c6e634893952866",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "humanmade/asset-loader": "^0.5.0",
+                "php": "~7.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
+                "ergebnis/composer-normalize": "^2",
+                "humanmade/coding-standards": "1.1.1",
+                "php-stubs/wordpress-stubs": "^5.5",
+                "phpcompatibility/phpcompatibility-wp": "2.1.0",
+                "phpstan/phpstan": "0.12.57",
+                "phpunit/phpunit": "^7",
+                "roots/wordpress": "~5.7.0",
+                "squizlabs/php_codesniffer": "3.5.8",
+                "szepeviktor/phpstan-wordpress": "0.7.1",
+                "vlucas/phpdotenv": "^3",
+                "wp-cli/db-command": "^2",
+                "wp-phpunit/wp-phpunit": "~5.7.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "lib/{$name}/": [
+                        "humanmade/asset-loader"
+                    ]
+                },
+                "wordpress-install-dir": "tests/wordpress"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Authorship",
+            "support": {
+                "issues": "https://github.com/humanmade/authorship/issues",
+                "source": "https://github.com/humanmade/authorship/tree/0.2.9"
+            },
+            "time": "2021-10-12T12:47:34+00:00"
+        },
+        {
+            "name": "humanmade/clean-html",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/clean-html.git",
+                "reference": "47840cf8794b74df470449fc012dbc4fc8de7f27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/clean-html/zipball/47840cf8794b74df470449fc012dbc4fc8de7f27",
+                "reference": "47840cf8794b74df470449fc012dbc4fc8de7f27",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "clean-html.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "email": "ryan@humanmade.com"
+                }
+            ],
+            "description": "Safe HTML for WordPress. Adds esc_*()-like function to allow some HTML.",
+            "support": {
+                "issues": "https://github.com/humanmade/clean-html/issues",
+                "source": "https://github.com/humanmade/clean-html/tree/master"
+            },
+            "time": "2020-06-09T13:13:07+00:00"
         },
         {
             "name": "humanmade/gaussholder",
@@ -798,13 +1008,45 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "6.0.1.1",
+            "version": "9.0.4.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/6.0.1.1"
+                "url": "https://github.com/jazzsequence/altis-cms.git",
+                "reference": "3bd7819f5b3111191d11575fffb1b5433026103d"
             },
-            "type": "wordpress-muplugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jazzsequence/altis-cms/zipball/3bd7819f5b3111191d11575fffb1b5433026103d",
+                "reference": "3bd7819f5b3111191d11575fffb1b5433026103d",
+                "shasum": ""
+            },
+            "require": {
+                "10up/simple-local-avatars": "~2.2.0",
+                "humanmade/altis-reusable-blocks": "~0.2.1",
+                "humanmade/asset-loader": "^0.5.0",
+                "humanmade/authorship": "~0.2.9",
+                "humanmade/clean-html": "^2.0.0",
+                "johnbillion/extended-cpts": "^4.5.2"
+            },
+            "type": "library",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "me@chrisreynolds.io"
+                },
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Altis CMS Module for jazzsequence.com",
+            "support": {
+                "source": "https://github.com/jazzsequence/altis-cms/tree/9.0.4.2"
+            },
+            "time": "2022-01-28T23:04:18+00:00"
         },
         {
             "name": "jazzsequence/artists",
@@ -1462,15 +1704,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "11.9.1",
+            "version": "12.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/11.9.1"
+                "reference": "tags/12.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.12.4.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
