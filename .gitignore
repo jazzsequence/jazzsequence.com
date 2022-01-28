@@ -28,6 +28,7 @@ readme.html
 !packages/*
 !packages/jz-222/index.php
 packages/*/.git
+packages/altis-cms/
 
 # ignore random other shit
 audio/
