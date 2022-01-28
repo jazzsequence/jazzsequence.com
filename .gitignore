@@ -26,7 +26,8 @@ readme.html
 
 # Don't ignore packages
 !packages/*
-!/packages/jz-222/index.php
+!packages/jz-222/index.php
+packages/*/.git
 
 # ignore random other shit
 audio/
