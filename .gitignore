@@ -24,6 +24,12 @@ server-config.php
 /index.php
 readme.html
 
+# Don't ignore packages
+!packages/*
+!packages/jz-222/index.php
+packages/*/.git
+packages/altis-cms/
+
 # ignore random other shit
 audio/
 images/

@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ea3ba4f6f4c2d34982a6d2b11d96475",
+    "content-hash": "18555652af3c617b6467992413755dd4",
     "packages": [
+        {
+            "name": "10up/simple-local-avatars",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/simple-local-avatars.git",
+                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/simple-local-avatars/zipball/46aba1b51bbd35dac333f9eca87071f2a80a3336",
+                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "10up/phpcs-composer": "dev-master",
+                "10up/wp_mock": "0.4.2",
+                "10up/wpacceptance": "dev-master"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "10up",
+                    "homepage": "https://10up.com/"
+                }
+            ],
+            "description": "Adds an avatar upload field to user profiles. Generates requested sizes on demand just like Gravatar!",
+            "homepage": "https://github.com/10up/simple-local-avatars",
+            "keywords": [
+                "10up",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/10up/simple-local-avatars/issues",
+                "source": "https://github.com/10up/simple-local-avatars"
+            },
+            "time": "2020-10-26T19:07:29+00:00"
+        },
         {
             "name": "altis/browser-security",
             "version": "1.1.1",
@@ -51,16 +96,16 @@
         },
         {
             "name": "altis/workflow",
-            "version": "9.0.0",
+            "version": "9.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "8b21127cc7874800d4b86de1f1c6d1080704d576"
+                "reference": "c6468428b87bea064647f065ed917bb3a61f14e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/8b21127cc7874800d4b86de1f1c6d1080704d576",
-                "reference": "8b21127cc7874800d4b86de1f1c6d1080704d576",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/c6468428b87bea064647f065ed917bb3a61f14e6",
+                "reference": "c6468428b87bea064647f065ed917bb3a61f14e6",
                 "shasum": ""
             },
             "require": {
@@ -102,9 +147,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/9.0.0"
+                "source": "https://github.com/humanmade/altis-workflow/tree/9.0.1"
             },
-            "time": "2021-10-19T12:27:47+00:00"
+            "time": "2021-12-15T11:40:19+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -318,6 +363,46 @@
             "time": "2019-12-30T22:54:17+00:00"
         },
         {
+            "name": "humanmade/altis-reusable-blocks",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-reusable-blocks.git",
+                "reference": "556d5cb3e29beae39d1efbf97d0bf217e0d21aa5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-reusable-blocks/zipball/556d5cb3e29beae39d1efbf97d0bf217e0d21aa5",
+                "reference": "556d5cb3e29beae39d1efbf97d0bf217e0d21aa5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.7",
+                "humanmade/asset-loader": "^0.5.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "automattic/vipwpcs": "^2.0",
+                "brain/monkey": "^2.3",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "mockery/mockery": "^1.2",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpunit/phpunit": "^7.5",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Adds functionality to reusable blocks to enhance their usage.",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-reusable-blocks/issues",
+                "source": "https://github.com/humanmade/altis-reusable-blocks/tree/v0.2.1"
+            },
+            "time": "2022-01-04T13:15:37+00:00"
+        },
+        {
             "name": "humanmade/amf-unsplash",
             "version": "0.3.0",
             "source": {
@@ -352,6 +437,40 @@
                 "source": "https://github.com/humanmade/amf-unsplash/tree/0.3.0"
             },
             "time": "2021-09-27T14:31:52+00:00"
+        },
+        {
+            "name": "humanmade/asset-loader",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/asset-loader.git",
+                "reference": "717ebc20e999affe7c601015221fe76037c011c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/717ebc20e999affe7c601015221fe76037c011c4",
+                "reference": "717ebc20e999affe7c601015221fe76037c011c4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "require-dev": {
+                "10up/wp_mock": "^0.4.2",
+                "humanmade/coding-standards": "^1.1.0",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
+            "support": {
+                "issues": "https://github.com/humanmade/asset-loader/issues",
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0"
+            },
+            "time": "2021-01-27T15:20:46+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
@@ -402,6 +521,97 @@
             "time": "2021-09-29T10:56:18+00:00"
         },
         {
+            "name": "humanmade/authorship",
+            "version": "0.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/authorship.git",
+                "reference": "f870ff54497ff6b8f63a24af7c6e634893952866"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/authorship/zipball/f870ff54497ff6b8f63a24af7c6e634893952866",
+                "reference": "f870ff54497ff6b8f63a24af7c6e634893952866",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "humanmade/asset-loader": "^0.5.0",
+                "php": "~7.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
+                "ergebnis/composer-normalize": "^2",
+                "humanmade/coding-standards": "1.1.1",
+                "php-stubs/wordpress-stubs": "^5.5",
+                "phpcompatibility/phpcompatibility-wp": "2.1.0",
+                "phpstan/phpstan": "0.12.57",
+                "phpunit/phpunit": "^7",
+                "roots/wordpress": "~5.7.0",
+                "squizlabs/php_codesniffer": "3.5.8",
+                "szepeviktor/phpstan-wordpress": "0.7.1",
+                "vlucas/phpdotenv": "^3",
+                "wp-cli/db-command": "^2",
+                "wp-phpunit/wp-phpunit": "~5.7.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "lib/{$name}/": [
+                        "humanmade/asset-loader"
+                    ]
+                },
+                "wordpress-install-dir": "tests/wordpress"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Authorship",
+            "support": {
+                "issues": "https://github.com/humanmade/authorship/issues",
+                "source": "https://github.com/humanmade/authorship/tree/0.2.9"
+            },
+            "time": "2021-10-12T12:47:34+00:00"
+        },
+        {
+            "name": "humanmade/clean-html",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/clean-html.git",
+                "reference": "47840cf8794b74df470449fc012dbc4fc8de7f27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/clean-html/zipball/47840cf8794b74df470449fc012dbc4fc8de7f27",
+                "reference": "47840cf8794b74df470449fc012dbc4fc8de7f27",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "clean-html.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "email": "ryan@humanmade.com"
+                }
+            ],
+            "description": "Safe HTML for WordPress. Adds esc_*()-like function to allow some HTML.",
+            "support": {
+                "issues": "https://github.com/humanmade/clean-html/issues",
+                "source": "https://github.com/humanmade/clean-html/tree/master"
+            },
+            "time": "2020-06-09T13:13:07+00:00"
+        },
+        {
             "name": "humanmade/gaussholder",
             "version": "1.1.3",
             "source": {
@@ -445,16 +655,16 @@
         },
         {
             "name": "humanmade/hm-redirects",
-            "version": "0.5.2",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/hm-redirects.git",
-                "reference": "67fab45496ddf9a0b9290ac76f0aecf0776c872c"
+                "reference": "5db819ac50e863b61f5b2688c2b5554578373013"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/hm-redirects/zipball/67fab45496ddf9a0b9290ac76f0aecf0776c872c",
-                "reference": "67fab45496ddf9a0b9290ac76f0aecf0776c872c",
+                "url": "https://api.github.com/repos/humanmade/hm-redirects/zipball/5db819ac50e863b61f5b2688c2b5554578373013",
+                "reference": "5db819ac50e863b61f5b2688c2b5554578373013",
                 "shasum": ""
             },
             "require": {
@@ -477,9 +687,9 @@
             ],
             "support": {
                 "issues": "https://github.com/humanmade/hm-redirects/issues",
-                "source": "https://github.com/humanmade/hm-redirects/tree/master"
+                "source": "https://github.com/humanmade/hm-redirects/tree/0.5.4"
             },
-            "time": "2020-05-25T11:38:39+00:00"
+            "time": "2021-11-08T12:25:20+00:00"
         },
         {
             "name": "humanmade/meta-tags",
@@ -798,13 +1008,45 @@
         },
         {
             "name": "jazzsequence/altis-cms",
-            "version": "6.0.1.1",
+            "version": "9.0.4.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazzsequence/altis-cms",
-                "reference": "tags/6.0.1.1"
+                "url": "https://github.com/jazzsequence/altis-cms.git",
+                "reference": "3bd7819f5b3111191d11575fffb1b5433026103d"
             },
-            "type": "wordpress-muplugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jazzsequence/altis-cms/zipball/3bd7819f5b3111191d11575fffb1b5433026103d",
+                "reference": "3bd7819f5b3111191d11575fffb1b5433026103d",
+                "shasum": ""
+            },
+            "require": {
+                "10up/simple-local-avatars": "~2.2.0",
+                "humanmade/altis-reusable-blocks": "~0.2.1",
+                "humanmade/asset-loader": "^0.5.0",
+                "humanmade/authorship": "~0.2.9",
+                "humanmade/clean-html": "^2.0.0",
+                "johnbillion/extended-cpts": "^4.5.2"
+            },
+            "type": "library",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "me@chrisreynolds.io"
+                },
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "Altis CMS Module for jazzsequence.com",
+            "support": {
+                "source": "https://github.com/jazzsequence/altis-cms/tree/9.0.4.2"
+            },
+            "time": "2022-01-28T23:04:18+00:00"
         },
         {
             "name": "jazzsequence/artists",
@@ -878,14 +1120,36 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "jazzsequence/hello-ziggy",
-            "version": "2.1",
+            "name": "jazzsequence/jz-222",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jazzsequence/jz-222.git",
+                "reference": "ea4de73b220b7cd72987066513b8135682a4865e"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jazzsequence/hello-ziggy/archive/2.1.zip",
-                "reference": "2.1"
+                "url": "https://api.github.com/repos/jazzsequence/jz-222/zipball/ea4de73b220b7cd72987066513b8135682a4865e",
+                "reference": "ea4de73b220b7cd72987066513b8135682a4865e",
+                "shasum": ""
             },
-            "type": "wordpress-plugin"
+            "default-branch": true,
+            "type": "wordpress-theme",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "chris@jazzsequence.com"
+                }
+            ],
+            "description": "Experimental child theme for Twenty Twenty-Two",
+            "support": {
+                "source": "https://github.com/jazzsequence/jz-222/tree/main",
+                "issues": "https://github.com/jazzsequence/jz-222/issues"
+            },
+            "time": "2022-01-28T22:32:27+00:00"
         },
         {
             "name": "jazzsequence/notifications",
@@ -894,16 +1158,6 @@
                 "type": "git",
                 "url": "https://github.com/jazzsequence/notifications",
                 "reference": "tags/1.1.3"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "jazzsequence/progress-bar",
-            "version": "2.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/progress-bar",
-                "reference": "tags/2.1.4"
             },
             "type": "wordpress-plugin"
         },
@@ -1049,16 +1303,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.13.0",
+            "version": "v2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "e95c5a008c23d3151d59ea72484d4f72049ab7f4"
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/e95c5a008c23d3151d59ea72484d4f72049ab7f4",
-                "reference": "e95c5a008c23d3151d59ea72484d4f72049ab7f4",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
+                "reference": "579ffa5c96e1d292c060b3dd62811ff01ad8c24e",
                 "shasum": ""
             },
             "require": {
@@ -1093,9 +1347,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/mustache.php/issues",
-                "source": "https://github.com/bobthecow/mustache.php/tree/master"
+                "source": "https://github.com/bobthecow/mustache.php/tree/v2.14.1"
             },
-            "time": "2019-11-23T21:40:31+00:00"
+            "time": "2022-01-21T06:08:36+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -1159,21 +1413,20 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.3.7",
+            "version": "v6.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "a10000ada1e600d109a6c7632e9ac42e8bf2fb93"
+                "reference": "8661b74dbabc23223f38c9b99d3f8ade71170430"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/a10000ada1e600d109a6c7632e9ac42e8bf2fb93",
-                "reference": "a10000ada1e600d109a6c7632e9ac42e8bf2fb93",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/8661b74dbabc23223f38c9b99d3f8ade71170430",
+                "reference": "8661b74dbabc23223f38c9b99d3f8ade71170430",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.16"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "autoload": {
@@ -1201,7 +1454,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.3.7"
+                "source": "https://github.com/symfony/finder/tree/v6.0.3"
             },
             "funding": [
                 {
@@ -1217,90 +1470,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-04T21:20:46+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.23-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ion Bazan",
-                    "email": "ion.bazan@gmail.com"
-                },
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-07-28T13:41:28+00:00"
+            "time": "2022-01-26T17:23:29+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -1409,21 +1579,21 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v2.5.0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "0bcf0c54f4d35685211d435e25219cc7acbe6d48"
+                "reference": "dee13c2baf6bf972484a63f8b8dab48f7220f095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0bcf0c54f4d35685211d435e25219cc7acbe6d48",
-                "reference": "0bcf0c54f4d35685211d435e25219cc7acbe6d48",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/dee13c2baf6bf972484a63f8b8dab48f7220f095",
+                "reference": "dee13c2baf6bf972484a63f8b8dab48f7220f095",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "mustache/mustache": "~2.13",
+                "mustache/mustache": "^2.14.1",
                 "php": "^5.6 || ^7.0 || ^8.0",
                 "rmccue/requests": "^1.8",
                 "symfony/finder": ">2.7",
@@ -1431,12 +1601,12 @@
                 "wp-cli/php-cli-tools": "~0.11.2"
             },
             "require-dev": {
-                "roave/security-advisories": "dev-master",
+                "roave/security-advisories": "dev-latest",
                 "wp-cli/db-command": "^1.3 || ^2",
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^3.0.7"
+                "wp-cli/wp-cli-tests": "^3.1.3"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -1449,7 +1619,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -1476,7 +1646,7 @@
                 "issues": "https://github.com/wp-cli/wp-cli/issues",
                 "source": "https://github.com/wp-cli/wp-cli"
             },
-            "time": "2021-05-14T13:44:51+00:00"
+            "time": "2022-01-25T16:31:27+00:00"
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
@@ -1491,7 +1661,7 @@
                 "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.2.5.5.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
@@ -1509,7 +1679,7 @@
                 "url": "https://downloads.wordpress.org/plugin/glotpress.2.3.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/glotpress/"
@@ -1527,79 +1697,97 @@
                 "url": "https://downloads.wordpress.org/plugin/google-analyticator.6.5.5.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-analyticator/"
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "11.8.0",
+            "version": "12.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/11.8.0"
+                "reference": "tags/12.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.8.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.12.4.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "10.2.1",
+            "name": "wpackagist-plugin/hello-ziggy",
+            "version": "2.1.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/10.2.1"
+                "url": "https://plugins.svn.wordpress.org/hello-ziggy/",
+                "reference": "tags/2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.10.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/hello-ziggy.2.1.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/hello-ziggy/"
+        },
+        {
+            "name": "wpackagist-plugin/jetpack",
+            "version": "10.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/jetpack/",
+                "reference": "tags/10.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.10.5.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.6.4",
+            "version": "3.6.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.6.4"
+                "reference": "tags/3.6.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.6.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.6.7.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ninja-forms/"
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.6.3",
+            "version": "2.7.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.6.3"
+                "reference": "tags/2.7.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.6.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.7.4.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/organize-series/"
@@ -1617,7 +1805,7 @@
                 "url": "https://downloads.wordpress.org/plugin/p3-profiler.1.5.4.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/p3-profiler/"
@@ -1635,10 +1823,28 @@
                 "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.12.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/plugins-garbage-collector/"
+        },
+        {
+            "name": "wpackagist-plugin/progress-bar",
+            "version": "2.1.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/progress-bar/",
+                "reference": "tags/2.1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/progress-bar.2.1.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/progress-bar/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
@@ -1653,7 +1859,7 @@
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.1.5.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
@@ -1671,7 +1877,7 @@
                 "url": "https://downloads.wordpress.org/plugin/storyftw.zip?timestamp=1425145416"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/storyftw/"
@@ -1689,7 +1895,7 @@
                 "url": "https://downloads.wordpress.org/plugin/term-management-tools.2.0.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/term-management-tools/"
@@ -1707,7 +1913,7 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-syntax.1.1.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-syntax/"
@@ -1725,7 +1931,7 @@
                 "url": "https://downloads.wordpress.org/plugin/wpmovielibrary.2.1.4.7.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpmovielibrary/"
@@ -1743,7 +1949,7 @@
                 "url": "https://downloads.wordpress.org/theme/museum-core.2.1.6.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/museum-core/"
@@ -1761,82 +1967,100 @@
                 "url": "https://downloads.wordpress.org/theme/ryu.1.4.7.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/ryu/"
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "2.1",
+            "version": "2.2",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "2.1"
+                "reference": "2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.1.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.2.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentynineteen/"
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "2.8",
+            "version": "2.9",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "2.8"
+                "reference": "2.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.8.zip"
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.9.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentyseventeen/"
         },
         {
             "name": "wpackagist-theme/twentytwenty",
-            "version": "1.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "1.8"
+                "reference": "1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.8.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.9.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwenty/"
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "1.4",
+            "version": "1.5",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "1.4"
+                "reference": "1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.4.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.5.zip"
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentyone/"
+        },
+        {
+            "name": "wpackagist-theme/twentytwentytwo",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentytwo/",
+                "reference": "1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentytwentytwo/"
         },
         {
             "name": "yoast/duplicate-post",
@@ -1900,16 +2124,16 @@
     "packages-dev": [
         {
             "name": "altis/local-server",
-            "version": "9.0.0",
+            "version": "9.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-local-server.git",
-                "reference": "30ec203d1d8a7e6627f43be86fdcfbb7155e7534"
+                "reference": "9c7edcf2119aa4b755d94fae7013b89fd8bcba5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/30ec203d1d8a7e6627f43be86fdcfbb7155e7534",
-                "reference": "30ec203d1d8a7e6627f43be86fdcfbb7155e7534",
+                "url": "https://api.github.com/repos/humanmade/altis-local-server/zipball/9c7edcf2119aa4b755d94fae7013b89fd8bcba5c",
+                "reference": "9c7edcf2119aa4b755d94fae7013b89fd8bcba5c",
                 "shasum": ""
             },
             "require": {
@@ -1944,22 +2168,22 @@
             "description": "Local Server module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-local-server/issues",
-                "source": "https://github.com/humanmade/altis-local-server/tree/9.0.0"
+                "source": "https://github.com/humanmade/altis-local-server/tree/9.0.5"
             },
-            "time": "2021-10-19T12:18:26+00:00"
+            "time": "2022-01-28T10:54:09+00:00"
         },
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.7.1",
+            "version": "3.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "3a18fdb8324d6528a168651b25ac80b141f1b0df"
+                "reference": "eb077d521c72600f756e0665e802706fe316dd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/3a18fdb8324d6528a168651b25ac80b141f1b0df",
-                "reference": "3a18fdb8324d6528a168651b25ac80b141f1b0df",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/eb077d521c72600f756e0665e802706fe316dd85",
+                "reference": "eb077d521c72600f756e0665e802706fe316dd85",
                 "shasum": ""
             },
             "require": {
@@ -1970,13 +2194,17 @@
                 "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
                 "johnbillion/falsey-assertequals-detector": "^1 || ^3",
                 "phpcompatibility/phpcompatibility-wp": "2.1.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
                 "phpunit/phpunit": "^5 || ^7",
                 "roots/wordpress": "*",
                 "squizlabs/php_codesniffer": "3.5.8",
+                "szepeviktor/phpstan-wordpress": "^1.0",
                 "vlucas/phpdotenv": "^3",
                 "wp-cli/db-command": "^2",
                 "wp-coding-standards/wpcs": "2.3.0",
-                "wp-phpunit/wp-phpunit": "*"
+                "wp-phpunit/wp-phpunit": "*",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "type": "wordpress-plugin",
             "extra": {
@@ -2005,7 +2233,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-05-13T13:35:03+00:00"
+            "time": "2022-01-07T20:43:27+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
@@ -2055,16 +2283,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627"
+                "reference": "6f981ee24cf69ee7ce9736146d1c57c2780598a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5f38c8804a9e97d23e0c8d63341088cd8a22d627",
-                "reference": "5f38c8804a9e97d23e0c8d63341088cd8a22d627",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/6f981ee24cf69ee7ce9736146d1c57c2780598a8",
+                "reference": "6f981ee24cf69ee7ce9736146d1c57c2780598a8",
                 "shasum": ""
             },
             "require": {
@@ -2073,7 +2301,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.4-dev"
+                    "dev-main": "2.5-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -2102,7 +2330,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.4.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.0"
             },
             "funding": [
                 {
@@ -2118,24 +2346,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-23T23:28:01+00:00"
+            "time": "2021-07-12T14:48:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
+            "version": "v1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
+                "reference": "30885182c981ab175d4d034db0f6f469898070ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/30885182c981ab175d4d034db0f6f469898070ab",
+                "reference": "30885182c981ab175d4d034db0f6f469898070ab",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -2181,7 +2412,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.24.0"
             },
             "funding": [
                 {
@@ -2197,20 +2428,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2021-10-20T20:35:02+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.3.6",
+            "version": "v5.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "4500fe63dc9c6ffc32d3b1cb0448c329f9c814b7"
+                "reference": "c441e9d2e340642ac8b951b753dea962d55b669d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/4500fe63dc9c6ffc32d3b1cb0448c329f9c814b7",
-                "reference": "4500fe63dc9c6ffc32d3b1cb0448c329f9c814b7",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/c441e9d2e340642ac8b951b753dea962d55b669d",
+                "reference": "c441e9d2e340642ac8b951b753dea962d55b669d",
                 "shasum": ""
             },
             "require": {
@@ -2256,7 +2487,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.3.6"
+                "source": "https://github.com/symfony/yaml/tree/v5.3.14"
             },
             "funding": [
                 {
@@ -2272,18 +2503,19 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-29T06:20:01+00:00"
+            "time": "2022-01-26T16:05:39+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wordpress-importer": 20,
+        "jazzsequence/jz-222": 20,
         "markjaquith/gifdrop": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
