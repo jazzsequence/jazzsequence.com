@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18555652af3c617b6467992413755dd4",
+    "content-hash": "9197f970a22819041af055a986477c7f",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1649,6 +1649,24 @@
                 "source": "https://github.com/wp-cli/wp-cli"
             },
             "time": "2022-01-25T16:31:27+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/altis-accelerate",
+            "version": "0.7.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
+                "reference": "tags/0.7.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.0.7.3.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/altis-accelerate/"
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",

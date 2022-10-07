@@ -182,6 +182,7 @@
 		"jazzsequence/wp-show-tracker": "^0.6",
 		"johnbillion/extended-cpts": "^4.4.1",
 		"markjaquith/gifdrop": "dev-master",
+		"wpackagist-plugin/altis-accelerate": "^0.7",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "^2.4.4",
 		"wpackagist-plugin/glotpress": "^2.3.1",
 		"wpackagist-plugin/google-analyticator": "^6.5.5",
