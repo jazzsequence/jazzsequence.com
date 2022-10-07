@@ -232,5 +232,9 @@
 			"johnpbloch/wordpress-core-installer": true,
 			"altis/cms-installer": true
 		}
+	},
+	"scripts": {
+		"pre-update-cmd": "cp wp-config.php wp-config.php.bak",
+		"post-update-cmd": "mv wp-config.php.bak wp-config.php"
 	}
 }
