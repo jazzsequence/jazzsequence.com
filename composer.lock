@@ -4,53 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9197f970a22819041af055a986477c7f",
+    "content-hash": "8492852b9e2c34f4ddb8ddc6338a4848",
     "packages": [
-        {
-            "name": "10up/simple-local-avatars",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/10up/simple-local-avatars.git",
-                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/10up/simple-local-avatars/zipball/46aba1b51bbd35dac333f9eca87071f2a80a3336",
-                "reference": "46aba1b51bbd35dac333f9eca87071f2a80a3336",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "10up/phpcs-composer": "dev-master",
-                "10up/wp_mock": "0.4.2",
-                "10up/wpacceptance": "dev-master"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "10up",
-                    "homepage": "https://10up.com/"
-                }
-            ],
-            "description": "Adds an avatar upload field to user profiles. Generates requested sizes on demand just like Gravatar!",
-            "homepage": "https://github.com/10up/simple-local-avatars",
-            "keywords": [
-                "10up",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/10up/simple-local-avatars/issues",
-                "source": "https://github.com/10up/simple-local-avatars"
-            },
-            "time": "2020-10-26T19:07:29+00:00"
-        },
         {
             "name": "altis/browser-security",
             "version": "1.2.0",
@@ -95,22 +50,138 @@
             "time": "2022-02-24T12:20:15+00:00"
         },
         {
-            "name": "altis/workflow",
-            "version": "9.0.6",
+            "name": "altis/cms",
+            "version": "13.0.0-beta.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "e4470dd76ae077061281e74aca02f8a8e1f6b82c"
+                "url": "https://github.com/humanmade/altis-cms.git",
+                "reference": "576b7eb57de3f91d69441fdf97eca3c5b2ec1cdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/e4470dd76ae077061281e74aca02f8a8e1f6b82c",
-                "reference": "e4470dd76ae077061281e74aca02f8a8e1f6b82c",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/576b7eb57de3f91d69441fdf97eca3c5b2ec1cdf",
+                "reference": "576b7eb57de3f91d69441fdf97eca3c5b2ec1cdf",
+                "shasum": ""
+            },
+            "require": {
+                "altis/cms-installer": "^0.4.3",
+                "humanmade/altis-reusable-blocks": "~0.2.3",
+                "humanmade/asset-loader": "^0.6.1",
+                "humanmade/authorship": "~0.2.12",
+                "humanmade/clean-html": "^2.0.0",
+                "johnbillion/extended-cpts": "^4.5.2",
+                "johnpbloch/wordpress": "6.0.2",
+                "php": ">=7.1",
+                "roots/wp-password-bcrypt": "1.1.0",
+                "stuttter/wp-user-signups": "^5.0.2"
+            },
+            "type": "library",
+            "extra": {
+                "altis": {
+                    "install-overrides": [
+                        "10up/simple-local-avatars",
+                        "stuttter/wp-user-signups",
+                        "humanmade/authorship",
+                        "humanmade/altis-reusable-blocks",
+                        "humanmade/asset-loader"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "inc/namespace.php",
+                    "inc/remove_updates/namespace.php",
+                    "inc/branding/namespace.php",
+                    "inc/block_editor/namespace.php",
+                    "inc/permalinks/namespace.php",
+                    "inc/add_site_ui/namespace.php",
+                    "inc/cli/namespace.php",
+                    "inc/network_ui/namespace.php",
+                    "inc/real_guids/namespace.php",
+                    "inc/signup_notification/namespace.php"
+                ],
+                "classmap": [
+                    "inc/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "CMS Module for Altis",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-cms/issues",
+                "source": "https://github.com/humanmade/altis-cms/tree/13.0.0-beta.1"
+            },
+            "time": "2022-09-07T14:16:44+00:00"
+        },
+        {
+            "name": "altis/cms-installer",
+            "version": "0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-cms-installer.git",
+                "reference": "d4a49f633e5ce33a248d8bc411ee1a25561ef827"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-cms-installer/zipball/d4a49f633e5ce33a248d8bc411ee1a25561ef827",
+                "reference": "d4a49f633e5ce33a248d8bc411ee1a25561ef827",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": ">=7.1"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Altis\\CMS\\Composer\\Plugin"
+            },
+            "autoload": {
+                "classmap": [
+                    "inc/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Human Made",
+                    "email": "hello@humanmade.com"
+                }
+            ],
+            "description": "CMS Installer plugin for Altis",
+            "support": {
+                "issues": "https://github.com/humanmade/altis-cms-installer/issues",
+                "source": "https://github.com/humanmade/altis-cms-installer/tree/0.4.3"
+            },
+            "time": "2020-10-29T10:13:57+00:00"
+        },
+        {
+            "name": "altis/workflow",
+            "version": "13.0.0-beta.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humanmade/altis-workflow.git",
+                "reference": "8d952546d804976ac092ae550c8c644a6965aa92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/8d952546d804976ac092ae550c8c644a6965aa92",
+                "reference": "8d952546d804976ac092ae550c8c644a6965aa92",
                 "shasum": ""
             },
             "require": {
                 "humanmade/publication-checklist": "~0.3.0",
-                "humanmade/workflows": "~0.4.3",
+                "humanmade/workflows": "~0.4.4",
                 "php": ">=7.1",
                 "yoast/duplicate-post": "~4.1.2"
             },
@@ -147,9 +218,9 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/9.0.6"
+                "source": "https://github.com/humanmade/altis-workflow/tree/13.0.0-beta.1"
             },
-            "time": "2022-08-02T10:38:50+00:00"
+            "time": "2022-08-05T08:44:43+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -440,16 +511,16 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.5.0",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4"
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/717ebc20e999affe7c601015221fe76037c011c4",
-                "reference": "717ebc20e999affe7c601015221fe76037c011c4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/0292258fa1391278d04e2802ba87628cade0ce52",
+                "reference": "0292258fa1391278d04e2802ba87628cade0ce52",
                 "shasum": ""
             },
             "require": {
@@ -468,9 +539,9 @@
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
                 "issues": "https://github.com/humanmade/asset-loader/issues",
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.5.0"
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.2"
             },
-            "time": "2021-01-27T15:20:46+00:00"
+            "time": "2022-07-26T16:43:22+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
@@ -1008,49 +1079,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "jazzsequence/altis-cms",
-            "version": "9.0.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/altis-cms.git",
-                "reference": "1428743ebb9d393f2c2e2e466f3f90c909b63b05"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jazzsequence/altis-cms/zipball/1428743ebb9d393f2c2e2e466f3f90c909b63b05",
-                "reference": "1428743ebb9d393f2c2e2e466f3f90c909b63b05",
-                "shasum": ""
-            },
-            "require": {
-                "10up/simple-local-avatars": "~2.2.0",
-                "humanmade/altis-reusable-blocks": "~0.2.1",
-                "humanmade/asset-loader": "^0.5.0",
-                "humanmade/authorship": "~0.2.9",
-                "humanmade/clean-html": "^2.0.0",
-                "johnbillion/extended-cpts": "^4.5.2"
-            },
-            "type": "library",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Reynolds",
-                    "email": "me@chrisreynolds.io"
-                },
-                {
-                    "name": "Human Made",
-                    "email": "hello@humanmade.com"
-                }
-            ],
-            "description": "Altis CMS Module for jazzsequence.com",
-            "support": {
-                "source": "https://github.com/jazzsequence/altis-cms/tree/9.0.4.3",
-                "issues": "https://github.com/jazzsequence/altis-cms/issues"
-            },
-            "time": "2022-01-31T17:54:27+00:00"
-        },
-        {
             "name": "jazzsequence/artists",
             "version": "1.0.1",
             "source": {
@@ -1414,6 +1442,122 @@
             "time": "2021-06-04T09:56:25+00:00"
         },
         {
+            "name": "roots/wp-password-bcrypt",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wp-password-bcrypt.git",
+                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
+                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "brain/monkey": "^2.6",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "mockery/mockery": "^1.4",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpunit/phpunit": "<= 9.3",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "wp-password-bcrypt.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                },
+                {
+                    "name": "QWp6t",
+                    "homepage": "https://github.com/qwp6t"
+                },
+                {
+                    "name": "Brandon Nifong",
+                    "homepage": "https://github.com/log1x"
+                },
+                {
+                    "name": "Jan Pingel",
+                    "email": "jpingel@bitpiston.com",
+                    "homepage": "http://janpingel.com"
+                }
+            ],
+            "description": "WordPress plugin which replaces wp_hash_password and wp_check_password's phpass hasher with PHP 5.5's password_hash and password_verify using bcrypt.",
+            "homepage": "https://roots.io/plugins/wp-password-bcrypt",
+            "keywords": [
+                "bcrypt",
+                "passwords",
+                "wordpress"
+            ],
+            "support": {
+                "forum": "https://discourse.roots.io/",
+                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/rootsdev",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-10-31T01:18:58+00:00"
+        },
+        {
+            "name": "stuttter/wp-user-signups",
+            "version": "5.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stuttter/wp-user-signups.git",
+                "reference": "4ab0f705428c7997bdcd61eee9d34b7a5aeaee54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/4ab0f705428c7997bdcd61eee9d34b7a5aeaee54",
+                "reference": "4ab0f705428c7997bdcd61eee9d34b7a5aeaee54",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0",
+                "php": ">=5.2"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John James Jacoby",
+                    "email": "johnjamesjacoby@me.com"
+                }
+            ],
+            "description": "The best way to manage user & site sign-ups in WordPress",
+            "homepage": "https://github.com/stuttter/wp-user-signups",
+            "support": {
+                "issues": "https://github.com/stuttter/wp-user-signups/issues",
+                "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.2"
+            },
+            "time": "2021-05-29T20:49:58+00:00"
+        },
+        {
             "name": "symfony/finder",
             "version": "v6.0.11",
             "source": {
@@ -1724,15 +1868,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "12.9.0",
+            "version": "14.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/12.9.0"
+                "reference": "tags/14.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.12.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.14.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
