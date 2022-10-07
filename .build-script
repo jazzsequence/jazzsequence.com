@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+#====================#
+# Altis Build Script #
+#====================#
+
+# Install composer dependencies
+composer install --no-dev --optimize-autoloader --apcu-autoloader
+
+# Edit below this line to add any additional build steps.
+#
+# Learn more about build scripts in the Altis documentation:
+# https://www.altis-dxp.com/resources/docs/cloud/build-scripts/
