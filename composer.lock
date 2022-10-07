@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8492852b9e2c34f4ddb8ddc6338a4848",
+    "content-hash": "55ca3e6a512ac3199107b3898038830a",
     "packages": [
         {
             "name": "altis/browser-security",
