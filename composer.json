@@ -202,9 +202,9 @@
 		"wpackagist-theme/museum-core": "^2.1.6",
 		"wpackagist-theme/ryu": "^1.4",
 		"wpackagist-theme/twentynineteen": "^2.0",
-		"wpackagist-theme/twentyseventeen": "^2.4",
+		"wpackagist-theme/twentyseventeen": "^3.0",
 		"wpackagist-theme/twentytwentyone": "^1.1",
-		"wpackagist-theme/twentytwenty": "^1.6",
+		"wpackagist-theme/twentytwenty": "^2.0",
 		"wpackagist-theme/twentytwentytwo": "^1.0"
 	},
 	"replace":{

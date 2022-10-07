@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82d660ced514e834f6102c2f3190a6a0",
+    "content-hash": "c7623b6361059facd6580d844406fe85",
     "packages": [
         {
             "name": "altis/browser-security",
@@ -2156,15 +2156,15 @@
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "2.9",
+            "version": "3.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "2.9"
+                "reference": "3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.9.zip"
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2174,15 +2174,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwenty",
-            "version": "1.9",
+            "version": "2.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "1.9"
+                "reference": "2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.1.9.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
