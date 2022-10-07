@@ -37,7 +37,7 @@ function bootstrap() {
 }
 
 function admin_scripts() {
-  wp_add_inline_style( 'admin-color-scheme', '.update-nag.notice-warning.inline { display: none; }' );
+  wp_add_inline_style( 'admin-color-scheme', '.update-nag.notice-warning.inline { display: none !important; }' );
 }
 
 bootstrap();
