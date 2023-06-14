@@ -78,6 +78,10 @@
 			"url": "git@github.com:jazzsequence/altis-cms.git"
 		},
 		{
+			"type": "vcs",
+			"url": "git@github.com:jazzsequence/address-book.git"
+		},
+		{
 			"type": "package",
 			"package": {
 				"name": "jazzsequence/releases",
@@ -113,19 +117,6 @@
 					"type": "git",
 					"url": "https://github.com/jazzsequence/wp-show-tracker",
 					"reference": "tags/0.6"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/address-book",
-				"version": "0.3.2",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/address-book",
-					"reference": "tags/0.3.2"
 				}
 			}
 		},
