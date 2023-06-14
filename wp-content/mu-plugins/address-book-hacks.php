@@ -30,7 +30,7 @@
  * SOFTWARE.
  */
 
-namespace jz\Admin;
+namespace jz\ABHack;
 
 function bootstrap() {
 	remove_meta_box( 'wp_seo', 'ab_address', 'normal' );
