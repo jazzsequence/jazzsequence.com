@@ -26,7 +26,7 @@ add_action( 'muplugins_loaded', function() {
 require_once dirname( __FILE__, 3 ) . '/vendor/autoload.php';
 
 $hm_mu_plugins = array(
-	'cmb2/init.php',
+	'vendor/cmb2/cmb2/init.php',
 	'dashboard-changelog/plugin.php',
 );
 
