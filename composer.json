@@ -215,8 +215,8 @@
 			"if [ -f index.php ]; then cp index.php index.php.tmp; fi"
 		],
 		"post-update-cmd": [
-			"mv wp-config.php.bak wp-config.php",
-			"mv index.php.tmp index.php"
+			"if [ -f wp-config.php.bak ]; then mv wp-config.php.bak wp-config.php; fi",
+			"if [ -f index.php.tmp ]; then mv index.php.tmp index.php; fi"
 		],
 		"pre-install-cmd": "@pre-update-cmd",
 		"post-install-cmd": "@post-update-cmd"
