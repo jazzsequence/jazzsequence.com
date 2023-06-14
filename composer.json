@@ -216,6 +216,8 @@
 		"post-update-cmd": [
 			"mv wp-config.php.bak wp-config.php",
 			"mv index.php.tmp index.php"
-		]
+		],
+		"pre-install-cmd": "@pre-update-cmd",
+		"post-install-cmd": "@post-update-cmd"
 	}
 }
