@@ -33,7 +33,8 @@
 namespace jz\ABHack;
 
 function bootstrap() {
-	remove_meta_box( 'wp-seo', 'ab_address', 'normal' );
+	remove_meta_box( 'wp-seo', 'ab_address', 'advanced' );
+	remove_meta_box( 'wp_seo', 'ab_address', 'advanced' );
 }
 
 add_action( 'admin_menu', __NAMESPACE__ . '\\bootstrap' );
