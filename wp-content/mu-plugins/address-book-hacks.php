@@ -36,4 +36,4 @@ function bootstrap() {
 	remove_meta_box( 'wp_seo', 'ab_address', 'normal' );
 }
 
-add_action( 'muplugins_loaded', __NAMESPACE__ . '\\bootstrap' );
+add_action( 'admin_menu', __NAMESPACE__ . '\\bootstrap' );
