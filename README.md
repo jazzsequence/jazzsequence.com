@@ -24,5 +24,6 @@
 <!-- TODO -->
 <!--
 * Move my plugins that are composerized to packagist so I don't need to use them as composer repositories
-* composerize plugins that arne't already so we can move them to packagits
+* composerize plugins that arne't already so we can move them to packagist
+* move the deploy workflow off of DeployHQ and onto GitHub Actions
 -->
