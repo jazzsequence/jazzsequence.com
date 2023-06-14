@@ -189,7 +189,8 @@
 		"installer-paths": {
 			"wp-content/mu-plugins/{$name}": [
 				"type:wordpress-muplugin",
-				"jazzsequence/dashboard-changelog"
+				"jazzsequence/dashboard-changelog",
+				"cmb2/cmb2"
 			],
 			"wp-content/plugins/{$name}": ["type:wordpress-plugin"],
 			"wp-content/themes/{$name}": ["type:wordpress-theme"]
