@@ -211,8 +211,8 @@
 	},
 	"scripts": {
 		"pre-update-cmd": [
-			"cp wp-config.php wp-config.php.bak",
-			"cp index.php index.php.tmp"
+			"if [ -f wp-config.php ]; then cp wp-config.php wp-config.php.tmp; fi",
+			"if [ -f index.php ]; then cp index.php index.php.tmp; fi"
 		],
 		"post-update-cmd": [
 			"mv wp-config.php.bak wp-config.php",
