@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88b961eb74cd22cc813035eb98106935",
+    "content-hash": "ea455a4f1be02692475afa400dda9598",
     "packages": [
+        {
+            "name": "10up/simple-local-avatars",
+            "version": "2.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10up/simple-local-avatars.git",
+                "reference": "b8f84a76f22e55270b38632dc393afba99d98d0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10up/simple-local-avatars/zipball/b8f84a76f22e55270b38632dc393afba99d98d0e",
+                "reference": "b8f84a76f22e55270b38632dc393afba99d98d0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "10up/phpcs-composer": "dev-master",
+                "10up/wp_mock": "0.4.2",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "10up",
+                    "homepage": "https://10up.com/"
+                }
+            ],
+            "description": "Adds an avatar upload field to user profiles. Generates requested sizes on demand just like Gravatar!",
+            "homepage": "https://github.com/10up/simple-local-avatars",
+            "keywords": [
+                "10up",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/10up/simple-local-avatars/issues",
+                "source": "https://github.com/10up/simple-local-avatars"
+            },
+            "time": "2023-05-15T10:11:45+00:00"
+        },
         {
             "name": "altis/browser-security",
             "version": "2.0.2",
@@ -51,26 +96,25 @@
         },
         {
             "name": "altis/cms",
-            "version": "13.0.10",
+            "version": "15.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "5587910f9899344e85fd5a3285e7dd638c1f13fd"
+                "reference": "75fe124a4414aef86aeea1a62937e26de4fd9ee3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/5587910f9899344e85fd5a3285e7dd638c1f13fd",
-                "reference": "5587910f9899344e85fd5a3285e7dd638c1f13fd",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/75fe124a4414aef86aeea1a62937e26de4fd9ee3",
+                "reference": "75fe124a4414aef86aeea1a62937e26de4fd9ee3",
                 "shasum": ""
             },
             "require": {
+                "10up/simple-local-avatars": "~2.7.5",
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.3",
-                "humanmade/authorship": "~0.2.16",
                 "humanmade/clean-html": "^2.0.0",
-                "johnbillion/extended-cpts": "^4.5.2",
-                "johnpbloch/wordpress": "6.0.5",
+                "johnpbloch/wordpress": "6.2.2",
                 "php": ">=7.1",
                 "roots/wp-password-bcrypt": "1.1.0",
                 "stuttter/wp-user-signups": "^5.0.2"
@@ -81,7 +125,6 @@
                     "install-overrides": [
                         "10up/simple-local-avatars",
                         "stuttter/wp-user-signups",
-                        "humanmade/authorship",
                         "humanmade/altis-reusable-blocks",
                         "humanmade/asset-loader"
                     ]
@@ -117,9 +160,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/13.0.10"
+                "source": "https://github.com/humanmade/altis-cms/tree/15.0.3"
             },
-            "time": "2023-05-24T15:07:12+00:00"
+            "time": "2023-05-24T14:46:42+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -167,21 +210,21 @@
         },
         {
             "name": "altis/workflow",
-            "version": "13.0.4",
+            "version": "15.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-workflow.git",
-                "reference": "327b8e94246e695bb6893ccf34462995f805e5d2"
+                "reference": "b17d6389063876b19efdb5e47ea3b4e6b2e64b28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/327b8e94246e695bb6893ccf34462995f805e5d2",
-                "reference": "327b8e94246e695bb6893ccf34462995f805e5d2",
+                "url": "https://api.github.com/repos/humanmade/altis-workflow/zipball/b17d6389063876b19efdb5e47ea3b4e6b2e64b28",
+                "reference": "b17d6389063876b19efdb5e47ea3b4e6b2e64b28",
                 "shasum": ""
             },
             "require": {
-                "humanmade/publication-checklist": "~0.3.1",
-                "humanmade/workflows": "~0.4.8",
+                "humanmade/publication-checklist": "~0.3.0",
+                "humanmade/workflows": "~0.4.4",
                 "php": ">=7.1",
                 "yoast/duplicate-post": "~4.1.2"
             },
@@ -218,19 +261,68 @@
             "description": "Workflow module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-workflow/issues",
-                "source": "https://github.com/humanmade/altis-workflow/tree/13.0.4"
+                "source": "https://github.com/humanmade/altis-workflow/tree/15.0.0"
             },
-            "time": "2023-06-14T15:25:35+00:00"
+            "time": "2022-10-06T15:36:32+00:00"
         },
         {
             "name": "cmb2/cmb2",
-            "version": "v2.7.0",
+            "version": "v2.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CMB2/CMB2.git",
+                "reference": "4afc4bb7b92ab6d93aac2247c9a84af773e42532"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CMB2/CMB2/archive/v2.7.0.zip",
-                "reference": "v2.7.0"
+                "url": "https://api.github.com/repos/CMB2/CMB2/zipball/4afc4bb7b92ab6d93aac2247c9a84af773e42532",
+                "reference": "4afc4bb7b92ab6d93aac2247c9a84af773e42532",
+                "shasum": ""
             },
-            "type": "wordpress-muplugin"
+            "require": {
+                "php": ">5.2.4"
+            },
+            "require-dev": {
+                "apigen/apigen": "4.1.2",
+                "awesomemotive/am-cli-tools": ">=1.3.1",
+                "nette/utils": "2.5.3",
+                "phpunit/phpunit": "^6.5",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "suggest": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Sternberg",
+                    "email": "justin@dsgnwrks.pro",
+                    "homepage": "https://dsgnwrks.pro",
+                    "role": "Developer"
+                },
+                {
+                    "name": "WebDevStudios",
+                    "email": "contact@webdevstudios.com",
+                    "homepage": "https://github.com/WebDevStudios",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+            "homepage": "https://github.com/CMB2/CMB2",
+            "keywords": [
+                "metabox",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/CMB2/CMB2/issues",
+                "source": "http://wordpress.org/support/plugin/cmb2"
+            },
+            "time": "2022-02-22T14:15:16+00:00"
         },
         {
             "name": "composer/installers",
@@ -590,61 +682,6 @@
                 "source": "https://github.com/humanmade/asset-manager-framework/tree/0.13.5"
             },
             "time": "2023-03-01T15:42:57+00:00"
-        },
-        {
-            "name": "humanmade/authorship",
-            "version": "0.2.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humanmade/authorship.git",
-                "reference": "15768bc072fe1907255e345854390db4aba39d11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/authorship/zipball/15768bc072fe1907255e345854390db4aba39d11",
-                "reference": "15768bc072fe1907255e345854390db4aba39d11",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0",
-                "humanmade/asset-loader": "^0.5.0 || ^0.6.1",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "0.7.0",
-                "ergebnis/composer-normalize": "^2",
-                "humanmade/coding-standards": "1.1.1",
-                "php-stubs/wordpress-stubs": "^5.5",
-                "phpcompatibility/phpcompatibility-wp": "2.1.0",
-                "phpstan/phpstan": "0.12.57",
-                "phpunit/phpunit": "^9.5.20",
-                "roots/wordpress": "~5.9.0",
-                "squizlabs/php_codesniffer": "3.5.8",
-                "szepeviktor/phpstan-wordpress": "0.7.1",
-                "vlucas/phpdotenv": "^3",
-                "wp-cli/db-command": "^2",
-                "wp-phpunit/wp-phpunit": "~5.9.3",
-                "yoast/phpunit-polyfills": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "extra": {
-                "installer-paths": {
-                    "lib/{$name}/": [
-                        "humanmade/asset-loader"
-                    ]
-                },
-                "wordpress-install-dir": "tests/wordpress"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "description": "Authorship",
-            "support": {
-                "issues": "https://github.com/humanmade/authorship/issues",
-                "source": "https://github.com/humanmade/authorship/tree/0.2.16"
-            },
-            "time": "2023-05-11T20:01:23+00:00"
         },
         {
             "name": "humanmade/clean-html",
@@ -1070,13 +1107,38 @@
         },
         {
             "name": "jazzsequence/address-book",
-            "version": "0.3.2",
+            "version": "0.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazzsequence/address-book",
-                "reference": "tags/0.3.2"
+                "url": "https://github.com/jazzsequence/Address-Book.git",
+                "reference": "f412fbb8610d85fd9d56f621fb92fb5d8e63437b"
             },
-            "type": "wordpress-plugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jazzsequence/Address-Book/zipball/f412fbb8610d85fd9d56f621fb92fb5d8e63437b",
+                "reference": "f412fbb8610d85fd9d56f621fb92fb5d8e63437b",
+                "shasum": ""
+            },
+            "require": {
+                "cmb2/cmb2": "^2.10",
+                "johnbillion/extended-cpts": "^5.0"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "me@chrisreynolds.io"
+                }
+            ],
+            "description": "A WordPress plugin for storing and maintaining addresses.",
+            "support": {
+                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.4",
+                "issues": "https://github.com/jazzsequence/Address-Book/issues"
+            },
+            "time": "2023-06-14T19:18:21+00:00"
         },
         {
             "name": "jazzsequence/artists",
@@ -1233,33 +1295,151 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "johnbillion/extended-cpts",
-            "version": "4.5.2",
+            "name": "johnbillion/args",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "59ce9f4e0422512eec6f698ccba4a6a81b018fdb"
+                "url": "https://github.com/johnbillion/args.git",
+                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/59ce9f4e0422512eec6f698ccba4a6a81b018fdb",
-                "reference": "59ce9f4e0422512eec6f698ccba4a6a81b018fdb",
+                "url": "https://api.github.com/repos/johnbillion/args/zipball/1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
+                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
                 "shasum": ""
             },
             "require": {
-                "php": "^7 | ^8"
+                "php": ">=7.4"
             },
             "require-dev": {
-                "automattic/phpcs-neutron-standard": "1.6.0",
+                "ergebnis/json-printer": "^3.2",
+                "ergebnis/phpstan-rules": "^1.0",
+                "humanmade/coding-standards": "^1.1",
+                "johnbillion/falsey-assertequals-detector": "^3",
+                "phpdocumentor/reflection": "~4.0 || ~5.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.1",
+                "phpunit/phpunit": "^9.0",
+                "roots/wordpress-core-installer": "^1.0.0",
+                "roots/wordpress-full": "~6.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "args-shapes": [
+                    "--function=\"\\get_categories()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/category.php",
+                    "--function=\"\\get_comments()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/comment.php",
+                    "--function=\"\\get_posts()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\get_tags()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/category.php",
+                    "--function=\"\\get_terms()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\get_users()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/user.php",
+                    "--function=\"\\paginate_links()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/general-template.php",
+                    "--function=\"\\register_block_type()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/blocks.php",
+                    "--function=\"\\register_meta()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/meta.php",
+                    "--function=\"\\register_post_meta()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\register_post_status()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\register_post_type()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\register_rest_field()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/rest-api.php",
+                    "--function=\"\\register_taxonomy()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\register_term_meta()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\wp_count_terms()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\wp_die()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/functions.php",
+                    "--function=\"\\wp_dropdown_categories()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/category-template.php",
+                    "--function=\"\\wp_dropdown_languages()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/l10n.php",
+                    "--function=\"\\wp_generate_tag_cloud()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/category-template.php",
+                    "--function=\"\\wp_get_nav_menus()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/nav-menu.php",
+                    "--function=\"\\wp_get_object_terms()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\wp_insert_post()\" --param=postarr --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\wp_insert_term()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\wp_insert_user()\" --param=userdata --file=vendor/wordpress/wordpress/wp-includes/user.php",
+                    "--function=\"\\wp_nav_menu()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/nav-menu-template.php",
+                    "--function=\"\\wp_remote_get()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_remote_head()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_remote_post()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_remote_request()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_safe_remote_get()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_safe_remote_head()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_safe_remote_post()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_safe_remote_request()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/http.php",
+                    "--function=\"\\wp_update_post()\" --param=postarr --file=vendor/wordpress/wordpress/wp-includes/post.php",
+                    "--function=\"\\wp_update_term()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/taxonomy.php",
+                    "--function=\"\\wp_update_user()\" --param=userdata --file=vendor/wordpress/wordpress/wp-includes/user.php",
+                    "--method=\"\\WP_Block_Type::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-block-type.php",
+                    "--method=\"\\WP_Comment_Query::__construct()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-comment-query.php",
+                    "--method=\"\\WP_Customize_Control::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-customize-control.php",
+                    "--method=\"\\WP_Customize_Manager::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-customize-manager.php",
+                    "--method=\"\\WP_Customize_Panel::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-customize-panel.php",
+                    "--method=\"\\WP_Customize_Section::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-customize-section.php",
+                    "--method=\"\\WP_Customize_Setting::__construct()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-customize-setting.php",
+                    "--method=\"\\WP_Http::request()\" --param=args --file=vendor/wordpress/wordpress/wp-includes/class-wp-http.php",
+                    "--method=\"\\WP_Query::parse_query()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-query.php",
+                    "--method=\"\\WP_Term_Query::__construct()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-term-query.php",
+                    "--method=\"\\WP_User_Query::prepare_query()\" --param=query --file=vendor/wordpress/wordpress/wp-includes/class-wp-user-query.php"
+                ],
+                "wordpress-install-dir": "vendor/wordpress/wordpress"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Args\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John Blackbourn",
+                    "homepage": "https://johnblackbourn.com/"
+                }
+            ],
+            "description": "I don't want to get into an argument about this.",
+            "support": {
+                "issues": "https://github.com/johnbillion/args/issues",
+                "source": "https://github.com/johnbillion/args/tree/1.7.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/johnbillion",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-01T22:34:53+00:00"
+        },
+        {
+            "name": "johnbillion/extended-cpts",
+            "version": "5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnbillion/extended-cpts.git",
+                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
+                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
+                "shasum": ""
+            },
+            "require": {
+                "johnbillion/args": "^1.4.1",
+                "php": ">= 7.4.0"
+            },
+            "require-dev": {
+                "automattic/phpcs-neutron-standard": "1.7.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-                "johnbillion/falsey-assertequals-detector": "^2",
+                "johnbillion/falsey-assertequals-detector": "*",
+                "lucatume/wp-browser": "^3.0",
                 "phpcompatibility/phpcompatibility-wp": "^2",
-                "phpunit/phpunit": "^6",
-                "roots/wordpress": "^5.7.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9",
+                "roots/wordpress-core-installer": "^1.0.0",
+                "roots/wordpress-full": "~6.1.0",
+                "szepeviktor/phpstan-wordpress": "1.1.6",
                 "vlucas/phpdotenv": "^3",
-                "wp-cli/db-command": "^2.0",
-                "wp-coding-standards/wpcs": "2.3.0",
-                "wp-phpunit/wp-phpunit": "^5.7.0"
+                "wp-cli/core-command": "^2",
+                "wp-cli/db-command": "^2",
+                "wp-coding-standards/wpcs": "2.3.0"
             },
             "suggest": {
                 "seravo/wp-custom-bulk-actions": "Custom Bulk Actions",
@@ -1271,10 +1451,11 @@
             },
             "autoload": {
                 "files": [
-                    "extended-cpts.php"
+                    "functions.php"
                 ],
                 "psr-4": {
-                    "ExtCPTs\\Tests\\": "tests/phpunit"
+                    "ExtCPTs\\": "src",
+                    "ExtCPTs\\Tests\\": "tests/integration"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1291,7 +1472,7 @@
             "homepage": "https://github.com/johnbillion/extended-cpts/",
             "support": {
                 "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/4.5.2"
+                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.3"
             },
             "funding": [
                 {
@@ -1299,7 +1480,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-21T00:26:19+00:00"
+            "time": "2022-12-14T00:07:21+00:00"
         },
         {
             "name": "markjaquith/gifdrop",

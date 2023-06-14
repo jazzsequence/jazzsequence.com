@@ -135,9 +135,9 @@
 		}
 	],
 	"require": {
-		"altis/cms": "^13.0.0",
+		"altis/cms": "*",
 		"altis/browser-security": "*",
-		"altis/workflow": "^13.0.0",
+		"altis/workflow": "*",
 		"cmb2/cmb2": "*",
 		"humanmade/amf-unsplash": "*",
 		"humanmade/gaussholder": "*",
@@ -147,7 +147,7 @@
 		"humanmade/two-factor": "*",
 		"humanmade/wp-seo": "*",
 		"humanmade/wordpress-importer": "dev-master",
-		"jazzsequence/address-book": "^0.3.2",
+		"jazzsequence/address-book": "*",
 		"jazzsequence/artists": "*",
 		"jazzsequence/dashboard-changelog": "^1.1.0",
 		"jazzsequence/games-collector": "1.3.4",
