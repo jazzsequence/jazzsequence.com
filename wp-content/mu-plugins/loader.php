@@ -25,10 +25,8 @@ add_action( 'muplugins_loaded', function() {
 // Require the Composer autoloader.
 require_once dirname( __FILE__, 3 ) . '/vendor/autoload.php';
 
-// Require CMB2.
-require_once dirname( __FILE__, 3 ) . '/vendor/cmb2/cmb2/init.php';
-
 $hm_mu_plugins = array(
+	'cmb2/init.php',
 	'dashboard-changelog/plugin.php',
 );
 
