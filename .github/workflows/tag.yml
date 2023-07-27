@@ -5,6 +5,9 @@ on:
       - main
 jobs:
   name: Tag Release
+  env:
+    GH_TOKEN: ${{ secrets.TOKEN }}
   run: |
     git config --global user.name "GitHub Robot"
     git config --global user.email "bot@dev.null"
+    bash ./bin/create_release.sh
