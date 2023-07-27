@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea455a4f1be02692475afa400dda9598",
+    "content-hash": "32a370a28785b7afb2cab94ed2e75f88",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "15.0.3",
+            "version": "16.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "75fe124a4414aef86aeea1a62937e26de4fd9ee3"
+                "reference": "3a23b258af2a09a1d0f88cce34297c70fbd9efe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/75fe124a4414aef86aeea1a62937e26de4fd9ee3",
-                "reference": "75fe124a4414aef86aeea1a62937e26de4fd9ee3",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/3a23b258af2a09a1d0f88cce34297c70fbd9efe7",
+                "reference": "3a23b258af2a09a1d0f88cce34297c70fbd9efe7",
                 "shasum": ""
             },
             "require": {
@@ -160,9 +160,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/15.0.3"
+                "source": "https://github.com/humanmade/altis-cms/tree/16.0.0"
             },
-            "time": "2023-05-24T14:46:42+00:00"
+            "time": "2023-05-24T14:45:06+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -1408,16 +1408,16 @@
         },
         {
             "name": "johnbillion/extended-cpts",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38"
+                "reference": "9188059dc74eb38ea8513bc093f640f78ade486c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
-                "reference": "4daaaef8acfff72f108e5f69c3f6cddb37b64a38",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/9188059dc74eb38ea8513bc093f640f78ade486c",
+                "reference": "9188059dc74eb38ea8513bc093f640f78ade486c",
                 "shasum": ""
             },
             "require": {
@@ -1460,7 +1460,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -1472,7 +1472,7 @@
             "homepage": "https://github.com/johnbillion/extended-cpts/",
             "support": {
                 "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.3"
+                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.4"
             },
             "funding": [
                 {
@@ -1480,7 +1480,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-14T00:07:21+00:00"
+            "time": "2023-06-23T20:59:13+00:00"
         },
         {
             "name": "markjaquith/gifdrop",
@@ -1610,15 +1610,15 @@
         },
         {
             "name": "wpackagist-plugin/altis-accelerate",
-            "version": "3.1.2",
+            "version": "3.1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/3.1.2"
+                "reference": "tags/3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.1.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.1.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1628,15 +1628,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "3.2.3",
+            "version": "3.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/3.2.3"
+                "reference": "tags/3.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.2.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.2.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1664,15 +1664,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "16.0.0",
+            "version": "16.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/16.0.0"
+                "reference": "tags/16.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.16.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.16.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1700,15 +1700,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "12.2.1",
+            "version": "12.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/12.2.1"
+                "reference": "tags/12.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.12.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.12.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1718,15 +1718,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.6.25",
+            "version": "3.6.28",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.6.25"
+                "reference": "tags/3.6.28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.6.25.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.6.28.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1736,15 +1736,15 @@
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.11.2",
+            "version": "2.11.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.11.2"
+                "reference": "tags/2.11.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.11.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.11.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2134,21 +2134,21 @@
         },
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.12.3",
+            "version": "3.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "35fbb43061737a9cf15dd5341710eea39aba27a1"
+                "reference": "e82322cb1f54348f0bc9d61a99f495c48862e43c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/35fbb43061737a9cf15dd5341710eea39aba27a1",
-                "reference": "35fbb43061737a9cf15dd5341710eea39aba27a1",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/e82322cb1f54348f0bc9d61a99f495c48862e43c",
+                "reference": "e82322cb1f54348f0bc9d61a99f495c48862e43c",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0 || ~2.0",
-                "php": ">=7.2.0"
+                "composer/installers": "^1.0 || ^2.0",
+                "php": ">=7.4.0"
             },
             "require-dev": {
                 "codeception/module-asserts": "^1.0",
@@ -2164,7 +2164,7 @@
                 "phpstan/phpstan-phpunit": "^1.0",
                 "roots/wordpress": "*",
                 "squizlabs/php_codesniffer": "3.7.1",
-                "szepeviktor/phpstan-wordpress": "1.1.6",
+                "szepeviktor/phpstan-wordpress": "1.3.0",
                 "wp-coding-standards/wpcs": "2.3.0"
             },
             "type": "wordpress-plugin",
@@ -2201,7 +2201,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-17T23:12:34+00:00"
+            "time": "2023-07-15T14:57:34+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
