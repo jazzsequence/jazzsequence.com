@@ -16,8 +16,9 @@ get_pr_details() {
 # Function to create a tag and release
 create_release() {
   local version="$1"
-  local release_notes="$2"
-  local release_date="$3"
+  local release_title="$2"
+  local release_notes="$3"
+  local release_date="$4"
 
   if [[ "${DRY_RUN}" == "true" ]]; then
     echo "Dry run enabled. Preview of release:"
@@ -45,8 +46,8 @@ get_current_version() {
   # Run gh release list and store the output in a variable
   release_list=$(gh release list)
 
-  # Extract the latest release number
-  latest_release=$(echo "$release_list" | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" | head -1)
+  # Extract the latest release number by finding the first numeric string after the word "Latest"
+  latest_release=$(echo "$release_list" | grep -o 'Latest[[:space:]]\+[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
 
   # Print the latest release number
   echo "${latest_release}"
@@ -124,6 +125,7 @@ if [[ -z "${merged_prs}" ]]; then
     release_title="${PR_TITLE_PREFIX} ${version}"
     release_notes="Release from previous release"
     release_date=$(date "+%B %d, %Y")
+    create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
   else
     echo "Warning: No merged PR found with a title following the pattern 'Release X.X.X'. Using manual version provided."
     version="${MANUAL_VERSION}"
@@ -131,6 +133,7 @@ if [[ -z "${merged_prs}" ]]; then
     release_title="${PR_TITLE_PREFIX} ${version}"
     release_notes="Manual release"
     release_date=$(date "+%B %d, %Y")
+    create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
   fi
 else
   # Loop through the merged PRs and extract information from each
@@ -147,7 +150,8 @@ else
 
     if [[ -z "${version}" ]]; then
       # If the version number is not found in the PR title, try to get it from the latest release
-      latest_release=$(get_current_version)
+      release_list=$(gh release list)
+      latest_release=$(echo "$release_list" | grep -o 'Latest[[:space:]]\+[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
       if [[ -z "${latest_release}" ]]; then
         echo "No version number found in the PR title, and no previous releases found."
         echo "Please provide a version number using --version option."
@@ -157,18 +161,17 @@ else
       version=$(increment_version "${pr_title}" "${pr_labels}")
       release_title=$(get_release_title "${pr_body}")
       release_notes="Release from previous release (No version found in PR title)"
+      release_date=$(date "+%B %d, %Y")
+      create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
     else
       # Determine the new version based on the labels and title
       version=$(increment_version "${pr_title}" "${pr_labels}")
       release_title=$(get_release_title "${pr_body}")
 
-      # Format the release notes with the PR body and current date
+      # Format the release notes with the PR body
+      release_notes="${pr_body}"
       release_date=$(date "+%B %d, %Y")
-      release_notes="${pr_body}
-Release Date: ${release_date}"
-
-      # Call the create_release function with the extracted information
-      create_release "${version}" "${release_notes}" "${release_date}"
+      create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
     fi
   done
 fi
