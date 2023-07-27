@@ -25,6 +25,10 @@ server-config.php
 /index.php
 readme.html
 
+# Backup files
+index.php.tmp
+wp-config.php.bak
+
 # Don't ignore packages
 !packages/*
 !packages/jz-222/index.php
