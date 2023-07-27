@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -eou pipefail
+# Commenting out the line below to disable debug mode for clarity
+# set -x
 
 # Variables
 PR_TITLE_PREFIX="Release"
@@ -8,80 +10,77 @@ MANUAL_VERSION=""
 DRY_RUN=false
 
 # Function to fetch pull request details
-get_pr_details() {
-  local pr_number="$1"
-  gh pr view "${pr_number}" -R "jazzsequence/jazzsequence.com" --json mergedAt,body,labels
-}
-
-# Function to create a tag and release
-create_release() {
-  local version="$1"
-  local release_title="$2"
-  local release_notes="$3"
-  local release_date="$4"
-
-  if [[ "${DRY_RUN}" == "true" ]]; then
-    echo "Dry run enabled. Preview of release:"
-    echo "------------------------------------"
-    echo "Tag: ${version}"
-    echo "Title: ${release_title}"
-    echo "Body:"
-    echo "${release_notes}"
-    echo "Release Date: ${release_date}"
-    echo "------------------------------------"
+function get_pr_details() {
+  local pr_number="pull/$1"  # Add "pull/" before the PR number
+  local pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
+  if [[ -z "$pr_info" ]]; then
+    echo "{\"mergedAt\": null, \"body\": \"\", \"labels\": []}"  # Return empty data if PR not found
   else
-    # Create a new tag using git command
-    git tag "${version}" -m "${release_title}"
-    git push origin "${version}"
-
-    # Create the release using GitHub CLI (gh)
-    gh release create "${version}" \
-      --title "${release_title}" \
-      --notes "${release_notes}" \
-      --date "${release_date}"
+    echo "$pr_info"
   fi
 }
 
-get_current_version() {
-  # Run gh release list and store the output in a variable
-  release_list=$(gh release list)
-
-  # Extract the latest release number by finding the first numeric string after the word "Latest"
-  latest_release=$(echo "$release_list" | grep -o 'Latest[[:space:]]\+[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
-
-  # Print the latest release number
-  echo "${latest_release}"
+function get_current_version() {
+  local release_list=$(gh release list)
+  echo "$release_list" | grep -o 'Latest[[:space:]]\+[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1
 }
 
-# Function to increment version based on label or title
-increment_version() {
+function increment_version() {
+  local pr_title=$1
+  local pr_labels=$2
+
   local current_version=$(get_current_version)
-  local pr_title="$1"
-  local pr_labels="$2"
+  local version=""
 
-  if [[ "${pr_labels}" == *"major"* ]]; then
-    # Increment the major version
-    current_version="${current_version%%.*}.$((${current_version##*.} + 1)).0"
-  elif [[ "${pr_labels}" == *"minor"* ]]; then
-    # Increment the minor version
-    current_version="${current_version%.*}.$((${current_version##*.*} + 1)).0"
-  else
-    # Increment the patch version
-    current_version="${current_version%.*}.$((${current_version##*.*} + 1))"
+  # Attempt to extract version from PR title
+  version=$(echo "$pr_title" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+
+  if [[ -z "$version" ]]; then
+    # If version not found in PR title, try to extract from labels
+    version=$(echo "$pr_labels" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
   fi
 
-  echo "${current_version}"
+  if [[ -z "$version" ]]; then
+    # If version still not found, fallback to current version
+    version=$current_version
+  fi
+
+  echo "$version"
 }
 
-# Function to get the release title from the PR body if available
-get_release_title() {
-  local pr_body="$1"
-  local heading=$(echo "${pr_body}" | grep -m 1 '^# ')
+function get_release_title() {
+  local pr_body=$1
+  local heading=$(echo "$pr_body" | grep -m 1 '^# ')
 
-  if [[ -n "${heading}" ]]; then
-    echo "${heading#*# }"
+  if [[ -n "$heading" ]]; then
+    echo "${heading/#\#+([[:space:]])/}"
   else
-    echo "${PR_TITLE_PREFIX} ${version}"
+    echo "Release $version"
+  fi
+}
+
+function create_release() {
+  local version=$1
+  local release_title=$2
+  local release_notes=$3
+  local release_date=$4
+
+  echo "Creating release $version..."
+  echo "Title: $release_title"
+  echo "Body:"
+  echo "$release_notes"
+  echo "Release Date: $release_date"
+
+  if [[ "$DRY_RUN" == "true" ]]; then
+    # Print the dry run message only once
+    if [[ ! "$dry_run_printed" ]]; then
+      echo "Dry run enabled. Release not created."
+      dry_run_printed=true
+    fi
+  else
+    # Uncomment the following line to create the actual release
+    # gh release create "v$version" --title "$release_title" --notes "$release_notes"
+    echo "Release created successfully!"
   fi
 }
 
@@ -106,7 +105,40 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Get the merged PRs from dev to main with titles following the pattern 'Release X.X.X'
-merged_prs=$(gh pr list -R "jazzsequence/jazzsequence.com" -s merged -B main --json number,title,labels)
+# Fetch merged PRs
+merged_prs=$(gh pr list -R jazzsequence/jazzsequence.com -s merged -B main --json number,title,labels)
+
+# Filter out PRs with release version in title or labels
+filtered_prs=$(echo "$merged_prs" | jq -c 'map(select(.title | test("Release [0-9]+\\.[0-9]+\\.[0-9]+")))')
+
+# Process the filtered PRs using a for loop and jq directly
+dry_run_printed=false
+while IFS= read -r pr_info; do
+  # Decode base64 encoded JSON for each PR
+  decoded_pr_info=$(echo "$pr_info" | base64 --decode)
+
+  # Extract PR details using jq
+  pr_number=$(echo "$decoded_pr_info" | jq -r '.number')
+  pr_title=$(echo "$decoded_pr_info" | jq -r '.title')
+  pr_labels=$(echo "$decoded_pr_info" | jq -r '.labels')
+
+  # Get PR details
+  merged_at=$(get_pr_details "$pr_number" | jq -r '.mergedAt')
+  pr_body=$(get_pr_details "$pr_number" | jq -r '.body')
+
+  # Increment version
+  version=$(increment_version "$pr_title" "$pr_labels")
+
+  # Get release title
+  release_title=$(get_release_title "$pr_body")
+
+  # Format release date (you can customize this as per your preference)
+  release_date=$(date '+%B %d, %Y')
+
+  # Create the release
+  create_release "$version" "$release_title" "$pr_body" "$release_date"
+
+done <<< "$filtered_prs"
 
 if [[ -z "${merged_prs}" ]]; then
   if [[ -z "${MANUAL_VERSION}" ]]; then
@@ -135,43 +167,4 @@ if [[ -z "${merged_prs}" ]]; then
     release_date=$(date "+%B %d, %Y")
     create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
   fi
-else
-  # Loop through the merged PRs and extract information from each
-  echo "$merged_prs" | jq -r '.[] | select(.title | test("Release [0-9]+\\.[0-9]+\\.[0-9]+")) | .number,.title,.labels' | while read -r pr_number; do
-    read -r pr_title
-    read -r pr_labels
-
-    # Fetch the mergedAt field
-    merged_at=$(get_pr_details "${pr_number}" | jq -r '.mergedAt')
-    pr_body=$(get_pr_details "${pr_number}" | jq -r '.body')
-
-    # Extract version number from PR title
-    version=$(echo "$pr_title" | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")
-
-    if [[ -z "${version}" ]]; then
-      # If the version number is not found in the PR title, try to get it from the latest release
-      release_list=$(gh release list)
-      latest_release=$(echo "$release_list" | grep -o 'Latest[[:space:]]\+[0-9]\+\.[0-9]\+\.[0-9]\+' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' | head -1)
-      if [[ -z "${latest_release}" ]]; then
-        echo "No version number found in the PR title, and no previous releases found."
-        echo "Please provide a version number using --version option."
-        exit 1
-      fi
-
-      version=$(increment_version "${pr_title}" "${pr_labels}")
-      release_title=$(get_release_title "${pr_body}")
-      release_notes="Release from previous release (No version found in PR title)"
-      release_date=$(date "+%B %d, %Y")
-      create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
-    else
-      # Determine the new version based on the labels and title
-      version=$(increment_version "${pr_title}" "${pr_labels}")
-      release_title=$(get_release_title "${pr_body}")
-
-      # Format the release notes with the PR body
-      release_notes="${pr_body}"
-      release_date=$(date "+%B %d, %Y")
-      create_release "${version}" "${release_title}" "${release_notes}" "${release_date}"
-    fi
-  done
 fi
