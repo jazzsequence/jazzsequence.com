@@ -1,0 +1,10 @@
+name: Tag Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  name: Tag Release
+  run: |
+    git config --global user.name "GitHub Robot"
+    git config --global user.email "bot@dev.null"
