@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a370a28785b7afb2cab94ed2e75f88",
+    "content-hash": "f3517977fad4ddbe6aa475aad153c3a3",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1769,6 +1769,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/p3-profiler/"
+        },
+        {
+            "name": "wpackagist-plugin/patchstack",
+            "version": "2.1.25",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/patchstack/",
+                "reference": "tags/2.1.25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/patchstack.2.1.25.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/patchstack/"
         },
         {
             "name": "wpackagist-plugin/plugins-garbage-collector",
