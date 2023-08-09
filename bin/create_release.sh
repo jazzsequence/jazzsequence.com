@@ -28,7 +28,7 @@ function get_release_title() {
   heading=$(echo "$pr_body" | grep -m 1 '^# ')
   
   if [[ -n "$heading" ]]; then
-    echo "${heading//^# +/}"
+    echo "${heading/#\#+([[:space:]])/}"
   else
     echo ""
   fi
