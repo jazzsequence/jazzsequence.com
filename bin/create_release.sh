@@ -79,11 +79,12 @@ done
 # Fetch merged PRs
 merged_prs=$(gh pr list -R jazzsequence/jazzsequence.com -s merged -B main --json number,title,labels)
 
-# Filter out PRs with release version in title or labels
+# Filter out PRs with release version in title or labels and include full PR details
 filtered_prs=$(echo "$merged_prs" | jq -c 'map(select(.title | test("Release [0-9]+\\.[0-9]+\\.[0-9]+")))')
 
 # Check if there are any PRs with version patterns
 if [[ -z "$filtered_prs" ]]; then
+  echo "No PRs with version patterns found."
   # No PRs with version patterns found, check if there is a manual version provided
   if [[ -z "${MANUAL_VERSION}" ]]; then
     echo "Warning: No merged PR found with a title following the pattern 'Release X.X.X', and no manual version provided."
@@ -95,7 +96,9 @@ if [[ -z "$filtered_prs" ]]; then
     pr_body=""
   fi
 else
+  echo "Found PRs with version patterns."
   # Process the filtered PRs using a for loop and jq directly
+
   for pr_info in $(echo "$filtered_prs" | jq -r '.[] | @base64'); do
     # Decode base64 encoded JSON for each PR
     decoded_pr_info=$(echo "$pr_info" | base64 --decode)
@@ -103,7 +106,7 @@ else
     # Extract PR details using jq
     pr_number=$(echo "$decoded_pr_info" | jq -r '.number')
     pr_title=$(echo "$decoded_pr_info" | jq -r '.title')
-
+    echo "Processing PR #$pr_number: $pr_title"
     # Get PR details
     pr_body=$(get_pr_details "$pr_number" | jq -r '.body')
 
