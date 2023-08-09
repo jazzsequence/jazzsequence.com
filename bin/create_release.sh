@@ -96,7 +96,9 @@ if [[ -z "$filtered_prs" ]]; then
     pr_body=""
   fi
 else
-  echo "Found PRs with version patterns."
+  # Count the number of $filtered_prs.
+  pr_count=$(echo "$filtered_prs" | jq -r 'length')
+  echo "Found $pr_count PRs with versions in the title."
   # Process the filtered PRs using a for loop and jq directly
 
   for pr_info in $(echo "$filtered_prs" | jq -r '.[] | @base64'); do
@@ -114,7 +116,7 @@ else
       echo "$pr_info"  # Print the captured error message
       continue
     else 
-      echo "No problems found in the PR."
+      echo "No problems found in PR #$pr_number."
     fi
 
     # Clean up the pr_info JSON string
@@ -122,14 +124,11 @@ else
     # Extract PR body from the pr_info, replace "&" with "and", and perform other replacements
     pr_body=$(echo "$cleaned_pr_info" | jq -r '.body')
 
-    # Check if pr_body is not null or empty before proceeding
-    if [[ -n "$pr_body" ]]; then
-      echo "PR Body:"
-      echo "$pr_body"
-    else
-      echo "PR Body is empty or not found."
+    # Check if pr_body is empty.
+    if [[ -z "$pr_body" ]]; then
+      echo "Warning: PR Body is empty. Skipping release for PR #$pr_number."
+      continue
     fi
-
 
     # Extract release version from PR title
     version=$(echo "$pr_title" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
