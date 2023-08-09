@@ -23,12 +23,12 @@ function get_pr_details() {
 }
 
 function get_release_title() {
-  local pr_body=$1
-  local heading=''
+  local pr_body="$1"
+  local heading=""
   heading=$(echo "$pr_body" | grep -m 1 '^# ')
   
   if [[ -n "$heading" ]]; then
-    echo "${heading//\#+([[:space:]])/}"
+    echo "${heading//^# +/}"
   else
     echo ""
   fi
