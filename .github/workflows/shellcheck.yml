@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint
-        run: shellcheck -x -s ${{ github.action_path }}/bin/*.sh
+        run: shellcheck -x -s ${{ github.workspace }}/bin/*.sh
