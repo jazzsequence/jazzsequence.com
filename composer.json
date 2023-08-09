@@ -226,6 +226,7 @@
 		"post-install-cmd": "@post-update-cmd",
 		"shellcheck": [
 			"shellcheck bin/*.sh"
-		]
+		],
+		"dry-run-release": "bash bin/dry-run-release.sh"
 	}
 }
