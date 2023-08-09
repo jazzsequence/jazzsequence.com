@@ -10,13 +10,15 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Get version from version.json
         run: echo "VERSION=$(jq -r .version ./version.json)" >> $GITHUB_ENV
       - name: Create Tag & Release
         run: |
           git config --global user.name "GitHub Robot"
           git config --global user.email "bot@dev.null"
-          bash ${{ github.action_path }}/bin/create_release.sh --version $VERSION
+          bash ${{ github.workspace }}/bin/create_release.sh --version $VERSION
       - name: Post-release update to dev
         run: |
           git config --global user.name "GitHub Robot"
