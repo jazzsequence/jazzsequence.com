@@ -108,7 +108,28 @@ else
     pr_title=$(echo "$decoded_pr_info" | jq -r '.title')
     echo "Processing PR #$pr_number: $pr_title"
     # Get PR details
-    pr_body=$(get_pr_details "$pr_number" | jq -r '.body')
+    pr_info=$(get_pr_details "$pr_number" 2>&1)  # Redirect stderr to stdout
+    if [[ ! "$pr_info" ]]; then
+      echo "Error fetching PR details for PR #$pr_number:"
+      echo "$pr_info"  # Print the captured error message
+      continue
+    else 
+      echo "No problems found in the PR."
+    fi
+
+    # Clean up the pr_info JSON string
+    cleaned_pr_info=$(echo "$pr_info" | tr -d '\r\n' | sed 's/&/and/g')
+    # Extract PR body from the pr_info, replace "&" with "and", and perform other replacements
+    pr_body=$(echo "$cleaned_pr_info" | jq -r '.body')
+
+    # Check if pr_body is not null or empty before proceeding
+    if [[ -n "$pr_body" ]]; then
+      echo "PR Body:"
+      echo "$pr_body"
+    else
+      echo "PR Body is empty or not found."
+    fi
+
 
     # Extract release version from PR title
     version=$(echo "$pr_title" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
