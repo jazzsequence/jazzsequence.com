@@ -28,7 +28,7 @@ function get_release_title() {
   heading=$(echo "$pr_body" | grep -m 1 '^# ')
   
   if [[ -n "$heading" ]]; then
-    echo "${heading}" | sed 's/^# *//'
+    echo "${heading}" | sed -e 's/^#[[:space:]]*//'
   else
     echo ""
   fi
