@@ -47,7 +47,7 @@ function create_release() {
     echo "Dry run enabled. Release not created."
   else
     # Uncomment the following line to create the actual release
-    # gh release create "v$version" --title "$release_title" --notes "$release_notes"
+    gh release create "$version" --title "$release_title" --notes "$release_notes"
     echo "Release created successfully!"
   fi
 }

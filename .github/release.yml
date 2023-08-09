@@ -1,13 +1,14 @@
 # .github/release.yml
 changelog:
-  - title: Major Updates
-    labels:
-      - major
-      - breaking-change
-  - title: New Features
-    labels:
-      - feature
-      - enhancement
-  - title: Other Changes
-    labels:
-      - "*"
+  categories:
+    - title: Major Updates
+      labels:
+        - major
+        - breaking-change
+    - title: New Features
+      labels:
+        - feature
+        - enhancement
+    - title: Other Changes
+      labels:
+        - "*"
