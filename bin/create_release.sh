@@ -12,7 +12,7 @@ DRY_RUN=false
 
 # Function to fetch pull request details
 function get_pr_details() {
-  local pr_number="pull/$1"  # Add "pull/" before the PR number
+  local pr_number="$1"  # Add "pull/" before the PR number
   local pr_info=''
   pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
   if [[ -z "$pr_info" ]]; then
