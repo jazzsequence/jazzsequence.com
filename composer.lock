@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3517977fad4ddbe6aa475aad153c3a3",
+    "content-hash": "09560744754adf2017caa48322c4b4ac",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1296,16 +1296,16 @@
         },
         {
             "name": "johnbillion/args",
-            "version": "1.7.2",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/args.git",
-                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc"
+                "reference": "8fa173a4d830ef2ce2f22679d3d09eb03bea95a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/args/zipball/1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
-                "reference": "1aa5ff807b096a8e449f1401d2ebfba53b3258bc",
+                "url": "https://api.github.com/repos/johnbillion/args/zipball/8fa173a4d830ef2ce2f22679d3d09eb03bea95a9",
+                "reference": "8fa173a4d830ef2ce2f22679d3d09eb03bea95a9",
                 "shasum": ""
             },
             "require": {
@@ -1322,7 +1322,7 @@
                 "phpstan/phpstan-strict-rules": "^1.1",
                 "phpunit/phpunit": "^9.0",
                 "roots/wordpress-core-installer": "^1.0.0",
-                "roots/wordpress-full": "~6.2.0"
+                "roots/wordpress-full": "~6.3.0"
             },
             "type": "library",
             "extra": {
@@ -1396,7 +1396,7 @@
             "description": "I don't want to get into an argument about this.",
             "support": {
                 "issues": "https://github.com/johnbillion/args/issues",
-                "source": "https://github.com/johnbillion/args/tree/1.7.2"
+                "source": "https://github.com/johnbillion/args/tree/1.8.0"
             },
             "funding": [
                 {
@@ -1404,7 +1404,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-01T22:34:53+00:00"
+            "time": "2023-08-08T22:06:15+00:00"
         },
         {
             "name": "johnbillion/extended-cpts",
@@ -1610,15 +1610,15 @@
         },
         {
             "name": "wpackagist-plugin/altis-accelerate",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/3.1.4"
+                "reference": "tags/3.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.1.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.1.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1700,15 +1700,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "12.3",
+            "version": "12.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/12.3"
+                "reference": "tags/12.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.12.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.12.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2021,6 +2021,24 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentyone/"
+        },
+        {
+            "name": "wpackagist-theme/twentytwentythree",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentythree/",
+                "reference": "1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentythree.1.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentytwentythree/"
         },
         {
             "name": "wpackagist-theme/twentytwentytwo",
