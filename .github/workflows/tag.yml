@@ -5,10 +5,15 @@ on:
       - main
 jobs:
   tag:
-    name: Tag Release
+    name: Create Release
+    runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.TOKEN }}
-    run: |
-      git config --global user.name "GitHub Robot"
-      git config --global user.email "bot@dev.null"
-      bash ./bin/create_release.sh
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Get version from version.json
+        run: echo "VERSION=$(jq -r .version ./version.json)" >> $GITHUB_ENV
+      - name: Create Tag & Release
+        run: |
+          git config --global user.name "GitHub Robot"
+          git config --global user.email "bot@dev.null"
+          bash ./bin/create_release.sh --version $VERSION

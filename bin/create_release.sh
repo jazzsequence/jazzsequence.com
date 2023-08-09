@@ -1,8 +1,9 @@
 #!/bin/bash
-
 set -eou pipefail
 # Commenting out the line below to disable debug mode for clarity
 # set -x
+
+# Usage: ./bin/create_release.sh [--dry-run] [--version <version>]
 
 # Variables
 PR_TITLE_PREFIX="Release"
@@ -47,7 +48,7 @@ function create_release() {
     echo "Dry run enabled. Release not created."
   else
     # Uncomment the following line to create the actual release
-    gh release create "$version" --title "$release_title" --notes "$release_notes"
+    gh release create "$version" --title "$release_title" --generate-notes "$release_notes"
     echo "Release created successfully!"
   fi
 }
