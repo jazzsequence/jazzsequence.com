@@ -12,9 +12,11 @@ jobs:
         run: composer shellcheck
   test-dry-run:
     runs-on: ubuntu-latest
+    env:
+      WORKSPACE_PATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: composer install
       - name: Test dry run
-        run: bash ${{ github.workspace }}/bin/dry-run-release.sh
+        run: bash $WORKSPACE_PATH/bin/dry-run-release.sh
