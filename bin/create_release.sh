@@ -47,7 +47,7 @@ function create_release() {
   echo "Release Date: $release_date"
 
   if [[ "$DRY_RUN" == "true" ]]; then
-    echo "Dry run enabled. Release not created."
+    echo "Dry run enabled. Release not created. Script executed successfully. Time for some tea. 🍵"
   else
     # Uncomment the following line to create the actual release
     gh release create "$version" --title "$release_title" --generate-notes "$release_notes"
