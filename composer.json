@@ -181,7 +181,8 @@
 		"wpackagist-theme/twentyseventeen": "*",
 		"wpackagist-theme/twentytwentyone": "*",
 		"wpackagist-theme/twentytwenty": "*",
-		"wpackagist-theme/twentytwentytwo": "*"
+		"wpackagist-theme/twentytwentytwo": "*",
+		"wpackagist-theme/twentytwentythree": "*"
 	},
 	"replace":{
 		"johnpbloch/wordpress": "*"
