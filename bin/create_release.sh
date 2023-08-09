@@ -142,8 +142,9 @@ else
   done
 fi
 
-# Get release title
+# Get release title and release notes from PR
 release_title=$(get_release_title "$pr_body")
+release_notes=$(echo "$pr_body" | sed '1d' | sed '1d')
 
 # Format release date (you can customize this as per your preference)
 release_date=$(date '+%B %d, %Y')
