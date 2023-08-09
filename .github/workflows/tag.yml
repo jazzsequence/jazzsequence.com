@@ -16,4 +16,12 @@ jobs:
         run: |
           git config --global user.name "GitHub Robot"
           git config --global user.email "bot@dev.null"
-          bash ./bin/create_release.sh --version $VERSION
+          bash ${{ github.action_path }}/bin/create_release.sh --version $VERSION
+      - name: Post-release update to dev
+        run: |
+          git config --global user.name "GitHub Robot"
+          git config --global user.email "bot@dev.null"
+          git checkout main && git pull
+          git checkout dev && git pull
+          git rebase main
+          git push origin dev
