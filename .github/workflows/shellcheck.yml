@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE_PATH: ${{ github.workspace }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: composer install
       - name: Test dry run
-        run: bash $WORKSPACE_PATH/bin/dry-run-release.sh
+        run: bash $WORKSPACE_PATH/bin/dry-run-release.sh /bin/bash
