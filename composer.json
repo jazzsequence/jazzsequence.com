@@ -174,7 +174,7 @@
 		"wpackagist-plugin/wpmovielibrary": "*",
 		"wpackagist-plugin/wp-syntax": "*",
 		"wpackagist-plugin/hello-ziggy": "*",
-		"wpackagist-plugin/patchstack": "^2.1",
+		"wpackagist-plugin/patchstack": "*",
 		"wpackagist-theme/museum-core": "*",
 		"wpackagist-theme/ryu": "*",
 		"wpackagist-theme/twentynineteen": "*",
