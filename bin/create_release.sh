@@ -150,4 +150,4 @@ release_notes=$(echo "$pr_body" | sed '1d' | sed '1d')
 release_date=$(date '+%B %d, %Y')
 
 # Create the release
-create_release "$version" "$release_title" "$pr_body" "$release_date"
+create_release "$version" "$release_title" "$release_notes" "$release_date"
