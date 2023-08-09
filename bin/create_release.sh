@@ -26,9 +26,9 @@ function get_release_title() {
   local pr_body=$1
   local heading=''
   heading=$(echo "$pr_body" | grep -m 1 '^# ')
-
+  
   if [[ -n "$heading" ]]; then
-    echo "${heading/#\#+([[:space:]])/}"
+    echo "${heading//\#+([[:space:]])/}"
   else
     echo ""
   fi
