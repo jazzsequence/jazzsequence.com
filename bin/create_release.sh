@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck shell=bash
 set -eou pipefail
 # Commenting out the line below to disable debug mode for clarity
 # set -x
@@ -6,14 +7,14 @@ set -eou pipefail
 # Usage: ./bin/create_release.sh [--dry-run] [--version <version>]
 
 # Variables
-PR_TITLE_PREFIX="Release"
 MANUAL_VERSION=""
 DRY_RUN=false
 
 # Function to fetch pull request details
 function get_pr_details() {
   local pr_number="pull/$1"  # Add "pull/" before the PR number
-  local pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
+  local pr_info=''
+  pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
   if [[ -z "$pr_info" ]]; then
     echo "{\"mergedAt\": null, \"body\": \"\", \"labels\": []}"  # Return empty data if PR not found
   else
@@ -23,7 +24,8 @@ function get_pr_details() {
 
 function get_release_title() {
   local pr_body=$1
-  local heading=$(echo "$pr_body" | grep -m 1 '^# ')
+  local heading=''
+  heading=$(echo "$pr_body" | grep -m 1 '^# ')
 
   if [[ -n "$heading" ]]; then
     echo "${heading/#\#+([[:space:]])/}"
@@ -101,10 +103,8 @@ else
     # Extract PR details using jq
     pr_number=$(echo "$decoded_pr_info" | jq -r '.number')
     pr_title=$(echo "$decoded_pr_info" | jq -r '.title')
-    pr_labels=$(echo "$decoded_pr_info" | jq -r '.labels')
 
     # Get PR details
-    merged_at=$(get_pr_details "$pr_number" | jq -r '.mergedAt')
     pr_body=$(get_pr_details "$pr_number" | jq -r '.body')
 
     # Extract release version from PR title
