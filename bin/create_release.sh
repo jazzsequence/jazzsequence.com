@@ -51,7 +51,7 @@ function create_release() {
   else
     # Uncomment the following line to create the actual release
     gh release create "$version" --title "$release_title" --generate-notes "$release_notes"
-    echo "Release created successfully!"
+    echo "Release created successfully! Time for some tea. 🍵"
   fi
 }
 

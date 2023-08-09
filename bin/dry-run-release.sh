@@ -2,7 +2,7 @@
 VERSION=$(jq -r .version ./version.json) 
 # If WORKSPACE_PATH is not set, set it to ./ (the current directory)
 WORKSPACE_PATH=${WORKSPACE_PATH:-./}
-echo \"Releasing "$VERSION"\"
+echo \"Dry running release "$VERSION"\"
 
 # Check if the create_release script exists before running it. If it does not, bail.
 if [[ ! -f "$WORKSPACE_PATH"/bin/create_release.sh ]]; then
