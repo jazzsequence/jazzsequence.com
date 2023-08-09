@@ -17,4 +17,4 @@ jobs:
       - name: Install dependencies
         run: composer install
       - name: Test dry run
-        run: composer dry-run-release
+        run: bash ${{ github.workspace }}/bin/dry-run-release.sh
