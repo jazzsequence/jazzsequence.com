@@ -29,8 +29,8 @@ jobs:
         run: |
           git clone https://github.com/bats-core/bats-core.git
           cd bats-core
-          ./install.sh $WORKSPACE_PATH/bin/bats        
+          ./install.sh ${{ github.workspace }}/bin/bats        
       - name: Run Bats tests
         run: |
-          cd $WORKSPACE_PATH/bin/bats
-          bats $WORKSPACE_PATH/bin/tests/*.bats
+          cd ${{ github.workspace }}/bin/bats
+          bats ${{ github.workspace }}/bin/tests/*.bats
