@@ -1,5 +1,5 @@
 # jazzsequence.com
-
+[![Test scripts](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml/badge.svg)](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml)
 ![jazzsequence.com 10 December, 2020](https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2020/12/10120020/Screen-Shot-2020-12-10-at-11.59.56-AM.png)
 
 ## Workflow
