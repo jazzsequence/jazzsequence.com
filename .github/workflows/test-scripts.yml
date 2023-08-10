@@ -1,8 +1,8 @@
-name: Shellcheck
+name: Test scripts
 on: 
   push:
 jobs:
-  lint:
+  shellcheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,3 +21,14 @@ jobs:
         run: composer install
       - name: Test dry run
         run: bash $WORKSPACE_PATH/bin/dry-run-release.sh /bin/bash
+  bats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Bats
+        run: |
+          git clone https://github.com/bats-core/bats-core.git
+          cd bats-core
+          ./install.sh /usr/local        
+      - name: Run Bats tests
+        run: bats $WORKSPACE_PATH/bin/tests/*.bats
