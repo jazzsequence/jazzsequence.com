@@ -1,6 +1,6 @@
 # Test that composer dry-run-release runs and exits with 0
 @test "test dry-run-release" {
-  run $COMPOSER dry-run-release
+  run composer dry-run-release
 
   # Test that the output contains a string that has a version number in "Creating release X.X.X..."
   [[ "${output[*]}" =~ "Creating release [0-9]+\.[0-9]+\.[0-9]+\\.{3}" ]]
