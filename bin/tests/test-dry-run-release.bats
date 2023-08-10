@@ -1,10 +1,5 @@
 #!/usr/bin/env bats
 set +x
-VERSION=$(jq -r .version $WORKSPACE_PATH/version.json) 
-if [[ ! -x "$WORKSPACE_PATH"/bin/create_release.sh ]]; then
-  echo "create_release.sh script is not executable. Adding +x."
-  chmod +x "$WORKSPACE_PATH"/bin/create_release.sh
-fi
 
 # Test that release dry-run runs and exits with 0
 @test "test dry-run" {

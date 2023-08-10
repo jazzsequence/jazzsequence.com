@@ -26,13 +26,20 @@ jobs:
     env:
       WORKSPACE_PATH: ${{ github.workspace }}
       GH_TOKEN: ${{ github.token }}
+      VERSION: $(jq -r .version ${{ github.workspace }}/version.json) 
     steps:
       - uses: actions/checkout@v3
       - name: Install Bats
         run: |
           git clone https://github.com/bats-core/bats-core.git
           cd bats-core
-          ./install.sh ${{ github.workspace }}/bin/bats        
+          ./install.sh ${{ github.workspace }}/bin/bats  
+      - name: Set +x
+        run: |
+          if [[ ! -x ${{ github.workspace }}/bin/create_release.sh ]]; then
+            echo "create_release.sh script is not executable. Adding +x."
+            chmod +x ${{ github.workspace }}/bin/create_release.sh
+          fi
       - name: Run Bats tests
         run: |
           cd ${{ github.workspace }}/bin/bats
