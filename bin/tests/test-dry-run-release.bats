@@ -2,12 +2,14 @@
 
 set +x
 
+load ../dry-run-release.sh
+
 # Test that composer dry-run-release runs and exits with 0
 @test "test dry-run-release" {
   run composer dry-run-release
+  echo $output
 
   # Test that the output contains a string that has a version number in "Creating release X.X.X..."
-  echo $output
   echo "$output" | grep -qE "Creating release [0-9]+\.[0-9]+\.[0-9]+..."
   [ "$status" -eq 0 ]
 
