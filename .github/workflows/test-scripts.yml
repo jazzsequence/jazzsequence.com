@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE_PATH: ${{ github.workspace }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
       - name: Install Bats
