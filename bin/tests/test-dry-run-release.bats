@@ -6,7 +6,7 @@ load ../dry-run-release.sh
 
 # Test that composer dry-run-release runs and exits with 0
 @test "test dry-run-release" {
-  run composer dry-run-release
+  run bash ../dry-run-release.sh
   echo $output
 
   # Test that the output contains a string that has a version number in "Creating release X.X.X..."
