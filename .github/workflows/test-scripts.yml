@@ -23,6 +23,8 @@ jobs:
         run: bash $WORKSPACE_PATH/bin/dry-run-release.sh /bin/bash
   bats:
     runs-on: ubuntu-latest
+    env:
+      WORKSPACE_PATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v3
       - name: Install Bats
