@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-+x
+set +x
 
 # Test that composer dry-run-release runs and exits with 0
 @test "test dry-run-release" {
