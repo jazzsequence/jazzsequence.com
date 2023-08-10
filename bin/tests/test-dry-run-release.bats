@@ -1,12 +1,10 @@
 #!/usr/bin/env bats
-
 set +x
+VERSION=$(jq -r .version $WORKSPACE_PATH/version.json) 
 
-load ../dry-run-release.sh
-
-# Test that composer dry-run-release runs and exits with 0
-@test "test dry-run-release" {
-  run bash ../dry-run-release.sh
+# Test that release dry-run runs and exits with 0
+@test "test dry-run" {
+  run "$WORKSPACE_PATH"/bin/create_release.sh --version "$VERSION" --dry-run
   echo $output
 
   # Test that the output contains a string that has a version number in "Creating release X.X.X..."
