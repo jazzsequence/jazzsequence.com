@@ -7,6 +7,7 @@ set +x
   run composer dry-run-release
 
   # Test that the output contains a string that has a version number in "Creating release X.X.X..."
+  echo $output
   echo "$output" | grep -qE "Creating release [0-9]+\.[0-9]+\.[0-9]+..."
   [ "$status" -eq 0 ]
 
