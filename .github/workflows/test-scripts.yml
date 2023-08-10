@@ -33,4 +33,5 @@ jobs:
       - name: Run Bats tests
         run: |
           cd ${{ github.workspace }}/bin/bats
+          ls -la
           bats ${{ github.workspace }}/bin/tests/*.bats
