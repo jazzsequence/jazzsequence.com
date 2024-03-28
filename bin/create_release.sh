@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 set -eou pipefail
 # Commenting out the line below to disable debug mode for clarity
-set -x
+# set -x
 
 # Usage: ./bin/create_release.sh [--dry-run] [--version <version>]
 
