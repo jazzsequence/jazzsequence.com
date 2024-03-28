@@ -10,18 +10,6 @@ set -eou pipefail
 MANUAL_VERSION=""
 DRY_RUN=false
 
-# Function to fetch pull request details
-function get_pr_details() {
-  local pr_number="$1"  # Add "pull/" before the PR number
-  local pr_info=''
-  pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
-  if [[ -z "$pr_info" ]]; then
-    echo "{\"mergedAt\": null, \"body\": \"\", \"labels\": []}"  # Return empty data if PR not found
-  else
-    echo "$pr_info"
-  fi
-}
-
 function get_release_title() {
   local pr_body="$1"
   local heading=""
@@ -110,19 +98,20 @@ else
     pr_title=$(echo "$decoded_pr_info" | jq -r '.title')
     echo "Processing PR #$pr_number: $pr_title"
     # Get PR details
-    pr_info=$(get_pr_details "$pr_number" 2>&1)  # Redirect stderr to stdout
+    pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json mergedAt,body,labels 2>/dev/null)
+ 
     if [[ ! "$pr_info" ]]; then
       echo "Error fetching PR details for PR #$pr_number:"
       echo "$pr_info"  # Print the captured error message
       continue
     else 
       echo "No problems found in PR #$pr_number."
+      # echo "Debug:"
+      # echo "$pr_info" | jq -r '.body | gsub("\r\n";"\n") | gsub("&";"and")'
     fi
 
-    # Clean up the pr_info JSON string
-    cleaned_pr_info=$(echo "$pr_info" | tr -d '\r\n' | sed 's/&/and/g')
     # Extract PR body from the pr_info, replace "&" with "and", and perform other replacements
-    pr_body=$(echo "$cleaned_pr_info" | jq -r '.body')
+    pr_body=$(echo "$pr_info" | jq -r '.body | gsub("\r\n";"\n") | gsub("&";"and")')
 
     # Check if pr_body is empty.
     if [[ -z "$pr_body" ]]; then
