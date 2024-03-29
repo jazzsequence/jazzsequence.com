@@ -8,14 +8,12 @@ WORDPRESS_ADMIN_USERNAME="testuser"
 WORDPRESS_ADMIN_PASSWORD="testpassword"
 TERMINUS_SITE="jazzsequence-sbox"
 TERMINUS_ENV="behat"
-SITE_ENV="${TERMINUS_SITE}.${TERMINUS_ENV}"
 
 if [ -z "$TERMINUS_MACHINE_TOKEN" ]; then
-	terminus auth:login --machine-token=$TERMINUS_MACHINE_TOKEN
+	terminus auth:login --machine-token="$TERMINUS_MACHINE_TOKEN"
 fi
 
-terminus whoami > /dev/null
-if [ $? -ne 0 ]; then
+if [ "$(terminus whoami)" -ne 0 ]; then
 	echo "Terminus unauthenticated; assuming unauthenticated build"
 	exit 0
 fi

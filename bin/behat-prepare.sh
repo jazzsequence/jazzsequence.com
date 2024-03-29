@@ -9,7 +9,7 @@ WORDPRESS_ADMIN_USERNAME="testuser"
 WORDPRESS_ADMIN_PASSWORD="testpassword"
 
 if [ -z "$TERMINUS_MACHINE_TOKEN" ]; then
-	terminus auth:login --machine-token=$TERMINUS_MACHINE_TOKEN
+	terminus auth:login --machine-token="$TERMINUS_MACHINE_TOKEN"
 fi
 
 ###
@@ -18,8 +18,7 @@ fi
 # such that it can be run a second time if a step fails.
 ###
 
-terminus whoami > /dev/null
-if [ $? -ne 0 ]; then
+if [ "$(terminus whoami)" -ne 0 ]; then
 	echo "Terminus unauthenticated; assuming unauthenticated build"
 	exit 0
 fi
@@ -46,14 +45,13 @@ terminus env:wipe $SITE_ENV --yes
 PANTHEON_GIT_URL=$(terminus connection:info $SITE_ENV --field=git_url)
 PANTHEON_SITE_URL="$TERMINUS_ENV-$TERMINUS_SITE.pantheonsite.io"
 PREPARE_DIR="/tmp/$TERMINUS_ENV-$TERMINUS_SITE"
-BASH_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ###
 # Switch to git mode for pushing the files up
 ###
 terminus connection:set $SITE_ENV git
 rm -rf $PREPARE_DIR
-git clone -b $TERMINUS_ENV $PANTHEON_GIT_URL $PREPARE_DIR
+git clone -b "$TERMINUS_ENV" "$PANTHEON_GIT_URL" "$PREPARE_DIR"
 
 PHP_VERSION="$(terminus env:info $SITE_ENV --field=php_version)"
 echo "PHP Version: $PHP_VERSION"

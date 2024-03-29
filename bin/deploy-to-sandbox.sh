@@ -17,6 +17,6 @@ git fetch sandbox
 git merge sandbox/master --allow-unrelated-histories
 git push sandbox sandbox:master --force
 
-bash $CURRENT_DIR/behat-prepare.sh
-bash $CURRENT_DIR/behat-test.sh
-bash $CURRENT_DIR/behat-cleanup.sh
+bash "$CURRENT_DIR"/behat-prepare.sh
+bash "$CURRENT_DIR"/behat-test.sh
+bash "$CURRENT_DIR"/behat-cleanup.sh
