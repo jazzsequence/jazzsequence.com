@@ -25,4 +25,7 @@ jobs:
           echo "Installing Composer dependencies"
           composer install
       - name: Sandbox Testing
+        env:
+          TERMINUS_MACHINE_TOKEN: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
+          SANDBOX_URL: ${{ secrets.SANDBOX_URL }}
         run: bash ./bin/deploy-to-sandbox.sh
