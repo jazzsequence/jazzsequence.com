@@ -10,6 +10,11 @@ if [[ -z "$SANDBOX_URL" ]]; then
   exit 1
 fi
 
+# Check if sandbox branch exists. If not, create it.
+if ! git show-ref --verify --quiet refs/heads/sandbox; then
+  git checkout -b sandbox
+fi
+
 git remote add sandbox "$SANDBOX_URL"
 git checkout dev && git pull
 git checkout sandbox && git merge dev
