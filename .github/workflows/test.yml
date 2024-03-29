@@ -24,8 +24,13 @@ jobs:
         run: |
           echo "Installing Composer dependencies"
           composer install
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Sandbox Testing
         env:
           TERMINUS_MACHINE_TOKEN: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
           SANDBOX_URL: ${{ secrets.SANDBOX_URL }}
+        shell: bash
         run: bash ./bin/deploy-to-sandbox.sh
