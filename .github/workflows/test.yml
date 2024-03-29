@@ -1,0 +1,25 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+      - dev
+  schedule: # once weekly
+    - cron: '0 0 * * 0'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Terminus
+        run: |
+          echo "Installing Terminus"
+          curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
+          php installer.phar install
+          terminus --version
+      - name: Install Composer dependencies
+        run: |
+          echo "Installing Composer dependencies"
+          composer install
+      - name: Sandbox Testing
+        run: bash ./bin/deploy-to-sandbox.sh
