@@ -201,8 +201,9 @@
 	},
 	"require-dev": {
 		"altis/local-server": "^9.0",
-        "johnbillion/wp-crontrol": "^1.16",
-        "johnbillion/query-monitor": "*"
+		"johnbillion/query-monitor": "*",
+		"johnbillion/wp-crontrol": "^1.16",
+		"pantheon-systems/pantheon-wordpress-upstream-tests": "dev-master"
 	},
 	"config": {
 		"allow-plugins": {
