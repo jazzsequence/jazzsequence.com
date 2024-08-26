@@ -1,5 +1,5 @@
 {
-    "name": "pantheon-systems/wordpress-composer-managed",
+    "name": "pantheon-systems/jazzsequence.com",
     "type": "project",
     "license": "MIT",
     "description": "Pantheon's recommended starting point for WordPress upstreams using the platform's Integrated Composer build process.",
@@ -55,6 +55,131 @@
         {
             "type": "path",
             "url": "upstream-configuration"
+        },
+        {
+          "type": "path",
+          "url": "./packages",
+          "symlinks": true
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/artists",
+            "version": "1.0.1",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/Artists",
+              "reference": "tags/1.0.1"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/cat-signal",
+            "version": "1.1.3",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/cat-signal",
+              "reference": "tags/1.1.3"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/games-collector",
+            "version": "1.3.4",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/games-collector",
+              "reference": "tags/1.3.4"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/notifications",
+            "version": "1.1.3",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/notifications",
+              "reference": "tags/1.1.3"
+            }
+          }
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:jazzsequence/recipe-box.git"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:jazzsequence/jz-222.git"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:jazzsequence/altis-cms.git"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:jazzsequence/address-book.git"
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/releases",
+            "version": "1.2.2",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/releases",
+              "reference": "1.2.2"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/reviews",
+            "version": "2.0.0",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/reviews",
+              "reference": "tags/2.0.0"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "jazzsequence/wp-show-tracker",
+            "version": "0.6",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/jazzsequence/wp-show-tracker",
+              "reference": "tags/0.6"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "markjaquith/gifdrop",
+            "version": "master",
+            "type": "wordpress-plugin",
+            "dist": {
+              "type": "zip",
+              "url": "https://github.com/markjaquith/gifdrop/archive/refs/heads/master.zip",
+              "reference": "master"
+            }
+          }
         }
     ],
     "require": {
@@ -72,17 +197,72 @@
         "pantheon-upstreams/upstream-configuration": "dev-main",
         "wpackagist-plugin/pantheon-advanced-page-cache": "*",
         "wpackagist-plugin/wp-native-php-sessions": "*",
-        "cweagans/composer-patches": "^1.7"
+        "cweagans/composer-patches": "^1.7",
+        "altis/browser-security": "*",
+        "altis/workflow": "*",
+        "cmb2/cmb2": "*",
+        "humanmade/amf-unsplash": "*",
+        "humanmade/gaussholder": "*",
+        "humanmade/hm-redirects": "*",
+        "humanmade/meta-tags": "*",
+        "humanmade/orphan-command": "*",
+        "humanmade/two-factor": "*",
+        "humanmade/wp-seo": "*",
+        "humanmade/wordpress-importer": "dev-master",
+        "jazzsequence/address-book": "*",
+        "jazzsequence/artists": "*",
+        "jazzsequence/dashboard-changelog": "*",
+        "jazzsequence/games-collector": "*",
+        "jazzsequence/jz-222": "dev-main",
+        "jazzsequence/recipe-box": "*",
+        "jazzsequence/releases": "*",
+        "jazzsequence/reviews": "*",
+        "jazzsequence/wp-show-tracker": "*",
+        "johnbillion/extended-cpts": "*",
+        "markjaquith/gifdrop": "dev-master",
+        "wpackagist-plugin/altis-accelerate": "*",
+        "wpackagist-plugin/amazon-s3-and-cloudfront": "*",
+        "wpackagist-plugin/glotpress": "*",
+        "wpackagist-plugin/gutenberg": "*",
+        "wpackagist-plugin/jetpack": "*",
+        "wpackagist-plugin/litespeed-cache": "*",
+        "wpackagist-plugin/ninja-forms": "*",
+        "wpackagist-plugin/organize-series": "*",
+        "wpackagist-plugin/p3-profiler": "*",
+        "wpackagist-plugin/plugins-garbage-collector": "*",
+        "wpackagist-plugin/progress-bar": "*",
+        "wpackagist-plugin/regenerate-thumbnails": "*",
+        "wpackagist-plugin/storyftw": "*",
+        "wpackagist-plugin/term-management-tools": "*",
+        "wpackagist-plugin/wpmovielibrary": "*",
+        "wpackagist-plugin/wp-syntax": "*",
+        "wpackagist-plugin/hello-ziggy": "*",
+        "wpackagist-plugin/patchstack": "*",
+        "wpackagist-theme/museum-core": "*",
+        "wpackagist-theme/ryu": "*",
+        "wpackagist-theme/twentynineteen": "*",
+        "wpackagist-theme/twentyseventeen": "*",
+        "wpackagist-theme/twentytwentyone": "*",
+        "wpackagist-theme/twentytwenty": "*",
+        "wpackagist-theme/twentytwentythree": "*",
+        "humanmade/clean-html": "*",
+        "humanmade/altis-reusable-blocks": "*",
+        "humanmade/asset-loader": "*",
+        "10up/simple-local-avatars": "*"
     },
     "require-dev": {
         "pantheon-systems/pantheon-wp-coding-standards": "*",
         "roave/security-advisories": "dev-latest",
-        "assertwell/shellcheck": "^1.0"
+        "assertwell/shellcheck": "^1.0",
+        "johnbillion/query-monitor": "*",
+        "johnbillion/wp-crontrol": "*",
+        "pantheon-systems/pantheon-wordpress-upstream-tests": "dev-master"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "process-timeout": 0,
+        "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
             "roots/wordpress-core-installer": true,
@@ -93,11 +273,15 @@
             "php": "8.1.13"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "installer-paths": {
-            "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "web/app/mu-plugins/{$name}/": [
+              "type:wordpress-muplugin",
+              "jazzsequence/dashboard-changelog",
+              "cmb2/cmb2"
+            ],
             "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
@@ -132,9 +316,13 @@
         "lint:php": ["php -l web/wp/wp-settings.php"],
         "lint:phpcs": ["vendor/bin/phpcs -s ."],
         "lint:phpcbf": ["vendor/bin/phpcbf ."],
-        "lint:bash": ["shellcheck private/scripts/*.sh"],
+        "lint:bash": [
+          "shellcheck bin/*.sh",
+          "shellcheck private/scripts/*.sh"
+        ],
         "test": [],
-        "post-update-cmd": ["WordPressComposerManaged\\ComposerScripts::postUpdate"]
+        "post-update-cmd": ["WordPressComposerManaged\\ComposerScripts::postUpdate"],
+        "dry-run-release": "bash bin/dry-run-release.sh"
     },
     "suggest": {
         "pantheon-systems/upstream-management": "Composer plugin that provides commands for managing custom upstreams on Pantheon."
