@@ -180,6 +180,32 @@
               "reference": "master"
             }
           }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "altis/accelerate",
+            "version": "3.2.5",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/humanmade/altis-accelerate-plugin",
+              "reference": "tags/3.2.5"
+            }
+          }
+        },
+        {
+          "type": "package",
+          "package": {
+            "name": "humanmade/altis-reusable-blocks",
+            "version": "0.2.4",
+            "type": "wordpress-plugin",
+            "source": {
+              "type": "git",
+              "url": "https://github.com/humanmade/altis-reusable-blocks",
+              "reference": "tags/v0.2.4"
+            }
+          }
         }
     ],
     "require": {
@@ -198,17 +224,14 @@
         "wpackagist-plugin/pantheon-advanced-page-cache": "*",
         "wpackagist-plugin/wp-native-php-sessions": "*",
         "cweagans/composer-patches": "^1.7",
+        "altis/accelerate": "*",
         "altis/browser-security": "*",
         "altis/workflow": "*",
         "cmb2/cmb2": "*",
-        "humanmade/amf-unsplash": "*",
-        "humanmade/gaussholder": "*",
-        "humanmade/hm-redirects": "*",
         "humanmade/meta-tags": "*",
         "humanmade/orphan-command": "*",
         "humanmade/two-factor": "*",
-        "humanmade/wp-seo": "*",
-        "humanmade/wordpress-importer": "dev-master",
+        "humanmade/altis-reusable-blocks": "*",
         "jazzsequence/address-book": "*",
         "jazzsequence/artists": "*",
         "jazzsequence/dashboard-changelog": "*",
@@ -246,7 +269,6 @@
         "wpackagist-theme/twentytwenty": "*",
         "wpackagist-theme/twentytwentythree": "*",
         "humanmade/clean-html": "*",
-        "humanmade/altis-reusable-blocks": "*",
         "humanmade/asset-loader": "*",
         "10up/simple-local-avatars": "*"
     },
@@ -304,8 +326,13 @@
         "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
     },
     "scripts": {
+        "make-packages-dir": "mkdir -p packages",
+        "pre-install-cmd": "@make-packages-dir",
         "post-install-cmd": "@maybe-create-symlinks",
-        "pre-update-cmd": ["WordPressComposerManaged\\ComposerScripts::preUpdate"],
+        "pre-update-cmd": [
+          "WordPressComposerManaged\\ComposerScripts::preUpdate",
+          "@make-packages-dir"
+        ],
         "install-sage": ["bash ./private/scripts/helpers.sh install_sage"],
         "maybe-create-symlinks": ["bash ./private/scripts/helpers.sh maybe_create_symlinks"],
         "lint": [
