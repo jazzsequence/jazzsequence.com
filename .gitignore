@@ -13,6 +13,9 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 
+# OCP auth.json
+auth.json
+
 # WordPress is installed in web/wp so that it can be fully managed by Composer.
 # This ensures that the WordPress directory is clean and doesn't contain any
 # files other than those that come with the WordPress package.
