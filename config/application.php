@@ -143,7 +143,7 @@ if ( ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) && ! in_array( $_ENV['PANTHEON_E
  * Object Cache Pro config
  */
 Config::define( 'WP_REDIS_CONFIG', [
-    'token' => 'dd9cc75fa72816fe69f8b3ccc7b8f68ab6043278921d52c3a7990c67aae3',
+    'token' => getenv( 'OCP_LICENSE' ),
 	'host' => getenv('CACHE_HOST') ?: '127.0.0.1',
 	'port' => getenv('CACHE_PORT') ?: 6379,
 	'database' => getenv('CACHE_DB') ?: 0,
