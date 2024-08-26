@@ -82,6 +82,8 @@ web/app/plugins/*
 # twenty-* themes by default. Any other Composer-managed themes should be
 # added to this list.
 web/app/themes/twenty*
+web/app/themes/ryu
+web/app/themes/museum-core
 
 # Other WordPress files and directories
 # Any other files or directories that should not be version controlled go here.
