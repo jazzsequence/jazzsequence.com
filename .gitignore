@@ -84,6 +84,7 @@ web/app/plugins/*
 web/app/themes/twenty*
 web/app/themes/ryu
 web/app/themes/museum-core
+web/app/themes/jz-222
 
 # Other WordPress files and directories
 # Any other files or directories that should not be version controlled go here.
