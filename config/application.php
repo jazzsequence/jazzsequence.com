@@ -140,6 +140,35 @@ if ( ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) && ! in_array( $_ENV['PANTHEON_E
 }
 
 /**
+ * Object Cache Pro config
+ */
+Config::define( 'WP_REDIS_CONFIG', [
+    'token' => 'dd9cc75fa72816fe69f8b3ccc7b8f68ab6043278921d52c3a7990c67aae3',
+	'host' => getenv('CACHE_HOST') ?: '127.0.0.1',
+	'port' => getenv('CACHE_PORT') ?: 6379,
+	'database' => getenv('CACHE_DB') ?: 0,
+	'password' => getenv('CACHE_PASSWORD') ?: null,
+	'maxttl' => 86400 * 7,
+	'timeout' => 0.5,
+	'read_timeout' => 0.5,
+	'split_alloptions' => true,
+	'prefetch' => true,
+	'debug' => false,
+	'save_commands' => false,
+	'analytics' => [
+		'enabled' => true,
+		'persist' => true,
+		'retention' => 3600, // 1 hour
+		'footnote' => true,
+	],
+	'prefix' => "ocppantheon", // This prefix can be changed. Setting a prefix helps avoid conflict when switching from other plugins like wp-redis.
+	'serializer' => 'igbinary',
+	'compression' => 'zstd',
+	'async_flush' => true,
+	'strict' => true,
+] );
+
+/**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
