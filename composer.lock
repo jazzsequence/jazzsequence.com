@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26087cbf184279b5fbfee0fd359eecb6",
+    "content-hash": "1f19ddcac8c7e06a94fa0a23dbb0a3d2",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1654,6 +1654,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
+        },
+        {
+            "name": "wpackagist-plugin/bv-pantheon-migration",
+            "version": "5.56",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/bv-pantheon-migration/",
+                "reference": "tags/5.56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/bv-pantheon-migration.5.56.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/bv-pantheon-migration/"
         },
         {
             "name": "wpackagist-plugin/glotpress",
