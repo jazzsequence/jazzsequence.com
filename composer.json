@@ -160,7 +160,7 @@
 		"markjaquith/gifdrop": "dev-master",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
-		"wpackagist-plugin/bv-pantheon-migration": "^5.56",
+		"wpackagist-plugin/bv-pantheon-migration": "*",
 		"wpackagist-plugin/glotpress": "*",
 		"wpackagist-plugin/gutenberg": "*",
 		"wpackagist-plugin/hello-ziggy": "*",
