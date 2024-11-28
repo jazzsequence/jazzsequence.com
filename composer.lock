@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85fc907595375cf7f85008b94bfdf521",
+    "content-hash": "6b9a982e4dff6d57bf0b0f4f12cf61ea",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1286,26 +1286,6 @@
             "time": "2020-11-16T17:43:04+00:00"
         },
         {
-            "name": "jazzsequence/releases",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/releases",
-                "reference": "1.2.2"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "jazzsequence/reviews",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/reviews",
-                "reference": "tags/2.0.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
             "name": "jazzsequence/wp-show-tracker",
             "version": "0.6",
             "source": {
@@ -1696,16 +1676,6 @@
             "time": "2024-11-14T14:59:43+00:00"
         },
         {
-            "name": "markjaquith/gifdrop",
-            "version": "master",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/markjaquith/gifdrop/archive/refs/heads/master.zip",
-                "reference": "master"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
             "name": "roots/wp-password-bcrypt",
             "version": "1.2.0",
             "source": {
@@ -1818,6 +1788,24 @@
             "time": "2021-05-29T20:49:58+00:00"
         },
         {
+            "name": "wpackagist-plugin/akismet",
+            "version": "5.3.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/akismet/",
+                "reference": "tags/5.3.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.3.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/akismet/"
+        },
+        {
             "name": "wpackagist-plugin/altis-accelerate",
             "version": "3.2.6",
             "source": {
@@ -1926,24 +1914,6 @@
             "homepage": "https://wordpress.org/plugins/hello-ziggy/"
         },
         {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "14.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/14.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.14.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
-        },
-        {
             "name": "wpackagist-plugin/litespeed-cache",
             "version": "6.5.2",
             "source": {
@@ -1996,24 +1966,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/organize-series/"
-        },
-        {
-            "name": "wpackagist-plugin/p3-profiler",
-            "version": "1.5.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/p3-profiler/",
-                "reference": "tags/1.5.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/p3-profiler.1.5.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/p3-profiler/"
         },
         {
             "name": "wpackagist-plugin/patchstack",
@@ -2786,8 +2738,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wordpress-importer": 20,
-        "jazzsequence/jz-222": 20,
-        "markjaquith/gifdrop": 20
+        "jazzsequence/jz-222": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
