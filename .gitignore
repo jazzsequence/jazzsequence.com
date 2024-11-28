@@ -42,6 +42,7 @@ images/
 # ignore node dependency directories
 node_modules/
 vendor/
+!content/plugins/autoblue/vendor/*
 
 # Ignore _misc folder
 _misc/
