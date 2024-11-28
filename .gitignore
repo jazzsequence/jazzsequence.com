@@ -10,6 +10,7 @@ wp-content/plugins/*
 !wp-content/plugins/js-*
 wp-content/themes/*
 !wp-content/themes/artbox
+!content/plugins/autoblue/vendor/*
 
 # Ignore core WordPress. We'll let those auto update
 wp-admin/*
