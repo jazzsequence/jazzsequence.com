@@ -6,6 +6,7 @@ wp-content/mu-plugins/*
 !wp-content/mu-plugins/address-book-hacks.php
 !wp-content/mu-plugins/loader.php
 !wp-content/mu-plugins/not-so-autoload.php
+!wp-content/mu-plugins/redirects.php
 wp-content/plugins/*
 !wp-content/plugins/js-*
 !wp-content/plugins/autoblue/**/*
