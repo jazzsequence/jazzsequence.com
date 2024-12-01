@@ -8,9 +8,9 @@ wp-content/mu-plugins/*
 !wp-content/mu-plugins/not-so-autoload.php
 wp-content/plugins/*
 !wp-content/plugins/js-*
+!wp-content/plugins/autoblue/**/*
 wp-content/themes/*
 !wp-content/themes/artbox
-!wp-content/plugins/autoblue/*
 
 # Ignore core WordPress. We'll let those auto update
 wp-admin/*
