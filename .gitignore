@@ -54,3 +54,4 @@ _misc/
 *.sql
 *.sqlite
 .vscode/settings.json
+.DS_Store
