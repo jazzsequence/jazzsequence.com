@@ -28,7 +28,6 @@ wp-*.php
 xmlrpc.php
 index.php
 server-config.php
-/index.php
 readme.html
 
 # Backup files
