@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "21.0.0",
+            "version": "22.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "1e391e455598f130e91b5112ea9b91849e3177d3"
+                "reference": "158aaa10c43ba598f9a01ccb339a177c77e4a510"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1e391e455598f130e91b5112ea9b91849e3177d3",
-                "reference": "1e391e455598f130e91b5112ea9b91849e3177d3",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/158aaa10c43ba598f9a01ccb339a177c77e4a510",
+                "reference": "158aaa10c43ba598f9a01ccb339a177c77e4a510",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.4",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.7.1",
+                "johnpbloch/wordpress": "6.7.2",
                 "php": ">=7.1",
                 "roots/wp-password-bcrypt": "1.2.0",
                 "stuttter/wp-user-signups": "^5.0.2"
@@ -160,9 +160,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/21.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/22.0.0"
             },
-            "time": "2024-11-21T16:29:12+00:00"
+            "time": "2025-02-19T17:37:14+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -1256,16 +1256,16 @@
         },
         {
             "name": "jazzsequence/recipe-box",
-            "version": "0.3.4",
+            "version": "0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/recipe-box.git",
-                "reference": "7615b65e342396f6bb20aed0604ffb876e64a709"
+                "reference": "554ebea8ae98e4a9bde9dd637dfe4ffca4a0314c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jazzsequence/recipe-box/zipball/7615b65e342396f6bb20aed0604ffb876e64a709",
-                "reference": "7615b65e342396f6bb20aed0604ffb876e64a709",
+                "url": "https://api.github.com/repos/jazzsequence/recipe-box/zipball/554ebea8ae98e4a9bde9dd637dfe4ffca4a0314c",
+                "reference": "554ebea8ae98e4a9bde9dd637dfe4ffca4a0314c",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -1280,10 +1280,10 @@
             ],
             "description": "Easily store and publish recipes in WordPress.",
             "support": {
-                "source": "https://github.com/jazzsequence/recipe-box/tree/0.3.4",
+                "source": "https://github.com/jazzsequence/recipe-box/tree/0.3.5",
                 "issues": "https://github.com/jazzsequence/recipe-box/issues"
             },
-            "time": "2020-11-16T17:43:04+00:00"
+            "time": "2025-01-23T05:21:21+00:00"
         },
         {
             "name": "jazzsequence/wp-show-tracker",
@@ -1783,15 +1783,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "5.3.5",
+            "version": "5.3.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/5.3.5"
+                "reference": "tags/5.3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.5.3.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.3.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1819,15 +1819,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "3.2.8",
+            "version": "3.2.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/3.2.8"
+                "reference": "tags/3.2.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.2.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.2.11.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1873,15 +1873,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "19.9.0",
+            "version": "20.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/19.9.0"
+                "reference": "tags/20.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.19.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.20.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1927,15 +1927,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.8.23",
+            "version": "3.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.8.23"
+                "reference": "tags/3.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.8.23.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.9.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1945,15 +1945,15 @@
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.12.0",
+            "version": "2.13.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.12.0"
+                "reference": "tags/2.13.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.12.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.13.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2361,16 +2361,16 @@
         },
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.17.0",
+            "version": "3.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "d4a6e4f5617b52a6033bb8038466ed87c0897e4e"
+                "reference": "e35dbc8ac937178d214c04552a0a802dacf6c79b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/d4a6e4f5617b52a6033bb8038466ed87c0897e4e",
-                "reference": "d4a6e4f5617b52a6033bb8038466ed87c0897e4e",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/e35dbc8ac937178d214c04552a0a802dacf6c79b",
+                "reference": "e35dbc8ac937178d214c04552a0a802dacf6c79b",
                 "shasum": ""
             },
             "require": {
@@ -2431,20 +2431,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-27T20:26:54+00:00"
+            "time": "2025-02-04T22:13:08+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
-            "version": "1.17.1",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/wp-crontrol.git",
-                "reference": "935132b5bcee5d70eb65c56104ff09ce36eb45cb"
+                "reference": "eb1a688c457d19a9bef9449eae93ff8495f227a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/935132b5bcee5d70eb65c56104ff09ce36eb45cb",
-                "reference": "935132b5bcee5d70eb65c56104ff09ce36eb45cb",
+                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/eb1a688c457d19a9bef9449eae93ff8495f227a9",
+                "reference": "eb1a688c457d19a9bef9449eae93ff8495f227a9",
                 "shasum": ""
             },
             "require": {
@@ -2504,7 +2504,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-22T16:44:19+00:00"
+            "time": "2025-01-13T18:33:37+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2525,12 +2525,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
