@@ -30,6 +30,10 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Test SSH Key
+        run: |
+          ssh -T git@github.com
+          ssh -T 
       - name: Sandbox Testing
         env:
           TERMINUS_MACHINE_TOKEN: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
