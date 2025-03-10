@@ -25,8 +25,8 @@ get_header();
 
 <?php endwhile;?>
 	<div class="navigation">
-		<div class="nav-previous alignleft"><?php previous_posts_link( '<< Recent Entries >>' ); ?></div>
-		<div class="nav-next alignright"><?php next_posts_link( '<< Older Entries' ); ?></div>
+		<div class="nav-previous alignleft"><?php previous_posts_link( '« Recent Entries' ); ?></div>
+		<div class="nav-next alignright"><?php next_posts_link( 'Older Entries »' ); ?></div>
 	</div>
 <?php else: ?>
 	<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
