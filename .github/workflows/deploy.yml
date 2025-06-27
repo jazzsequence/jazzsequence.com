@@ -35,6 +35,7 @@ jobs:
       - name: Deploy to Digital Ocean
         run: |
           rsync -avzi --progress \
+            --exclude='content' \
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \

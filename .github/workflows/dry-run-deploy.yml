@@ -35,6 +35,7 @@ jobs:
       - name: Dry Run Rsync
         run: |
           rsync -avzi --dry-run \
+            --exclude='content' \          
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \
