@@ -168,7 +168,7 @@
 		"jazzsequence/recipe-box": "*",
 		"jazzsequence/wp-show-tracker": "*",
 		"johnbillion/extended-cpts": "*",
-		"pantheon-systems/pantheon-content-publisher-for-wordpress": "*",
+		"pantheon-systems/pantheon-content-publisher-for-wordpress": "1.2.5",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
