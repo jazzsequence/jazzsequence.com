@@ -1,38 +1,37 @@
-name: Deploy
+name: Dry Run Deploy
 on:
   push:
     branches:
-      - main
-    paths-ignore:
-    - '.github/**'
-    - 'README.md'
-    - 'RELEASES.md'
-    - 'bin/**'
+      - dev
+
 jobs:
-  deploy:
-    name: Deploy to Digital Ocean
+  dry-run-deploy:
+    name: Dry Run Rsync to Digital Ocean
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install SSH keys
+
+      - name: Install SSH Key
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+
       - name: Setup Dashboard Changelog
         run: |
-          # This is a temporary fix if the build tools do not work
           DASHBOARD_CHANGELOG_PATH=wp-content/mu-plugins/dashboard-changelog
           FILE=${DASHBOARD_CHANGELOG_PATH}/vendor/erusev/parsedown/Parsedown.php
           if [ -f "$FILE" ]; then
             cd $DASHBOARD_CHANGELOG_PATH
             composer install --no-dev --no-progress
           fi
-      - name: Deploy to Digital Ocean
+
+      - name: Dry Run Rsync
         run: |
-          rsync -avz --progress --delete \
+          rsync -avz --dry-run --delete \
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \
