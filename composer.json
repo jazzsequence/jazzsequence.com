@@ -132,6 +132,10 @@
 					"reference": "master"
 				}
 			}
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:pantheon-systems/pantheon-content-publisher-for-wordpress.git"
 		}
 	],
 	"require": {
@@ -155,6 +159,7 @@
 		"jazzsequence/recipe-box": "*",
 		"jazzsequence/wp-show-tracker": "*",
 		"johnbillion/extended-cpts": "*",
+		"pantheon-systems/pantheon-content-publisher-for-wordpress": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
