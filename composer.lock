@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d5d12e7cded522fed651692fe6d50f8",
+    "content-hash": "b7a88ef9acfe5321e66d7f41d956af49",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -2127,6 +2127,24 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwenty/"
+        },
+        {
+            "name": "wpackagist-theme/twentytwentyfive",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentyfive/",
+                "reference": "1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentytwentyfive/"
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
