@@ -32,7 +32,7 @@ jobs:
           fi
       - name: Deploy to Digital Ocean
         run: |
-          rsync -avz --delete \
+          rsync -avz --progress --delete \
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \
