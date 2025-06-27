@@ -47,6 +47,9 @@ vendor/
 # Ignore _misc folder
 _misc/
 
+# ignore audio files
+audio/
+
 # ignore log files and databases
 *.log
 *.sql

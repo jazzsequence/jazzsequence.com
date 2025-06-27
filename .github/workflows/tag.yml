@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Get version from version.json
         run: echo "VERSION=$(jq -r .version ./version.json)" >> $GITHUB_ENV
-      - name: Create Tag & Release
+      - name: Set Git Config
         run: |
           git config --global user.name "GitHub Robot"
           git config --global user.email "bot@dev.null"
+      - name: Create Tag & Release
+        run: |
           bash ${{ github.workspace }}/bin/create_release.sh --version $VERSION
       - name: Post-release update to dev
         run: |
-          git config --global user.name "GitHub Robot"
-          git config --global user.email "bot@dev.null"
           git checkout main && git pull
           git checkout dev && git pull
           git rebase main
