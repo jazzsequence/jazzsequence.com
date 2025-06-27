@@ -1,5 +1,6 @@
 # jazzsequence.com
 [![Test scripts](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml/badge.svg)](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml)
+[![Dry Run Deploy](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/dry-run-deploy.yml/badge.svg)](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/dry-run-deploy.yml)
 
 ![jazzsequence.com 10 December, 2020](https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2020/12/10120020/Screen-Shot-2020-12-10-at-11.59.56-AM.png)
 
@@ -14,7 +15,6 @@
 * [GitHub Actions](https://docs.github.com/en/actions)
 * [Open LiteSpeed](https://openlitespeed.org/)
 * [Digital Ocean](https://m.do.co/c/36c3e7160e43)
-* [Deploy HQ](https://www.deployhq.com/r/8hnhpr)
 
 <!-- TODO -->
 <!--
