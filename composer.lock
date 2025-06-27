@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "22.0.0",
+            "version": "23.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "158aaa10c43ba598f9a01ccb339a177c77e4a510"
+                "reference": "c0afa918fa2ea131368d46c9da2c1a6521dd665b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/158aaa10c43ba598f9a01ccb339a177c77e4a510",
-                "reference": "158aaa10c43ba598f9a01ccb339a177c77e4a510",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/c0afa918fa2ea131368d46c9da2c1a6521dd665b",
+                "reference": "c0afa918fa2ea131368d46c9da2c1a6521dd665b",
                 "shasum": ""
             },
             "require": {
@@ -114,9 +114,8 @@
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.4",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.7.2",
-                "php": ">=7.1",
-                "roots/wp-password-bcrypt": "1.2.0",
+                "johnpbloch/wordpress": "6.8.1",
+                "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
             "type": "library",
@@ -160,9 +159,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/22.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/23.0.0"
             },
-            "time": "2025-02-19T17:37:14+00:00"
+            "time": "2025-05-06T13:18:28+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -764,20 +763,20 @@
         },
         {
             "name": "humanmade/hm-redirects",
-            "version": "0.7.3",
+            "version": "0.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/hm-redirects.git",
-                "reference": "8c20c38bd28757eabe3a8d717ec032907dd15f0e"
+                "reference": "7af22e6dd87a739d80c4a12eb86699dc98adbdbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/hm-redirects/zipball/8c20c38bd28757eabe3a8d717ec032907dd15f0e",
-                "reference": "8c20c38bd28757eabe3a8d717ec032907dd15f0e",
+                "url": "https://api.github.com/repos/humanmade/hm-redirects/zipball/7af22e6dd87a739d80c4a12eb86699dc98adbdbf",
+                "reference": "7af22e6dd87a739d80c4a12eb86699dc98adbdbf",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.0|^2.0",
                 "php": ">=5.4"
             },
             "require-dev": {
@@ -797,9 +796,9 @@
             ],
             "support": {
                 "issues": "https://github.com/humanmade/hm-redirects/issues",
-                "source": "https://github.com/humanmade/hm-redirects/tree/0.7.3"
+                "source": "https://github.com/humanmade/hm-redirects/tree/0.7.5"
             },
-            "time": "2024-04-22T15:03:46+00:00"
+            "time": "2025-05-21T11:48:38+00:00"
         },
         {
             "name": "humanmade/meta-tags",
@@ -1297,16 +1296,16 @@
         },
         {
             "name": "johnbillion/args",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/args.git",
-                "reference": "ef9b110c4379ded08300c5484e4fa67455697c5b"
+                "reference": "d13fe0c5388f66cfa9310a1940625c27347c38d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/args/zipball/ef9b110c4379ded08300c5484e4fa67455697c5b",
-                "reference": "ef9b110c4379ded08300c5484e4fa67455697c5b",
+                "url": "https://api.github.com/repos/johnbillion/args/zipball/d13fe0c5388f66cfa9310a1940625c27347c38d9",
+                "reference": "d13fe0c5388f66cfa9310a1940625c27347c38d9",
                 "shasum": ""
             },
             "require": {
@@ -1314,7 +1313,6 @@
             },
             "require-dev": {
                 "ergebnis/json-printer": "3.7.0",
-                "ergebnis/phpstan-rules": "1.0.0",
                 "humanmade/coding-standards": "1.2.1",
                 "johnbillion/falsey-assertequals-detector": "^3",
                 "phpdocumentor/reflection": "~4.0 || ~5.0",
@@ -1323,7 +1321,7 @@
                 "phpstan/phpstan-strict-rules": "1.6.1",
                 "phpunit/phpunit": "^9.0",
                 "roots/wordpress-core-installer": "1.100.0",
-                "roots/wordpress-full": "6.7",
+                "roots/wordpress-full": "6.8",
                 "szepeviktor/phpstan-wordpress": "1.3.5"
             },
             "type": "library",
@@ -1595,7 +1593,7 @@
             "description": "I don't want to get into an argument about this.",
             "support": {
                 "issues": "https://github.com/johnbillion/args/issues",
-                "source": "https://github.com/johnbillion/args/tree/2.2.1"
+                "source": "https://github.com/johnbillion/args/tree/2.2.2"
             },
             "funding": [
                 {
@@ -1603,20 +1601,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-30T23:22:24+00:00"
+            "time": "2025-04-16T18:09:01+00:00"
         },
         {
             "name": "johnbillion/extended-cpts",
-            "version": "5.0.11",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/extended-cpts.git",
-                "reference": "57f2e74155a12e7a37d07250e6739dbab5a732b3"
+                "reference": "20b7e9773b60f7301cd59ee520affa0ff63f90e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/57f2e74155a12e7a37d07250e6739dbab5a732b3",
-                "reference": "57f2e74155a12e7a37d07250e6739dbab5a732b3",
+                "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/20b7e9773b60f7301cd59ee520affa0ff63f90e6",
+                "reference": "20b7e9773b60f7301cd59ee520affa0ff63f90e6",
                 "shasum": ""
             },
             "require": {
@@ -1625,6 +1623,7 @@
             },
             "require-dev": {
                 "automattic/phpcs-neutron-standard": "1.7.0",
+                "behat/gherkin": "< 4.13.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
                 "johnbillion/falsey-assertequals-detector": "*",
                 "johnbillion/plugin-infrastructure": "dev-trunk",
@@ -1647,8 +1646,7 @@
                     "functions.php"
                 ],
                 "psr-4": {
-                    "ExtCPTs\\": "src",
-                    "ExtCPTs\\Tests\\": "tests/integration"
+                    "ExtCPTs\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1665,9 +1663,9 @@
             "homepage": "https://github.com/johnbillion/extended-cpts/",
             "support": {
                 "issues": "https://github.com/johnbillion/extended-cpts/issues",
-                "source": "https://github.com/johnbillion/extended-cpts/tree/5.0.11"
+                "source": "https://github.com/johnbillion/extended-cpts/tree/5.1.0"
             },
-            "time": "2024-11-30T23:16:17+00:00"
+            "time": "2025-06-18T21:18:03+00:00"
         },
         {
             "name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
@@ -1678,81 +1676,6 @@
                 "reference": "tags/v1.2.5"
             },
             "type": "wordpress-plugin"
-        },
-        {
-            "name": "roots/wp-password-bcrypt",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/bd26ab98aa646d88ce98c76e365d16259c5227a2",
-                "reference": "bd26ab98aa646d88ce98c76e365d16259c5227a2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "brain/monkey": "^2.6",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "mockery/mockery": "^1.4",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpunit/phpunit": "<= 9.3",
-                "squizlabs/php_codesniffer": "^3.5"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "wp-password-bcrypt.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "QWp6t",
-                    "homepage": "https://github.com/qwp6t"
-                },
-                {
-                    "name": "Brandon Nifong",
-                    "homepage": "https://github.com/log1x"
-                },
-                {
-                    "name": "Jan Pingel",
-                    "email": "jpingel@bitpiston.com",
-                    "homepage": "http://janpingel.com"
-                }
-            ],
-            "description": "WordPress plugin which replaces wp_hash_password and wp_check_password's phpass hasher with PHP 5.5's password_hash and password_verify using bcrypt.",
-            "homepage": "https://roots.io/plugins/wp-password-bcrypt",
-            "keywords": [
-                "bcrypt",
-                "passwords",
-                "wordpress"
-            ],
-            "support": {
-                "forum": "https://discourse.roots.io/",
-                "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.2.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-09-10T23:11:22+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1793,15 +1716,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "5.3.7",
+            "version": "5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/5.3.7"
+                "reference": "tags/5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.5.3.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1811,15 +1734,15 @@
         },
         {
             "name": "wpackagist-plugin/altis-accelerate",
-            "version": "3.2.7",
+            "version": "3.4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/3.2.7"
+                "reference": "tags/3.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.2.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.4.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1883,15 +1806,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "20.4.0",
+            "version": "21.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/20.4.0"
+                "reference": "tags/21.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.20.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.21.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1919,15 +1842,15 @@
         },
         {
             "name": "wpackagist-plugin/litespeed-cache",
-            "version": "6.5.4",
+            "version": "7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/litespeed-cache/",
-                "reference": "tags/6.5.4"
+                "reference": "tags/7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.6.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1937,15 +1860,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.9.1",
+            "version": "3.10.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.9.1"
+                "reference": "tags/3.10.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.10.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1973,15 +1896,15 @@
         },
         {
             "name": "wpackagist-plugin/patchstack",
-            "version": "2.2.13",
+            "version": "2.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/patchstack/",
-                "reference": "tags/2.2.13"
+                "reference": "tags/2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/patchstack.2.2.13.zip"
+                "url": "https://downloads.wordpress.org/plugin/patchstack.2.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2009,15 +1932,15 @@
         },
         {
             "name": "wpackagist-plugin/progress-bar",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/progress-bar/",
-                "reference": "tags/2.2.3"
+                "reference": "tags/2.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/progress-bar.2.2.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/progress-bar.2.2.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2153,15 +2076,15 @@
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "3.0",
+            "version": "3.1",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "3.0"
+                "reference": "3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.3.0.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.3.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2171,15 +2094,15 @@
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "3.8",
+            "version": "3.9",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "3.8"
+                "reference": "3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.3.8.zip"
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.3.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2189,15 +2112,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwenty",
-            "version": "2.8",
+            "version": "2.9",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "2.8"
+                "reference": "2.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.2.8.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.2.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2207,15 +2130,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "2.4",
+            "version": "2.5",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "2.4"
+                "reference": "2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.4.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2243,15 +2166,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentytwo",
-            "version": "1.9",
+            "version": "2.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentytwo/",
-                "reference": "1.9"
+                "reference": "2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.1.9.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2321,16 +2244,16 @@
     "packages-dev": [
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.17.2",
+            "version": "3.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "e35dbc8ac937178d214c04552a0a802dacf6c79b"
+                "reference": "08edec4f7bcd45cb92525d6375e9876c11eee1cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/e35dbc8ac937178d214c04552a0a802dacf6c79b",
-                "reference": "e35dbc8ac937178d214c04552a0a802dacf6c79b",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/08edec4f7bcd45cb92525d6375e9876c11eee1cd",
+                "reference": "08edec4f7bcd45cb92525d6375e9876c11eee1cd",
                 "shasum": ""
             },
             "require": {
@@ -2338,6 +2261,7 @@
                 "php": ">=7.4.0"
             },
             "require-dev": {
+                "behat/gherkin": "< 4.13.0",
                 "codeception/module-asserts": "^1.0",
                 "codeception/module-db": "^1.0",
                 "codeception/module-webdriver": "^1.0",
@@ -2391,20 +2315,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-04T22:13:08+00:00"
+            "time": "2025-06-16T15:28:52+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
-            "version": "1.18.0",
+            "version": "1.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/wp-crontrol.git",
-                "reference": "eb1a688c457d19a9bef9449eae93ff8495f227a9"
+                "reference": "3b51e7e80c02ca6cc73b87886b2220287ab88e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/eb1a688c457d19a9bef9449eae93ff8495f227a9",
-                "reference": "eb1a688c457d19a9bef9449eae93ff8495f227a9",
+                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/3b51e7e80c02ca6cc73b87886b2220287ab88e7d",
+                "reference": "3b51e7e80c02ca6cc73b87886b2220287ab88e7d",
                 "shasum": ""
             },
             "require": {
@@ -2418,13 +2342,13 @@
                 "codeception/util-universalframework": "^1.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "johnbillion/plugin-infrastructure": "dev-trunk",
-                "johnbillion/wp-compat": "0.2.3",
+                "johnbillion/wp-compat": "^1.2",
                 "lucatume/wp-browser": "3.2.1",
-                "phpcompatibility/phpcompatibility-wp": "2.1.5",
-                "phpstan/phpstan": "1.12.2",
+                "phpcompatibility/phpcompatibility-wp": "2.1.6",
+                "phpstan/phpstan": "2.1.12",
                 "roots/wordpress-core-installer": "1.100.0",
                 "roots/wordpress-full": "*",
-                "szepeviktor/phpstan-wordpress": "1.3.5",
+                "szepeviktor/phpstan-wordpress": "2.0.1",
                 "wp-coding-standards/wpcs": "3.1.0"
             },
             "type": "wordpress-plugin",
@@ -2464,7 +2388,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-13T18:33:37+00:00"
+            "time": "2025-06-03T14:59:36+00:00"
         }
     ],
     "aliases": [],
