@@ -134,8 +134,17 @@
 			}
 		},
 		{
-			"type": "vcs",
-			"url": "git@github.com:pantheon-systems/pantheon-content-publisher-for-wordpress.git"
+			"type": "package",
+			"package": {
+				"name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
+				"version": "1.2.5",
+				"type": "wordpress-plugin",
+				"source": {
+					"type": "git",
+					"url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress",
+					"reference": "tags/v1.2.5"
+				}
+			}
 		}
 	],
 	"require": {
@@ -202,14 +211,12 @@
 		}
 	},
 	"require-dev": {
-		"altis/local-server": "^9.0",
         "johnbillion/wp-crontrol": "^1.16",
         "johnbillion/query-monitor": "*"
 	},
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true,
-			"altis/local-server": true,
 			"johnpbloch/wordpress-core-installer": true,
 			"altis/cms-installer": true
 		},
