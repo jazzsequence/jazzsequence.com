@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7a88ef9acfe5321e66d7f41d956af49",
+    "content-hash": "211c9fe0053b83f2e47aa07fac5fb75d",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1670,9 +1670,9 @@
         {
             "name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
             "version": "1.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress/releases/download/v1.2.5/pantheon-content-publisher-for-wordpress.zip",
                 "reference": "tags/v1.2.5"
             },
             "type": "wordpress-plugin"
