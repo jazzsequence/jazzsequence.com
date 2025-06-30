@@ -228,16 +228,23 @@
 		}
 	},
 	"scripts": {
-		"pre-update-cmd": [
+		"backup-files": [
 			"if [ -f wp-config.php ]; then cp wp-config.php wp-config.php.bak; fi",
-			"if [ -f index.php ]; then cp index.php index.php.tmp; fi"
+			"if [ -f index.php ]; then cp index.php index.php.bak; fi"
+		],
+		"restore-backup-files": [
+			"if [ -f wp-config.php.bak ]; then mv wp-config.php.bak wp-config.php; fi",
+			"if [ -f index.php.bak ]; then mv index.php.bak index.php; fi",
+			"rm .build-script"
+		],
+		"pre-update-cmd": [
+			"@backup-files"
 		],
 		"post-update-cmd": [
-			"if [ -f wp-config.php.bak ]; then mv wp-config.php.bak wp-config.php; fi",
-			"if [ -f index.php.tmp ]; then mv index.php.tmp index.php; fi"
+			"@restore-backup-files"
 		],
-		"pre-install-cmd": "@pre-update-cmd",
-		"post-install-cmd": "@post-update-cmd",
+		"pre-install-cmd": "@backup-files",
+		"post-install-cmd": "@restore-backup-files",
 		"shellcheck": [
 			"shellcheck bin/*.sh"
 		],
