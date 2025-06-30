@@ -139,9 +139,9 @@
 				"name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
 				"version": "1.2.5",
 				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress/releases/download/v1.2.5/pantheon-content-publisher-for-wordpress.zip",
 					"reference": "tags/v1.2.5"
 				}
 			}
