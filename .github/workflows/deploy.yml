@@ -8,6 +8,7 @@ on:
     - 'README.md'
     - 'RELEASES.md'
     - 'bin/**'
+  workflow_dispatch:
 jobs:
   deploy:
     name: Deploy to Digital Ocean
