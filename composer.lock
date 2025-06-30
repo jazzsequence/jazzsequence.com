@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "211c9fe0053b83f2e47aa07fac5fb75d",
+    "content-hash": "9bbff4147b28c37ca2e412585c658106",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -2419,5 +2419,8 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.2"
+    },
     "plugin-api-version": "2.6.0"
 }
