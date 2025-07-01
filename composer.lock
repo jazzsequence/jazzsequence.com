@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bbff4147b28c37ca2e412585c658106",
+    "content-hash": "74ebdc71a31ac8bd722f6d0b5fcb4a9d",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1676,6 +1676,50 @@
                 "reference": "tags/v1.2.5"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "rhubarbgroup/object-cache-pro",
+            "version": "v1.24.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://objectcache.pro/plugin/object-cache-pro-1.24.2.zip?token=dd9cc75fa72816fe69f8b3ccc7b8f68ab6043278921d52c3a7990c67aae3",
+                "reference": "acfe64a924006cf62f6edc84e8e4770a091f3c91"
+            },
+            "require": {
+                "composer/installers": "~1.0 || ~2.0",
+                "ext-redis": ">=4.0.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "suggest": {
+                "ext-redis": "Required to use PhpRedis as the object cache backend.",
+                "ext-relay": "Required to use Relay as the object cache backend."
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "RedisCachePro\\": "src/"
+                },
+                "classmap": [
+                    "src/Support/Types.php",
+                    "src/Extensions/Debugbar/Panel.php",
+                    "src/Extensions/Debugbar/Insights.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                },
+                "exclude-from-classmap": [
+                    "tests/PHPStan/",
+                    "tests/bootstrap.php"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "A business class Redis object cache backend for WordPress.",
+            "homepage": "https://objectcache.pro",
+            "time": "2025-06-20T15:46:38+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",

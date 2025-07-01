@@ -145,6 +145,10 @@
 					"reference": "tags/v1.2.5"
 				}
 			}
+		},
+		{
+			"type": "composer",
+			"url": "https://objectcache.pro/repo/"			
 		}
 	],
 	"require": {
@@ -169,6 +173,7 @@
 		"jazzsequence/wp-show-tracker": "*",
 		"johnbillion/extended-cpts": "*",
 		"pantheon-systems/pantheon-content-publisher-for-wordpress": "1.2.5",
+		"rhubarbgroup/object-cache-pro": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
@@ -192,10 +197,10 @@
 		"wpackagist-theme/twentynineteen": "*",
 		"wpackagist-theme/twentyseventeen": "*",
 		"wpackagist-theme/twentytwenty": "*",
+		"wpackagist-theme/twentytwentyfive": "*",
 		"wpackagist-theme/twentytwentyone": "*",
 		"wpackagist-theme/twentytwentythree": "*",
-		"wpackagist-theme/twentytwentytwo": "*",
-		"wpackagist-theme/twentytwentyfive": "*"
+		"wpackagist-theme/twentytwentytwo": "*"
 	},
 	"replace":{
 		"johnpbloch/wordpress": "*"
