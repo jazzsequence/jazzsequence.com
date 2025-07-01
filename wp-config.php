@@ -9,6 +9,7 @@
 // arbitrary change
 // Load public and local server stuff.
 require_once __DIR__ . '/server-config.php';
+require_once __DIR__ . '/ocp-config.php';
 
 // Define WordPress constants.
 define( 'WP_CACHE', true ) ;
