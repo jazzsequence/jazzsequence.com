@@ -21,3 +21,9 @@ jobs:
       - name: Create Tag & Release
         run: |
           bash ${{ github.workspace }}/bin/create_release.sh --version $VERSION
+      - name: Sync dev branch with main
+        run: |
+          git fetch origin
+          git checkout dev
+          git reset --hard origin/main
+          git push --force origin dev
