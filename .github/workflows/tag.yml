@@ -21,9 +21,3 @@ jobs:
       - name: Create Tag & Release
         run: |
           bash ${{ github.workspace }}/bin/create_release.sh --version $VERSION
-      - name: Post-release update to dev
-        run: |
-          git checkout main && git pull
-          git checkout dev && git pull
-          git rebase main
-          git push origin dev
