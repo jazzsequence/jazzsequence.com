@@ -26,6 +26,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.4
+      - name: Setup auth.json
+        run: composer config --auth http-basic.objectcache.pro token ${{ secrets.OBJECTCACHE_PRO_TOKEN }}
       - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader --ignore-platform-reqs
       - name: Setup Dashboard Changelog

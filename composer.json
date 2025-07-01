@@ -145,6 +145,10 @@
 					"reference": "tags/v1.2.5"
 				}
 			}
+		},
+		{
+			"type": "composer",
+			"url": "https://objectcache.pro/repo/"			
 		}
 	],
 	"require": {
@@ -169,6 +173,7 @@
 		"jazzsequence/wp-show-tracker": "*",
 		"johnbillion/extended-cpts": "*",
 		"pantheon-systems/pantheon-content-publisher-for-wordpress": "1.2.5",
+		"rhubarbgroup/object-cache-pro": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
@@ -192,10 +197,10 @@
 		"wpackagist-theme/twentynineteen": "*",
 		"wpackagist-theme/twentyseventeen": "*",
 		"wpackagist-theme/twentytwenty": "*",
+		"wpackagist-theme/twentytwentyfive": "*",
 		"wpackagist-theme/twentytwentyone": "*",
 		"wpackagist-theme/twentytwentythree": "*",
-		"wpackagist-theme/twentytwentytwo": "*",
-		"wpackagist-theme/twentytwentyfive": "*"
+		"wpackagist-theme/twentytwentytwo": "*"
 	},
 	"replace":{
 		"johnpbloch/wordpress": "*"
@@ -228,16 +233,23 @@
 		}
 	},
 	"scripts": {
-		"pre-update-cmd": [
+		"backup-files": [
 			"if [ -f wp-config.php ]; then cp wp-config.php wp-config.php.bak; fi",
-			"if [ -f index.php ]; then cp index.php index.php.tmp; fi"
+			"if [ -f index.php ]; then cp index.php index.php.bak; fi"
+		],
+		"restore-backup-files": [
+			"if [ -f wp-config.php.bak ]; then mv wp-config.php.bak wp-config.php; fi",
+			"if [ -f index.php.bak ]; then mv index.php.bak index.php; fi",
+			"rm .build-script"
+		],
+		"pre-update-cmd": [
+			"@backup-files"
 		],
 		"post-update-cmd": [
-			"if [ -f wp-config.php.bak ]; then mv wp-config.php.bak wp-config.php; fi",
-			"if [ -f index.php.tmp ]; then mv index.php.tmp index.php; fi"
+			"@restore-backup-files"
 		],
-		"pre-install-cmd": "@pre-update-cmd",
-		"post-install-cmd": "@post-update-cmd",
+		"pre-install-cmd": "@backup-files",
+		"post-install-cmd": "@restore-backup-files",
 		"shellcheck": [
 			"shellcheck bin/*.sh"
 		],
