@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74ebdc71a31ac8bd722f6d0b5fcb4a9d",
+    "content-hash": "91d5c992a7f428e4c9cef6814773e438",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1127,16 +1127,16 @@
         },
         {
             "name": "jazzsequence/address-book",
-            "version": "0.3.4",
+            "version": "0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/Address-Book.git",
-                "reference": "f412fbb8610d85fd9d56f621fb92fb5d8e63437b"
+                "reference": "b779c6ede862a0fc895fa68a342ed55dc818aa82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jazzsequence/Address-Book/zipball/f412fbb8610d85fd9d56f621fb92fb5d8e63437b",
-                "reference": "f412fbb8610d85fd9d56f621fb92fb5d8e63437b",
+                "url": "https://api.github.com/repos/jazzsequence/Address-Book/zipball/b779c6ede862a0fc895fa68a342ed55dc818aa82",
+                "reference": "b779c6ede862a0fc895fa68a342ed55dc818aa82",
                 "shasum": ""
             },
             "require": {
@@ -1155,10 +1155,10 @@
             ],
             "description": "A WordPress plugin for storing and maintaining addresses.",
             "support": {
-                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.4",
+                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.5",
                 "issues": "https://github.com/jazzsequence/Address-Book/issues"
             },
-            "time": "2023-06-14T19:18:21+00:00"
+            "time": "2025-07-01T14:52:16+00:00"
         },
         {
             "name": "jazzsequence/artists",
