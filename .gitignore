@@ -26,7 +26,6 @@ license.txt
 wp-*.php
 !wp-config.php
 xmlrpc.php
-index.php
 server-config.php
 readme.html
 auth.json

@@ -10,6 +10,34 @@ set -eou pipefail
 MANUAL_VERSION=""
 DRY_RUN=false
 
+function wait_for_pr_merge() {
+  local expected_version="$1"
+  local max_attempts=30
+  local attempt=1
+  
+  echo "Waiting for PR 'Release $expected_version' to be available in merged PR list..."
+  
+  while [[ $attempt -le $max_attempts ]]; do
+    echo "Attempt $attempt/$max_attempts: Checking for merged PR..."
+    
+    # Check if PR with the expected version is in the merged list
+    merged_prs=$(gh pr list -R jazzsequence/jazzsequence.com -s merged -B main --json number,title,labels)
+    pr_found=$(echo "$merged_prs" | jq -r ".[] | select(.title == \"Release $expected_version\") | .number")
+    
+    if [[ -n "$pr_found" ]]; then
+      echo "✅ Found merged PR #$pr_found for Release $expected_version"
+      return 0
+    fi
+    
+    echo "⏳ PR not found in merged list yet, waiting 5 seconds..."
+    sleep 5
+    ((attempt++))
+  done
+  
+  echo "❌ Timeout: PR 'Release $expected_version' not found in merged PR list after $max_attempts attempts"
+  return 1
+}
+
 function get_release_title() {
   local pr_body="$1"
   local pr_title="$2"
@@ -77,12 +105,16 @@ done
 # Get the merged PRs from dev to main with titles following the pattern 'Release X.X.X'
 # Fetch merged PRs
 merged_prs=$(gh pr list -R jazzsequence/jazzsequence.com -s merged -B main --json number,title,labels)
+echo "DEBUG: All merged PRs:"
+echo "$merged_prs" | jq -r '.[] | "#\(.number): \(.title)"'
 
 # Filter out PRs with release version in title or labels and include full PR details
 filtered_prs=$(echo "$merged_prs" | jq -c 'map(select(.title | test("Release [0-9]+\\.[0-9]+\\.[0-9]+")))')
+echo "DEBUG: Filtered PRs matching release pattern:"
+echo "$filtered_prs" | jq -r '.[] | "#\(.number): \(.title)"'
 
 # Check if there are any PRs with version patterns
-if [[ -z "$filtered_prs" ]]; then
+if [[ -z "$filtered_prs" ]] || [[ "$filtered_prs" == "[]" ]]; then
   echo "No PRs with version patterns found."
   # No PRs with version patterns found, check if there is a manual version provided
   if [[ -z "${MANUAL_VERSION}" ]]; then
@@ -92,7 +124,27 @@ if [[ -z "$filtered_prs" ]]; then
   else
     version="${MANUAL_VERSION}"
     pr_title="Release ${MANUAL_VERSION}"
-    pr_body=""
+    # Set fallback first
+    pr_body="${pr_title}"
+
+    # Try to get the actual PR body
+    if wait_for_pr_merge "${MANUAL_VERSION}"; then
+      pr_number=$(echo "$merged_prs" | jq -r ".[] | select(.title == \"$pr_title\") | .number")
+      if [[ -n "$pr_number" ]]; then
+        pr_info=$(gh pr view "$pr_number" -R jazzsequence/jazzsequence.com --json body)
+        fetched_body=$(echo "$pr_info" | jq -r '.body | gsub("\r\n";"\n") | gsub("&";"and")')
+        if [[ -n "$fetched_body" && "$fetched_body" != "null" ]]; then
+          pr_body="$fetched_body"
+          echo "✅ Using PR body from #$pr_number"
+        else
+          echo "⚠️  PR body was empty, using fallback"
+        fi
+      else
+        echo "⚠️  Could not find PR number, using fallback"
+      fi
+    else
+      echo "⚠️  PR not found, using fallback release notes"
+    fi
   fi
 else
   # Count the number of $filtered_prs.
@@ -123,10 +175,12 @@ else
 
     # Extract PR body from the pr_info, replace "&" with "and", and perform other replacements
     pr_body=$(echo "$pr_info" | jq -r '.body | gsub("\r\n";"\n") | gsub("&";"and")')
+    echo "DEBUG: Raw PR body length: ${#pr_body}"
+    echo "DEBUG: First 200 chars of PR body: ${pr_body:0:200}"
 
     # Check if pr_body is empty.
-    if [[ -z "$pr_body" ]]; then
-      echo "Warning: PR Body is empty. Skipping release for PR #$pr_number."
+    if [[ -z "$pr_body" ]] || [[ "$pr_body" == "null" ]]; then
+      echo "Warning: PR Body is empty or null. Skipping release for PR #$pr_number."
       continue
     fi
 
