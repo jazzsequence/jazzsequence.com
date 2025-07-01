@@ -12,13 +12,15 @@ DRY_RUN=false
 
 function get_release_title() {
   local pr_body="$1"
+  local pr_title="$2"
   local heading=""
   heading=$(echo "$pr_body" | grep -m 1 '^# ')
   
   if [[ -n "$heading" ]]; then
     echo "${heading#*# }"
   else
-    echo ""
+    # Fallback to PR title if no heading found
+    echo "$pr_title"
   fi
 }
 
@@ -140,8 +142,14 @@ else
 fi
 
 # Get release title and release notes from PR
-release_title=$(get_release_title "$pr_body")
-release_notes=$(echo "$pr_body" | sed '1d' | sed '1d')
+release_title=$(get_release_title "$pr_body" "$pr_title")
+# If PR body starts with a title (# ), remove the title and blank line
+# Otherwise, use the full PR body as release notes
+if echo "$pr_body" | grep -q '^# '; then
+  release_notes=$(echo "$pr_body" | sed '1d' | sed '1d')
+else
+  release_notes="$pr_body"
+fi
 
 # Format release date (you can customize this as per your preference)
 release_date=$(date '+%B %d, %Y')
