@@ -29,6 +29,7 @@ xmlrpc.php
 index.php
 server-config.php
 readme.html
+auth.json
 
 # Backup files
 index.php.tmp
