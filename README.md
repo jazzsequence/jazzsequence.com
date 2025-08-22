@@ -2,7 +2,7 @@
 [![Test scripts](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml/badge.svg)](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/test-scripts.yml)
 [![Dry Run Deploy](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/dry-run-deploy.yml/badge.svg)](https://github.com/jazzsequence/jazzsequence.com/actions/workflows/dry-run-deploy.yml)
 
-![jazzsequence.com 10 December, 2020](https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2020/12/10120020/Screen-Shot-2020-12-10-at-11.59.56-AM.png)
+![jazzsequence.com 22 August, 2025](https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2025/08/22112833/Screenshot-2025-08-22-at-11.27.19-AM.png)
 
 ## Technologies
 [jazzsequence.com](https://jazzsequence.com) is powered by the following technologies:
