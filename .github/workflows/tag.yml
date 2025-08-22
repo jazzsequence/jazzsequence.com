@@ -22,7 +22,10 @@ jobs:
         run: |
           bash ${{ github.workspace }}/bin/create_release.sh --version $VERSION
       - name: Sync dev branch with main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN || github.token }}
         run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/jazzsequence/jazzsequence.com.git
           git fetch origin
           git checkout dev
           git reset --hard origin/main
