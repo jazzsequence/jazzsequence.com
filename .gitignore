@@ -14,7 +14,6 @@ wp-content/themes/*
 !wp-content/themes/artbox
 !wp-content/themes/artbox/index.php
 !wp-content/themes/artbox/images/*
-!wp-content/plugins/autoblue/vendor/*
 
 
 # Ignore core WordPress. We'll let those auto update
