@@ -11,7 +11,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Get version from version.json
         run: echo "VERSION=$(jq -r .version ./version.json)" >> $GITHUB_ENV
       - name: Set Git Config
