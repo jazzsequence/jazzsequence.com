@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c913d8785525c68ec736d91ff16ca6f",
+    "content-hash": "63889f8dcf082061ac820a4a58304ef8",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1384,38 +1384,6 @@
                 "source": "https://github.com/jazzsequence/recipe-box/tree/0.3.5"
             },
             "time": "2025-01-23T05:21:21+00:00"
-        },
-        {
-            "name": "jazzsequence/wp-show-tracker",
-            "version": "0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/WP-Show-Tracker.git",
-                "reference": "a1ca855b240ceabaa84b5dd3e70b947527aefcd5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jazzsequence/WP-Show-Tracker/zipball/a1ca855b240ceabaa84b5dd3e70b947527aefcd5",
-                "reference": "a1ca855b240ceabaa84b5dd3e70b947527aefcd5",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Reynolds",
-                    "email": "chris@jazzsequence.com"
-                }
-            ],
-            "description": "Track shows that you (or your kids) watch. Set a weekly limit and display an alert when the limit is reached.",
-            "support": {
-                "issues": "https://github.com/jazzsequence/WP-Show-Tracker/issues",
-                "source": "https://github.com/jazzsequence/WP-Show-Tracker/tree/0.1.1"
-            },
-            "time": "2025-01-11T06:20:05+00:00"
         },
         {
             "name": "johnbillion/args",
