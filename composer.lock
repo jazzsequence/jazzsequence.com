@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91d5c992a7f428e4c9cef6814773e438",
+    "content-hash": "63889f8dcf082061ac820a4a58304ef8",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "23.0.0",
+            "version": "24.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "c0afa918fa2ea131368d46c9da2c1a6521dd665b"
+                "reference": "ad3579a4732c35d32877f3c48ff6c0a3cac9ce79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/c0afa918fa2ea131368d46c9da2c1a6521dd665b",
-                "reference": "c0afa918fa2ea131368d46c9da2c1a6521dd665b",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/ad3579a4732c35d32877f3c48ff6c0a3cac9ce79",
+                "reference": "ad3579a4732c35d32877f3c48ff6c0a3cac9ce79",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.4",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.8.1",
+                "johnpbloch/wordpress": "6.8.2",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -159,9 +159,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/23.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/24.0.0"
             },
-            "time": "2025-05-06T13:18:28+00:00"
+            "time": "2025-07-17T19:03:54+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -523,6 +523,58 @@
                 "source": "https://github.com/erusev/parsedown/tree/1.7.x"
             },
             "time": "2019-12-30T22:54:17+00:00"
+        },
+        {
+            "name": "harvesthq/chosen",
+            "version": "v1.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harvesthq/chosen-package.git",
+                "reference": "ad86732b668627c131e61ee8f0e6e9ed52e4db8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harvesthq/chosen-package/zipball/ad86732b668627c131e61ee8f0e6e9ed52e4db8d",
+                "reference": "ad86732b668627c131e61ee8f0e6e9ed52e4db8d",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Koen Punt",
+                    "homepage": "https://github.com/koenpunt"
+                },
+                {
+                    "name": "Patrick Filler",
+                    "homepage": "https://github.com/pfiller"
+                },
+                {
+                    "name": "Christophe Coevoet",
+                    "homepage": "https://github.com/stof"
+                },
+                {
+                    "name": "Ken Earley",
+                    "homepage": "https://github.com/kenearley"
+                }
+            ],
+            "description": "Chosen is a JavaScript plugin that makes select boxes user-friendly. It is currently available in both jQuery and Prototype flavors.",
+            "homepage": "https://harvesthq.github.io/chosen/",
+            "keywords": [
+                "dropdown",
+                "form",
+                "input",
+                "multiselect",
+                "select",
+                "ui"
+            ],
+            "support": {
+                "source": "https://github.com/harvesthq/chosen-package/tree/v1.8.7"
+            },
+            "time": "2018-06-28T20:32:51+00:00"
         },
         {
             "name": "humanmade/altis-reusable-blocks",
@@ -1056,16 +1108,16 @@
         },
         {
             "name": "humanmade/workflows",
-            "version": "0.4.9",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/Workflows.git",
-                "reference": "f738648c4c94573d75431e6fe9e88a01175c9475"
+                "reference": "75096174bcaef9019b38530e1b2c3194ce0c37c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/f738648c4c94573d75431e6fe9e88a01175c9475",
-                "reference": "f738648c4c94573d75431e6fe9e88a01175c9475",
+                "url": "https://api.github.com/repos/humanmade/Workflows/zipball/75096174bcaef9019b38530e1b2c3194ce0c37c5",
+                "reference": "75096174bcaef9019b38530e1b2c3194ce0c37c5",
                 "shasum": ""
             },
             "require": {
@@ -1088,9 +1140,9 @@
             "description": "Workflow management for WordPress, an extensible event and notification system.",
             "support": {
                 "issues": "https://github.com/humanmade/Workflows/issues",
-                "source": "https://github.com/humanmade/Workflows/tree/0.4.9"
+                "source": "https://github.com/humanmade/Workflows/tree/0.4.10"
             },
-            "time": "2024-11-01T14:59:53+00:00"
+            "time": "2025-08-19T11:18:13+00:00"
         },
         {
             "name": "humanmade/wp-seo",
@@ -1144,6 +1196,7 @@
                 "johnbillion/extended-cpts": "^5.0"
             },
             "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1155,8 +1208,8 @@
             ],
             "description": "A WordPress plugin for storing and maintaining addresses.",
             "support": {
-                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.5",
-                "issues": "https://github.com/jazzsequence/Address-Book/issues"
+                "issues": "https://github.com/jazzsequence/Address-Book/issues",
+                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.5"
             },
             "time": "2025-07-01T14:52:16+00:00"
         },
@@ -1165,10 +1218,24 @@
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazzsequence/Artists",
-                "reference": "tags/1.0.1"
+                "url": "https://github.com/jazzsequence/artists.git",
+                "reference": "ff352d7b8c7d302966d00b9fe0cc3c043bfaaa27"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "homepage": "https://jazzsequence.com"
+                }
+            ],
+            "description": "A WordPress plugin for music artists, to be used in conjunction with Releases",
+            "support": {
+                "issues": "https://github.com/jazzsequence/artists/issues",
+                "source": "https://github.com/jazzsequence/artists"
+            }
         },
         {
             "name": "jazzsequence/dashboard-changelog",
@@ -1213,13 +1280,46 @@
         },
         {
             "name": "jazzsequence/games-collector",
-            "version": "1.3.4",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jazzsequence/games-collector",
-                "reference": "tags/1.3.4"
+                "url": "https://github.com/jazzsequence/games-collector.git",
+                "reference": "bd1bbe8049cd6db81d2a4ace66bc6edcd81360b7"
             },
-            "type": "wordpress-plugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jazzsequence/games-collector/zipball/bd1bbe8049cd6db81d2a4ace66bc6edcd81360b7",
+                "reference": "bd1bbe8049cd6db81d2a4ace66bc6edcd81360b7",
+                "shasum": ""
+            },
+            "require": {
+                "cmb2/cmb2": "^2.6",
+                "harvesthq/chosen": "^1.8",
+                "johnbillion/extended-cpts": "^5.0"
+            },
+            "require-dev": {
+                "pantheon-systems/pantheon-wp-coding-standards": "^2.0",
+                "pantheon-systems/wpunit-helpers": "^2.0",
+                "phpunit/phpunit": "^9",
+                "yoast/phpunit-polyfills": "^3.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Reynolds",
+                    "email": "chris@jazzsequence.com"
+                }
+            ],
+            "description": "A WordPress plugin to catalog all your tabletop (or other) games in your WordPress site and display a list of games in your collection.",
+            "support": {
+                "issues": "https://github.com/jazzsequence/games-collector/issues",
+                "source": "https://github.com/jazzsequence/games-collector/tree/1.3.6"
+            },
+            "time": "2024-10-10T17:03:48+00:00"
         },
         {
             "name": "jazzsequence/jz-222",
@@ -1268,6 +1368,7 @@
                 "shasum": ""
             },
             "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -1279,20 +1380,10 @@
             ],
             "description": "Easily store and publish recipes in WordPress.",
             "support": {
-                "source": "https://github.com/jazzsequence/recipe-box/tree/0.3.5",
-                "issues": "https://github.com/jazzsequence/recipe-box/issues"
+                "issues": "https://github.com/jazzsequence/recipe-box/issues",
+                "source": "https://github.com/jazzsequence/recipe-box/tree/0.3.5"
             },
             "time": "2025-01-23T05:21:21+00:00"
-        },
-        {
-            "name": "jazzsequence/wp-show-tracker",
-            "version": "0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/wp-show-tracker",
-                "reference": "tags/0.6"
-            },
-            "type": "wordpress-plugin"
         },
         {
             "name": "johnbillion/args",
@@ -1668,58 +1759,34 @@
             "time": "2025-06-18T21:18:03+00:00"
         },
         {
-            "name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
-            "version": "1.2.5",
+            "name": "pantheon-systems/pantheon-content-publisher-wordpress",
+            "version": "v1.2.6",
+            "source": {
+                "type": "zip",
+                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/releases/download/v1.2.6/pantheon-content-publisher-for-wordpress.zip",
+                "reference": "9e27d468cc5a22a6252d4f66ac5274d772cbb57e"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress/releases/download/v1.2.5/pantheon-content-publisher-for-wordpress.zip",
-                "reference": "tags/v1.2.5"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "rhubarbgroup/object-cache-pro",
-            "version": "v1.24.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://objectcache.pro/plugin/object-cache-pro-1.24.2.zip?token=dd9cc75fa72816fe69f8b3ccc7b8f68ab6043278921d52c3a7990c67aae3",
-                "reference": "acfe64a924006cf62f6edc84e8e4770a091f3c91"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0",
-                "ext-redis": ">=4.0.0",
-                "php": "^7.2 || ^8.0"
-            },
-            "suggest": {
-                "ext-redis": "Required to use PhpRedis as the object cache backend.",
-                "ext-relay": "Required to use Relay as the object cache backend."
+                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/releases/download/v1.2.6/pantheon-content-publisher-for-wordpress.zip",
+                "reference": "v1.2.6"
             },
             "type": "wordpress-plugin",
-            "autoload": {
-                "psr-4": {
-                    "RedisCachePro\\": "src/"
-                },
-                "classmap": [
-                    "src/Support/Types.php",
-                    "src/Extensions/Debugbar/Panel.php",
-                    "src/Extensions/Debugbar/Insights.php"
-                ]
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                },
-                "exclude-from-classmap": [
-                    "tests/PHPStan/",
-                    "tests/bootstrap.php"
-                ]
-            },
             "license": [
-                "proprietary"
+                "GPL-2.0"
             ],
-            "description": "A business class Redis object cache backend for WordPress.",
-            "homepage": "https://objectcache.pro",
-            "time": "2025-06-20T15:46:38+00:00"
+            "authors": [
+                {
+                    "name": "Pantheon",
+                    "email": "contact@pantheon.io",
+                    "homepage": "https://pantheon.io"
+                }
+            ],
+            "description": "A plugin that connects Pantheon Content Publisher to WordPress",
+            "support": {
+                "issues": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/issues",
+                "source": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress"
+            }
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1760,15 +1827,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "5.4",
+            "version": "5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/5.4"
+                "reference": "tags/5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1778,15 +1845,15 @@
         },
         {
             "name": "wpackagist-plugin/altis-accelerate",
-            "version": "3.4.3",
+            "version": "3.4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/3.4.3"
+                "reference": "tags/3.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.3.4.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1811,6 +1878,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
+        },
+        {
+            "name": "wpackagist-plugin/autoblue",
+            "version": "0.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autoblue/",
+                "reference": "tags/0.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autoblue.0.0.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoblue/"
         },
         {
             "name": "wpackagist-plugin/bv-pantheon-migration",
@@ -1850,15 +1935,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "21.0.0",
+            "version": "21.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/21.0.0"
+                "reference": "tags/21.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.21.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.21.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1886,15 +1971,15 @@
         },
         {
             "name": "wpackagist-plugin/litespeed-cache",
-            "version": "7.2",
+            "version": "7.3.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/litespeed-cache/",
-                "reference": "tags/7.2"
+                "reference": "tags/7.3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.3.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1904,15 +1989,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.10.3",
+            "version": "3.11.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.10.3"
+                "reference": "tags/3.11.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.10.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.11.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1922,15 +2007,15 @@
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.13.0",
+            "version": "2.14.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.13.0"
+                "reference": "tags/2.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.13.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2174,15 +2259,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyfive",
-            "version": "1.2",
+            "version": "1.3",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyfive/",
-                "reference": "1.2"
+                "reference": "1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.2.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2192,15 +2277,15 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "2.5",
+            "version": "2.6",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "2.5"
+                "reference": "2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.5.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2306,16 +2391,16 @@
     "packages-dev": [
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.18.0",
+            "version": "3.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "08edec4f7bcd45cb92525d6375e9876c11eee1cd"
+                "reference": "dabf626190fa20d8b9f95a8f8131c27a81c9d177"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/08edec4f7bcd45cb92525d6375e9876c11eee1cd",
-                "reference": "08edec4f7bcd45cb92525d6375e9876c11eee1cd",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/dabf626190fa20d8b9f95a8f8131c27a81c9d177",
+                "reference": "dabf626190fa20d8b9f95a8f8131c27a81c9d177",
                 "shasum": ""
             },
             "require": {
@@ -2329,6 +2414,7 @@
                 "codeception/module-webdriver": "^1.0",
                 "codeception/util-universalframework": "^1.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
+                "guzzlehttp/guzzle": "^7.0",
                 "johnbillion/plugin-infrastructure": "dev-trunk",
                 "johnbillion/wp-compat": "0.3.1",
                 "lucatume/wp-browser": "3.2.3",
@@ -2377,20 +2463,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-16T15:28:52+00:00"
+            "time": "2025-07-23T17:19:30+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
-            "version": "1.19.1",
+            "version": "1.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/wp-crontrol.git",
-                "reference": "3b51e7e80c02ca6cc73b87886b2220287ab88e7d"
+                "reference": "d94523fa109d460f17072fbd5076ac78dfa53d6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/3b51e7e80c02ca6cc73b87886b2220287ab88e7d",
-                "reference": "3b51e7e80c02ca6cc73b87886b2220287ab88e7d",
+                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/d94523fa109d460f17072fbd5076ac78dfa53d6e",
+                "reference": "d94523fa109d460f17072fbd5076ac78dfa53d6e",
                 "shasum": ""
             },
             "require": {
@@ -2398,6 +2484,7 @@
                 "php": ">=7.4"
             },
             "require-dev": {
+                "behat/gherkin": "< 4.13.0",
                 "codeception/module-asserts": "^1.0",
                 "codeception/module-db": "^1.0",
                 "codeception/module-webdriver": "^1.0",
@@ -2450,7 +2537,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-03T14:59:36+00:00"
+            "time": "2025-08-19T14:11:05+00:00"
         }
     ],
     "aliases": [],

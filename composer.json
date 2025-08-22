@@ -9,65 +9,13 @@
 			"url": "https://wpackagist.org"
 		},
 		{
+			"type": "composer",
+			"url": "https://packages.jazzsequence.com"
+		},
+		{
 			"type": "path",
 			"url": "./packages",
 			"symlinks": true
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/artists",
-				"version": "1.0.1",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/Artists",
-					"reference": "tags/1.0.1"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/cat-signal",
-				"version": "1.1.3",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/cat-signal",
-					"reference": "tags/1.1.3"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/games-collector",
-				"version": "1.3.4",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/games-collector",
-					"reference": "tags/1.3.4"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/notifications",
-				"version": "1.1.3",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/notifications",
-					"reference": "tags/1.1.3"
-				}
-			}
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:jazzsequence/recipe-box.git"
 		},
 		{
 			"type": "vcs",
@@ -76,79 +24,6 @@
 		{
 			"type": "vcs",
 			"url": "git@github.com:jazzsequence/altis-cms.git"
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:jazzsequence/address-book.git"
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/releases",
-				"version": "1.2.2",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/releases",
-					"reference": "1.2.2"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/reviews",
-				"version": "2.0.0",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/reviews",
-					"reference": "tags/2.0.0"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "jazzsequence/wp-show-tracker",
-				"version": "0.6",
-				"type": "wordpress-plugin",
-				"source": {
-					"type": "git",
-					"url": "https://github.com/jazzsequence/wp-show-tracker",
-					"reference": "tags/0.6"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "markjaquith/gifdrop",
-				"version": "master",
-				"type": "wordpress-plugin",
-				"dist": {
-					"type": "zip",
-					"url": "https://github.com/markjaquith/gifdrop/archive/refs/heads/master.zip",
-					"reference": "master"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "pantheon-systems/pantheon-content-publisher-for-wordpress",
-				"version": "1.2.5",
-				"type": "wordpress-plugin",
-				"dist": {
-					"type": "zip",
-					"url": "https://github.com/pantheon-systems/pantheon-content-publisher-for-wordpress/releases/download/v1.2.5/pantheon-content-publisher-for-wordpress.zip",
-					"reference": "tags/v1.2.5"
-				}
-			}
-		},
-		{
-			"type": "composer",
-			"url": "https://objectcache.pro/repo/"			
 		}
 	],
 	"require": {
@@ -170,13 +45,12 @@
 		"jazzsequence/games-collector": "*",
 		"jazzsequence/jz-222": "dev-main",
 		"jazzsequence/recipe-box": "*",
-		"jazzsequence/wp-show-tracker": "*",
 		"johnbillion/extended-cpts": "*",
-		"pantheon-systems/pantheon-content-publisher-for-wordpress": "1.2.5",
-		"rhubarbgroup/object-cache-pro": "*",
+		"pantheon-systems/pantheon-content-publisher-wordpress": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
+		"wpackagist-plugin/autoblue": "*",
 		"wpackagist-plugin/bv-pantheon-migration": "*",
 		"wpackagist-plugin/glotpress": "*",
 		"wpackagist-plugin/gutenberg": "*",
