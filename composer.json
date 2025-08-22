@@ -51,6 +51,7 @@
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
+		"wpackagist-plugin/autoblue": "*",
 		"wpackagist-plugin/bv-pantheon-migration": "*",
 		"wpackagist-plugin/glotpress": "*",
 		"wpackagist-plugin/gutenberg": "*",
