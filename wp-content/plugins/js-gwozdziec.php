@@ -12,6 +12,7 @@
  * 
  * @param array $atts Shortcode attributes.
  * @param string|null $content Shortcode content.
+ * @return string The generated HTML content.
  */
 function gwozdziec( $atts, $content = null ) {
 
