@@ -91,7 +91,7 @@ function sideload_media_thumbnail( $post_id, $post, $update ) {
 
 	$media_url = get_post_meta( $post_id, 'media_url', true );
 	if ( ! $media_url ) {
-		if ( isset( $_POST['js_media_manual_sideload'] ) ) {
+		if ( did_request_manual_sideload() ) {
 			queue_media_admin_notice( __( 'Please enter a media URL before sideloading a thumbnail.', 'js-media' ), 'error' );
 		}
 		return;
@@ -99,7 +99,7 @@ function sideload_media_thumbnail( $post_id, $post, $update ) {
 
 	$media_url      = esc_url_raw( $media_url );
 	$stored_source  = get_post_meta( $post_id, '_js_media_thumbnail_source', true );
-	$manual_request = isset( $_POST['js_media_manual_sideload'] );
+	$manual_request = did_request_manual_sideload();
 
 	// Skip if we already sideloaded an image for this URL and nothing has changed.
 	if ( has_post_thumbnail( $post_id ) && $stored_source === $media_url && ! $manual_request ) {
@@ -126,6 +126,7 @@ function sideload_media_thumbnail( $post_id, $post, $update ) {
 	if ( $manual_request ) {
 		queue_media_admin_notice(
 			sprintf(
+				/* translators: %s: Thumbnail image URL. */
 				__( 'Attempting sideload from: %s', 'js-media' ),
 				esc_html( $image_url )
 			),
@@ -304,7 +305,8 @@ function save_media_meta_box( $post_id, $post, $update ) {
 		return;
 	}
 
-	if ( ! isset( $_POST['js_media_url_nonce'] ) || ! wp_verify_nonce( $_POST['js_media_url_nonce'], 'js_media_url_meta_box' ) ) {
+	$nonce = isset( $_POST['js_media_url_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['js_media_url_nonce'] ) ) : '';
+	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'js_media_url_meta_box' ) ) {
 		return;
 	}
 
@@ -360,9 +362,11 @@ function render_media_admin_notices() {
 	}
 
 	foreach ( $notices as $notice ) {
-		$type    = esc_attr( $notice['type'] );
-		$message = wp_kses_post( $notice['message'] );
-		printf( '<div class="notice notice-%s"><p>%s</p></div>', $type, $message );
+		printf(
+			'<div class="notice notice-%1$s"><p>%2$s</p></div>',
+			esc_attr( $notice['type'] ),
+			wp_kses_post( $notice['message'] )
+		);
 	}
 
 	unset( $GLOBALS['js_media_notices'] );
@@ -520,6 +524,29 @@ function filter_media_archive_content( $content ) {
 	}
 
 	return '<p>' . esc_html( $excerpt ) . '</p>';
+}
+
+/**
+ * Check whether the current save request clicked the manual sideload button.
+ *
+ * @return bool
+ */
+function did_request_manual_sideload() {
+	static $manual_request = null;
+
+	if ( null !== $manual_request ) {
+		return $manual_request;
+	}
+
+	if ( empty( $_POST['js_media_manual_sideload'] ) ) {
+		$manual_request = false;
+		return $manual_request;
+	}
+
+	$nonce = isset( $_POST['js_media_url_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['js_media_url_nonce'] ) ) : '';
+	$manual_request = (bool) ( $nonce && wp_verify_nonce( $nonce, 'js_media_url_meta_box' ) );
+
+	return $manual_request;
 }
 
 /**
