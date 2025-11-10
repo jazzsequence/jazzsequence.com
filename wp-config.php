@@ -6,7 +6,7 @@
  *
  * @package WordPress
  */
-// arbitrary change
+
 // Load public and local server stuff.
 require_once __DIR__ . '/server-config.php';
 

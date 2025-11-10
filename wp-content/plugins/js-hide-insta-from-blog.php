@@ -32,7 +32,7 @@ Version: 1.0
  * @link   https://www.wpmayor.com/how-to-hide-or-remove-categories-from-a-wordpress-homepage/
  */
 function js_exclude_division_of_pressed_grams( $query ) {
-	if ( $query->is_home() || is_post_type_archive( 'post' ) && ! is_archive() ) {
+	if ( $query->is_home() || is_post_type_archive( 'post' ) && ! is_archive() ) { // phpcs:ignore Generic.CodeAnalysis.RequireExplicitBooleanOperatorPrecedence.MissingParentheses
 		$query->set( 'cat', '-3089' );
 	}
 	return $query;

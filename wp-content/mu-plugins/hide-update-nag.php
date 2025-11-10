@@ -32,10 +32,16 @@
 
 namespace jz\Admin;
 
+/**
+ * Kick it off
+ */
 function bootstrap() {
 	add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_scripts' );
 }
 
+/**
+ * Adds inline CSS to hide the update nag.
+ */
 function admin_scripts() {
 	wp_add_inline_style( 'litespeed-cache-css', '.update-nag.notice-warning.inline { display: none !important; }' );
 }

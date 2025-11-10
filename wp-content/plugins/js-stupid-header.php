@@ -29,10 +29,18 @@
 
 namespace jazzsequence\ASCII;
 
+/**
+ * Initializes the plugin.
+ */
 function init() {
 	add_action( 'wp_head', __NAMESPACE__ . '\\output_ascii' );
 }
 
+/**
+ * Returns the ASCII art message.
+ *
+ * @return string The ASCII art message.
+ */
 function get_ascii() {
 	$ascii_message = '<!--' . PHP_EOL;
 	$ascii_message .= '
@@ -62,8 +70,11 @@ function get_ascii() {
 	return $ascii_message;
 }
 
+/**
+ * Outputs the ASCII art message to the header.
+ */
 function output_ascii() {
-	echo get_ascii();
+	echo get_ascii(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 // Do the stuff.

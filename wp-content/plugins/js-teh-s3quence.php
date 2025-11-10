@@ -1,18 +1,25 @@
 <?php 
-/*
-Plugin Name: jazzsequence teh s3quence
-Description: this plugin takes care of the teh s3quence page template by turning the frakker into a shortcode.  boo yah beyotch.
-Version: 0.1
-Author: jazzs3quence
-Author URI: http://jazzsequence.com/
-*/
+/**
+ * Plugin Name: jazzsequence teh s3quence
+ * Description: this plugin takes care of the teh s3quence page template by turning the frakker into a shortcode.  boo yah beyotch.
+ * Version: 0.1
+ * Author: jazzs3quence
+ * Author URI: http://jazzsequence.com/
+ */
 
+/**
+ * Teh s3quence shortcode function
+ * 
+ * @param array $atts Shortcode attributes.
+ * @param string|null $content Shortcode content.
+ * @return string The generated HTML content.
+ */
 function teh_s3quence( $atts, $content = null ) {
 
 	$html = '<em>teh s3quence</em> is just a name i started attaching to mixtapes (and i use that term very loosely since there\'s no tape involved at all) i started recording and posting here.  each set is different (and i post the tracklist).  not just different meaning that it\'s not the same as the last, i mean different in that the genre, style, and mood is different, because i like a lot of different stuff.  check back often because this page will update when i post new sets.
         <div class="spacer-10"></div>
         <div class="spacer-10"></div>';
-	extract(shortcode_atts([
+	extract(shortcode_atts([ // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		'pagination' => 'true',
 		'query' => '',
 		'category' => '',
@@ -24,8 +31,7 @@ function teh_s3quence( $atts, $content = null ) {
 	$query .= '&tag=teh-s3quence';
 	$wp_query->query( $query );
 	ob_start();
-	?>
-	<?php
+
 	while ( $wp_query->have_posts() ) :
 		$wp_query->the_post();
 		?>
@@ -42,13 +48,11 @@ function teh_s3quence( $atts, $content = null ) {
 			<div class="alignright"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
 		</div>
 
-	<?php $wp_query = null;
+	<?php 
+	$wp_query = null;
 	$wp_query = $temp;
 	$content = ob_get_contents();
 	ob_end_clean();
 	return $html . $content;
 }
 add_shortcode( 'tehs3', 'teh_s3quence' );
-
-
-?>

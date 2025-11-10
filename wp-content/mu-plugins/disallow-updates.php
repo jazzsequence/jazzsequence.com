@@ -32,6 +32,12 @@
 
 namespace jz\DisallowUpdates;
 
+/**
+ * Disable plugin updates for specific plugins.
+ *
+ * @param object $value The update transient object.
+ * @return object Filtered update transient object.
+ */
 function disable_plugin_updates( $value ) {
 	if ( isset( $value ) && is_object( $value ) ) {
 		// TODO: If we need to disallow updates to other plugins we can create a loop of plugins to go through.

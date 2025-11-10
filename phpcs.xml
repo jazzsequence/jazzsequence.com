@@ -30,7 +30,7 @@
 	<exclude-pattern>wp-content/plugins/ninja-forms</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/organize-series</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/pantheon-content-publisher</exclude-pattern>
-	<exclude-pattern>wp-content/plugins/patcstack</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/patchstack</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/plugins-garbage-collector</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/progress-bar</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/publication-checklist</exclude-pattern>
@@ -55,6 +55,7 @@
 	<exclude-pattern>wp-content/themes/museum-core</exclude-pattern>
 	<exclude-pattern>wp-content/themes/ryu</exclude-pattern>
 	<exclude-pattern>wp-content/db.php</exclude-pattern>
+	<exclude-pattern>wp-content/uploads/*</exclude-pattern>
 	<exclude-pattern>index.php</exclude-pattern>
 
 	<!-- Ignore Artbox -->
@@ -64,7 +65,9 @@
 	<exclude-pattern>vendor/*</exclude-pattern>
 
 	<rule ref="Pantheon-WP">
-
+		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited">
+			<file>wp-content/plugins/js-gwozdziec.php</file>
+		</exclude>
 	</rule>
 
 	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED"/>

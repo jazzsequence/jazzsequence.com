@@ -10,6 +10,12 @@
 
 namespace jz\Redirects;
 
+/**
+ * Adds allowed redirect hosts.
+ *
+ * @param array $hosts Existing allowed hosts.
+ * @return array Filtered allowed hosts.
+ */
 function allowed_redirect_hosts( $hosts ) {
 	$jz_allowed_hosts = [
 		'www.dropbox.com',
