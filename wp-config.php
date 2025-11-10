@@ -11,7 +11,7 @@
 require_once __DIR__ . '/server-config.php';
 
 // Define WordPress constants.
-define( 'WP_CACHE', true ) ;
+define( 'WP_CACHE', true );
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', true );
 define( 'PATH_CURRENT_SITE', '/' );

@@ -14,7 +14,7 @@ if ( ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) ) {
 /**
  * Fix cookie domain stuff.
  */
-add_action( 'muplugins_loaded', function() {
+add_action( 'muplugins_loaded', function () {
 	global $current_blog, $current_site;
 
 	if ( false === stripos( $current_blog->domain, $current_site->cookie_domain ) ) {
@@ -23,19 +23,19 @@ add_action( 'muplugins_loaded', function() {
 } );
 
 // Require the Composer autoloader.
-require_once dirname( __FILE__, 3 ) . '/vendor/autoload.php';
+require_once dirname( __DIR__, 2 ) . '/vendor/autoload.php';
 
-$hm_mu_plugins = array(
+$hm_mu_plugins = [
 	'cmb2/init.php',
 	'dashboard-changelog/plugin.php',
-);
+];
 
 foreach ( $hm_mu_plugins as $file ) {
-	require_once dirname( __FILE__ ) . '/' . $file;
+	require_once __DIR__ . '/' . $file;
 }
 unset( $file );
 
-add_action( 'pre_current_active_plugins', function() use ( $hm_mu_plugins ) {
+add_action( 'pre_current_active_plugins', function () use ( $hm_mu_plugins ) {
 	global $plugins, $wp_list_table;
 
 	// Add our own mu-plugins to the page
@@ -66,20 +66,20 @@ add_action( 'pre_current_active_plugins', function() use ( $hm_mu_plugins ) {
 	$total_this_page = $GLOBALS['totals']['mustuse'];
 
 	if ( $GLOBALS['orderby'] ) {
-		uasort( $wp_list_table->items, array( $wp_list_table, '_order_callback' ) );
+		uasort( $wp_list_table->items, [ $wp_list_table, '_order_callback' ] );
 	}
 
 	// Force showing all plugins
 	// See https://core.trac.wordpress.org/ticket/27110
 	$plugins_per_page = $total_this_page;
 
-	$wp_list_table->set_pagination_args( array(
+	$wp_list_table->set_pagination_args( [
 		'total_items' => $total_this_page,
 		'per_page'    => $plugins_per_page,
-	) );
+	] );
 } );
 
-add_action( 'network_admin_plugin_action_links', function( $actions, $plugin_file, $plugin_data, $context ) use ( $hm_mu_plugins ) {
+add_action( 'network_admin_plugin_action_links', function ( $actions, $plugin_file, $plugin_data, $context ) use ( $hm_mu_plugins ) {
 	if ( $context !== 'mustuse' || ! in_array( $plugin_file, $hm_mu_plugins, true ) ) {
 		return;
 	}
@@ -92,7 +92,7 @@ add_action( 'network_admin_plugin_action_links', function( $actions, $plugin_fil
 /**
  * Use the Altis logo on the login page.
  */
-add_filter( 'jazzsequence.get_config', function( $config ) {
+add_filter( 'jazzsequence.get_config', function ( $config ) {
 	$config['login-logo'] = 'wp-content/mu-plugins/altis-cms/assets/logo.svg';
 
 	return $config;

@@ -28,18 +28,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
  */
 
 namespace jz\DisallowUpdates;
 
 function disable_plugin_updates( $value ) {
-  if ( isset($value) && is_object($value) ) {
-    // TODO: If we need to disallow updates to other plugins we can create a loop of plugins to go through.
-    if ( isset( $value->response['two-factor/two-factor.php'] ) ) {
-      unset( $value->response['two-factor/two-factor.php'] );
-    }
-  }
-  return $value;
+	if ( isset( $value ) && is_object( $value ) ) {
+		// TODO: If we need to disallow updates to other plugins we can create a loop of plugins to go through.
+		if ( isset( $value->response['two-factor/two-factor.php'] ) ) {
+			unset( $value->response['two-factor/two-factor.php'] );
+		}
+	}
+	return $value;
 }
 add_filter( 'site_transient_update_plugins', __NAMESPACE__ . '\\disable_plugin_updates' );

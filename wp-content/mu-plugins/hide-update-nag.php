@@ -33,11 +33,11 @@
 namespace jz\Admin;
 
 function bootstrap() {
-  add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_scripts' );
+	add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_scripts' );
 }
 
 function admin_scripts() {
-  wp_add_inline_style( 'litespeed-cache-css', '.update-nag.notice-warning.inline { display: none !important; }' );
+	wp_add_inline_style( 'litespeed-cache-css', '.update-nag.notice-warning.inline { display: none !important; }' );
 }
 
 bootstrap();
