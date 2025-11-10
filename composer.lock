@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63889f8dcf082061ac820a4a58304ef8",
+    "content-hash": "917bc9b69ac9a33aec07ad348de4ce1c",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "24.0.0",
+            "version": "24.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "ad3579a4732c35d32877f3c48ff6c0a3cac9ce79"
+                "reference": "b219daa933bc5a78f43869df5c48f6cc61681d05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/ad3579a4732c35d32877f3c48ff6c0a3cac9ce79",
-                "reference": "ad3579a4732c35d32877f3c48ff6c0a3cac9ce79",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/b219daa933bc5a78f43869df5c48f6cc61681d05",
+                "reference": "b219daa933bc5a78f43869df5c48f6cc61681d05",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.4",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.8.2",
+                "johnpbloch/wordpress": "6.8.3",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -159,9 +159,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/24.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/24.0.1"
             },
-            "time": "2025-07-17T19:03:54+00:00"
+            "time": "2025-10-27T15:14:00+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -688,16 +688,16 @@
         },
         {
             "name": "humanmade/asset-manager-framework",
-            "version": "0.13.5",
+            "version": "0.13.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-manager-framework.git",
-                "reference": "58e37f495638a40ce6ddab10b400d702cb4883bc"
+                "reference": "aed443d54725282a5b05189e74cbdddd319d6247"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/58e37f495638a40ce6ddab10b400d702cb4883bc",
-                "reference": "58e37f495638a40ce6ddab10b400d702cb4883bc",
+                "url": "https://api.github.com/repos/humanmade/asset-manager-framework/zipball/aed443d54725282a5b05189e74cbdddd319d6247",
+                "reference": "aed443d54725282a5b05189e74cbdddd319d6247",
                 "shasum": ""
             },
             "require": {
@@ -730,9 +730,9 @@
             "homepage": "https://github.com/humanmade/asset-manager-framework/",
             "support": {
                 "issues": "https://github.com/humanmade/asset-manager-framework/issues",
-                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.13.5"
+                "source": "https://github.com/humanmade/asset-manager-framework/tree/0.13.6.1"
             },
-            "time": "2023-03-01T15:42:57+00:00"
+            "time": "2025-11-05T10:58:09+00:00"
         },
         {
             "name": "humanmade/clean-html",
@@ -1759,36 +1759,6 @@
             "time": "2025-06-18T21:18:03+00:00"
         },
         {
-            "name": "pantheon-systems/pantheon-content-publisher-wordpress",
-            "version": "v1.3.0",
-            "source": {
-                "type": "zip",
-                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/releases/download/v1.2.6/pantheon-content-publisher-for-wordpress.zip",
-                "reference": "9e27d468cc5a22a6252d4f66ac5274d772cbb57e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/releases/download/v1.3.0/pantheon-content-publisher-for-wordpress.zip",
-                "reference": "v1.3.0"
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pantheon",
-                    "email": "contact@pantheon.io",
-                    "homepage": "https://pantheon.io"
-                }
-            ],
-            "description": "A plugin that connects Pantheon Content Publisher to WordPress",
-            "support": {
-                "issues": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-content-publisher-wordpress"
-            }
-        },
-        {
             "name": "stuttter/wp-user-signups",
             "version": "5.0.2",
             "source": {
@@ -1881,15 +1851,15 @@
         },
         {
             "name": "wpackagist-plugin/autoblue",
-            "version": "0.0.6",
+            "version": "1.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autoblue/",
-                "reference": "tags/0.0.6"
+                "reference": "tags/1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autoblue.0.0.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/autoblue.1.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1917,15 +1887,15 @@
         },
         {
             "name": "wpackagist-plugin/glotpress",
-            "version": "4.0.1",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/glotpress/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/glotpress.4.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/glotpress.4.0.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1935,15 +1905,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "21.7.0",
+            "version": "22.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/21.7.0"
+                "reference": "tags/22.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.21.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.22.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1971,15 +1941,15 @@
         },
         {
             "name": "wpackagist-plugin/litespeed-cache",
-            "version": "7.5.0.1",
+            "version": "7.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/litespeed-cache/",
-                "reference": "tags/7.5.0.1"
+                "reference": "tags/7.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.5.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.6.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1989,15 +1959,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.12.1",
+            "version": "3.13.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.12.1"
+                "reference": "tags/3.13.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.12.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.13.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2007,21 +1977,39 @@
         },
         {
             "name": "wpackagist-plugin/organize-series",
-            "version": "2.15.0",
+            "version": "2.16.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/2.15.0"
+                "reference": "tags/2.16.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.2.15.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.2.16.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/organize-series/"
+        },
+        {
+            "name": "wpackagist-plugin/pantheon-content-publisher",
+            "version": "1.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/pantheon-content-publisher/",
+                "reference": "tags/1.3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.3.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/pantheon-content-publisher/"
         },
         {
             "name": "wpackagist-plugin/patchstack",
@@ -2467,16 +2455,16 @@
         },
         {
             "name": "johnbillion/wp-crontrol",
-            "version": "1.19.2",
+            "version": "1.19.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/wp-crontrol.git",
-                "reference": "d94523fa109d460f17072fbd5076ac78dfa53d6e"
+                "reference": "2cd97b4bdbcd1b0041bf69d08f7244deb7802104"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/d94523fa109d460f17072fbd5076ac78dfa53d6e",
-                "reference": "d94523fa109d460f17072fbd5076ac78dfa53d6e",
+                "url": "https://api.github.com/repos/johnbillion/wp-crontrol/zipball/2cd97b4bdbcd1b0041bf69d08f7244deb7802104",
+                "reference": "2cd97b4bdbcd1b0041bf69d08f7244deb7802104",
                 "shasum": ""
             },
             "require": {
@@ -2537,7 +2525,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-19T14:11:05+00:00"
+            "time": "2025-10-23T18:22:16+00:00"
         }
     ],
     "aliases": [],
