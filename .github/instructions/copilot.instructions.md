@@ -41,7 +41,26 @@ Always run `composer install` (and the Dashboard Changelog step when relevant) b
 Releases: bump `version.json`, create a PR named `Release X.Y.Z` from `dev` to `main` with a Markdown heading and summary (used in release notes), squash-merge into `main`, and let tag + deploy workflows run. Never merge `main` back to `dev`; the tag workflow resets `dev` automatically.
 
 ### Layout & Key Files
-- **Repo root (selected)**: `_misc/` (ignored scratch), `audio/` (ignored media), `bin/` (release/test scripts), `composer.json|lock`, `content/` (alt content tree, should remain empty and uncommitted), `images/`, `index.php`, `packages/` (path repo stubs, e.g., `packages/jz-222`), `phpcs.xml`, `README.md`, `RELEASES.md`, `server-config.php`, `vendor/`, `version.json`, `WARP.md`, `wp-config.php`, `wp-content/`, `wp-content/uploads` (ignored). `auth.json` exists but must never be committed with secrets and is unused (Object Cache Pro is not installed).
+- **Repo root (selected):**
+  - `_misc/` (ignored scratch)
+  - `audio/` (ignored media)
+  - `bin/` (release/test scripts)
+  - `composer.json` / `composer.lock`
+  - `content/` (alt content tree, should remain empty and uncommitted)
+  - `images/`
+  - `index.php`
+  - `packages/` (path repo stubs, e.g., `packages/jz-222`)
+  - `phpcs.xml`
+  - `README.md`
+  - `RELEASES.md`
+  - `server-config.php`
+  - `vendor/`
+  - `version.json`
+  - `WARP.md`
+  - `wp-config.php`
+  - `wp-content/`
+  - `wp-content/uploads` (ignored)
+  - `auth.json` (exists but must never be committed with secrets; unused—Object Cache Pro is not installed)
 - **`bin/`**:  
   - `create_release.sh`: drives tagging by querying merged PRs via `gh` + `jq`, generating notes, and (unless `--dry-run`) creating/updating GitHub releases. Requires `GH_TOKEN`.  
   - `dry-run-release.sh`: convenience wrapper used by CI to sanity-check release notes.  
