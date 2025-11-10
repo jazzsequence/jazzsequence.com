@@ -56,5 +56,9 @@ audio/
 .vscode/settings.json
 .DS_Store
 
-#Ignore vscode AI rules
+#Ignore Codacy AI rules
 .github/instructions/codacy.instructions.md
+.codacy/*
+
+# Don't ignore WARP.md
+!WARP.md

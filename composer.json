@@ -46,7 +46,7 @@
 		"jazzsequence/jz-222": "dev-main",
 		"jazzsequence/recipe-box": "*",
 		"johnbillion/extended-cpts": "*",
-		"pantheon-systems/pantheon-content-publisher-wordpress": "*",
+		"pfefferle/wordpress-activitypub": "^7.5",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
@@ -58,6 +58,7 @@
 		"wpackagist-plugin/litespeed-cache": "*",
 		"wpackagist-plugin/ninja-forms": "*",
 		"wpackagist-plugin/organize-series": "*",
+		"wpackagist-plugin/pantheon-content-publisher": "*",
 		"wpackagist-plugin/patchstack": "*",
 		"wpackagist-plugin/plugins-garbage-collector": "*",
 		"wpackagist-plugin/progress-bar": "*",
@@ -91,14 +92,16 @@
 		}
 	},
 	"require-dev": {
-        "johnbillion/wp-crontrol": "^1.16",
-        "johnbillion/query-monitor": "*"
+		"johnbillion/query-monitor": "*",
+		"johnbillion/wp-crontrol": "^1.16",
+		"pantheon-systems/pantheon-wp-coding-standards": "^3.0"
 	},
 	"config": {
 		"allow-plugins": {
+			"altis/cms-installer": true,
 			"composer/installers": true,
-			"johnpbloch/wordpress-core-installer": true,
-			"altis/cms-installer": true
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"johnpbloch/wordpress-core-installer": true
 		},
 		"optimize-autoloader": true,
 		"sort-packages": true,
@@ -127,6 +130,8 @@
 		"shellcheck": [
 			"shellcheck bin/*.sh"
 		],
+		"phpcs": "vendor/bin/phpcs -s .",
+		"phpcbf": "vendor/bin/phpcbf .",
 		"dry-run-release": "bash bin/dry-run-release.sh"
 	}
 }

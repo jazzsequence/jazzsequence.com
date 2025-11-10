@@ -29,13 +29,21 @@
 
 namespace jazzsequence\ASCII;
 
+/**
+ * Initializes the plugin.
+ */
 function init() {
 	add_action( 'wp_head', __NAMESPACE__ . '\\output_ascii' );
 }
 
+/**
+ * Returns the ASCII art message.
+ *
+ * @return string The ASCII art message.
+ */
 function get_ascii() {
-  $ascii_message = '<!--' . PHP_EOL;
-  $ascii_message .= '
+	$ascii_message = '<!--' . PHP_EOL;
+	$ascii_message .= '
    __   ______   ______   ______   ______   ______   ______   __  __   ______   __   __   ______   ______
   /\ \ /\  __ \ /\___  \ /\___  \ /\  ___\ /\  ___\ /\  __ \ /\ \/\ \ /\  ___\ /\ "-.\ \ /\  ___\ /\  ___\
  _\_\ \\\\ \  __ \\\\/_/  /__\/_/  /__\ \___  \\\\ \  __\ \ \ \/\_\\\\ \ \_\ \\\\ \  __\ \ \ \-.  \\\\ \ \____\ \  __\
@@ -43,25 +51,30 @@ function get_ascii() {
 \/_____/ \/_/\/_/ \/_____/ \/_____/ \/_____/ \/_____/ \/___/_/ \/_____/ \/_____/ \/_/ \/_/ \/_____/ \/_____/
                                                                                                              ;;
   ' . PHP_EOL;
-  $ascii_message .= 'I make websites and things.' . "\n\n";
+	$ascii_message .= 'I make websites and things.' . "\n\n";
 
-  $ascii_message .= 'jazzsequence.com is powered by the following technologies:' . "\n\n";
+	$ascii_message .= 'jazzsequence.com is powered by the following technologies:' . "\n\n";
 
-  $ascii_message .= ' * WordPress' . PHP_EOL;
-  $ascii_message .= ' * Altis DXP' . PHP_EOL;
-  $ascii_message .= ' * Composer' . PHP_EOL;
-  $ascii_message .= ' * Litespeed' . PHP_EOL;
-  $ascii_message .= ' * Digital Ocean' . PHP_EOL;
-  $ascii_message .= ' * Deploy HQ' . "\n\n";
+	$ascii_message .= ' * WordPress' . PHP_EOL;
+	$ascii_message .= ' * Altis DXP' . PHP_EOL;
+	$ascii_message .= ' * Composer' . PHP_EOL;
+	$ascii_message .= ' * Litespeed' . PHP_EOL;
+	$ascii_message .= ' * GitHub Actions' . PHP_EOL;
+	$ascii_message .= ' * Bats' . PHP_EOL;
+	$ascii_message .= ' * Digital Ocean' . PHP_EOL;
+	$ascii_message .= "\n\n";
 
-  $ascii_message .= '...if you can read this, you\'re looking too hard.' . PHP_EOL;
-  $ascii_message .= '-->';
+	$ascii_message .= '...if you can read this, you\'re looking too hard.' . PHP_EOL;
+	$ascii_message .= '-->';
 
-  return $ascii_message;
+	return $ascii_message;
 }
 
+/**
+ * Outputs the ASCII art message to the header.
+ */
 function output_ascii() {
-	echo get_ascii();
+	echo get_ascii(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 // Do the stuff.
