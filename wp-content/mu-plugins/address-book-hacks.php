@@ -32,6 +32,9 @@
 
 namespace jz\ABHack;
 
+/**
+ * Kick it off
+ */
 function bootstrap() {
 	remove_meta_box( 'wp-seo', 'ab_address', 'advanced' );
 	remove_meta_box( 'wp_seo', 'ab_address', 'advanced' );

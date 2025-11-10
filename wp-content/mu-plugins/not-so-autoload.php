@@ -7,6 +7,6 @@ $hm_autoload = [
 	WP_PLUGIN_DIR . '/browser-security/inc/namespace.php',
 ];
 
-foreach ( $hm_autoload as $plugin ) {
+foreach ( $hm_autoload as $plugin ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 	require_once $plugin;
 }

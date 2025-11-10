@@ -91,14 +91,16 @@
 		}
 	},
 	"require-dev": {
-        "johnbillion/wp-crontrol": "^1.16",
-        "johnbillion/query-monitor": "*"
+		"johnbillion/query-monitor": "*",
+		"johnbillion/wp-crontrol": "^1.16",
+		"pantheon-systems/pantheon-wp-coding-standards": "^3.0"
 	},
 	"config": {
 		"allow-plugins": {
+			"altis/cms-installer": true,
 			"composer/installers": true,
-			"johnpbloch/wordpress-core-installer": true,
-			"altis/cms-installer": true
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"johnpbloch/wordpress-core-installer": true
 		},
 		"optimize-autoloader": true,
 		"sort-packages": true,
@@ -127,6 +129,8 @@
 		"shellcheck": [
 			"shellcheck bin/*.sh"
 		],
+		"phpcs": "vendor/bin/phpcs -s .",
+		"phpcbf": "vendor/bin/phpcbf .",
 		"dry-run-release": "bash bin/dry-run-release.sh"
 	}
 }
