@@ -57,6 +57,9 @@
 	<exclude-pattern>wp-content/db.php</exclude-pattern>
 	<exclude-pattern>index.php</exclude-pattern>
 
+	<!-- Ignore Artbox -->
+	<exclude-pattern>wp-content/themes/artbox</exclude-pattern>
+
 	<!-- Exclude /vendor -->
 	<exclude-pattern>vendor/*</exclude-pattern>
 
