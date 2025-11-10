@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "219eaf3abbd8b542d62737cf618c51c8",
+    "content-hash": "b9b0917a93eaa1bf8289760ea5f79015",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1757,6 +1757,62 @@
                 "source": "https://github.com/johnbillion/extended-cpts/tree/5.1.0"
             },
             "time": "2025-06-18T21:18:03+00:00"
+        },
+        {
+            "name": "pfefferle/wordpress-activitypub",
+            "version": "7.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Automattic/wordpress-activitypub.git",
+                "reference": "af244686b414525757f547e1a73c332215d10789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/af244686b414525757f547e1a73c332215d10789",
+                "reference": "af244686b414525757f547e1a73c332215d10789",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "automattic/jetpack-changelogger": "6.0.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+                "dms/phpunit-arraysubset-asserts": "^0.5.0",
+                "phpcompatibility/php-compatibility": "*",
+                "phpcompatibility/phpcompatibility-wp": "*",
+                "phpcsstandards/phpcsextra": "^1.1.0",
+                "phpunit/phpunit": "^8 || ^9",
+                "sirbrillig/phpcs-variable-analysis": "^2.11",
+                "squizlabs/php_codesniffer": "3.*",
+                "wp-coding-standards/wpcs": "dev-develop",
+                "yoast/phpunit-polyfills": "^4.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "changelogger": {
+                    "changes-dir": ".github/changelog/",
+                    "link-template": "https://github.com/Automattic/wordpress-activitypub/compare/${old}...${new}"
+                },
+                "installer-name": "activitypub"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Pfefferle",
+                    "email": "pfefferle@gmail.com"
+                }
+            ],
+            "description": "The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.",
+            "support": {
+                "issues": "https://github.com/Automattic/wordpress-activitypub/issues",
+                "source": "https://github.com/Automattic/wordpress-activitypub/tree/7.5.0"
+            },
+            "time": "2025-10-01T13:24:10+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",

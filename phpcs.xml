@@ -48,6 +48,7 @@
 	<exclude-pattern>wp-content/plugins/wp-syntax</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wp-user-signups</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wpmovielibrary</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/activitypub</exclude-pattern>
 	<exclude-pattern>wp-content/mu-plugins/cmb2</exclude-pattern>
 	<exclude-pattern>wp-content/mu-plugins/dashboard-changelog</exclude-pattern>
 	<exclude-pattern>wp-content/themes/twenty*</exclude-pattern>
