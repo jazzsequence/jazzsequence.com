@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<ruleset name="jazzsequence Coding Standards">
+	<description>PHP_CodeSniffer ruleset for jazzsequence.com project.</description>
+	<file>.</file>
+	<arg name="extensions" value="php"/>
+	<arg value="-colors"/>
+	<arg value="ns"/>
+
+	<!-- Exclude Plugins managed by Composer -->
+	<exclude-pattern>wp-content/plugins/address-book</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/akismet</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/altis-*</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/amazon-s3-and-cloudfront</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/amf*</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/artists</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/asset-loader</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/asset-manager-framework</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/autoblue</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/browser-security</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/bv-*</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/duplicate-post</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/games-collector</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/gaussholder</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/glotpress</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/gutenberg</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/hello-ziggy</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/hm-redirects</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/litespeed-cache</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/meta-tags</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/ninja-forms</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/organize-series</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/pantheon-content-publisher</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/patcstack</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/plugins-garbage-collector</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/progress-bar</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/publication-checklist</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/query-monitor</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/recipe-box</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/regenerate-thumbnails</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/simple-local-avatars</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/storyftw</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/term-management-tools</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/two-factor</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wordpress-importer</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/workflows</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wp-crontrol</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wp-seo</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wp-syntax</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wp-user-signups</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wpmovielibrary</exclude-pattern>
+	<exclude-pattern>wp-content/mu-plugins/cmb2</exclude-pattern>
+	<exclude-pattern>wp-content/mu-plugins/dashboard-changelog</exclude-pattern>
+	<exclude-pattern>wp-content/themes/twenty*</exclude-pattern>
+	<exclude-pattern>wp-content/themes/jz-222</exclude-pattern>
+	<exclude-pattern>wp-content/themes/museum-core</exclude-pattern>
+	<exclude-pattern>wp-content/themes/ryu</exclude-pattern>
+	<exclude-pattern>wp-content/db.php</exclude-pattern>
+	<exclude-pattern>index.php</exclude-pattern>
+
+	<!-- Exclude /vendor -->
+	<exclude-pattern>vendor/*</exclude-pattern>
+
+	<rule ref="Pantheon-WP">
+
+	</rule>
+
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED"/>
+</ruleset>
