@@ -46,7 +46,7 @@
 		"jazzsequence/jz-222": "dev-main",
 		"jazzsequence/recipe-box": "*",
 		"johnbillion/extended-cpts": "*",
-		"pantheon-systems/pantheon-content-publisher-wordpress": "*",
+		"wpackagist-plugin/pantheon-content-publisher": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
