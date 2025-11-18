@@ -220,6 +220,10 @@ function get_youtube_video_id( $media_url ) {
 	}
 
 	if ( in_array( $host, [ 'youtube.com', 'm.youtube.com' ], true ) ) {
+		if ( ! empty( $parts['path'] ) && 0 === strpos( $parts['path'], '/embed/' ) ) {
+			return trim( basename( $parts['path'] ), '/' );
+		}
+
 		if ( ! empty( $parts['path'] ) && 0 === strpos( $parts['path'], '/shorts/' ) ) {
 			return basename( $parts['path'] );
 		}
@@ -503,8 +507,6 @@ function tune_media_post_content_block( $block_content, $block ) {
 
 	return preg_replace( '/(\bentry-content\b[^"]*)\balignfull\b/', '$1aligncenter', $block_content );
 }
-
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
 
 /**
  * Replace archive content with excerpt for Media entries.
@@ -823,11 +825,14 @@ function import_media_from_source( $source ) {
 
 		$post_id = wp_insert_post(
 			[
-				'post_type'    => 'media',
-				'post_status'  => 'publish',
-				'post_title'   => $post_title,
-				'post_content' => $post_body,
-				'meta_input'   => [
+				'post_type'     => 'media',
+				'post_status'   => 'publish',
+				'post_title'    => $post_title,
+				'post_content'  => $post_body,
+				'post_excerpt'  => $post_body,
+				'post_date'     => ! empty( $item['date'] ) ? $item['date'] : current_time( 'mysql' ),
+				'post_date_gmt' => ! empty( $item['date_gmt'] ) ? $item['date_gmt'] : current_time( 'mysql', true ),
+				'meta_input'    => [
 					'media_url'                => esc_url_raw( $youtube_url ),
 					'_js_media_remote_id'      => $remote_id ? $remote_id : md5( $youtube_url ),
 					'_js_media_remote_title'   => $title,
@@ -874,7 +879,7 @@ function fetch_remote_items( $url ) {
 	}
 
 	$items     = [];
-	$quantity  = $feed->get_item_quantity( 10 );
+	$quantity  = $feed->get_item_quantity( 0 );
 	$simplepie = $feed->get_items( 0, $quantity );
 
 	foreach ( $simplepie as $item ) {
@@ -949,9 +954,16 @@ function extract_youtube_url( $content ) {
 		return '';
 	}
 
-	$pattern = '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtube\.com/embed/|youtu\.be/)[^\s"\']+#i';
+	$pattern = '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtube\.com/embed/|youtu\.be/)([^\s"\']+)#i';
 	if ( preg_match( $pattern, $content, $matches ) ) {
-		return esc_url_raw( $matches[0] );
+		$path = $matches[1];
+
+		// When matching embed URLs, strip query params and standardize to watch?v=
+		if ( str_starts_with( $matches[0], 'https://www.youtube.com/embed/' ) || str_starts_with( $matches[0], 'https://youtube.com/embed/' ) ) {
+			$path = strtok( $path, '?' );
+		}
+
+		return 'https://www.youtube.com/watch?v=' . rawurlencode( $path );
 	}
 
 	return '';
@@ -999,3 +1011,5 @@ function remote_media_exists( $remote_id, $media_url ) {
 
 	return $query->have_posts();
 }
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
