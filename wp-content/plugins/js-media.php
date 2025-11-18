@@ -879,15 +879,16 @@ function fetch_remote_items( $url ) {
 	}
 
 	$items     = [];
-	$quantity  = $feed->get_item_quantity( 0 );
-	$simplepie = $feed->get_items( 0, $quantity );
+	$simplepie = $feed->get_items();
 
 	foreach ( $simplepie as $item ) {
 		$items[] = [
-			'id'      => $item->get_id(),
-			'title'   => $item->get_title(),
-			'content' => $item->get_content(),
-			'link'    => $item->get_permalink(),
+			'id'        => $item->get_id(),
+			'title'     => $item->get_title(),
+			'content'   => $item->get_content(),
+			'link'      => $item->get_permalink(),
+			'date'      => $item->get_date( 'Y-m-d H:i:s' ),
+			'date_gmt'  => $item->get_gmdate( 'Y-m-d H:i:s' ),
 		];
 	}
 
@@ -912,10 +913,12 @@ function normalize_rest_items( array $data ) {
 		}
 
 		$items[] = [
-			'id'      => $entry['id'] ?? '',
-			'title'   => $entry['title']['rendered'] ?? ( $entry['title'] ?? '' ),
-			'content' => $entry['content']['rendered'] ?? ( $entry['content'] ?? '' ),
-			'link'    => $entry['link'] ?? '',
+			'id'       => $entry['id'] ?? '',
+			'title'    => $entry['title']['rendered'] ?? ( $entry['title'] ?? '' ),
+			'content'  => $entry['content']['rendered'] ?? ( $entry['content'] ?? '' ),
+			'link'     => $entry['link'] ?? '',
+			'date'     => $entry['date'] ?? '',
+			'date_gmt' => $entry['date_gmt'] ?? '',
 		];
 	}
 
@@ -955,18 +958,13 @@ function extract_youtube_url( $content ) {
 	}
 
 	$pattern = '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtube\.com/embed/|youtu\.be/)([^\s"\']+)#i';
-	if ( preg_match( $pattern, $content, $matches ) ) {
-		$path = $matches[1];
-
-		// When matching embed URLs, strip query params and standardize to watch?v=
-		if ( str_starts_with( $matches[0], 'https://www.youtube.com/embed/' ) || str_starts_with( $matches[0], 'https://youtube.com/embed/' ) ) {
-			$path = strtok( $path, '?' );
-		}
-
-		return 'https://www.youtube.com/watch?v=' . rawurlencode( $path );
+	if ( ! preg_match( $pattern, $content, $matches ) ) {
+		return '';
 	}
 
-	return '';
+	$id_part = strtok( $matches[1], '?&' );
+
+	return 'https://www.youtube.com/watch?v=' . rawurlencode( $id_part );
 }
 
 /**
