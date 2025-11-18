@@ -823,7 +823,7 @@ function import_media_from_source( $source ) {
 			)
 		);
 
-		$post_id = wp_insert_post(
+		wp_insert_post(
 			[
 				'post_type'     => 'media',
 				'post_status'   => 'publish',
@@ -843,10 +843,6 @@ function import_media_from_source( $source ) {
 				],
 			]
 		);
-
-		if ( ! is_wp_error( $post_id ) && $post_id ) {
-			// save_post_media hook will sideload thumbnail from media_url.
-		}
 	}
 }
 
@@ -857,7 +853,7 @@ function import_media_from_source( $source ) {
  * @return array
  */
 function fetch_remote_items( $url ) {
-	$response = wp_remote_get( $url, [ 'timeout' => 15 ] );
+	$response = wp_remote_get( $url, [ 'timeout' => 3 ] );
 	if ( is_wp_error( $response ) ) {
 		return [];
 	}
