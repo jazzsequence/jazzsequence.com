@@ -34,6 +34,15 @@ function bootstrap() {
 }
 
 /**
+ * YouTube URL regex pattern.
+ * 
+ * @return string
+ */
+function get_youtube_pattern() {
+	return '/https?:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([^\s"\'>?#&]+)/i';
+}
+
+/**
  * Register the 'media' custom post type.
  */
 function create_media_post_type() {
@@ -173,7 +182,7 @@ function get_media_thumbnail_url( $media_url ) {
 		return esc_url_raw( $data->thumbnail_url );
 	}
 
-	$youtube_id = get_youtube_video_id( $media_url );
+	$youtube_id = get_youtube_id_from_string( $media_url );
 	if ( $youtube_id ) {
 		return sprintf( 'https://img.youtube.com/vi/%s/maxresdefault.jpg', $youtube_id );
 	}
@@ -199,46 +208,6 @@ function get_media_oembed_data( $media_url ) {
 	}
 
 	return $data;
-}
-
-/**
- * Extract a YouTube video ID from a URL if one exists.
- *
- * @param string $media_url Remote media URL.
- * @return string
- */
-function get_youtube_video_id( $media_url ) {
-	$parts = wp_parse_url( $media_url );
-	if ( ! $parts || empty( $parts['host'] ) ) {
-		return '';
-	}
-
-	$host = strtolower( preg_replace( '/^www\./', '', $parts['host'] ) );
-
-	if ( 'youtu.be' === $host && ! empty( $parts['path'] ) ) {
-		return trim( $parts['path'], '/' );
-	}
-
-	if ( in_array( $host, [ 'youtube.com', 'm.youtube.com' ], true ) ) {
-		if ( ! empty( $parts['path'] ) && 0 === strpos( $parts['path'], '/embed/' ) ) {
-			return trim( basename( $parts['path'] ), '/' );
-		}
-
-		if ( ! empty( $parts['path'] ) && 0 === strpos( $parts['path'], '/shorts/' ) ) {
-			return basename( $parts['path'] );
-		}
-
-		if ( empty( $parts['query'] ) ) {
-			return '';
-		}
-
-		parse_str( $parts['query'], $query_vars );
-		if ( ! empty( $query_vars['v'] ) ) {
-			return sanitize_text_field( $query_vars['v'] );
-		}
-	}
-
-	return '';
 }
 
 /**
@@ -953,14 +922,32 @@ function extract_youtube_url( $content ) {
 		return '';
 	}
 
-	$pattern = '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtube\.com/embed/|youtu\.be/)([^\s"\']+)#i';
-	if ( ! preg_match( $pattern, $content, $matches ) ) {
+	$id_part = get_youtube_id_from_string( $content );
+	if ( ! $id_part ) {
+		return '';
+	}
+
+	return 'https://www.youtube.com/watch?v=' . rawurlencode( $id_part );
+}
+
+/**
+ * Extract a YouTube video ID from arbitrary text or URL.
+ *
+ * @param string $text Text that may contain a YouTube URL.
+ * @return string
+ */
+function get_youtube_id_from_string( $text ) {
+	if ( ! $text ) {
+		return '';
+	}
+
+	if ( ! preg_match( get_youtube_pattern(), $text, $matches ) ) {
 		return '';
 	}
 
 	$id_part = strtok( $matches[1], '?&' );
 
-	return 'https://www.youtube.com/watch?v=' . rawurlencode( $id_part );
+	return sanitize_text_field( $id_part );
 }
 
 /**
