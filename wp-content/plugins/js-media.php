@@ -18,6 +18,7 @@ namespace Jazzsequence\Media;
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\create_media_post_type' );
 	add_action( 'init', __NAMESPACE__ . '\\register_media_url_meta' );
+	add_action( 'init', __NAMESPACE__ . '\\ensure_media_import_schedule' );
 	add_action( 'add_meta_boxes_media', __NAMESPACE__ . '\\register_media_meta_box' );
 	add_action( 'save_post_media', __NAMESPACE__ . '\\save_media_meta_box', 5, 3 );
 	add_action( 'save_post_media', __NAMESPACE__ . '\\sideload_media_thumbnail', 10, 3 );
@@ -27,6 +28,9 @@ function bootstrap() {
 	add_filter( 'get_the_excerpt', __NAMESPACE__ . '\\filter_media_excerpt', 10, 2 );
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_media_assets' );
 	add_filter( 'the_content', __NAMESPACE__ . '\\filter_media_archive_content', 9 );
+	add_filter( 'cron_schedules', __NAMESPACE__ . '\\add_weekly_schedule' );
+	add_action( 'js_media_import_sources', __NAMESPACE__ . '\\run_media_imports' );
+	add_action( 'admin_menu', __NAMESPACE__ . '\\register_media_sources_menu' );
 }
 
 /**
@@ -583,4 +587,415 @@ function query_contains_media_posts() {
 	}
 
 	return false;
+}
+
+/**
+ * Add a weekly cron schedule.
+ *
+ * @param array $schedules Existing schedules.
+ * @return array
+ */
+function add_weekly_schedule( $schedules ) {
+	if ( ! isset( $schedules['weekly'] ) ) {
+		$schedules['weekly'] = [
+			'interval' => WEEK_IN_SECONDS,
+			'display'  => __( 'Once Weekly', 'js-media' ),
+		];
+	}
+
+	return $schedules;
+}
+
+/**
+ * Ensure the import event is scheduled.
+ *
+ * @return void
+ */
+function ensure_media_import_schedule() {
+	if ( wp_next_scheduled( 'js_media_import_sources' ) ) {
+		return;
+	}
+
+	wp_schedule_event( time() + HOUR_IN_SECONDS, 'weekly', 'js_media_import_sources' );
+}
+
+/**
+ * Add the Media Sources submenu.
+ *
+ * @return void
+ */
+function register_media_sources_menu() {
+	add_submenu_page(
+		'edit.php?post_type=media',
+		__( 'Media Sources', 'js-media' ),
+		__( 'Media Sources', 'js-media' ),
+		'manage_options',
+		'js-media-sources',
+		__NAMESPACE__ . '\\render_media_sources_page'
+	);
+}
+
+/**
+ * Render the Media Sources settings page.
+ *
+ * @return void
+ */
+function render_media_sources_page() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	if ( isset( $_POST['js_media_sources_action'] ) ) {
+		check_admin_referer( 'js_media_sources_action', 'js_media_sources_nonce' );
+
+		$action = sanitize_text_field( wp_unslash( $_POST['js_media_sources_action'] ) );
+		if ( 'add' === $action ) {
+			$source_url  = isset( $_POST['js_media_source_url'] ) ? esc_url_raw( wp_unslash( $_POST['js_media_source_url'] ) ) : '';
+			$source_name = isset( $_POST['js_media_source_name'] ) ? sanitize_text_field( wp_unslash( $_POST['js_media_source_name'] ) ) : '';
+
+			if ( $source_url && $source_name ) {
+				$sources   = get_media_sources();
+				$sources[] = [
+					'id'   => md5( $source_url . '|' . $source_name ),
+					'url'  => $source_url,
+					'name' => $source_name,
+				];
+
+				update_option( 'js_media_sources', $sources, false );
+			}
+		}
+
+		if ( 'delete' === $action && ! empty( $_POST['js_media_source_id'] ) ) {
+			$delete_id = sanitize_text_field( wp_unslash( $_POST['js_media_source_id'] ) );
+			$sources   = array_values(
+				array_filter(
+					get_media_sources(),
+					static function ( $source ) use ( $delete_id ) {
+						return isset( $source['id'] ) && $delete_id !== $source['id'];
+					}
+				)
+			);
+			update_option( 'js_media_sources', $sources, false );
+		}
+
+		if ( 'run' === $action ) {
+			run_media_imports();
+		}
+	}
+
+	$sources = get_media_sources();
+	?>
+	<div class="wrap">
+		<h1><?php esc_html_e( 'Media Sources', 'js-media' ); ?></h1>
+
+		<h2><?php esc_html_e( 'Add Source', 'js-media' ); ?></h2>
+		<form method="post">
+			<?php wp_nonce_field( 'js_media_sources_action', 'js_media_sources_nonce' ); ?>
+			<input type="hidden" name="js_media_sources_action" value="add" />
+			<table class="form-table" role="presentation">
+				<tr>
+					<th scope="row"><label for="js_media_source_name"><?php esc_html_e( 'Source Name', 'js-media' ); ?></label></th>
+					<td><input name="js_media_source_name" id="js_media_source_name" type="text" class="regular-text" required /></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="js_media_source_url"><?php esc_html_e( 'Source URL (RSS or WP REST)', 'js-media' ); ?></label></th>
+					<td><input name="js_media_source_url" id="js_media_source_url" type="url" class="regular-text" required /></td>
+				</tr>
+			</table>
+			<?php submit_button( __( 'Add Source', 'js-media' ) ); ?>
+		</form>
+
+		<h2><?php esc_html_e( 'Existing Sources', 'js-media' ); ?></h2>
+		<?php if ( empty( $sources ) ) : ?>
+			<p><?php esc_html_e( 'No sources added yet.', 'js-media' ); ?></p>
+		<?php else : ?>
+			<table class="widefat striped">
+				<thead>
+					<tr>
+						<th><?php esc_html_e( 'Name', 'js-media' ); ?></th>
+						<th><?php esc_html_e( 'URL', 'js-media' ); ?></th>
+						<th><?php esc_html_e( 'Actions', 'js-media' ); ?></th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ( $sources as $source ) : ?>
+					<tr>
+						<td><?php echo esc_html( $source['name'] ); ?></td>
+						<td><code><?php echo esc_html( $source['url'] ); ?></code></td>
+						<td>
+							<form method="post" style="display:inline">
+								<?php wp_nonce_field( 'js_media_sources_action', 'js_media_sources_nonce' ); ?>
+								<input type="hidden" name="js_media_sources_action" value="delete" />
+								<input type="hidden" name="js_media_source_id" value="<?php echo esc_attr( $source['id'] ); ?>" />
+								<?php submit_button( __( 'Delete', 'js-media' ), 'delete', 'submit', false ); ?>
+							</form>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		<?php endif; ?>
+
+		<form method="post" style="margin-top:20px;">
+			<?php wp_nonce_field( 'js_media_sources_action', 'js_media_sources_nonce' ); ?>
+			<input type="hidden" name="js_media_sources_action" value="run" />
+			<?php submit_button( __( 'Run Import Now', 'js-media' ), 'secondary' ); ?>
+		</form>
+	</div>
+	<?php
+}
+
+/**
+ * Get configured media sources.
+ *
+ * @return array
+ */
+function get_media_sources() {
+	$sources = get_option( 'js_media_sources', [] );
+
+	return is_array( $sources ) ? $sources : [];
+}
+
+/**
+ * Run imports for all sources.
+ *
+ * @return void
+ */
+function run_media_imports() {
+	$sources = get_media_sources();
+	if ( empty( $sources ) ) {
+		return;
+	}
+
+	foreach ( $sources as $source ) {
+		import_media_from_source( $source );
+	}
+}
+
+/**
+ * Import media items from a single source.
+ *
+ * @param array $source Source data.
+ * @return void
+ */
+function import_media_from_source( $source ) {
+	if ( empty( $source['url'] ) || empty( $source['name'] ) ) {
+		return;
+	}
+
+	$items = fetch_remote_items( $source['url'] );
+	if ( empty( $items ) ) {
+		return;
+	}
+
+	foreach ( $items as $item ) {
+		$remote_id   = isset( $item['id'] ) ? sanitize_text_field( (string) $item['id'] ) : '';
+		$title       = isset( $item['title'] ) ? wp_strip_all_tags( (string) $item['title'] ) : '';
+		$content     = isset( $item['content'] ) ? (string) $item['content'] : '';
+		$permalink   = isset( $item['link'] ) ? esc_url_raw( $item['link'] ) : '';
+		$title_parts = parse_episode_title( $title );
+
+		$episode_number = $title_parts['episode'];
+		$guest_name     = $title_parts['guest'];
+		$youtube_url    = extract_youtube_url( $content );
+
+		if ( ! $youtube_url && $permalink ) {
+			$youtube_url = extract_youtube_url( $permalink );
+		}
+
+		if ( ! $youtube_url ) {
+			continue;
+		}
+
+		// Prevent duplicates by remote ID or media URL.
+		if ( remote_media_exists( $remote_id, $youtube_url ) ) {
+			continue;
+		}
+
+		$post_title = $guest_name ? $guest_name : $title;
+		$post_body  = trim(
+			sprintf(
+				'%s%s',
+				$source['name'],
+				$episode_number ? ' #' . $episode_number : ''
+			)
+		);
+
+		$post_id = wp_insert_post(
+			[
+				'post_type'    => 'media',
+				'post_status'  => 'publish',
+				'post_title'   => $post_title,
+				'post_content' => $post_body,
+				'meta_input'   => [
+					'media_url'                => esc_url_raw( $youtube_url ),
+					'_js_media_remote_id'      => $remote_id ? $remote_id : md5( $youtube_url ),
+					'_js_media_remote_title'   => $title,
+					'_js_media_remote_link'    => $permalink,
+					'_js_media_source_name'    => sanitize_text_field( $source['name'] ),
+					'_js_media_source_url'     => esc_url_raw( $source['url'] ),
+					'_js_media_episode_number' => $episode_number,
+				],
+			]
+		);
+
+		if ( ! is_wp_error( $post_id ) && $post_id ) {
+			// save_post_media hook will sideload thumbnail from media_url.
+		}
+	}
+}
+
+/**
+ * Fetch remote items from a URL (tries JSON then RSS/Atom).
+ *
+ * @param string $url Source URL.
+ * @return array
+ */
+function fetch_remote_items( $url ) {
+	$response = wp_remote_get( $url, [ 'timeout' => 15 ] );
+	if ( is_wp_error( $response ) ) {
+		return [];
+	}
+
+	$body = wp_remote_retrieve_body( $response );
+	if ( ! $body ) {
+		return [];
+	}
+
+	$data = json_decode( $body, true );
+	if ( is_array( $data ) ) {
+		return normalize_rest_items( $data );
+	}
+
+	require_once ABSPATH . WPINC . '/feed.php';
+	$feed = fetch_feed( $url );
+	if ( is_wp_error( $feed ) ) {
+		return [];
+	}
+
+	$items     = [];
+	$quantity  = $feed->get_item_quantity( 10 );
+	$simplepie = $feed->get_items( 0, $quantity );
+
+	foreach ( $simplepie as $item ) {
+		$items[] = [
+			'id'      => $item->get_id(),
+			'title'   => $item->get_title(),
+			'content' => $item->get_content(),
+			'link'    => $item->get_permalink(),
+		];
+	}
+
+	return $items;
+}
+
+/**
+ * Normalize REST items from WP JSON responses.
+ *
+ * @param array $data Raw JSON data.
+ * @return array
+ */
+function normalize_rest_items( array $data ) {
+	$items = [];
+
+	// Handle both plain arrays of posts and wrapped responses.
+	$list = isset( $data['posts'] ) && is_array( $data['posts'] ) ? $data['posts'] : $data;
+
+	foreach ( $list as $entry ) {
+		if ( ! is_array( $entry ) ) {
+			continue;
+		}
+
+		$items[] = [
+			'id'      => $entry['id'] ?? '',
+			'title'   => $entry['title']['rendered'] ?? ( $entry['title'] ?? '' ),
+			'content' => $entry['content']['rendered'] ?? ( $entry['content'] ?? '' ),
+			'link'    => $entry['link'] ?? '',
+		];
+	}
+
+	return $items;
+}
+
+/**
+ * Parse episode title into components.
+ *
+ * @param string $title Remote title.
+ * @return array{episode:string,guest:string}
+ */
+function parse_episode_title( $title ) {
+	$episode = '';
+	$guest   = trim( $title );
+
+	if ( preg_match( '/episode\s*#?\s*(\d+)\s*:\s*(.+)/i', $title, $matches ) ) {
+		$episode = $matches[1];
+		$guest   = $matches[2];
+	}
+
+	return [
+		'episode' => $episode,
+		'guest'   => $guest,
+	];
+}
+
+/**
+ * Extract the first YouTube URL from HTML/text.
+ *
+ * @param string $content HTML content.
+ * @return string
+ */
+function extract_youtube_url( $content ) {
+	if ( ! $content ) {
+		return '';
+	}
+
+	$pattern = '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtube\.com/embed/|youtu\.be/)[^\s"\']+#i';
+	if ( preg_match( $pattern, $content, $matches ) ) {
+		return esc_url_raw( $matches[0] );
+	}
+
+	return '';
+}
+
+/**
+ * Determine if a remote media item already exists.
+ *
+ * @param string $remote_id  Remote identifier.
+ * @param string $media_url  Media URL.
+ * @return bool
+ */
+function remote_media_exists( $remote_id, $media_url ) {
+	$meta_queries = [];
+
+	if ( $remote_id ) {
+		$meta_queries[] = [
+			'key'   => '_js_media_remote_id',
+			'value' => $remote_id,
+		];
+	}
+
+	if ( $media_url ) {
+		$meta_queries[] = [
+			'key'   => 'media_url',
+			'value' => $media_url,
+		];
+	}
+
+	if ( empty( $meta_queries ) ) {
+		return false;
+	}
+
+	$query = new \WP_Query(
+		[
+			'post_type'      => 'media',
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+			'meta_query'     => [
+				'relation' => 'OR',
+				...$meta_queries,
+			],
+		]
+	);
+
+	return $query->have_posts();
 }
