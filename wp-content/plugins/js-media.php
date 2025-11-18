@@ -31,6 +31,8 @@ function bootstrap() {
 	add_filter( 'cron_schedules', __NAMESPACE__ . '\\add_weekly_schedule' );
 	add_action( 'js_media_import_sources', __NAMESPACE__ . '\\run_media_imports' );
 	add_action( 'admin_menu', __NAMESPACE__ . '\\register_media_sources_menu' );
+	add_action( 'init', __NAMESPACE__ . '\\add_media_pagination_rewrite' );
+	add_filter( 'query_vars', __NAMESPACE__ . '\\allow_media_pagination_query_var' );
 }
 
 /**
@@ -558,6 +560,26 @@ function query_contains_media_posts() {
 	}
 
 	return false;
+}
+
+/**
+ * Add pretty pagination for Media archives (/videos/page/2/).
+ *
+ * @return void
+ */
+function add_media_pagination_rewrite() {
+	add_rewrite_rule( '^videos/page/([0-9]+)/?$', 'index.php?post_type=media&query-24-page=$matches[1]', 'top' );
+}
+
+/**
+ * Allow the query loop pagination variable used in the Media archive template.
+ *
+ * @param array $vars Public query vars.
+ * @return array
+ */
+function allow_media_pagination_query_var( $vars ) {
+	$vars[] = 'query-24-page';
+	return $vars;
 }
 
 /**
