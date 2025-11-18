@@ -658,7 +658,7 @@ function render_media_sources_page() {
 			if ( $source_url && $source_name ) {
 				$sources   = get_media_sources();
 				$sources[] = [
-					'id'   => md5( $source_url . '|' . $source_name ),
+					'id'   => uniqid('', true),
 					'url'  => $source_url,
 					'name' => $source_name,
 				];
@@ -853,7 +853,7 @@ function import_media_from_source( $source ) {
  * @return array
  */
 function fetch_remote_items( $url ) {
-	$response = wp_remote_get( $url, [ 'timeout' => 3 ] );
+	$response = wp_remote_get( $url, [ 'timeout' => 15 ] );
 	if ( is_wp_error( $response ) ) {
 		return [];
 	}
