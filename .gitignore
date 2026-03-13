@@ -10,6 +10,8 @@ wp-content/mu-plugins/*
 wp-content/plugins/*
 !wp-content/plugins/js-*
 !wp-content/plugins/autoblue/**/*
+!wp-content/plugins/jazzsequence-mcp-abilities/
+!wp-content/plugins/jazzsequence-mcp-abilities/**
 wp-content/themes/*
 !wp-content/themes/artbox
 !wp-content/themes/artbox/index.php

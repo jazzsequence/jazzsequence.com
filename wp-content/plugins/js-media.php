@@ -568,7 +568,8 @@ function query_contains_media_posts() {
  * @return void
  */
 function add_media_pagination_rewrite() {
-	add_rewrite_rule( '^videos/page/([0-9]+)/?$', 'index.php?post_type=media&query-24-page=$matches[1]', 'top' );
+	// Pretty pagination for the "Videos" page using the query loop pagination var.
+	add_rewrite_rule( '^videos/page/([0-9]+)/?$', 'index.php?pagename=videos&query-24-page=$matches[1]', 'top' );
 }
 
 /**

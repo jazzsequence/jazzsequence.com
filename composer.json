@@ -5,6 +5,36 @@
 	"prefer-stable": true,
 	"repositories": [
 		{
+			"type": "package",
+			"package": {
+				"name": "wpackagist-plugin/wp-syntax",
+				"version": "1.2",
+				"type": "wordpress-plugin",
+				"dist": {
+					"url": "https://downloads.wordpress.org/plugin/wp-syntax.1.2.zip",
+					"type": "zip"
+				},
+				"require": {
+					"composer/installers": "~1.0"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wpackagist-plugin/wpmovielibrary",
+				"version": "2.1.4.8",
+				"type": "wordpress-plugin",
+				"dist": {
+					"url": "https://downloads.wordpress.org/plugin/wpmovielibrary.2.1.4.8.zip",
+					"type": "zip"
+				},
+				"require": {
+					"composer/installers": "~1.0"
+				}
+			}
+		},
+		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
 		},
@@ -46,7 +76,8 @@
 		"jazzsequence/jz-222": "dev-main",
 		"jazzsequence/recipe-box": "*",
 		"johnbillion/extended-cpts": "*",
-		"pfefferle/wordpress-activitypub": "^7.5",
+		"pfefferle/wordpress-activitypub": "*",
+		"wordpress/mcp-adapter": "*",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/altis-accelerate": "*",
 		"wpackagist-plugin/amazon-s3-and-cloudfront": "*",
@@ -65,8 +96,8 @@
 		"wpackagist-plugin/regenerate-thumbnails": "*",
 		"wpackagist-plugin/storyftw": "*",
 		"wpackagist-plugin/term-management-tools": "*",
-		"wpackagist-plugin/wp-syntax": "*",
-		"wpackagist-plugin/wpmovielibrary": "*",
+		"wpackagist-plugin/wp-syntax": "1.2",
+		"wpackagist-plugin/wpmovielibrary": "2.1.4.8",
 		"wpackagist-theme/museum-core": "*",
 		"wpackagist-theme/ryu": "*",
 		"wpackagist-theme/twentynineteen": "*",
