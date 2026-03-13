@@ -30,6 +30,13 @@ jobs:
         run: composer config --auth http-basic.objectcache.pro token ${{ secrets.OBJECTCACHE_PRO_TOKEN }}
       - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+      - name: Setup MCP Adapter
+        run: |
+          MCP_ADAPTER_PATH=vendor/wordpress/mcp-adapter
+          if [ -d "$MCP_ADAPTER_PATH" ]; then
+            cd $MCP_ADAPTER_PATH
+            composer install --no-dev --no-progress --ignore-platform-reqs
+          fi
       - name: Setup Dashboard Changelog
         run: |
           # This is a temporary fix if the build tools do not work
