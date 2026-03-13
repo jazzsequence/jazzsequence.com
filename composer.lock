@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b49caeffc065fcf967fa2ff291e8ad6c",
+    "content-hash": "948ef4d4dc70457f2ef7da722932a1f2",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1786,21 +1786,21 @@
         },
         {
             "name": "pfefferle/wordpress-activitypub",
-            "version": "7.9.1",
+            "version": "8.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/wordpress-activitypub.git",
-                "reference": "a0dc2513e48c2a12354b223d4657be3e4e7c8601"
+                "reference": "a7e7b85528638f04a5fd63b95a4103a64e8dc7f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/a0dc2513e48c2a12354b223d4657be3e4e7c8601",
-                "reference": "a0dc2513e48c2a12354b223d4657be3e4e7c8601",
+                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/a7e7b85528638f04a5fd63b95a4103a64e8dc7f9",
+                "reference": "a7e7b85528638f04a5fd63b95a4103a64e8dc7f9",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0",
-                "php": ">=7.2"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "automattic/jetpack-changelogger": "6.0.0",
@@ -1809,7 +1809,7 @@
                 "phpcompatibility/php-compatibility": "*",
                 "phpcompatibility/phpcompatibility-wp": "*",
                 "phpcsstandards/phpcsextra": "^1.1.0",
-                "phpunit/phpunit": "^8 || ^9",
+                "phpunit/phpunit": "^9",
                 "sirbrillig/phpcs-variable-analysis": "^2.11",
                 "squizlabs/php_codesniffer": "3.*",
                 "wp-coding-standards/wpcs": "dev-develop",
@@ -1836,9 +1836,9 @@
             "description": "The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.",
             "support": {
                 "issues": "https://github.com/Automattic/wordpress-activitypub/issues",
-                "source": "https://github.com/Automattic/wordpress-activitypub/tree/7.9.1"
+                "source": "https://github.com/Automattic/wordpress-activitypub/tree/8.0.1"
             },
-            "time": "2026-02-09T13:29:36+00:00"
+            "time": "2026-03-11T09:23:50+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1876,6 +1876,80 @@
                 "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.2"
             },
             "time": "2021-05-29T20:49:58+00:00"
+        },
+        {
+            "name": "wordpress/mcp-adapter",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/mcp-adapter.git",
+                "reference": "1a0f9ab868e34b4375be42e873f60765e6632505"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WordPress/mcp-adapter/zipball/1a0f9ab868e34b4375be42e873f60765e6632505",
+                "reference": "1a0f9ab868e34b4375be42e873f60765e6632505",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "automattic/vipwpcs": "^3.0",
+                "php-stubs/wp-cli-stubs": "^2.12",
+                "phpcompatibility/php-compatibility": "10.x-dev as 9.99.99",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/php-8-stubs": "^0.4.24",
+                "phpstan/phpstan": "^2.1.22",
+                "phpstan/phpstan-deprecation-rules": "^2.0.3",
+                "phpunit/phpunit": "^9.6",
+                "slevomat/coding-standard": "^8.0",
+                "szepeviktor/phpstan-wordpress": "^2.0",
+                "wp-phpunit/wp-phpunit": "^6.5",
+                "wpackagist-plugin/plugin-check": "^1.6",
+                "yoast/phpunit-polyfills": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "installer-paths": {
+                    "vendor/{$vendor}/{$name}/": [
+                        "wpackagist-plugin/plugin-check"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WP\\MCP\\": "includes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress AI Team",
+                    "homepage": "https://make.wordpress.org/ai/"
+                }
+            ],
+            "description": "Adapter for Abilities API, letting WordPress abilities to be used as MCP tools, resources or prompts",
+            "homepage": "https://github.com/wordpress/mcp-adapter",
+            "keywords": [
+                "abilities-api",
+                "adapter",
+                "ai",
+                "api",
+                "integration",
+                "mcp",
+                "model-context-protocol",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/wordpress/mcp-adapter/issues",
+                "source": "https://github.com/wordpress/mcp-adapter"
+            },
+            "time": "2025-12-09T06:56:51+00:00"
         },
         {
             "name": "wpackagist-plugin/akismet",
