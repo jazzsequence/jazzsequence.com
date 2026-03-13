@@ -149,18 +149,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<pre style="background: #f0f0f1; padding: 1em; border-radius: 4px; overflow-x: auto;"><code>{
   "mcpServers": {
-    "jazzsequence": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-wordpress"
-      ],
-      "env": {
-        "WORDPRESS_URL": "<?php echo esc_js( home_url() ); ?>",
-        "WORDPRESS_USERNAME": "<?php echo esc_js( \JazzSequence\MCP_Abilities\Security\MCP_USER_LOGIN ); ?>",
-        "WORDPRESS_APP_PASSWORD": "YOUR_APPLICATION_PASSWORD_HERE"
-      }
-    }
+	"jazzsequence": {
+	  "command": "npx",
+	  "args": [
+		"-y",
+		"@modelcontextprotocol/server-wordpress"
+	  ],
+	  "env": {
+		"WORDPRESS_URL": "<?php echo esc_js( home_url() ); ?>",
+		"WORDPRESS_USERNAME": "<?php echo esc_js( \JazzSequence\MCP_Abilities\Security\MCP_USER_LOGIN ); ?>",
+		"WORDPRESS_APP_PASSWORD": "YOUR_APPLICATION_PASSWORD_HERE"
+	  }
+	}
   }
 }</code></pre>
 

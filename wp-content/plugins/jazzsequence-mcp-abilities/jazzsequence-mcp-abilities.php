@@ -127,7 +127,7 @@ function activate(): void {
 		wp_die(
 			esc_html__( 'JazzSequence MCP Abilities requires WordPress 6.9+ or the Abilities API plugin.', 'jazzsequence-mcp-abilities' ),
 			esc_html__( 'Plugin Activation Error', 'jazzsequence-mcp-abilities' ),
-			array( 'back_link' => true )
+			[ 'back_link' => true ]
 		);
 	}
 
@@ -144,9 +144,11 @@ register_activation_hook( __FILE__, __NAMESPACE__ . '\activate' );
  * @since 0.1.0
  */
 function deactivate(): void {
-	// Note: We intentionally do NOT delete the MCP user on deactivation.
-	// This preserves the user account and application passwords.
-	// Admin must manually delete the user if desired.
+	/*
+	 * Note: We intentionally do NOT delete the MCP user on deactivation.
+	 * This preserves the user account and application passwords.
+	 * Admin must manually delete the user if desired.
+	 */
 }
 
 register_deactivation_hook( __FILE__, __NAMESPACE__ . '\deactivate' );

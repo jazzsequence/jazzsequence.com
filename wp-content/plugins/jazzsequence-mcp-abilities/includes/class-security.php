@@ -13,7 +13,7 @@ declare( strict_types=1 );
 namespace JazzSequence\MCP_Abilities\Security;
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' )) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -50,7 +50,7 @@ function register_mcp_role(): void {
 	}
 
 	// Define capabilities for AI Manager role.
-	$capabilities = array(
+	$capabilities = [
 		// Read capabilities.
 		'read'                   => true,
 		'read_private_posts'     => true,
@@ -117,7 +117,7 @@ function register_mcp_role(): void {
 		'update_core'            => false,
 		'export'                 => true,
 		'import'                 => false,
-	);
+	];
 
 	/**
 	 * Filter the capabilities for the AI Manager role.
@@ -129,6 +129,7 @@ function register_mcp_role(): void {
 	$capabilities = apply_filters( 'jsmcp_ai_manager_capabilities', $capabilities );
 
 	// Add the role.
+	// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.custom_role_add_role -- Not a VIP site.
 	add_role(
 		MCP_ROLE_NAME,
 		__( 'AI Manager', 'jazzsequence-mcp-abilities' ),
@@ -156,19 +157,22 @@ function create_mcp_user_on_activation(): void {
 
 	// Create the user.
 	$user_id = wp_insert_user(
-		array(
+		[
 			'user_login'   => MCP_USER_LOGIN,
 			'user_email'   => MCP_USER_EMAIL,
 			'display_name' => __( 'Claude MCP', 'jazzsequence-mcp-abilities' ),
 			'user_pass'    => wp_generate_password( 64, true, true ),
 			'role'         => MCP_ROLE_NAME,
 			'description'  => __( 'AI-powered site management user with MCP access. Managed by JazzSequence MCP Abilities plugin.', 'jazzsequence-mcp-abilities' ),
-		)
+		]
 	);
 
 	if ( is_wp_error( $user_id ) ) {
-		// Log error but don't fail activation.
-		error_log( 'JazzSequence MCP Abilities: Failed to create MCP user - ' . $user_id->get_error_message() );
+		/*
+		 * Store error for admin notice instead of error_log.
+		 * This prevents development function from being used in production.
+		 */
+		update_option( 'jsmcp_activation_error', $user_id->get_error_message() );
 		return;
 	}
 
@@ -223,7 +227,7 @@ function generate_application_password( string $app_name = 'Claude MCP Access' )
 	// Generate the application password.
 	$created = \WP_Application_Passwords::create_new_application_password(
 		$user->ID,
-		array( 'name' => $app_name )
+		[ 'name' => $app_name ]
 	);
 
 	if ( is_wp_error( $created ) ) {
@@ -231,12 +235,12 @@ function generate_application_password( string $app_name = 'Claude MCP Access' )
 	}
 
 	// Return the password details.
-	return array(
+	return [
 		'user_login' => MCP_USER_LOGIN,
 		'password'   => \WP_Application_Passwords::chunk_password( $created[0] ),
 		'uuid'       => $created[1]['uuid'],
 		'created'    => $created[1]['created'],
-	);
+	];
 }
 
 /**
@@ -367,7 +371,7 @@ function render_admin_page(): void {
 	}
 
 	$user             = get_mcp_user();
-	$app_passwords    = is_wp_error( $user ) ? array() : list_application_passwords();
+	$app_passwords    = is_wp_error( $user ) ? [] : list_application_passwords();
 	$new_password     = get_transient( 'jsmcp_new_password' );
 	$mcp_adapter_path = defined( 'WP_DEBUG' ) && WP_DEBUG
 		? '/wp-json/mcp/mcp-adapter-default-server'

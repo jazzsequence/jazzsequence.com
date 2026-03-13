@@ -34,11 +34,11 @@ class Discovery_Engine {
 	 * @return array Discovery results.
 	 */
 	public function discover_post_types( string $format = 'json' ): array {
-		$post_types = get_post_types( array(), 'objects' );
-		$data       = array();
+		$post_types = get_post_types( [], 'objects' );
+		$data       = [];
 
 		foreach ( $post_types as $post_type ) {
-			$data[ $post_type->name ] = array(
+			$data[ $post_type->name ] = [
 				'name'          => $post_type->name,
 				'label'         => $post_type->label,
 				'labels'        => (array) $post_type->labels,
@@ -55,7 +55,7 @@ class Discovery_Engine {
 				'capability_type' => $post_type->capability_type,
 				'capabilities'  => (array) $post_type->cap,
 				'registered_meta' => $this->get_registered_meta( $post_type->name ),
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Post Types' );
@@ -70,18 +70,18 @@ class Discovery_Engine {
 	 * @return array Discovery results.
 	 */
 	public function discover_taxonomies( string $format = 'json' ): array {
-		$taxonomies = get_taxonomies( array(), 'objects' );
-		$data       = array();
+		$taxonomies = get_taxonomies( [], 'objects' );
+		$data       = [];
 
 		foreach ( $taxonomies as $taxonomy ) {
 			$terms = get_terms(
-				array(
+				[
 					'taxonomy'   => $taxonomy->name,
 					'hide_empty' => false,
-				)
+				]
 			);
 
-			$data[ $taxonomy->name ] = array(
+			$data[ $taxonomy->name ] = [
 				'name'         => $taxonomy->name,
 				'label'        => $taxonomy->label,
 				'labels'       => (array) $taxonomy->labels,
@@ -95,7 +95,7 @@ class Discovery_Engine {
 				'capabilities' => (array) $taxonomy->cap,
 				'term_count'   => is_array( $terms ) ? count( $terms ) : 0,
 				'terms'        => $this->format_terms( $terms ),
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Taxonomies' );
@@ -115,8 +115,8 @@ class Discovery_Engine {
 		}
 
 		$all_plugins    = get_plugins();
-		$active_plugins = get_option( 'active_plugins', array() );
-		$data           = array();
+		$active_plugins = get_option( 'active_plugins', [] );
+		$data           = [];
 
 		foreach ( $active_plugins as $plugin_file ) {
 			if ( ! isset( $all_plugins[ $plugin_file ] ) ) {
@@ -125,7 +125,7 @@ class Discovery_Engine {
 
 			$plugin_data = $all_plugins[ $plugin_file ];
 
-			$data[ $plugin_file ] = array(
+			$data[ $plugin_file ] = [
 				'name'        => $plugin_data['Name'],
 				'version'     => $plugin_data['Version'],
 				'description' => $plugin_data['Description'],
@@ -134,7 +134,7 @@ class Discovery_Engine {
 				'plugin_uri'  => $plugin_data['PluginURI'],
 				'network'     => $plugin_data['Network'] ?? false,
 				'text_domain' => $plugin_data['TextDomain'] ?? '',
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Active Plugins' );
@@ -150,7 +150,7 @@ class Discovery_Engine {
 	 */
 	public function discover_theme_structure( string $format = 'json' ): array {
 		$theme = wp_get_theme();
-		$data  = array(
+		$data  = [
 			'name'            => $theme->get( 'Name' ),
 			'version'         => $theme->get( 'Version' ),
 			'description'     => $theme->get( 'Description' ),
@@ -166,7 +166,7 @@ class Discovery_Engine {
 			'nav_menus'       => $this->get_nav_menu_locations(),
 			'template_files'  => $this->get_template_files( $theme ),
 			'custom_templates' => $this->get_custom_templates(),
-		);
+		];
 
 		return $this->format_response( $data, $format, 'Theme Structure' );
 	}
@@ -182,23 +182,23 @@ class Discovery_Engine {
 	public function discover_custom_fields( string $format = 'json' ): array {
 		global $wp_meta_keys;
 
-		$data = array(
-			'registered_meta' => array(),
+		$data = [
+			'registered_meta' => [],
 			'cmb2_fields'     => $this->get_cmb2_fields(),
-		);
+		];
 
 		// Get all registered meta.
 		if ( ! empty( $wp_meta_keys ) ) {
 			foreach ( $wp_meta_keys as $object_type => $meta_keys ) {
 				foreach ( $meta_keys as $object_subtype => $keys ) {
 					foreach ( $keys as $meta_key => $args ) {
-						$data['registered_meta'][ $object_type ][ $meta_key ] = array(
+						$data['registered_meta'][ $object_type ][ $meta_key ] = [
 							'object_subtype' => $object_subtype,
 							'type'           => $args['type'] ?? 'string',
 							'description'    => $args['description'] ?? '',
 							'single'         => $args['single'] ?? false,
 							'show_in_rest'   => $args['show_in_rest'] ?? false,
-						);
+						];
 					}
 				}
 			}
@@ -218,15 +218,15 @@ class Discovery_Engine {
 	public function discover_menus( string $format = 'json' ): array {
 		$menus     = wp_get_nav_menus();
 		$locations = get_nav_menu_locations();
-		$data      = array(
+		$data      = [
 			'locations' => get_registered_nav_menus(),
-			'menus'     => array(),
-		);
+			'menus'     => [],
+		];
 
 		foreach ( $menus as $menu ) {
 			$menu_items = wp_get_nav_menu_items( $menu->term_id );
 
-			$data['menus'][ $menu->slug ] = array(
+			$data['menus'][ $menu->slug ] = [
 				'id'           => $menu->term_id,
 				'name'         => $menu->name,
 				'slug'         => $menu->slug,
@@ -234,7 +234,7 @@ class Discovery_Engine {
 				'count'        => $menu->count,
 				'locations'    => array_keys( $locations, $menu->term_id, true ),
 				'items'        => $this->format_menu_items( $menu_items ),
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Navigation Menus' );
@@ -251,13 +251,13 @@ class Discovery_Engine {
 	public function discover_shortcodes( string $format = 'json' ): array {
 		global $shortcode_tags;
 
-		$data = array();
+		$data = [];
 
 		foreach ( $shortcode_tags as $tag => $callback ) {
-			$data[ $tag ] = array(
+			$data[ $tag ] = [
 				'tag'      => $tag,
 				'callback' => $this->format_callback( $callback ),
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Shortcodes' );
@@ -274,10 +274,10 @@ class Discovery_Engine {
 	public function discover_blocks( string $format = 'json' ): array {
 		$registry = \WP_Block_Type_Registry::get_instance();
 		$blocks   = $registry->get_all_registered();
-		$data     = array();
+		$data     = [];
 
 		foreach ( $blocks as $block_name => $block_type ) {
-			$data[ $block_name ] = array(
+			$data[ $block_name ] = [
 				'name'        => $block_name,
 				'title'       => $block_type->title,
 				'description' => $block_type->description,
@@ -286,7 +286,7 @@ class Discovery_Engine {
 				'keywords'    => $block_type->keywords,
 				'supports'    => $block_type->supports,
 				'attributes'  => $block_type->attributes,
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'Blocks' );
@@ -303,25 +303,27 @@ class Discovery_Engine {
 	public function discover_hooks( string $format = 'json' ): array {
 		global $wp_filter;
 
-		$data = array(
-			'actions' => array(),
-			'filters' => array(),
-		);
+		$data = [
+			'actions' => [],
+			'filters' => [],
+		];
 
 		foreach ( $wp_filter as $hook_name => $hook ) {
-			$callbacks = array();
+			$callbacks = [];
 
 			foreach ( $hook->callbacks as $priority => $functions ) {
 				foreach ( $functions as $function ) {
-					$callbacks[] = array(
+					$callbacks[] = [
 						'priority' => $priority,
 						'callback' => $this->format_callback( $function['function'] ),
-					);
+					];
 				}
 			}
 
-			// Determine if it's primarily used as action or filter.
-			// This is a heuristic - WordPress doesn't distinguish.
+			/*
+			 * Determine if it's primarily used as action or filter.
+			 * This is a heuristic - WordPress doesn't distinguish.
+			 */
 			$type = $this->guess_hook_type( $hook_name );
 
 			$data[ $type ][ $hook_name ] = $callbacks;
@@ -350,10 +352,10 @@ class Discovery_Engine {
 			ARRAY_A
 		);
 
-		$data = array(
-			'site_options' => array(),
+		$data = [
+			'site_options' => [],
 			'theme_mods'   => get_theme_mods(),
-		);
+		];
 
 		foreach ( $options as $option ) {
 			// Skip sensitive options.
@@ -378,14 +380,14 @@ class Discovery_Engine {
 	public function discover_rewrite_rules( string $format = 'json' ): array {
 		global $wp_rewrite;
 
-		$data = array(
+		$data = [
 			'permalink_structure' => get_option( 'permalink_structure' ),
 			'category_base'       => get_option( 'category_base' ),
 			'tag_base'            => get_option( 'tag_base' ),
 			'rewrite_rules'       => get_option( 'rewrite_rules' ),
 			'endpoints'           => $wp_rewrite->endpoints,
 			'extra_permastructs'  => $wp_rewrite->extra_permastructs,
-		);
+		];
 
 		return $this->format_response( $data, $format, 'Rewrite Rules' );
 	}
@@ -401,14 +403,14 @@ class Discovery_Engine {
 	public function discover_capabilities( string $format = 'json' ): array {
 		global $wp_roles;
 
-		$data = array();
+		$data = [];
 
 		foreach ( $wp_roles->roles as $role_name => $role ) {
-			$data[ $role_name ] = array(
+			$data[ $role_name ] = [
 				'name'         => $role_name,
 				'display_name' => $role['name'],
 				'capabilities' => $role['capabilities'],
-			);
+			];
 		}
 
 		return $this->format_response( $data, $format, 'User Roles and Capabilities' );
@@ -424,18 +426,18 @@ class Discovery_Engine {
 	 */
 	public function discover_cron_jobs( string $format = 'json' ): array {
 		$crons = _get_cron_array();
-		$data  = array();
+		$data  = [];
 
 		foreach ( $crons as $timestamp => $cron ) {
 			foreach ( $cron as $hook => $events ) {
 				foreach ( $events as $key => $event ) {
-					$data[] = array(
+					$data[] = [
 						'hook'      => $hook,
 						'timestamp' => $timestamp,
 						'schedule'  => $event['schedule'] ?? 'single',
 						'interval'  => $event['interval'] ?? 0,
 						'args'      => $event['args'],
-					);
+					];
 				}
 			}
 		}
@@ -455,16 +457,16 @@ class Discovery_Engine {
 	 */
 	private function format_response( array $data, string $format, string $title = '' ): array {
 		if ( 'markdown' === $format ) {
-			return array(
+			return [
 				'content' => to_markdown( $data, $title ),
 				'format'  => 'markdown',
-			);
+			];
 		}
 
-		return array(
+		return [
 			'data'   => $data,
 			'format' => 'json',
-		);
+		];
 	}
 
 	/**
@@ -477,15 +479,15 @@ class Discovery_Engine {
 	 */
 	private function get_registered_meta( string $post_type ): array {
 		$meta_keys = get_registered_meta_keys( 'post', $post_type );
-		$data      = array();
+		$data      = [];
 
 		foreach ( $meta_keys as $meta_key => $args ) {
-			$data[ $meta_key ] = array(
+			$data[ $meta_key ] = [
 				'type'         => $args['type'] ?? 'string',
 				'description'  => $args['description'] ?? '',
 				'single'       => $args['single'] ?? false,
 				'show_in_rest' => $args['show_in_rest'] ?? false,
-			);
+			];
 		}
 
 		return $data;
@@ -501,20 +503,20 @@ class Discovery_Engine {
 	 */
 	private function format_terms( $terms ): array {
 		if ( is_wp_error( $terms ) || empty( $terms ) ) {
-			return array();
+			return [];
 		}
 
-		$formatted = array();
+		$formatted = [];
 
 		foreach ( $terms as $term ) {
-			$formatted[] = array(
+			$formatted[] = [
 				'id'          => $term->term_id,
 				'name'        => $term->name,
 				'slug'        => $term->slug,
 				'description' => $term->description,
 				'parent'      => $term->parent,
 				'count'       => $term->count,
-			);
+			];
 		}
 
 		return $formatted;
@@ -530,7 +532,7 @@ class Discovery_Engine {
 	private function get_theme_supports(): array {
 		global $_wp_theme_features;
 
-		return array_keys( $_wp_theme_features ?? array() );
+		return array_keys( $_wp_theme_features ?? [] );
 	}
 
 	/**
@@ -543,7 +545,7 @@ class Discovery_Engine {
 	private function get_sidebars(): array {
 		global $wp_registered_sidebars;
 
-		return $wp_registered_sidebars ?? array();
+		return $wp_registered_sidebars ?? [];
 	}
 
 	/**
@@ -591,21 +593,21 @@ class Discovery_Engine {
 	 */
 	private function get_cmb2_fields(): array {
 		if ( ! function_exists( 'cmb2_get_metabox_sanitized_values' ) ) {
-			return array();
+			return [];
 		}
 
 		// Get all CMB2 metaboxes.
 		$all_metaboxes = \CMB2_Boxes::get_all();
-		$data          = array();
+		$data          = [];
 
 		foreach ( $all_metaboxes as $cmb ) {
-			$data[ $cmb->cmb_id ] = array(
+			$data[ $cmb->cmb_id ] = [
 				'id'           => $cmb->cmb_id,
 				'title'        => $cmb->prop( 'title' ),
 				'object_types' => $cmb->prop( 'object_types' ),
 				'context'      => $cmb->prop( 'context' ),
 				'fields'       => $this->format_cmb2_fields( $cmb->prop( 'fields' ) ),
-			);
+			];
 		}
 
 		return $data;
@@ -620,15 +622,15 @@ class Discovery_Engine {
 	 * @return array Formatted fields.
 	 */
 	private function format_cmb2_fields( array $fields ): array {
-		$formatted = array();
+		$formatted = [];
 
 		foreach ( $fields as $field ) {
-			$formatted[ $field['id'] ] = array(
+			$formatted[ $field['id'] ] = [
 				'id'          => $field['id'],
 				'name'        => $field['name'] ?? '',
 				'type'        => $field['type'] ?? 'text',
 				'description' => $field['desc'] ?? '',
-			);
+			];
 		}
 
 		return $formatted;
@@ -644,13 +646,13 @@ class Discovery_Engine {
 	 */
 	private function format_menu_items( $items ): array {
 		if ( ! $items ) {
-			return array();
+			return [];
 		}
 
-		$formatted = array();
+		$formatted = [];
 
 		foreach ( $items as $item ) {
-			$formatted[] = array(
+			$formatted[] = [
 				'id'          => $item->ID,
 				'title'       => $item->title,
 				'url'         => $item->url,
@@ -661,7 +663,7 @@ class Discovery_Engine {
 				'order'       => $item->menu_order,
 				'classes'     => $item->classes,
 				'description' => $item->description,
-			);
+			];
 		}
 
 		return $formatted;
@@ -704,7 +706,7 @@ class Discovery_Engine {
 	 */
 	private function guess_hook_type( string $hook_name ): string {
 		// Common action patterns.
-		$action_patterns = array( '_init', '_loaded', '_enqueue_', '_save_', '_delete_', '_update_' );
+		$action_patterns = [ '_init', '_loaded', '_enqueue_', '_save_', '_delete_', '_update_' ];
 
 		foreach ( $action_patterns as $pattern ) {
 			if ( str_contains( $hook_name, $pattern ) ) {
@@ -725,7 +727,7 @@ class Discovery_Engine {
 	 * @return bool True if sensitive.
 	 */
 	private function is_sensitive_option( string $option_name ): bool {
-		$sensitive_patterns = array(
+		$sensitive_patterns = [
 			'password',
 			'secret',
 			'key',
@@ -733,7 +735,7 @@ class Discovery_Engine {
 			'salt',
 			'auth',
 			'private',
-		);
+		];
 
 		$lower_name = strtolower( $option_name );
 

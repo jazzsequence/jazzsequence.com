@@ -98,7 +98,7 @@ function format_value_for_markdown( $value ): string {
  * @return array Sanitized arguments.
  */
 function sanitize_ability_args( array $args ): array {
-	$sanitized = array();
+	$sanitized = [];
 
 	foreach ( $args as $key => $value ) {
 		if ( is_array( $value ) ) {
@@ -169,10 +169,10 @@ function get_taxonomy_labels( \WP_Taxonomy $taxonomy ): array {
  * @return array Formatted error.
  */
 function format_error( \WP_Error $error ): array {
-	return array(
+	return [
 		'error'   => true,
 		'code'    => $error->get_error_code(),
 		'message' => $error->get_error_message(),
 		'data'    => $error->get_error_data(),
-	);
+	];
 }
