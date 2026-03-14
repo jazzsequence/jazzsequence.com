@@ -27,11 +27,11 @@ function bootstrap(): void {
 	require_once JSMCP_PLUGIN_DIR . 'includes/class-audit-log.php';
 	require_once JSMCP_PLUGIN_DIR . 'includes/helpers.php';
 
-	// Register ability category.
-	add_action( 'wp_abilities_api_init', __NAMESPACE__ . '\register_ability_category' );
+	// Register ability category directly (not via hook).
+	register_ability_category();
 
-	// Register all abilities.
-	add_action( 'wp_abilities_api_init', __NAMESPACE__ . '\register_abilities' );
+	// Register all abilities directly (not via hook).
+	register_abilities();
 
 	// Initialize security features.
 	Security\init();
@@ -93,6 +93,10 @@ function register_abilities(): void {
  * @since 0.1.0
  */
 function register_discovery_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	$discovery_abilities = [
 		'discover-post-types'     => [
 			'label'       => __( 'Discover Post Types', 'jazzsequence-mcp-abilities' ),
@@ -205,6 +209,10 @@ function register_discovery_abilities(): void {
  * @since 0.1.0
  */
 function register_content_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/content/class-content-manager.php';
 
 	$content_abilities = [
@@ -274,6 +282,10 @@ function register_content_abilities(): void {
  * @since 0.1.0
  */
 function register_media_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/media/class-media-manager.php';
 
 	$media_abilities = [
@@ -343,6 +355,10 @@ function register_media_abilities(): void {
  * @since 0.1.0
  */
 function register_taxonomy_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/taxonomy/class-taxonomy-manager.php';
 
 	$taxonomy_abilities = [
@@ -418,6 +434,10 @@ function register_user_abilities(): void {
  * @since 0.1.0
  */
 function register_system_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/system/class-system-manager.php';
 
 	$system_abilities = [
@@ -481,6 +501,10 @@ function register_system_abilities(): void {
  * @since 0.1.0
  */
 function register_configuration_abilities(): void {
+	if ( ! function_exists( 'wp_register_ability' ) ) {
+		return;
+	}
+
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/config/class-config-manager.php';
 
 	$config_abilities = [
