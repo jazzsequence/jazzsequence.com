@@ -3,7 +3,7 @@
  * Plugin Name: JazzSequence MCP Abilities
  * Plugin URI: https://github.com/jazzsequence/jazzsequence.com
  * Description: Exposes comprehensive WordPress abilities via MCP for AI-powered site management. Provides full read/write access to content, configuration, and system operations through the Model Context Protocol.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Requires at least: 6.9
  * Requires PHP: 8.2
  * Author: Chris Reynolds
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants.
-define( 'JSMCP_VERSION', '0.1.0' );
+define( 'JSMCP_VERSION', '0.1.1' );
 define( 'JSMCP_PLUGIN_FILE', __FILE__ );
 define( 'JSMCP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'JSMCP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -95,26 +95,14 @@ function check_dependencies(): bool {
 	return true;
 }
 
-/**
- * Initialize the plugin.
- *
- * @since 0.1.0
+/*
+ * Initialize plugin immediately to register abilities early.
+ * Hook registration must happen at file load time, not deferred to plugins_loaded.
  */
-function init(): void {
-	// Check dependencies first.
-	if ( ! check_dependencies() ) {
-		return;
-	}
-
-	// Load plugin files.
+if ( check_dependencies() ) {
 	require_once JSMCP_PLUGIN_DIR . 'includes/bootstrap.php';
-
-	// Initialize the plugin.
 	bootstrap();
 }
-
-// Hook into plugins_loaded to ensure WordPress and dependencies are ready.
-add_action( 'plugins_loaded', __NAMESPACE__ . '\init', 5 );
 
 /**
  * Plugin activation hook.
