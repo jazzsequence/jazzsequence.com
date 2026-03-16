@@ -53,6 +53,14 @@ function register_ability_category(): void {
 		return;
 	}
 
+	// Idempotent: skip if category is already registered (e.g. during test resets).
+	if ( function_exists( 'wp_get_ability_categories' ) ) {
+		$registered = wp_get_ability_categories();
+		if ( isset( $registered[ JSMCP_ABILITY_CATEGORY ] ) ) {
+			return;
+		}
+	}
+
 	wp_register_ability_category(
 		JSMCP_ABILITY_CATEGORY,
 		[
