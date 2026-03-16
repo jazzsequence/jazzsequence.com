@@ -27,7 +27,6 @@ jobs:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
       WP_CORE_DIR: /tmp/wordpress
       PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
-      WP_VERSION: '6.9'
 
     steps:
       - uses: actions/checkout@v4
@@ -51,15 +50,20 @@ jobs:
         run: composer install --no-interaction --prefer-dist
         working-directory: ${{ env.PLUGIN_DIR }}
 
-      - name: Download WordPress core
+      - name: Download latest stable WordPress
         run: |
           mkdir -p "$WP_CORE_DIR"
-          wp core download --path="$WP_CORE_DIR" --version="$WP_VERSION" --allow-root
+          wp core download --path="$WP_CORE_DIR" --version=latest --allow-root
+          WP_VERSION=$(wp core version --path="$WP_CORE_DIR" --allow-root)
+          WP_BRANCH=$(echo "$WP_VERSION" | cut -d. -f1,2)
+          echo "WP_VERSION=$WP_VERSION" >> "$GITHUB_ENV"
+          echo "WP_BRANCH=$WP_BRANCH" >> "$GITHUB_ENV"
+          echo "Installed WordPress $WP_VERSION (branch: $WP_BRANCH)"
 
       - name: Install WordPress test library
         run: |
           mkdir -p "$WP_TESTS_DIR"
-          git clone --depth=1 --branch "$WP_VERSION" --filter=blob:none --sparse \
+          git clone --depth=1 --branch "$WP_BRANCH" --filter=blob:none --sparse \
             https://github.com/WordPress/wordpress-develop.git \
             /tmp/wordpress-develop
           cd /tmp/wordpress-develop
