@@ -27,7 +27,7 @@ jobs:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
       WP_CORE_DIR: /tmp/wordpress
       PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
-      WP_VERSION: '6.7'
+      WP_VERSION: '6.9'
 
     steps:
       - uses: actions/checkout@v4
