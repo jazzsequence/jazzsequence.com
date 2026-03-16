@@ -28,7 +28,8 @@ jobs:
 
     env:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
-      WP_CORE_DIR: /tmp/wordpress
+      # WordPress core is installed via composer into the repo root.
+      WP_CORE_DIR: ${{ github.workspace }}
       PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
       WP_VERSION: '6.7'
 
@@ -41,7 +42,6 @@ jobs:
           php-version: '8.2'
           extensions: mysqli, pdo_mysql
           coverage: none
-          tools: none
 
       - name: Cache root Composer dependencies
         uses: actions/cache@v5
@@ -64,11 +64,6 @@ jobs:
         run: composer install --no-interaction --prefer-dist
         working-directory: ${{ env.PLUGIN_DIR }}
 
-      - name: Download WordPress core
-        run: |
-          curl -s "https://wordpress.org/wordpress-${WP_VERSION}.tar.gz" | tar -xz -C /tmp/
-          mv /tmp/wordpress "$WP_CORE_DIR"
-
       - name: Install WordPress test library
         run: |
           mkdir -p "$WP_TESTS_DIR"
@@ -81,7 +76,7 @@ jobs:
 
       - name: Configure WordPress test suite
         run: |
-          cat > "$WP_TESTS_DIR/wp-tests-config.php" << 'EOF'
+          cat > "$WP_TESTS_DIR/wp-tests-config.php" <<EOF
           <?php
           define( 'DB_NAME', 'wordpress_test' );
           define( 'DB_USER', 'root' );
@@ -89,14 +84,14 @@ jobs:
           define( 'DB_HOST', '127.0.0.1' );
           define( 'DB_CHARSET', 'utf8' );
           define( 'DB_COLLATE', '' );
-          $table_prefix = 'wptests_';
+          \$table_prefix = 'wptests_';
           define( 'WP_DEBUG', true );
           define( 'WP_TESTS_DOMAIN', 'example.org' );
           define( 'WP_TESTS_EMAIL', 'admin@example.org' );
           define( 'WP_TESTS_TITLE', 'Test Blog' );
           define( 'WP_PHP_BINARY', 'php' );
           define( 'WPLANG', '' );
-          define( 'ABSPATH', '/tmp/wordpress/' );
+          define( 'ABSPATH', '${{ github.workspace }}/' );
           EOF
 
       - name: Run PHPUnit
