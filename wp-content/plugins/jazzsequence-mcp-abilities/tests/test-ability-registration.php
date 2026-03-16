@@ -35,26 +35,27 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 		/* Use the public API (WP 6.9+) rather than the internal global. */
 		if ( function_exists( 'wp_get_ability_categories' ) ) {
 			$categories = wp_get_ability_categories();
-			$this->assertIsArray( $categories, 'wp_get_ability_categories() should return an array' );
-			$this->assertArrayHasKey(
-				'jazzsequence-mcp',
-				$categories,
-				'jazzsequence-mcp ability category should be registered'
-			);
-			$category = $categories['jazzsequence-mcp'];
+
+			/*
+			 * wp_get_ability_categories() may return an object, not an array.
+			 * Iterate to find the category rather than using assertArrayHasKey.
+			 */
+			$category = null;
+			foreach ( $categories as $key => $cat ) {
+				if ( 'jazzsequence-mcp' === $key ) {
+					$category = $cat;
+					break;
+				}
+			}
 		} else {
 			global $_wp_ability_categories_registry;
 			$this->assertIsArray( $_wp_ability_categories_registry, 'Ability categories registry should be an array' );
-			$this->assertArrayHasKey(
-				'jazzsequence-mcp',
-				$_wp_ability_categories_registry,
-				'jazzsequence-mcp ability category should be registered'
-			);
-			$category = $_wp_ability_categories_registry['jazzsequence-mcp'];
+			$category = $_wp_ability_categories_registry['jazzsequence-mcp'] ?? null;
 		}
 
-		$this->assertArrayHasKey( 'label', $category, 'Category should have label' );
-		$this->assertArrayHasKey( 'description', $category, 'Category should have description' );
+		$this->assertNotNull( $category, 'jazzsequence-mcp ability category should be registered' );
+		$this->assertArrayHasKey( 'label', (array) $category, 'Category should have label' );
+		$this->assertArrayHasKey( 'description', (array) $category, 'Category should have description' );
 	}
 
 	/**
