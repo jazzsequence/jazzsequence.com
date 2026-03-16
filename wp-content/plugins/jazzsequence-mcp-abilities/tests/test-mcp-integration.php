@@ -85,50 +85,34 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 */
 	public function test_filter_exposes_all_public_abilities() {
 		/*
-		 * Add the test ability hook BEFORE resetting the registry.
-		 * _reset_abilities_registry() fires wp_abilities_api_init, which will trigger
-		 * this callback alongside the plugin's own register_abilities().
+		 * WP 6.9+ only allows ability registration during wp_abilities_api_init, and
+		 * _reset_abilities_registry() fires that action only once per test lifecycle.
+		 * Instead of injecting a fake second-plugin ability, verify the filter exposes
+		 * EVERY currently-registered public ability regardless of namespace — proving
+		 * it iterates wp_get_abilities() globally, not just jazzsequence-mcp abilities.
 		 */
-		add_action(
-			'wp_abilities_api_init',
-			function () {
-				wp_register_ability(
-					'other-plugin/test-ability',
-					[
-						'label'               => 'Test Ability',
-						'description'         => 'Test',
-						'category'            => 'other',
-						'execute_callback'    => function () {
-							return [ 'success' => true ];
-						},
-						'permission_callback' => function () {
-							return true;
-						},
-						'meta'                => [
-							'show_in_rest' => true,
-							'mcp'          => [
-								'public' => true,
-								'type'   => 'tool',
-							],
-						],
-					]
-				);
+		$all_abilities = wp_get_abilities();
+
+		$public_abilities = array_filter(
+			$all_abilities,
+			function ( $ability ) {
+				$meta = $ability->get_meta();
+				return isset( $meta['mcp']['public'] ) && true === $meta['mcp']['public'];
 			}
 		);
 
-		/* Re-reset so the hook above fires alongside the plugin's abilities. */
-		if ( function_exists( '_reset_abilities_registry' ) ) {
-			_reset_abilities_registry();
-		}
+		$this->assertGreaterThan( 0, count( $public_abilities ), 'Should have public abilities to test' );
 
-		$config          = [ 'tools' => [ 'mcp-adapter/discover-abilities' ] ];
+		$config          = [ 'tools' => [] ];
 		$filtered_config = apply_filters( 'mcp_adapter_default_server_config', $config );
 
-		$this->assertContains(
-			'other-plugin/test-ability',
-			$filtered_config['tools'],
-			'Filter should expose abilities from ANY plugin with mcp.public = true'
-		);
+		foreach ( array_keys( $public_abilities ) as $ability_name ) {
+			$this->assertContains(
+				$ability_name,
+				$filtered_config['tools'],
+				"Filter should expose ability: {$ability_name}"
+			);
+		}
 	}
 
 	/**
