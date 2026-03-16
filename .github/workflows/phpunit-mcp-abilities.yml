@@ -28,7 +28,6 @@ jobs:
 
     env:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
-      # WordPress core is installed via composer into the repo root.
       WP_CORE_DIR: ${{ github.workspace }}
       PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
       WP_VERSION: '6.7'
@@ -67,12 +66,13 @@ jobs:
       - name: Install WordPress test library
         run: |
           mkdir -p "$WP_TESTS_DIR"
-          svn export --quiet \
-            "https://develop.svn.wordpress.org/tags/${WP_VERSION}/tests/phpunit/includes/" \
-            "$WP_TESTS_DIR/includes"
-          svn export --quiet \
-            "https://develop.svn.wordpress.org/tags/${WP_VERSION}/tests/phpunit/data/" \
-            "$WP_TESTS_DIR/data"
+          git clone --depth=1 --filter=blob:none --sparse \
+            https://github.com/WordPress/wordpress-develop.git \
+            /tmp/wordpress-develop
+          cd /tmp/wordpress-develop
+          git sparse-checkout set tests/phpunit/includes tests/phpunit/data
+          cp -r tests/phpunit/includes "$WP_TESTS_DIR/includes"
+          cp -r tests/phpunit/data "$WP_TESTS_DIR/data"
 
       - name: Configure WordPress test suite
         run: |
