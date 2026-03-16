@@ -20,10 +20,18 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 			_reset_abilities_registry();
 		}
 
-		// Trigger bootstrap.
+		// Remove previously-hooked callbacks to prevent double-registration
+		// when bootstrap() is called across multiple test setUp() invocations.
+		remove_all_actions( 'wp_abilities_api_init' );
+		remove_all_actions( 'wp_abilities_api_categories_init' );
+
+		// Re-bootstrap and trigger hooks fresh for each test.
 		if ( function_exists( 'JazzSequence\MCP_Abilities\bootstrap' ) ) {
 			JazzSequence\MCP_Abilities\bootstrap();
 		}
+
+		do_action( 'wp_abilities_api_categories_init' );
+		do_action( 'wp_abilities_api_init' );
 	}
 
 	/**
@@ -88,30 +96,35 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * This is THE CRITICAL REQUIREMENT - expose ALL abilities, not just ours.
 	 */
 	public function test_filter_exposes_all_public_abilities() {
-		/*
-		 * Register a fake ability from another plugin with mcp.public = true.
-		 */
-		wp_register_ability(
-			'other-plugin/test-ability',
-			[
-				'label'              => 'Test Ability',
-				'description'        => 'Test',
-				'category'           => 'other',
-				'execute_callback'   => function () {
-					return [ 'success' => true ];
-				},
-				'permission_callback' => function () {
-					return true;
-				},
-				'meta'               => [
-					'show_in_rest' => true,
-					'mcp'          => [
-						'public' => true,
-						'type'   => 'tool',
-					],
-				],
-			]
+		// WP 6.9+ requires abilities to be registered on wp_abilities_api_init.
+		add_action(
+			'wp_abilities_api_init',
+			function () {
+				wp_register_ability(
+					'other-plugin/test-ability',
+					[
+						'label'               => 'Test Ability',
+						'description'         => 'Test',
+						'category'            => 'other',
+						'execute_callback'    => function () {
+							return [ 'success' => true ];
+						},
+						'permission_callback' => function () {
+							return true;
+						},
+						'meta'                => [
+							'show_in_rest' => true,
+							'mcp'          => [
+								'public' => true,
+								'type'   => 'tool',
+							],
+						],
+					]
+				);
+			}
 		);
+
+		do_action( 'wp_abilities_api_init' );
 
 		// Create mock config.
 		$config = [
@@ -137,27 +150,32 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should NOT expose abilities without MCP metadata.
 	 */
 	public function test_filter_does_not_expose_private_abilities() {
-		/*
-		 * Register a fake ability WITHOUT mcp.public.
-		 */
-		wp_register_ability(
-			'private-plugin/private-ability',
-			[
-				'label'              => 'Private Ability',
-				'description'        => 'Test',
-				'category'           => 'private',
-				'execute_callback'   => function () {
-					return [ 'success' => true ];
-				},
-				'permission_callback' => function () {
-					return true;
-				},
-				'meta'               => [
-					'show_in_rest' => true,
-					// No mcp.public metadata.
-				],
-			]
+		// WP 6.9+ requires abilities to be registered on wp_abilities_api_init.
+		add_action(
+			'wp_abilities_api_init',
+			function () {
+				wp_register_ability(
+					'private-plugin/private-ability',
+					[
+						'label'               => 'Private Ability',
+						'description'         => 'Test',
+						'category'            => 'private',
+						'execute_callback'    => function () {
+							return [ 'success' => true ];
+						},
+						'permission_callback' => function () {
+							return true;
+						},
+						'meta'                => [
+							'show_in_rest' => true,
+							// No mcp.public metadata.
+						],
+					]
+				);
+			}
 		);
+
+		do_action( 'wp_abilities_api_init' );
 
 		// Create mock config.
 		$config = [
@@ -183,10 +201,6 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should not error if wp_get_abilities doesn't exist.
 	 */
 	public function test_filter_handles_missing_api() {
-		/*
-		 * This test would require temporarily removing the function.
-		 * For now, just verify the filter returns config unchanged if function is missing.
-		 */
 		$config = [ 'tools' => [ 'test' ] ];
 
 		/*
