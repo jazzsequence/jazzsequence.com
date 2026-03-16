@@ -1,9 +1,6 @@
 name: PHPUnit — jazzsequence-mcp-abilities
 
 on:
-  push:
-    paths:
-      - 'wp-content/plugins/jazzsequence-mcp-abilities/**'
   pull_request:
     paths:
       - 'wp-content/plugins/jazzsequence-mcp-abilities/**'
@@ -62,7 +59,7 @@ jobs:
       - name: Install WordPress test library
         run: |
           mkdir -p "$WP_TESTS_DIR"
-          git clone --depth=1 --filter=blob:none --sparse \
+          git clone --depth=1 --branch "$WP_VERSION" --filter=blob:none --sparse \
             https://github.com/WordPress/wordpress-develop.git \
             /tmp/wordpress-develop
           cd /tmp/wordpress-develop
