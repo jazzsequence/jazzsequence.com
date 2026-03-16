@@ -53,6 +53,14 @@ function register_ability_category(): void {
 		return;
 	}
 
+	// Idempotent: skip if category is already registered (e.g. during test resets).
+	if ( function_exists( 'wp_get_ability_categories' ) ) {
+		$registered = wp_get_ability_categories();
+		if ( isset( $registered[ JSMCP_ABILITY_CATEGORY ] ) ) {
+			return;
+		}
+	}
+
 	wp_register_ability_category(
 		JSMCP_ABILITY_CATEGORY,
 		[
@@ -224,30 +232,163 @@ function register_content_abilities(): void {
 			'description' => __( 'Create a new post of any post type.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'edit_posts',
 			'method'      => 'create_post',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'post_title'   => [
+						'type'        => 'string',
+						'description' => __( 'Post title.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_content' => [
+						'type'        => 'string',
+						'description' => __( 'Post content (HTML or block markup).', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_excerpt' => [
+						'type'        => 'string',
+						'description' => __( 'Post excerpt.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_status'  => [
+						'type'        => 'string',
+						'description' => __( 'Post status: draft, publish, pending, private.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_type'    => [
+						'type'        => 'string',
+						'description' => __( 'Post type slug (default: post).', 'jazzsequence-mcp-abilities' ),
+					],
+					'meta_input'   => [
+						'type'        => 'object',
+						'description' => __( 'Post meta key/value pairs to set on creation.', 'jazzsequence-mcp-abilities' ),
+					],
+					'tax_input'    => [
+						'type'        => 'object',
+						'description' => __( 'Taxonomy term assignments (e.g. {"post_tag": ["slug1", "slug2"]}).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'post_title' ],
+			],
 		],
 		'update-post'  => [
 			'label'       => __( 'Update Post', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Update an existing post.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'edit_posts',
 			'method'      => 'update_post',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID'           => [
+						'type'        => 'integer',
+						'description' => __( 'Post ID to update.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_title'   => [
+						'type'        => 'string',
+						'description' => __( 'New post title.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_content' => [
+						'type'        => 'string',
+						'description' => __( 'New post content.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_excerpt' => [
+						'type'        => 'string',
+						'description' => __( 'New post excerpt.', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_status'  => [
+						'type'        => 'string',
+						'description' => __( 'New post status.', 'jazzsequence-mcp-abilities' ),
+					],
+					'meta_input'   => [
+						'type'        => 'object',
+						'description' => __( 'Post meta key/value pairs to update.', 'jazzsequence-mcp-abilities' ),
+					],
+					'tax_input'    => [
+						'type'        => 'object',
+						'description' => __( 'Taxonomy term assignments to update.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
 		'delete-post'  => [
 			'label'       => __( 'Delete Post', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Delete a post.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'delete_posts',
 			'method'      => 'delete_post',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID'           => [
+						'type'        => 'integer',
+						'description' => __( 'Post ID to delete.', 'jazzsequence-mcp-abilities' ),
+					],
+					'force_delete' => [
+						'type'        => 'boolean',
+						'description' => __( 'Whether to bypass trash and permanently delete (default: false).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
 		'get-post'     => [
 			'label'       => __( 'Get Post', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Get a post by ID.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'read',
 			'method'      => 'get_post',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID' => [
+						'type'        => 'integer',
+						'description' => __( 'Post ID to retrieve.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
 		'query-posts'  => [
 			'label'       => __( 'Query Posts', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Query posts with custom arguments.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'read',
 			'method'      => 'query_posts',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'post_type'      => [
+						'type'        => 'string',
+						'description' => __( 'Post type slug (default: post).', 'jazzsequence-mcp-abilities' ),
+					],
+					'posts_per_page' => [
+						'type'        => 'integer',
+						'description' => __( 'Number of posts per page (default: 10).', 'jazzsequence-mcp-abilities' ),
+					],
+					'paged'          => [
+						'type'        => 'integer',
+						'description' => __( 'Page number (default: 1).', 'jazzsequence-mcp-abilities' ),
+					],
+					'post_status'    => [
+						'type'        => 'string',
+						'description' => __( 'Post status filter (default: publish).', 'jazzsequence-mcp-abilities' ),
+					],
+					'orderby'        => [
+						'type'        => 'string',
+						'description' => __( 'Field to order by (date, title, menu_order, etc.).', 'jazzsequence-mcp-abilities' ),
+					],
+					'order'          => [
+						'type'        => 'string',
+						'description' => __( 'Sort order: ASC or DESC.', 'jazzsequence-mcp-abilities' ),
+					],
+					's'              => [
+						'type'        => 'string',
+						'description' => __( 'Search keyword.', 'jazzsequence-mcp-abilities' ),
+					],
+					'tax_query'      => [
+						'type'        => 'array',
+						'description' => __( 'Taxonomy query arguments (WP_Query tax_query format).', 'jazzsequence-mcp-abilities' ),
+					],
+					'meta_query'     => [
+						'type'        => 'array',
+						'description' => __( 'Meta query arguments (WP_Query meta_query format).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+			],
 		],
 	];
 
@@ -257,18 +398,15 @@ function register_content_abilities(): void {
 		wp_register_ability(
 			JSMCP_ABILITY_CATEGORY . '/' . $ability_id,
 			[
-				'label'       => $config['label'],
-				'description' => $config['description'],
-				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input_schema' => [
-					'type'       => 'object',
-					'properties' => [],
-				],
-				'execute_callback' => [ $manager, $config['method'] ],
+				'label'               => $config['label'],
+				'description'         => $config['description'],
+				'category'            => JSMCP_ABILITY_CATEGORY,
+				'input_schema'        => $config['input_schema'],
+				'execute_callback'    => [ $manager, $config['method'] ],
 				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
-				'meta'        => [
+				'meta'                => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
@@ -293,35 +431,133 @@ function register_media_abilities(): void {
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/media/class-media-manager.php';
 
 	$media_abilities = [
-		'upload-media-url'     => [
+		'upload-media-url'    => [
 			'label'       => __( 'Upload Media from URL', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Upload media from a URL.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'upload_files',
 			'method'      => 'upload_from_url',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'url'         => [
+						'type'        => 'string',
+						'description' => __( 'URL of the media file to upload.', 'jazzsequence-mcp-abilities' ),
+					],
+					'title'       => [
+						'type'        => 'string',
+						'description' => __( 'Attachment title.', 'jazzsequence-mcp-abilities' ),
+					],
+					'alt'         => [
+						'type'        => 'string',
+						'description' => __( 'Image alt text.', 'jazzsequence-mcp-abilities' ),
+					],
+					'description' => [
+						'type'        => 'string',
+						'description' => __( 'Attachment description.', 'jazzsequence-mcp-abilities' ),
+					],
+					'filename'    => [
+						'type'        => 'string',
+						'description' => __( 'Override filename (defaults to basename of URL).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'url' ],
+			],
 		],
-		'upload-media-base64'  => [
+		'upload-media-base64' => [
 			'label'       => __( 'Upload Media from Base64', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Upload media from base64 encoded data.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'upload_files',
 			'method'      => 'upload_from_base64',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'data'     => [
+						'type'        => 'string',
+						'description' => __( 'Base64-encoded file contents.', 'jazzsequence-mcp-abilities' ),
+					],
+					'filename' => [
+						'type'        => 'string',
+						'description' => __( 'Filename including extension.', 'jazzsequence-mcp-abilities' ),
+					],
+					'title'    => [
+						'type'        => 'string',
+						'description' => __( 'Attachment title.', 'jazzsequence-mcp-abilities' ),
+					],
+					'alt'      => [
+						'type'        => 'string',
+						'description' => __( 'Image alt text.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'data', 'filename' ],
+			],
 		],
-		'update-media'         => [
+		'update-media'        => [
 			'label'       => __( 'Update Media', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Update media attachment metadata.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'upload_files',
 			'method'      => 'update_attachment',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID'          => [
+						'type'        => 'integer',
+						'description' => __( 'Attachment ID to update.', 'jazzsequence-mcp-abilities' ),
+					],
+					'title'       => [
+						'type'        => 'string',
+						'description' => __( 'New attachment title.', 'jazzsequence-mcp-abilities' ),
+					],
+					'caption'     => [
+						'type'        => 'string',
+						'description' => __( 'New attachment caption.', 'jazzsequence-mcp-abilities' ),
+					],
+					'description' => [
+						'type'        => 'string',
+						'description' => __( 'New attachment description.', 'jazzsequence-mcp-abilities' ),
+					],
+					'alt'         => [
+						'type'        => 'string',
+						'description' => __( 'New image alt text.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
-		'delete-media'         => [
+		'delete-media'        => [
 			'label'       => __( 'Delete Media', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Delete a media attachment.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'delete_files',
 			'method'      => 'delete_attachment',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID'           => [
+						'type'        => 'integer',
+						'description' => __( 'Attachment ID to delete.', 'jazzsequence-mcp-abilities' ),
+					],
+					'force_delete' => [
+						'type'        => 'boolean',
+						'description' => __( 'Whether to skip trash and permanently delete (default: false).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
-		'get-media'            => [
+		'get-media'           => [
 			'label'       => __( 'Get Media', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Get media attachment by ID.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'read',
 			'method'      => 'get_attachment',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'ID' => [
+						'type'        => 'integer',
+						'description' => __( 'Attachment ID to retrieve.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'ID' ],
+			],
 		],
 	];
 
@@ -331,18 +567,15 @@ function register_media_abilities(): void {
 		wp_register_ability(
 			JSMCP_ABILITY_CATEGORY . '/' . $ability_id,
 			[
-				'label'       => $config['label'],
-				'description' => $config['description'],
-				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input_schema' => [
-					'type'       => 'object',
-					'properties' => [],
-				],
-				'execute_callback' => [ $manager, $config['method'] ],
+				'label'               => $config['label'],
+				'description'         => $config['description'],
+				'category'            => JSMCP_ABILITY_CATEGORY,
+				'input_schema'        => $config['input_schema'],
+				'execute_callback'    => [ $manager, $config['method'] ],
 				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
-				'meta'        => [
+				'meta'                => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
@@ -372,24 +605,108 @@ function register_taxonomy_abilities(): void {
 			'description' => __( 'Create a new taxonomy term.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_categories',
 			'method'      => 'create_term',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'name'        => [
+						'type'        => 'string',
+						'description' => __( 'Term name.', 'jazzsequence-mcp-abilities' ),
+					],
+					'taxonomy'    => [
+						'type'        => 'string',
+						'description' => __( 'Taxonomy slug (e.g. category, post_tag).', 'jazzsequence-mcp-abilities' ),
+					],
+					'description' => [
+						'type'        => 'string',
+						'description' => __( 'Term description.', 'jazzsequence-mcp-abilities' ),
+					],
+					'slug'        => [
+						'type'        => 'string',
+						'description' => __( 'Term slug (auto-generated from name if omitted).', 'jazzsequence-mcp-abilities' ),
+					],
+					'parent'      => [
+						'type'        => 'integer',
+						'description' => __( 'Parent term ID (for hierarchical taxonomies).', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'name', 'taxonomy' ],
+			],
 		],
 		'update-term' => [
 			'label'       => __( 'Update Term', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Update an existing term.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_categories',
 			'method'      => 'update_term',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'term_id'     => [
+						'type'        => 'integer',
+						'description' => __( 'Term ID to update.', 'jazzsequence-mcp-abilities' ),
+					],
+					'taxonomy'    => [
+						'type'        => 'string',
+						'description' => __( 'Taxonomy the term belongs to.', 'jazzsequence-mcp-abilities' ),
+					],
+					'name'        => [
+						'type'        => 'string',
+						'description' => __( 'New term name.', 'jazzsequence-mcp-abilities' ),
+					],
+					'slug'        => [
+						'type'        => 'string',
+						'description' => __( 'New term slug.', 'jazzsequence-mcp-abilities' ),
+					],
+					'description' => [
+						'type'        => 'string',
+						'description' => __( 'New term description.', 'jazzsequence-mcp-abilities' ),
+					],
+					'parent'      => [
+						'type'        => 'integer',
+						'description' => __( 'New parent term ID.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'term_id', 'taxonomy' ],
+			],
 		],
 		'delete-term' => [
 			'label'       => __( 'Delete Term', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Delete a taxonomy term.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_categories',
 			'method'      => 'delete_term',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'term_id'  => [
+						'type'        => 'integer',
+						'description' => __( 'Term ID to delete.', 'jazzsequence-mcp-abilities' ),
+					],
+					'taxonomy' => [
+						'type'        => 'string',
+						'description' => __( 'Taxonomy the term belongs to.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'term_id', 'taxonomy' ],
+			],
 		],
 		'get-term'    => [
 			'label'       => __( 'Get Term', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Get a term by ID.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'read',
 			'method'      => 'get_term',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'term_id'  => [
+						'type'        => 'integer',
+						'description' => __( 'Term ID to retrieve.', 'jazzsequence-mcp-abilities' ),
+					],
+					'taxonomy' => [
+						'type'        => 'string',
+						'description' => __( 'Taxonomy the term belongs to.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'term_id', 'taxonomy' ],
+			],
 		],
 	];
 
@@ -399,18 +716,15 @@ function register_taxonomy_abilities(): void {
 		wp_register_ability(
 			JSMCP_ABILITY_CATEGORY . '/' . $ability_id,
 			[
-				'label'       => $config['label'],
-				'description' => $config['description'],
-				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input_schema' => [
-					'type'       => 'object',
-					'properties' => [],
-				],
-				'execute_callback' => [ $manager, $config['method'] ],
+				'label'               => $config['label'],
+				'description'         => $config['description'],
+				'category'            => JSMCP_ABILITY_CATEGORY,
+				'input_schema'        => $config['input_schema'],
+				'execute_callback'    => [ $manager, $config['method'] ],
 				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
-				'meta'        => [
+				'meta'                => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
@@ -447,29 +761,89 @@ function register_system_abilities(): void {
 	require_once JSMCP_PLUGIN_DIR . 'includes/abilities/system/class-system-manager.php';
 
 	$system_abilities = [
-		'clear-cache'      => [
+		'clear-cache'     => [
 			'label'       => __( 'Clear Cache', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Clear various WordPress caches.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'clear_cache',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'types' => [
+						'type'        => 'array',
+						'description' => __( 'Cache types to clear: object, transients, rewrite. Defaults to all.', 'jazzsequence-mcp-abilities' ),
+						'items'       => [ 'type' => 'string' ],
+					],
+				],
+			],
 		],
-		'run-cron'         => [
+		'run-cron'        => [
 			'label'       => __( 'Run Cron Job', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Execute a cron job immediately.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'run_cron',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'hook' => [
+						'type'        => 'string',
+						'description' => __( 'The cron hook name to execute.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'hook' ],
+			],
 		],
-		'schedule-cron'    => [
+		'schedule-cron'   => [
 			'label'       => __( 'Schedule Cron Job', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Schedule a new cron job.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'schedule_cron',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'hook'       => [
+						'type'        => 'string',
+						'description' => __( 'Hook name to schedule.', 'jazzsequence-mcp-abilities' ),
+					],
+					'timestamp'  => [
+						'type'        => 'integer',
+						'description' => __( 'Unix timestamp for first run (defaults to now for recurring).', 'jazzsequence-mcp-abilities' ),
+					],
+					'recurrence' => [
+						'type'        => 'string',
+						'description' => __( 'Recurrence interval (hourly, twicedaily, daily, weekly). Omit for single event.', 'jazzsequence-mcp-abilities' ),
+					],
+					'args'       => [
+						'type'        => 'array',
+						'description' => __( 'Arguments to pass to the hook callback.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'hook' ],
+			],
 		],
-		'unschedule-cron'  => [
+		'unschedule-cron' => [
 			'label'       => __( 'Unschedule Cron Job', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Remove a scheduled cron job.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'unschedule_cron',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'hook'      => [
+						'type'        => 'string',
+						'description' => __( 'Hook name to unschedule.', 'jazzsequence-mcp-abilities' ),
+					],
+					'timestamp' => [
+						'type'        => 'integer',
+						'description' => __( 'Specific event timestamp to remove. Omit to remove all instances.', 'jazzsequence-mcp-abilities' ),
+					],
+					'args'      => [
+						'type'        => 'array',
+						'description' => __( 'Hook arguments to match.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'hook' ],
+			],
 		],
 	];
 
@@ -479,18 +853,15 @@ function register_system_abilities(): void {
 		wp_register_ability(
 			JSMCP_ABILITY_CATEGORY . '/' . $ability_id,
 			[
-				'label'       => $config['label'],
-				'description' => $config['description'],
-				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input_schema' => [
-					'type'       => 'object',
-					'properties' => [],
-				],
-				'execute_callback' => [ $manager, $config['method'] ],
+				'label'               => $config['label'],
+				'description'         => $config['description'],
+				'category'            => JSMCP_ABILITY_CATEGORY,
+				'input_schema'        => $config['input_schema'],
+				'execute_callback'    => [ $manager, $config['method'] ],
 				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
-				'meta'        => [
+				'meta'                => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
@@ -520,18 +891,54 @@ function register_configuration_abilities(): void {
 			'description' => __( 'Update a WordPress option.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'update_option',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'option_name' => [
+						'type'        => 'string',
+						'description' => __( 'Option name to update.', 'jazzsequence-mcp-abilities' ),
+					],
+					'value'       => [
+						'description' => __( 'New option value.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'option_name', 'value' ],
+			],
 		],
 		'get-option'    => [
 			'label'       => __( 'Get Option', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Get a WordPress option value.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'get_option',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'option_name' => [
+						'type'        => 'string',
+						'description' => __( 'Option name to retrieve.', 'jazzsequence-mcp-abilities' ),
+					],
+					'default'     => [
+						'description' => __( 'Default value if option does not exist.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'option_name' ],
+			],
 		],
 		'delete-option' => [
 			'label'       => __( 'Delete Option', 'jazzsequence-mcp-abilities' ),
 			'description' => __( 'Delete a WordPress option.', 'jazzsequence-mcp-abilities' ),
 			'capability'  => 'manage_options',
 			'method'      => 'delete_option',
+			'input_schema' => [
+				'type'       => 'object',
+				'properties' => [
+					'option_name' => [
+						'type'        => 'string',
+						'description' => __( 'Option name to delete.', 'jazzsequence-mcp-abilities' ),
+					],
+				],
+				'required'   => [ 'option_name' ],
+			],
 		],
 	];
 
@@ -541,18 +948,15 @@ function register_configuration_abilities(): void {
 		wp_register_ability(
 			JSMCP_ABILITY_CATEGORY . '/' . $ability_id,
 			[
-				'label'       => $config['label'],
-				'description' => $config['description'],
-				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input_schema' => [
-					'type'       => 'object',
-					'properties' => [],
-				],
-				'execute_callback' => [ $manager, $config['method'] ],
+				'label'               => $config['label'],
+				'description'         => $config['description'],
+				'category'            => JSMCP_ABILITY_CATEGORY,
+				'input_schema'        => $config['input_schema'],
+				'execute_callback'    => [ $manager, $config['method'] ],
 				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
-				'meta'        => [
+				'meta'                => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
