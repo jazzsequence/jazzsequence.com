@@ -5,8 +5,13 @@
  * @package JazzSequence\MCP_Abilities\Tests
  */
 
+/**
+ * Test MCP integration filter.
+ */
 class Test_MCP_Integration extends WP_UnitTestCase {
-
+	/**
+	 * Set up test environment.
+	 */
 	public function setUp(): void {
 		parent::setUp();
 
@@ -64,7 +69,7 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 		// All jazzsequence-mcp abilities should be in the tools array.
 		$jazzsequence_tools = array_filter(
 			$filtered_config['tools'],
-			function( $tool ) {
+			function ( $tool ) {
 				return strpos( $tool, 'jazzsequence-mcp/' ) === 0;
 			}
 		);
@@ -83,16 +88,22 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * This is THE CRITICAL REQUIREMENT - expose ALL abilities, not just ours.
 	 */
 	public function test_filter_exposes_all_public_abilities() {
-		// Register a fake ability from another plugin with mcp.public = true.
+		/*
+		 * Register a fake ability from another plugin with mcp.public = true.
+		 */
 		wp_register_ability(
 			'other-plugin/test-ability',
 			[
-				'label'       => 'Test Ability',
-				'description' => 'Test',
-				'category'    => 'other',
-				'execute'     => function() { return [ 'success' => true ]; },
-				'permission'  => function() { return true; },
-				'meta'        => [
+				'label'              => 'Test Ability',
+				'description'        => 'Test',
+				'category'           => 'other',
+				'execute_callback'   => function () {
+					return [ 'success' => true ];
+				},
+				'permission_callback' => function () {
+					return true;
+				},
+				'meta'               => [
 					'show_in_rest' => true,
 					'mcp'          => [
 						'public' => true,
@@ -126,16 +137,22 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should NOT expose abilities without MCP metadata.
 	 */
 	public function test_filter_does_not_expose_private_abilities() {
-		// Register a fake ability WITHOUT mcp.public.
+		/*
+		 * Register a fake ability WITHOUT mcp.public.
+		 */
 		wp_register_ability(
 			'private-plugin/private-ability',
 			[
-				'label'       => 'Private Ability',
-				'description' => 'Test',
-				'category'    => 'private',
-				'execute'     => function() { return [ 'success' => true ]; },
-				'permission'  => function() { return true; },
-				'meta'        => [
+				'label'              => 'Private Ability',
+				'description'        => 'Test',
+				'category'           => 'private',
+				'execute_callback'   => function () {
+					return [ 'success' => true ];
+				},
+				'permission_callback' => function () {
+					return true;
+				},
+				'meta'               => [
 					'show_in_rest' => true,
 					// No mcp.public metadata.
 				],
@@ -166,12 +183,16 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should not error if wp_get_abilities doesn't exist.
 	 */
 	public function test_filter_handles_missing_api() {
-		// This test would require temporarily removing the function.
-		// For now, just verify the filter returns config unchanged if function is missing.
+		/*
+		 * This test would require temporarily removing the function.
+		 * For now, just verify the filter returns config unchanged if function is missing.
+		 */
 		$config = [ 'tools' => [ 'test' ] ];
 
-		// If wp_get_abilities doesn't exist, config should be returned unchanged.
-		// We can't easily test this without mocking, but we document the expectation.
+		/*
+		 * If wp_get_abilities doesn't exist, config should be returned unchanged.
+		 * We can't easily test this without mocking, but we document the expectation.
+		 */
 		$this->assertTrue(
 			function_exists( 'wp_get_abilities' ),
 			'This test assumes wp_get_abilities exists. If it doesn\'t, filter should return config unchanged.'

@@ -5,6 +5,10 @@
  * Usage: wp eval-file tests/test-assumptions.php
  *
  * @package JazzSequence\MCP_Abilities\Tests
+ *
+ * phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- CLI script, not web output.
+ * phpcs:disable Squiz.Commenting.FunctionComment.Missing -- Test helper function.
+ * phpcs:disable Squiz.Commenting.InlineComment.InvalidEndChar -- Test comments.
  */
 
 echo "=== JAZZSEQUENCE MCP ABILITIES ASSUMPTION TESTS ===\n\n";
@@ -72,7 +76,7 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 	// Test 7: Count jazzsequence-mcp abilities
 	$jazzsequence_abilities = array_filter(
 		array_keys( $all_abilities ),
-		function( $name ) {
+		function ( $name ) {
 			return strpos( $name, 'jazzsequence-mcp/' ) === 0;
 		}
 	);
@@ -122,7 +126,7 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 	// Test 9: Count core abilities
 	$core_abilities = array_filter(
 		array_keys( $all_abilities ),
-		function( $name ) {
+		function ( $name ) {
 			return strpos( $name, 'core/' ) === 0;
 		}
 	);
@@ -131,11 +135,11 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 	// Test 10: Count ninja forms abilities
 	$ninja_abilities = array_filter(
 		array_keys( $all_abilities ),
-		function( $name ) {
+		function ( $name ) {
 			return strpos( $name, 'ninjaforms/' ) === 0;
 		}
 	);
-	echo "Ninja Forms abilities: " . count( $ninja_abilities ) . "\n";
+	echo 'Ninja Forms abilities: ' . count( $ninja_abilities ) . "\n";
 }
 
 // Test 11: Check MCP integration filter
@@ -158,7 +162,7 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 
 	echo "  Original tools count: {$original_count}\n";
 	echo "  Filtered tools count: {$filtered_count}\n";
-	echo "  Tools added by filter: " . ($filtered_count - $original_count) . "\n";
+	echo '  Tools added by filter: ' . ( $filtered_count - $original_count ) . "\n";
 
 	test_assert(
 		$filtered_count > $original_count,
@@ -170,12 +174,12 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 	// Count how many jazzsequence tools were added
 	$jazzsequence_tools = array_filter(
 		$filtered_config['tools'],
-		function( $tool ) {
+		function ( $tool ) {
 			return strpos( $tool, 'jazzsequence-mcp/' ) === 0;
 		}
 	);
 
-	echo "  JazzSequence tools in filtered config: " . count( $jazzsequence_tools ) . "\n";
+	echo '  JazzSequence tools in filtered config: ' . count( $jazzsequence_tools ) . "\n";
 
 	test_assert(
 		count( $jazzsequence_tools ) === 34,
@@ -189,7 +193,7 @@ if ( function_exists( 'wp_get_abilities' ) ) {
 echo "\n=== TEST SUMMARY ===\n";
 echo "Passed: {$tests_passed}\n";
 echo "Failed: {$tests_failed}\n";
-echo "Total:  " . ($tests_passed + $tests_failed) . "\n";
+echo 'Total:  ' . ( $tests_passed + $tests_failed ) . "\n";
 
 if ( $tests_failed > 0 ) {
 	echo "\n✗ TESTS FAILED\n";

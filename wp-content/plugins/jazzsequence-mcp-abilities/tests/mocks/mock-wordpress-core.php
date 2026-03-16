@@ -141,9 +141,11 @@ function esc_html__( string $text, string $domain = 'default' ): string {
  *
  * @param string $message Error message.
  * @param string $title Error title.
- * @param array $args Additional arguments.
+ * @param array  $args Additional arguments.
+ * @throws Exception Always throws exception with message.
  */
 function wp_die( string $message = '', string $title = '', array $args = [] ): void {
+	// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- Mock function for testing.
 	throw new Exception( $message );
 }
 

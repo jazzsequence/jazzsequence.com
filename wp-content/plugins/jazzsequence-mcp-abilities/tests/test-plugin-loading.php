@@ -5,6 +5,9 @@
  * @package JazzSequence\MCP_Abilities\Tests
  */
 
+/**
+ * Test plugin loading.
+ */
 class Test_Plugin_Loading extends WP_UnitTestCase {
 
 	/**

@@ -5,8 +5,13 @@
  * @package JazzSequence\MCP_Abilities\Tests
  */
 
+/**
+ * Test ability registration.
+ */
 class Test_Ability_Registration extends WP_UnitTestCase {
-
+	/**
+	 * Set up each test.
+	 */
 	public function setUp(): void {
 		parent::setUp();
 
@@ -84,7 +89,7 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function( $ability ) {
+			function ( $ability ) {
 				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
 			}
 		);
@@ -139,7 +144,7 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function( $ability ) {
+			function ( $ability ) {
 				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
 			}
 		);
@@ -170,7 +175,7 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function( $ability ) {
+			function ( $ability ) {
 				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
 			}
 		);

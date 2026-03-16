@@ -42,8 +42,10 @@ function wp_register_ability( string $name, array $args ) {
 	$_wp_abilities_registry[ $name ] = $ability;
 
 	return (object) [
-		'get_name' => function() use ($name) { return $name; },
-		'get_meta' => function() use ($args) { return $args['meta'] ?? []; },
+		'get_name' => function () use ( $name ) {
+			return $name; },
+		'get_meta' => function () use ( $args ) {
+			return $args['meta'] ?? []; },
 	];
 }
 
@@ -59,8 +61,10 @@ function wp_get_abilities(): array {
 	foreach ( $_wp_abilities_registry as $name => $data ) {
 		$abilities[ $name ] = (object) [
 			'name' => $name,
-			'get_name' => function() use ($name) { return $name; },
-			'get_meta' => function() use ($data) { return $data->args['meta'] ?? []; },
+			'get_name' => function () use ( $name ) {
+				return $name; },
+			'get_meta' => function () use ( $data ) {
+				return $data->args['meta'] ?? []; },
 		];
 	}
 
@@ -84,8 +88,10 @@ function wp_get_ability( string $name ) {
 
 	return (object) [
 		'name' => $name,
-		'get_name' => function() use ($name) { return $name; },
-		'get_meta' => function() use ($data) { return $data->args['meta'] ?? []; },
+		'get_name' => function () use ( $name ) {
+			return $name; },
+		'get_meta' => function () use ( $data ) {
+			return $data->args['meta'] ?? []; },
 	];
 }
 
