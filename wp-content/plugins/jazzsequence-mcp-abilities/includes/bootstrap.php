@@ -27,11 +27,11 @@ function bootstrap(): void {
 	require_once JSMCP_PLUGIN_DIR . 'includes/class-audit-log.php';
 	require_once JSMCP_PLUGIN_DIR . 'includes/helpers.php';
 
-	// Register ability category directly (not via hook).
-	register_ability_category();
+	// Register ability category on the correct hook.
+	add_action( 'wp_abilities_api_categories_init', __NAMESPACE__ . '\\register_ability_category' );
 
-	// Register all abilities directly (not via hook).
-	register_abilities();
+	// Register all abilities on the correct hook.
+	add_action( 'wp_abilities_api_init', __NAMESPACE__ . '\\register_abilities' );
 
 	// Initialize security features.
 	Security\init();
@@ -177,7 +177,7 @@ function register_discovery_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [
 						'format' => [
@@ -188,14 +188,10 @@ function register_discovery_abilities(): void {
 						],
 					],
 				],
-				'output'      => [
-					'type'        => 'object',
-					'description' => __( 'Discovery results in requested format.', 'jazzsequence-mcp-abilities' ),
-				],
-				'execute'     => function ( $args ) use ( $ability_id ) {
+				'execute_callback' => function ( $args ) use ( $ability_id ) {
 					return execute_discovery_ability( $ability_id, $args );
 				},
-				'permission'  => function () use ( $config ) {
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
@@ -264,15 +260,12 @@ function register_content_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [],
 				],
-				'output'      => [
-					'type' => 'object',
-				],
-				'execute'     => [ $manager, $config['method'] ],
-				'permission'  => function () use ( $config ) {
+				'execute_callback' => [ $manager, $config['method'] ],
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
@@ -341,15 +334,12 @@ function register_media_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [],
 				],
-				'output'      => [
-					'type' => 'object',
-				],
-				'execute'     => [ $manager, $config['method'] ],
-				'permission'  => function () use ( $config ) {
+				'execute_callback' => [ $manager, $config['method'] ],
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
@@ -412,15 +402,12 @@ function register_taxonomy_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [],
 				],
-				'output'      => [
-					'type' => 'object',
-				],
-				'execute'     => [ $manager, $config['method'] ],
-				'permission'  => function () use ( $config ) {
+				'execute_callback' => [ $manager, $config['method'] ],
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
@@ -495,15 +482,12 @@ function register_system_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [],
 				],
-				'output'      => [
-					'type' => 'object',
-				],
-				'execute'     => [ $manager, $config['method'] ],
-				'permission'  => function () use ( $config ) {
+				'execute_callback' => [ $manager, $config['method'] ],
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
@@ -560,15 +544,12 @@ function register_configuration_abilities(): void {
 				'label'       => $config['label'],
 				'description' => $config['description'],
 				'category'    => JSMCP_ABILITY_CATEGORY,
-				'input'       => [
+				'input_schema' => [
 					'type'       => 'object',
 					'properties' => [],
 				],
-				'output'      => [
-					'type' => 'object',
-				],
-				'execute'     => [ $manager, $config['method'] ],
-				'permission'  => function () use ( $config ) {
+				'execute_callback' => [ $manager, $config['method'] ],
+				'permission_callback' => function () use ( $config ) {
 					return current_user_can( $config['capability'] );
 				},
 				'meta'        => [
