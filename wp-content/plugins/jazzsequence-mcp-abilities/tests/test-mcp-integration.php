@@ -15,23 +15,15 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	public function setUp(): void {
 		parent::setUp();
 
-		// Reset abilities registry before each test.
+		/*
+		 * Reset the abilities registry. In WP 6.9+, _reset_abilities_registry() fires
+		 * wp_abilities_api_init internally, re-triggering all registered callbacks.
+		 * The plugin was already loaded via _manually_load_plugin, so its hooks are in place.
+		 * Do NOT call bootstrap() here — that would add duplicate hooks each test run.
+		 */
 		if ( function_exists( '_reset_abilities_registry' ) ) {
 			_reset_abilities_registry();
 		}
-
-		// Remove previously-hooked callbacks to prevent double-registration
-		// when bootstrap() is called across multiple test setUp() invocations.
-		remove_all_actions( 'wp_abilities_api_init' );
-		remove_all_actions( 'wp_abilities_api_categories_init' );
-
-		// Re-bootstrap and trigger hooks fresh for each test.
-		if ( function_exists( 'JazzSequence\MCP_Abilities\bootstrap' ) ) {
-			JazzSequence\MCP_Abilities\bootstrap();
-		}
-
-		do_action( 'wp_abilities_api_categories_init' );
-		do_action( 'wp_abilities_api_init' );
 	}
 
 	/**
@@ -55,7 +47,6 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * This is the ACTUAL MECHANISM that exposes abilities to MCP.
 	 */
 	public function test_filter_adds_abilities_to_config() {
-		// Create mock config.
 		$config = [
 			'tools' => [
 				'mcp-adapter/discover-abilities',
@@ -64,17 +55,14 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 			],
 		];
 
-		// Apply the filter.
 		$filtered_config = apply_filters( 'mcp_adapter_default_server_config', $config );
 
-		// Should have more tools now.
 		$this->assertGreaterThan(
 			count( $config['tools'] ),
 			count( $filtered_config['tools'] ),
 			'Filter should add jazzsequence-mcp abilities to tools array'
 		);
 
-		// All jazzsequence-mcp abilities should be in the tools array.
 		$jazzsequence_tools = array_filter(
 			$filtered_config['tools'],
 			function ( $tool ) {
@@ -96,7 +84,11 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * This is THE CRITICAL REQUIREMENT - expose ALL abilities, not just ours.
 	 */
 	public function test_filter_exposes_all_public_abilities() {
-		// WP 6.9+ requires abilities to be registered on wp_abilities_api_init.
+		/*
+		 * Add the test ability hook BEFORE resetting the registry.
+		 * _reset_abilities_registry() fires wp_abilities_api_init, which will trigger
+		 * this callback alongside the plugin's own register_abilities().
+		 */
 		add_action(
 			'wp_abilities_api_init',
 			function () {
@@ -124,19 +116,14 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 			}
 		);
 
-		do_action( 'wp_abilities_api_init' );
+		/* Re-reset so the hook above fires alongside the plugin's abilities. */
+		if ( function_exists( '_reset_abilities_registry' ) ) {
+			_reset_abilities_registry();
+		}
 
-		// Create mock config.
-		$config = [
-			'tools' => [
-				'mcp-adapter/discover-abilities',
-			],
-		];
-
-		// Apply the filter.
+		$config          = [ 'tools' => [ 'mcp-adapter/discover-abilities' ] ];
 		$filtered_config = apply_filters( 'mcp_adapter_default_server_config', $config );
 
-		// The other plugin's ability should also be included.
 		$this->assertContains(
 			'other-plugin/test-ability',
 			$filtered_config['tools'],
@@ -150,7 +137,10 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should NOT expose abilities without MCP metadata.
 	 */
 	public function test_filter_does_not_expose_private_abilities() {
-		// WP 6.9+ requires abilities to be registered on wp_abilities_api_init.
+		/*
+		 * Add the private ability hook BEFORE resetting the registry so it fires
+		 * during wp_abilities_api_init when _reset_abilities_registry() is called.
+		 */
 		add_action(
 			'wp_abilities_api_init',
 			function () {
@@ -175,19 +165,14 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 			}
 		);
 
-		do_action( 'wp_abilities_api_init' );
+		/* Re-reset so the hook above fires. */
+		if ( function_exists( '_reset_abilities_registry' ) ) {
+			_reset_abilities_registry();
+		}
 
-		// Create mock config.
-		$config = [
-			'tools' => [
-				'mcp-adapter/discover-abilities',
-			],
-		];
-
-		// Apply the filter.
+		$config          = [ 'tools' => [ 'mcp-adapter/discover-abilities' ] ];
 		$filtered_config = apply_filters( 'mcp_adapter_default_server_config', $config );
 
-		// The private ability should NOT be included.
 		$this->assertNotContains(
 			'private-plugin/private-ability',
 			$filtered_config['tools'],
@@ -201,12 +186,6 @@ class Test_MCP_Integration extends WP_UnitTestCase {
 	 * Assumption: Filter should not error if wp_get_abilities doesn't exist.
 	 */
 	public function test_filter_handles_missing_api() {
-		$config = [ 'tools' => [ 'test' ] ];
-
-		/*
-		 * If wp_get_abilities doesn't exist, config should be returned unchanged.
-		 * We can't easily test this without mocking, but we document the expectation.
-		 */
 		$this->assertTrue(
 			function_exists( 'wp_get_abilities' ),
 			'This test assumes wp_get_abilities exists. If it doesn\'t, filter should return config unchanged.'
