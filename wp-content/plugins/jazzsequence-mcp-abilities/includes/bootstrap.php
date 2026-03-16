@@ -38,6 +38,9 @@ function bootstrap(): void {
 
 	// Initialize audit logging.
 	Audit_Log\init();
+
+	// Register MCP integration filter to expose ALL abilities.
+	register_mcp_integration();
 }
 
 /**
@@ -197,6 +200,10 @@ function register_discovery_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -270,6 +277,10 @@ function register_content_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -343,6 +354,10 @@ function register_media_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -410,6 +425,10 @@ function register_taxonomy_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -489,6 +508,10 @@ function register_system_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -550,6 +573,10 @@ function register_configuration_abilities(): void {
 				},
 				'meta'        => [
 					'show_in_rest' => true,
+					'mcp'          => [
+						'public' => true,
+						'type'   => 'tool',
+					],
 				],
 			]
 		);
@@ -623,4 +650,39 @@ function execute_discovery_ability( string $ability_id, array $args ) {
 				)
 			);
 	}
+}
+
+/**
+ * Register MCP integration to expose all abilities.
+ *
+ * This filter exposes ALL abilities registered via the WordPress Abilities API
+ * that have meta.mcp.public = true, not just jazzsequence-mcp abilities.
+ *
+ * This provides comprehensive MCP discovery of all site capabilities.
+ *
+ * @since 0.1.3
+ */
+function register_mcp_integration(): void {
+	add_filter(
+		'mcp_adapter_default_server_config',
+		function ( $config ) {
+			if ( ! function_exists( 'wp_get_abilities' ) ) {
+				return $config;
+			}
+
+			$all_abilities = wp_get_abilities();
+
+			foreach ( $all_abilities as $ability_name => $ability ) {
+				$meta = $ability->get_meta();
+
+				// Expose ANY ability that has mcp.public = true.
+				if ( isset( $meta['mcp']['public'] ) && $meta['mcp']['public'] === true ) {
+					$config['tools'][] = $ability_name;
+				}
+			}
+
+			return $config;
+		},
+		10
+	);
 }
