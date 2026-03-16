@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants.
-define( 'JSMCP_VERSION', '0.1.2' );
+define( 'JSMCP_VERSION', '0.1.3' );
 define( 'JSMCP_PLUGIN_FILE', __FILE__ );
 define( 'JSMCP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'JSMCP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
