@@ -29,10 +29,7 @@ jobs:
     env:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
       WP_CORE_DIR: /tmp/wordpress
-
-    defaults:
-      run:
-        working-directory: wp-content/plugins/jazzsequence-mcp-abilities
+      PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
 
     steps:
       - uses: actions/checkout@v4
@@ -44,23 +41,32 @@ jobs:
           extensions: mysqli, pdo_mysql
           coverage: none
 
-      - name: Cache Composer dependencies
+      - name: Cache root Composer dependencies
         uses: actions/cache@v5
         with:
-          path: wp-content/plugins/jazzsequence-mcp-abilities/vendor
-          key: composer-${{ hashFiles('wp-content/plugins/jazzsequence-mcp-abilities/composer.lock') }}
-          restore-keys: composer-
+          path: vendor
+          key: composer-root-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-root-
 
-      - name: Install Composer dependencies
+      - name: Install root Composer dependencies
         run: composer install --no-interaction --prefer-dist
+
+      - name: Cache plugin Composer dependencies
+        uses: actions/cache@v5
+        with:
+          path: ${{ env.PLUGIN_DIR }}/vendor
+          key: composer-plugin-${{ hashFiles(format('{0}/composer.lock', env.PLUGIN_DIR)) }}
+          restore-keys: composer-plugin-
+
+      - name: Install plugin Composer dependencies
+        run: composer install --no-interaction --prefer-dist
+        working-directory: ${{ env.PLUGIN_DIR }}
 
       - name: Install WordPress test library
         run: |
           bash <(curl -s https://raw.githubusercontent.com/wp-cli/scaffold-command/main/templates/install-wp-tests.sh) \
             wordpress_test root root 127.0.0.1:3306 latest true
-        env:
-          WP_TESTS_DIR: /tmp/wordpress-tests-lib
-          WP_CORE_DIR: /tmp/wordpress
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit --testdox
+        working-directory: ${{ env.PLUGIN_DIR }}
