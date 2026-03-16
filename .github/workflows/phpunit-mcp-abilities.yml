@@ -1,0 +1,66 @@
+name: PHPUnit — jazzsequence-mcp-abilities
+
+on:
+  push:
+    paths:
+      - 'wp-content/plugins/jazzsequence-mcp-abilities/**'
+  pull_request:
+    paths:
+      - 'wp-content/plugins/jazzsequence-mcp-abilities/**'
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    env:
+      WP_TESTS_DIR: /tmp/wordpress-tests-lib
+      WP_CORE_DIR: /tmp/wordpress
+
+    defaults:
+      run:
+        working-directory: wp-content/plugins/jazzsequence-mcp-abilities
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mysqli, pdo_mysql
+          coverage: none
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v5
+        with:
+          path: wp-content/plugins/jazzsequence-mcp-abilities/vendor
+          key: composer-${{ hashFiles('wp-content/plugins/jazzsequence-mcp-abilities/composer.lock') }}
+          restore-keys: composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Install WordPress test library
+        run: |
+          bash <(curl -s https://raw.githubusercontent.com/wp-cli/scaffold-command/main/templates/install-wp-tests.sh) \
+            wordpress_test root root 127.0.0.1:3306 latest true
+        env:
+          WP_TESTS_DIR: /tmp/wordpress-tests-lib
+          WP_CORE_DIR: /tmp/wordpress
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --testdox
