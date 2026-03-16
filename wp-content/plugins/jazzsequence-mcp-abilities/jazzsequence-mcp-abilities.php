@@ -3,7 +3,7 @@
  * Plugin Name: JazzSequence MCP Abilities
  * Plugin URI: https://github.com/jazzsequence/jazzsequence.com
  * Description: Exposes comprehensive WordPress abilities via MCP for AI-powered site management. Provides full read/write access to content, configuration, and system operations through the Model Context Protocol.
- * Version: 0.1.2
+ * Version: 0.1.3
  * Requires at least: 6.9
  * Requires PHP: 8.2
  * Author: Chris Reynolds
