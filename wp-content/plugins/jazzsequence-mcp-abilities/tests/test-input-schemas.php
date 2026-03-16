@@ -127,9 +127,7 @@ class Test_Input_Schemas extends WP_UnitTestCase {
 		}
 	}
 
-	// -------------------------------------------------------------------------
-	// Content abilities
-	// -------------------------------------------------------------------------
+	/* Content abilities */
 
 	/**
 	 * Test create-post input schema.
@@ -195,9 +193,7 @@ class Test_Input_Schemas extends WP_UnitTestCase {
 		$this->assertHasProperties( $schema, [ 'post_type', 'posts_per_page', 'paged', 'post_status', 'orderby', 'order', 's' ], $ability );
 	}
 
-	// -------------------------------------------------------------------------
-	// Media abilities
-	// -------------------------------------------------------------------------
+	/* Media abilities */
 
 	/**
 	 * Test upload-media-url input schema.
@@ -264,9 +260,7 @@ class Test_Input_Schemas extends WP_UnitTestCase {
 		$this->assertRequiredProperties( $schema, [ 'ID' ], $ability );
 	}
 
-	// -------------------------------------------------------------------------
-	// Taxonomy abilities
-	// -------------------------------------------------------------------------
+	/* Taxonomy abilities */
 
 	/**
 	 * Test create-term input schema.
@@ -320,9 +314,7 @@ class Test_Input_Schemas extends WP_UnitTestCase {
 		$this->assertRequiredProperties( $schema, [ 'term_id', 'taxonomy' ], $ability );
 	}
 
-	// -------------------------------------------------------------------------
-	// System abilities
-	// -------------------------------------------------------------------------
+	/* System abilities */
 
 	/**
 	 * Test clear-cache input schema.
@@ -375,9 +367,7 @@ class Test_Input_Schemas extends WP_UnitTestCase {
 		$this->assertRequiredProperties( $schema, [ 'hook' ], $ability );
 	}
 
-	// -------------------------------------------------------------------------
-	// Config abilities
-	// -------------------------------------------------------------------------
+	/* Config abilities */
 
 	/**
 	 * Test get-option input schema.
