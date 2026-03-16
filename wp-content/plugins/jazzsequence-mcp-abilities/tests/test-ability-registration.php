@@ -20,10 +20,18 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 			_reset_abilities_registry();
 		}
 
-		// Trigger bootstrap.
+		// Remove previously-hooked callbacks to prevent double-registration
+		// when bootstrap() is called across multiple test setUp() invocations.
+		remove_all_actions( 'wp_abilities_api_init' );
+		remove_all_actions( 'wp_abilities_api_categories_init' );
+
+		// Re-bootstrap and trigger hooks fresh for each test.
 		if ( function_exists( 'JazzSequence\MCP_Abilities\bootstrap' ) ) {
 			JazzSequence\MCP_Abilities\bootstrap();
 		}
+
+		do_action( 'wp_abilities_api_categories_init' );
+		do_action( 'wp_abilities_api_init' );
 	}
 
 	/**
@@ -32,15 +40,29 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 	 * Assumption: register_ability_category() registers the jazzsequence-mcp category.
 	 */
 	public function test_ability_category_registered() {
-		global $_wp_ability_categories_registry;
+		// WP 6.9+ provides wp_get_ability_categories(); fall back to internal global.
+		if ( function_exists( 'wp_get_ability_categories' ) ) {
+			$categories = wp_get_ability_categories();
+			$this->assertArrayHasKey(
+				'jazzsequence-mcp',
+				$categories,
+				'jazzsequence-mcp ability category should be registered'
+			);
+			$category = $categories['jazzsequence-mcp'];
+		} else {
+			global $_wp_ability_categories_registry;
+			$this->assertIsArray(
+				$_wp_ability_categories_registry,
+				'Ability categories registry should be an array'
+			);
+			$this->assertArrayHasKey(
+				'jazzsequence-mcp',
+				$_wp_ability_categories_registry,
+				'jazzsequence-mcp ability category should be registered'
+			);
+			$category = $_wp_ability_categories_registry['jazzsequence-mcp'];
+		}
 
-		$this->assertArrayHasKey(
-			'jazzsequence-mcp',
-			$_wp_ability_categories_registry,
-			'jazzsequence-mcp ability category should be registered'
-		);
-
-		$category = $_wp_ability_categories_registry['jazzsequence-mcp'];
 		$this->assertArrayHasKey( 'label', $category, 'Category should have label' );
 		$this->assertArrayHasKey( 'description', $category, 'Category should have description' );
 	}
@@ -87,11 +109,13 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 	public function test_abilities_have_mcp_metadata() {
 		$abilities = wp_get_abilities();
 
+		// Filter by array key (ability name) — WP_Ability::$name is protected in 6.9+.
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function ( $ability ) {
-				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
-			}
+			function ( $ability, $name ) {
+				return strpos( $name, 'jazzsequence-mcp/' ) === 0;
+			},
+			ARRAY_FILTER_USE_BOTH
 		);
 
 		$this->assertGreaterThan(
@@ -142,11 +166,13 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 	public function test_abilities_have_show_in_rest() {
 		$abilities = wp_get_abilities();
 
+		// Filter by array key (ability name) — WP_Ability::$name is protected in 6.9+.
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function ( $ability ) {
-				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
-			}
+			function ( $ability, $name ) {
+				return strpos( $name, 'jazzsequence-mcp/' ) === 0;
+			},
+			ARRAY_FILTER_USE_BOTH
 		);
 
 		foreach ( $jazzsequence_abilities as $ability_name => $ability ) {
@@ -173,11 +199,13 @@ class Test_Ability_Registration extends WP_UnitTestCase {
 	public function test_correct_number_of_abilities_registered() {
 		$abilities = wp_get_abilities();
 
+		// Filter by array key (ability name) — WP_Ability::$name is protected in 6.9+.
 		$jazzsequence_abilities = array_filter(
 			$abilities,
-			function ( $ability ) {
-				return strpos( $ability->name, 'jazzsequence-mcp/' ) === 0;
-			}
+			function ( $ability, $name ) {
+				return strpos( $name, 'jazzsequence-mcp/' ) === 0;
+			},
+			ARRAY_FILTER_USE_BOTH
 		);
 
 		$this->assertEquals(
