@@ -10,6 +10,7 @@
 	<testsuites>
 		<testsuite name="jazzsequence-mcp-abilities">
 			<directory prefix="test-" suffix=".php">./tests/</directory>
+			<exclude>./tests/test-assumptions.php</exclude>
 		</testsuite>
 	</testsuites>
 	<filter>

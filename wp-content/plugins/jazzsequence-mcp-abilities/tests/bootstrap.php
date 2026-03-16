@@ -2,11 +2,25 @@
 /**
  * PHPUnit bootstrap file for jazzsequence-mcp-abilities tests.
  *
+ * Supports two environments:
+ * - Local development: plugin is installed inside a full WordPress project,
+ *   so the root vendor/autoload.php (4 levels up) is used.
+ * - CI: plugin runs standalone; falls back to the plugin's own vendor/autoload.php.
+ *
  * @package JazzSequence\MCP_Abilities
  */
 
-// Composer autoloader.
-require_once dirname( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/vendor/autoload.php';
+// Composer autoloader — try root project first, fall back to plugin's own vendor.
+$root_autoload   = dirname( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/vendor/autoload.php';
+$plugin_autoload = dirname( __DIR__ ) . '/vendor/autoload.php';
+
+if ( file_exists( $root_autoload ) ) {
+	require_once $root_autoload;
+} elseif ( file_exists( $plugin_autoload ) ) {
+	require_once $plugin_autoload;
+} else {
+	exit( 'No autoloader found. Run composer install.' . PHP_EOL );
+}
 
 // WordPress test environment.
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
