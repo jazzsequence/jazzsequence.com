@@ -105,7 +105,7 @@ function check_dependencies(): bool {
  */
 add_action(
 	'plugins_loaded',
-	function() {
+	function () {
 		if ( check_dependencies() ) {
 			require_once JSMCP_PLUGIN_DIR . 'includes/bootstrap.php';
 			bootstrap();
