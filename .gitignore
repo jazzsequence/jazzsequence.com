@@ -65,6 +65,7 @@ audio/
 
 # Ignore Claude settings
 .claude
+.mcp.json
 
 # Don't ignore CLAUDE.md
 !CLAUDE.md
