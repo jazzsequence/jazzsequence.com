@@ -63,5 +63,8 @@ audio/
 .github/instructions/codacy.instructions.md
 .codacy/*
 
-# Don't ignore WARP.md
-!WARP.md
+# Ignore Claude settings
+.claude
+
+# Don't ignore CLAUDE.md
+!CLAUDE.md

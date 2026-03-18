@@ -1,6 +1,6 @@
-# WARP.md
+# CLAUDE.md
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+This file provides guidance to Claude Code when working with code in this repository.
 
 ## Project Overview
 
@@ -144,7 +144,7 @@ When developing new MU plugins, follow the pattern established in existing files
 - Bats (Bash Automated Testing System) for integration testing
 - GitHub Actions ensures all scripts pass tests before deployment
 
-### Release Testing  
+### Release Testing
 - Dry-run capabilities for testing release processes
 - Automated validation of release creation workflows
 - Version pattern matching for PR-based releases
