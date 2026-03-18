@@ -40,6 +40,10 @@
 		},
 		{
 			"type": "composer",
+			"url": "https://wp-composer.com"
+		},
+		{
+			"type": "composer",
 			"url": "https://packages.jazzsequence.com"
 		},
 		{
@@ -72,7 +76,7 @@
 		"jazzsequence/address-book": "*",
 		"jazzsequence/artists": "*",
 		"jazzsequence/dashboard-changelog": "*",
-		"jazzsequence/games-collector": "*",
+		"jazzsequence/games-collector": "^2.0",
 		"jazzsequence/jz-222": "dev-main",
 		"jazzsequence/recipe-box": "*",
 		"johnbillion/extended-cpts": "*",
