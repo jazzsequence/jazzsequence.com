@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abb6838898b208ac4f3ffaa21bdbe266",
+    "content-hash": "1256f1e804bd732578bd44b9c232baab",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -2465,16 +2465,16 @@
         },
         {
             "name": "yoast/duplicate-post",
-            "version": "4.1.2",
+            "version": "4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast-dist/duplicate-post.git",
-                "reference": "92fd35b2a494555166470e0906a3463d0b897687"
+                "reference": "a48dea757979a751cb00f553ee9db926be173daa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/92fd35b2a494555166470e0906a3463d0b897687",
-                "reference": "92fd35b2a494555166470e0906a3463d0b897687",
+                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/a48dea757979a751cb00f553ee9db926be173daa",
+                "reference": "a48dea757979a751cb00f553ee9db926be173daa",
                 "shasum": ""
             },
             "require": {
@@ -2482,12 +2482,8 @@
                 "php": ">=5.6"
             },
             "require-dev": {
-                "automattic/vipwpcs": "^2.0",
-                "brain/monkey": "^2.5",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "phpcompatibility/phpcompatibility-wp": "^2.1.0",
-                "phpunit/phpunit": "^5.7",
-                "wp-coding-standards/wpcs": "^2.1"
+                "yoast/wp-test-utils": "^1.0.0",
+                "yoast/yoastcs": "^2.2.0"
             },
             "type": "wordpress-plugin",
             "autoload": {
@@ -2519,7 +2515,7 @@
                 "issues": "https://github.com/Yoast/duplicate-post/issues",
                 "source": "https://github.com/Yoast/duplicate-post"
             },
-            "time": "2021-05-26T09:13:56+00:00"
+            "time": "2021-11-18T09:20:05+00:00"
         }
     ],
     "packages-dev": [
@@ -3685,7 +3681,14 @@
             "time": "2025-11-25T12:08:04+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "yoast/duplicate-post",
+            "version": "4.2.0.0",
+            "alias": "4.1.3",
+            "alias_normalized": "4.1.3.0"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wordpress-importer": 20,

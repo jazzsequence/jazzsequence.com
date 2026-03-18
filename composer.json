@@ -95,6 +95,7 @@
 		"wpackagist-plugin/organize-series": "*",
 		"wpackagist-plugin/pantheon-content-publisher": "*",
 		"wpackagist-plugin/patchstack": "*",
+		"yoast/duplicate-post": "4.2 as 4.1.3",
 		"wpackagist-plugin/plugins-garbage-collector": "*",
 		"wpackagist-plugin/progress-bar": "*",
 		"wpackagist-plugin/regenerate-thumbnails": "*",
