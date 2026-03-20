@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1256f1e804bd732578bd44b9c232baab",
+    "content-hash": "d725172ea15b80806dffb57382fcc3de",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1788,16 +1788,16 @@
         },
         {
             "name": "pfefferle/wordpress-activitypub",
-            "version": "8.0.1",
+            "version": "8.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/wordpress-activitypub.git",
-                "reference": "a7e7b85528638f04a5fd63b95a4103a64e8dc7f9"
+                "reference": "5c49b39dd520a8c8c672ecd73109cd1272bb7ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/a7e7b85528638f04a5fd63b95a4103a64e8dc7f9",
-                "reference": "a7e7b85528638f04a5fd63b95a4103a64e8dc7f9",
+                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/5c49b39dd520a8c8c672ecd73109cd1272bb7ad0",
+                "reference": "5c49b39dd520a8c8c672ecd73109cd1272bb7ad0",
                 "shasum": ""
             },
             "require": {
@@ -1838,9 +1838,9 @@
             "description": "The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.",
             "support": {
                 "issues": "https://github.com/Automattic/wordpress-activitypub/issues",
-                "source": "https://github.com/Automattic/wordpress-activitypub/tree/8.0.1"
+                "source": "https://github.com/Automattic/wordpress-activitypub/tree/8.0.2"
             },
-            "time": "2026-03-11T09:23:50+00:00"
+            "time": "2026-03-17T11:21:25+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1973,15 +1973,15 @@
         },
         {
             "name": "wpackagist-plugin/altis-accelerate",
-            "version": "4.0.1",
+            "version": "4.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/4.0.1"
+                "reference": "tags/4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.0.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.1.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2063,15 +2063,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "22.7.0",
+            "version": "22.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/22.7.0"
+                "reference": "tags/22.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.22.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.22.7.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2099,15 +2099,15 @@
         },
         {
             "name": "wpackagist-plugin/litespeed-cache",
-            "version": "7.8",
+            "version": "7.8.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/litespeed-cache/",
-                "reference": "tags/7.8"
+                "reference": "tags/7.8.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.8.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2465,25 +2465,25 @@
         },
         {
             "name": "yoast/duplicate-post",
-            "version": "4.2",
+            "version": "4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast-dist/duplicate-post.git",
-                "reference": "a48dea757979a751cb00f553ee9db926be173daa"
+                "reference": "db85005366144846cac3b07632488a6da92876f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/a48dea757979a751cb00f553ee9db926be173daa",
-                "reference": "a48dea757979a751cb00f553ee9db926be173daa",
+                "url": "https://api.github.com/repos/Yoast-dist/duplicate-post/zipball/db85005366144846cac3b07632488a6da92876f5",
+                "reference": "db85005366144846cac3b07632488a6da92876f5",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.9.0",
-                "php": ">=5.6"
+                "composer/installers": "^1.12.0 || ^2.0",
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "yoast/wp-test-utils": "^1.0.0",
-                "yoast/yoastcs": "^2.2.0"
+                "yoast/wp-test-utils": "^1.2.1",
+                "yoast/yoastcs": "^3.3.0"
             },
             "type": "wordpress-plugin",
             "autoload": {
@@ -2513,9 +2513,10 @@
             "support": {
                 "forum": "https://wordpress.org/support/plugin/duplicate-post",
                 "issues": "https://github.com/Yoast/duplicate-post/issues",
+                "security": "https://yoast.com/security-program/",
                 "source": "https://github.com/Yoast/duplicate-post"
             },
-            "time": "2021-11-18T09:20:05+00:00"
+            "time": "2026-03-09T10:26:52+00:00"
         }
     ],
     "packages-dev": [
@@ -2728,16 +2729,16 @@
         },
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.20.2",
+            "version": "3.20.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "40b9ba0d72a4d938a24aa6367b7715e8ae02e8d4"
+                "reference": "19a230464200294ae0448e5d3487be5537de0622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/40b9ba0d72a4d938a24aa6367b7715e8ae02e8d4",
-                "reference": "40b9ba0d72a4d938a24aa6367b7715e8ae02e8d4",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/19a230464200294ae0448e5d3487be5537de0622",
+                "reference": "19a230464200294ae0448e5d3487be5537de0622",
                 "shasum": ""
             },
             "require": {
@@ -2752,7 +2753,7 @@
                 "codeception/util-universalframework": "^1.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
                 "guzzlehttp/guzzle": "^7.0",
-                "johnbillion/plugin-infrastructure": "1.2.1",
+                "johnbillion/plugin-infrastructure": "1.2.2",
                 "johnbillion/wp-compat": "0.3.1",
                 "lucatume/wp-browser": "3.2.3",
                 "phpcompatibility/phpcompatibility-wp": "2.1.5",
@@ -2800,7 +2801,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-11T22:08:53+00:00"
+            "time": "2026-03-19T17:07:45+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
@@ -3684,7 +3685,7 @@
     "aliases": [
         {
             "package": "yoast/duplicate-post",
-            "version": "4.2.0.0",
+            "version": "4.6.0.0",
             "alias": "4.1.3",
             "alias_normalized": "4.1.3.0"
         }
