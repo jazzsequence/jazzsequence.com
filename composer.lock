@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d725172ea15b80806dffb57382fcc3de",
+    "content-hash": "00b0ec93bb80a060c1d38e92e971a44d",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "26.0.3",
+            "version": "26.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "15a516d601562d6132360a6430cb0772dbc209cd"
+                "reference": "caa4218793b74b23f989508c83ce443a46636941"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/15a516d601562d6132360a6430cb0772dbc209cd",
-                "reference": "15a516d601562d6132360a6430cb0772dbc209cd",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/caa4218793b74b23f989508c83ce443a46636941",
+                "reference": "caa4218793b74b23f989508c83ce443a46636941",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "humanmade/altis-reusable-blocks": "~0.2.4",
                 "humanmade/asset-loader": "^0.6.4",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.9.3",
+                "johnpbloch/wordpress": "6.9.4",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -159,9 +159,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/26.0.3"
+                "source": "https://github.com/humanmade/altis-cms/tree/26.0.4"
             },
-            "time": "2026-03-11T22:24:33+00:00"
+            "time": "2026-03-20T17:47:00+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -2224,6 +2224,24 @@
             "homepage": "https://wordpress.org/plugins/progress-bar/"
         },
         {
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "3.20.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/3.20.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.20.4.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/query-monitor/"
+        },
+        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "3.1.6",
             "source": {
@@ -2260,6 +2278,24 @@
             "homepage": "https://wordpress.org/plugins/storyftw/"
         },
         {
+            "name": "wpackagist-plugin/support-webp",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/support-webp/",
+                "reference": "tags/1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/support-webp.1.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/support-webp/"
+        },
+        {
             "name": "wpackagist-plugin/term-management-tools",
             "version": "2.0.2",
             "source": {
@@ -2278,23 +2314,47 @@
             "homepage": "https://wordpress.org/plugins/term-management-tools/"
         },
         {
+            "name": "wpackagist-plugin/wp-crontrol",
+            "version": "1.21.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
+                "reference": "tags/1.21.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.21.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-mail-smtp",
+            "version": "4.7.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
+                "reference": "tags/4.7.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.7.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
+        },
+        {
             "name": "wpackagist-plugin/wp-syntax",
             "version": "1.2",
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-syntax.1.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin"
-        },
-        {
-            "name": "wpackagist-plugin/wpmovielibrary",
-            "version": "2.1.4.8",
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpmovielibrary.2.1.4.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
