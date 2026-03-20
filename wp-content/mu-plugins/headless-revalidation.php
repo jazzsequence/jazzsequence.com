@@ -25,14 +25,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array{url: string, secret: string}|null Null if not configured.
  */
 function jazzsequence_revalidate_config(): ?array {
-	$url    = defined( 'NEXTJS_SITE_URL' )          ? NEXTJS_SITE_URL          : get_option( 'nextjs_site_url', '' );
+	$url    = defined( 'NEXTJS_SITE_URL' ) ? NEXTJS_SITE_URL : get_option( 'nextjs_site_url', '' );
 	$secret = defined( 'NEXTJS_REVALIDATE_SECRET' ) ? NEXTJS_REVALIDATE_SECRET : get_option( 'nextjs_revalidate_secret', '' );
 
 	if ( empty( $url ) || empty( $secret ) ) {
 		return null;
 	}
 
-	return [ 'url' => trailingslashit( $url ), 'secret' => $secret ];
+	return [
+		'url'    => trailingslashit( $url ),
+		'secret' => $secret,
+	];
 }
 
 /**
@@ -54,8 +57,8 @@ function jazzsequence_send_revalidate( array $payload ): void {
 				'Content-Type'        => 'application/json',
 			],
 			'body'     => wp_json_encode( $payload ),
-			'blocking' => false, // fire-and-forget; don't slow down the save
-			'timeout'  => 5,
+			'blocking' => false, // Fire-and-forget; don't slow down the save.
+			'timeout'  => 5, // phpcs:ignore WordPressVIPMinimum.Performance.RemoteRequestTimeout.timeout_timeout
 		]
 	);
 }
@@ -76,8 +79,10 @@ function jazzsequence_revalidate_on_save( int $post_id, WP_Post $post ): void {
 		return;
 	}
 
-	// When a post is trashed, WordPress appends __trashed to post_name.
-	// Strip it so the revalidation targets the original slug, not the mangled one.
+	/*
+	 * When a post is trashed, WordPress appends __trashed to post_name.
+	 * Strip it so the revalidation targets the original slug, not the mangled one.
+	 */
 	$slug = rtrim( str_replace( '__trashed', '', $post->post_name ), '-' );
 
 	jazzsequence_send_revalidate( [
