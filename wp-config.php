@@ -25,6 +25,13 @@ define( 'BLOG_ID_CURRENT_SITE', 1 );
  */
 define( 'JSDC_REPOSITORY', 'jazzsequence/jazzsequence.com' );
 
+/**
+ * Next.js site url
+ * This is required by /wp-content/mu-plugins/headless-revalidation.php to revalidate
+ * the Next.js frontend when new posts are published.
+ */
+define( 'NEXTJS_SITE_URL', 'https://dev-jazz-nextjs15.pantheonsite.io' ); // Change this when the url changes.
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
