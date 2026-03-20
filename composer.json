@@ -48,6 +48,10 @@
 		},
 		{
 			"type": "composer",
+			"url": "https://wp-composer.com"
+		},
+		{
+			"type": "composer",
 			"url": "https://packages.jazzsequence.com"
 		},
 		{
