@@ -149,6 +149,11 @@ When developing new MU plugins, follow the pattern established in existing files
 - Automated validation of release creation workflows
 - Version pattern matching for PR-based releases
 
+## Tooling Notes
+
+- **jq** is installed — use it for JSON parsing instead of Python (`jq '.key' file.json`)
+- **ag** (The Silver Searcher) is installed — use it instead of `grep` or `find` for searching file contents and filenames
+
 ## Key Technical Considerations
 
 ### WordPress Multisite Complexity
