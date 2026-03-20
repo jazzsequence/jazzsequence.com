@@ -35,8 +35,16 @@
 			}
 		},
 		{
+			"type": "vcs",
+			"url": "git@github.com:jazzsequence/jz-222.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:jazzsequence/altis-cms.git"
+		},        
+		{
 			"type": "composer",
-			"url": "https://wpackagist.org"
+			"url": "https://repo.wp-packages.org"
 		},
 		{
 			"type": "composer",
@@ -47,17 +55,13 @@
 			"url": "https://packages.jazzsequence.com"
 		},
 		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},        
+		{
 			"type": "path",
 			"url": "./packages",
 			"symlinks": true
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:jazzsequence/jz-222.git"
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:jazzsequence/altis-cms.git"
 		}
 	],
 	"require": {
@@ -95,7 +99,7 @@
 		"wpackagist-plugin/organize-series": "*",
 		"wpackagist-plugin/pantheon-content-publisher": "*",
 		"wpackagist-plugin/patchstack": "*",
-		"yoast/duplicate-post": "4.2 as 4.1.3",
+		"yoast/duplicate-post": "4.6 as 4.1.3",
 		"wpackagist-plugin/plugins-garbage-collector": "*",
 		"wpackagist-plugin/progress-bar": "*",
 		"wpackagist-plugin/regenerate-thumbnails": "*",
