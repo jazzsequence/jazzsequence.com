@@ -44,7 +44,9 @@
 	<exclude-pattern>wp-content/plugins/wordpress-importer</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/workflows</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wp-crontrol</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/wp-mail-smtp</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wp-seo</exclude-pattern>
+	<exclude-pattern>wp-content/plugins/support-webp</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wp-syntax</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wp-user-signups</exclude-pattern>
 	<exclude-pattern>wp-content/plugins/wpmovielibrary</exclude-pattern>
