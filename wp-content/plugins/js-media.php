@@ -77,7 +77,7 @@ function create_media_post_type() {
 		'has_archive' => true,
 		'hierarchical' => false,
 		'show_in_rest' => true,
-		'rest_base' => 'media',
+		'rest_base' => 'media-items',
 		'menu_icon' => 'dashicons-video-alt',
 		'supports' => [ 'title', 'thumbnail', 'excerpt' ],
 	];
