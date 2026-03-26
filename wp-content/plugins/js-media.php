@@ -2,7 +2,7 @@
 /**
  * Plugin Name: jazzsequence Media
  * Description: A plugin to manage and display video content on the jazzsequence.com.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Chris Reynolds
  * Author URI: https://jazzsequence.com
  * License: MIT
@@ -77,7 +77,7 @@ function create_media_post_type() {
 		'has_archive' => true,
 		'hierarchical' => false,
 		'show_in_rest' => true,
-		'rest_base' => 'media',
+		'rest_base' => 'media-items',
 		'menu_icon' => 'dashicons-video-alt',
 		'supports' => [ 'title', 'thumbnail', 'excerpt' ],
 	];

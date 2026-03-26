@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code when working with code in this repository.
 
+## Session Continuity
+
+At the start of every session, read `session_notes.md` in the repo root if it exists. It contains context from the previous session: what was done, what's in progress, and what needs follow-up. Update it at the end of each session before closing.
+
 ## Project Overview
 
 This is a WordPress multisite network built with Altis DXP (Digital Experience Platform), a high-performance WordPress distribution by Human Made. The site uses Composer for dependency management and includes both custom plugins and themes alongside third-party packages.
