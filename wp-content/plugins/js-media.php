@@ -2,7 +2,7 @@
 /**
  * Plugin Name: jazzsequence Media
  * Description: A plugin to manage and display video content on the jazzsequence.com.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Chris Reynolds
  * Author URI: https://jazzsequence.com
  * License: MIT
@@ -18,6 +18,7 @@ namespace Jazzsequence\Media;
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\create_media_post_type' );
 	add_action( 'init', __NAMESPACE__ . '\\register_media_url_meta' );
+	add_action( 'rest_api_init', __NAMESPACE__ . '\\register_media_rest_fields' );
 	add_action( 'init', __NAMESPACE__ . '\\ensure_media_import_schedule' );
 	add_action( 'add_meta_boxes_media', __NAMESPACE__ . '\\register_media_meta_box' );
 	add_action( 'save_post_media', __NAMESPACE__ . '\\save_media_meta_box', 5, 3 );
@@ -213,8 +214,34 @@ function get_media_oembed_data( $media_url ) {
 }
 
 /**
+ * Register REST API fields for the media CPT.
+ *
+ * Uses register_rest_field (not register_post_meta) to ensure media_url is
+ * always present in REST responses. Altis DXP filters standard meta out of
+ * REST responses, so explicit REST field registration is required.
+ *
+ * @return void
+ */
+function register_media_rest_fields() {
+	register_rest_field(
+		'media',
+		'media_url',
+		[
+			'get_callback' => static function ( $post ) {
+				return (string) get_post_meta( $post['id'], 'media_url', true );
+			},
+			'schema' => [
+				'description' => 'URL of the media to embed (YouTube, VideoPress, etc.)',
+				'type'        => 'string',
+				'context'     => [ 'view', 'edit' ],
+			],
+		]
+	);
+}
+
+/**
  * Register meta field for media URL to embed media
- * 
+ *
  * @return void
  */
 function register_media_url_meta() {
