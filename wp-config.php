@@ -30,7 +30,7 @@ define( 'JSDC_REPOSITORY', 'jazzsequence/jazzsequence.com' );
  * This is required by /wp-content/mu-plugins/headless-revalidation.php to revalidate
  * the Next.js frontend when new posts are published.
  */
-define( 'NEXTJS_SITE_URL', 'https://dev-jazz-nextjs15.pantheonsite.io' ); // Change this when the url changes.
+define( 'NEXTJS_SITE_URL', 'https://live-jazz-nextjs15.pantheonsite.io' );
 
 /* That's all, stop editing! Happy publishing. */
 
