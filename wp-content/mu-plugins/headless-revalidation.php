@@ -103,3 +103,50 @@ function jazzsequence_revalidate_on_menu_update(): void {
 	jazzsequence_send_revalidate( [ 'tags' => [ 'menu', 'header' ] ] );
 }
 add_action( 'wp_update_nav_menu', 'jazzsequence_revalidate_on_menu_update' );
+
+/**
+ * Register a diagnostic REST endpoint to check revalidation configuration.
+ *
+ * GET /wp-json/jazz-nextjs/v1/revalidation-status
+ *
+ * Requires authentication as an administrator. Returns whether the required
+ * constants/options are set — never exposes the actual secret value.
+ */
+function jazzsequence_register_revalidation_status_endpoint(): void {
+	register_rest_route(
+		'jazz-nextjs/v1',
+		'/revalidation-status',
+		[
+			'methods'             => 'GET',
+			'callback'            => 'jazzsequence_revalidation_status_callback',
+			'permission_callback' => function () {
+				return current_user_can( 'manage_options' );
+			},
+		]
+	);
+}
+add_action( 'rest_api_init', 'jazzsequence_register_revalidation_status_endpoint' );
+
+/**
+ * Diagnostic callback: returns revalidation config status.
+ *
+ * @return WP_REST_Response
+ */
+function jazzsequence_revalidation_status_callback(): WP_REST_Response {
+	$url    = defined( 'NEXTJS_SITE_URL' ) ? NEXTJS_SITE_URL : get_option( 'nextjs_site_url', '' );
+	$secret = defined( 'NEXTJS_REVALIDATE_SECRET' ) ? NEXTJS_REVALIDATE_SECRET : get_option( 'nextjs_revalidate_secret', '' );
+
+	$configured = ! empty( $url ) && ! empty( $secret );
+
+	return new WP_REST_Response(
+		[
+			'configured'      => $configured,
+			'url_set'         => ! empty( $url ),
+			'url_source'      => defined( 'NEXTJS_SITE_URL' ) ? 'constant' : ( get_option( 'nextjs_site_url' ) ? 'option' : 'unset' ),
+			'url_value'       => ! empty( $url ) ? $url : null,
+			'secret_set'      => ! empty( $secret ),
+			'secret_source'   => defined( 'NEXTJS_REVALIDATE_SECRET' ) ? 'constant' : ( get_option( 'nextjs_revalidate_secret' ) ? 'option' : 'unset' ),
+		],
+		200
+	);
+}
