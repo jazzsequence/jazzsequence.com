@@ -21,6 +21,11 @@ const JAZZ_CONTACT_FORM_ID = 1;
 
 add_action( 'rest_api_init', 'jazz_register_contact_endpoint' );
 
+/**
+ * Register the headless contact form REST API endpoint.
+ *
+ * @return void
+ */
 function jazz_register_contact_endpoint(): void {
 	register_rest_route(
 		'jazz-nextjs/v1',
@@ -55,6 +60,16 @@ function jazz_register_contact_endpoint(): void {
 	);
 }
 
+/**
+ * Handle an incoming contact form submission.
+ *
+ * Validates the request, maps fields to Ninja Forms field IDs, and processes
+ * the submission through Ninja Forms to trigger all configured actions (save,
+ * email notification, confirmation email, success message).
+ *
+ * @param WP_REST_Request $request The REST API request.
+ * @return WP_REST_Response|WP_Error Success response or error on failure.
+ */
 function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Response|WP_Error {
 	$name    = $request->get_param( 'name' );
 	$email   = $request->get_param( 'email' );
@@ -85,20 +100,18 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 	try {
 		$response = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->process_fields( $fields_data );
 	} catch ( Exception $e ) {
-		error_log( '[jazz-contact] Ninja Forms exception: ' . $e->getMessage() );
 		return new WP_Error(
 			'ninja_forms_error',
-			'Failed to process form submission.',
+			sprintf( 'Failed to process form submission: %s', $e->getMessage() ),
 			[ 'status' => 500 ]
 		);
 	}
 
 	// process_fields returns errors array on failure.
 	if ( ! empty( $response['errors'] ) ) {
-		error_log( '[jazz-contact] Ninja Forms errors: ' . wp_json_encode( $response['errors'] ) );
 		return new WP_Error(
 			'ninja_forms_error',
-			'Form submission failed.',
+			sprintf( 'Form submission failed: %s', wp_json_encode( $response['errors'] ) ),
 			[ 'status' => 422 ]
 		);
 	}
