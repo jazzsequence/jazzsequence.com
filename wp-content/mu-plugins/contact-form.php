@@ -103,6 +103,14 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 		$fields_by_key[ $key ]      = $field;
 	}
 
+	// Initialize NF's field merge tag resolver so {field:key} tags resolve in action settings
+	// (e.g. reply_to: "{field:email}" in the Email Notification action).
+	$field_merge_tags = Ninja_Forms()->merge_tags['fields'];
+	$field_merge_tags->set_form_id( $form_id );
+	foreach ( $fields as $field ) {
+		$field_merge_tags->add_field( $field );
+	}
+
 	// Build the submission data array that NF action handlers receive.
 	$form_obj  = Ninja_Forms()->form( $form_id )->get();
 	$data      = [
