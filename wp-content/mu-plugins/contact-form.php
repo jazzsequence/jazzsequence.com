@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Headless Contact Form
  * Plugin URI:  https://github.com/jazzsequence/jazz-nextjs
- * Description: REST endpoint for the Next.js contact form. Accepts submissions
- *              and processes them through Ninja Forms (save + email actions).
- * Version:     1.1.0
+ * Description: REST endpoint for the Next.js contact form. Records submissions
+ *              in Ninja Forms and sends email notifications via wp_mail().
+ * Version:     1.2.0
  * Author:      Chris Reynolds
  *
  * Endpoint: POST /wp-json/jazz-nextjs/v1/contact
@@ -63,9 +63,9 @@ function jazz_register_contact_endpoint(): void {
 /**
  * Handle an incoming contact form submission.
  *
- * Builds the Ninja Forms data structure expected by its action pipeline and
- * calls each active action's process() method — saving the submission to the
- * NF backend and triggering email notification/confirmation.
+ * Records the submission in Ninja Forms and sends email notifications.
+ * Uses wp_mail() directly rather than NF's action pipeline to avoid
+ * dependency on NF's internal API, which varies across versions.
  *
  * @param WP_REST_Request $request The REST API request.
  * @return WP_REST_Response|WP_Error Success response or error on failure.
@@ -75,66 +75,106 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 	$email   = $request->get_param( 'email' );
 	$message = $request->get_param( 'message' );
 
-	$field_values = [
-		'name'    => $name,
-		'email'   => $email,
-		'message' => $message,
-	];
+	// Record the submission in Ninja Forms so it appears in the NF backend.
+	jazz_record_ninja_forms_submission( $name, $email, $message );
 
-	// Load form fields and build the data structure NF's action pipeline expects.
-	$form_fields = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_fields();
-	$fields_data = [];
+	// Send admin notification email.
+	$admin_email = get_option( 'admin_email' );
+	$admin_sent  = wp_mail(
+		$admin_email,
+		sprintf( 'New message from %s', $name ),
+		sprintf(
+			"<p>%s</p>\n<p>— %s (%s)</p>",
+			nl2br( esc_html( $message ) ),
+			esc_html( $name ),
+			esc_html( $email )
+		),
+		[
+			'Content-Type: text/html; charset=UTF-8',
+			sprintf( 'Reply-To: %s <%s>', $name, $email ),
+		]
+	);
 
-	foreach ( $form_fields as $field_id => $field_obj ) {
-		$key      = $field_obj->get_setting( 'key' );
-		$settings = $field_obj->get_settings();
+	// Send confirmation email to the submitter.
+	wp_mail(
+		$email,
+		'Submission Confirmation',
+		sprintf(
+			'<p>Thank you %s for filling out my form!</p><p>A confirmation email was sent to %s.</p>',
+			esc_html( $name ),
+			esc_html( $email )
+		),
+		[ 'Content-Type: text/html; charset=UTF-8' ]
+	);
 
-		// Inject the submitted value; leave blank for fields we don't populate (e.g. submit).
-		$settings['value'] = isset( $field_values[ $key ] ) ? $field_values[ $key ] : '';
-
-		$fields_data[ $field_id ] = $settings;
-	}
-
-	// Build the complete form data array that NF action handlers expect.
-	$form_data = [
-		'id'       => JAZZ_CONTACT_FORM_ID,
-		'settings' => Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get(),
-		'fields'   => $fields_data,
-		'extra'    => [],
-		'errors'   => [
-			'fields' => [],
-			'form'   => [],
-		],
-		'response' => [],
-	];
-
-	// Process each active action (save, email notification, confirmation, success message).
-	$actions = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_actions();
-
-	foreach ( $actions as $action_obj ) {
-		if ( ! $action_obj->get_setting( 'active' ) ) {
-			continue;
-		}
-
-		$action_type = $action_obj->get_setting( 'type' );
-
-		// Retrieve the registered action handler for this type.
-		$action_controller = Ninja_Forms()->action_types->get( $action_type );
-
-		if ( ! $action_controller ) {
-			continue;
-		}
-
-		$form_data = $action_controller->process( $action_obj->get_settings(), $form_data );
-	}
-
-	if ( ! empty( $form_data['errors']['fields'] ) || ! empty( $form_data['errors']['form'] ) ) {
+	if ( ! $admin_sent ) {
 		return new WP_Error(
-			'ninja_forms_error',
-			sprintf( 'Form submission failed: %s', wp_json_encode( $form_data['errors'] ) ),
-			[ 'status' => 422 ]
+			'mail_error',
+			'Submission recorded but email notification could not be sent.',
+			[ 'status' => 500 ]
 		);
 	}
 
 	return new WP_REST_Response( [ 'success' => true ], 200 );
+}
+
+/**
+ * Record a submission in the Ninja Forms database.
+ *
+ * Creates a submission record so the entry appears in the NF Submissions
+ * admin. Fails silently — email delivery is the critical path.
+ *
+ * @param string $name    Submitter name.
+ * @param string $email   Submitter email.
+ * @param string $message Submission message.
+ * @return void
+ */
+function jazz_record_ninja_forms_submission( string $name, string $email, string $message ): void {
+	if ( ! class_exists( 'Ninja_Forms' ) ) {
+		return;
+	}
+
+	try {
+		$form_fields = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_fields();
+		$field_values = [
+			'name'    => $name,
+			'email'   => $email,
+			'message' => $message,
+		];
+
+		global $wpdb;
+
+		// Insert the submission record.
+		$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->prefix . 'nf3_subs',
+			[
+				'form_id'  => JAZZ_CONTACT_FORM_ID,
+				'sub_date' => current_time( 'mysql' ),
+				'user_id'  => 0,
+			]
+		);
+
+		$sub_id = $wpdb->insert_id;
+
+		if ( ! $sub_id ) {
+			return;
+		}
+
+		// Insert each field value into the sub meta table.
+		foreach ( $form_fields as $field_obj ) {
+			$key = $field_obj->get_setting( 'key' );
+			if ( isset( $field_values[ $key ] ) ) {
+				$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+					$wpdb->prefix . 'nf3_sub_meta',
+					[
+						'sub_id'     => $sub_id,
+						'meta_key'   => $key,
+						'meta_value' => $field_values[ $key ],
+					]
+				);
+			}
+		}
+	} catch ( Exception $e ) { // phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedCatch
+		// Fail silently — email is the critical path, not NF recording.
+	}
 }
