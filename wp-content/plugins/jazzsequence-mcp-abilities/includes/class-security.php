@@ -397,6 +397,15 @@ function display_setup_notices(): void {
 		return;
 	}
 
+	// If an application password already exists, mark setup as complete so the notice doesn't repeat.
+	if ( get_option( 'jsmcp_user_created' ) && ! get_option( 'jsmcp_setup_complete' ) ) {
+		$passwords = list_application_passwords();
+		if ( ! is_wp_error( $passwords ) && ! empty( $passwords ) ) {
+			update_option( 'jsmcp_setup_complete', true );
+			return;
+		}
+	}
+
 	// Check if we just activated and created the user.
 	if ( get_option( 'jsmcp_user_created' ) && ! get_option( 'jsmcp_setup_complete' ) ) {
 		?>
