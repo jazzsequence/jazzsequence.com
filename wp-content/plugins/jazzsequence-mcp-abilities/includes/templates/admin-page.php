@@ -178,49 +178,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h2><?php esc_html_e( 'Registered Abilities', 'jazzsequence-mcp-abilities' ); ?></h2>
 
 		<?php
-		$abilities = function_exists( 'wp_get_abilities' ) ? wp_get_abilities() : [];
-
-		if ( ! empty( $abilities ) ) :
-			// Group by category.
-			$by_category = [];
-			foreach ( $abilities as $ability_name => $ability ) {
-				$category                      = $ability['category'] ?? 'uncategorized';
-				$by_category[ $category ][] = [
-					'name' => $ability_name,
-					'data' => $ability,
-				];
-			}
+		<?php
+		// wp_get_abilities() is available in WordPress 6.9+ Abilities API.
+		if ( ! function_exists( 'wp_get_abilities' ) ) :
 			?>
-			<p>
-				<?php
-				printf(
-					/* translators: %d: number of abilities */
-					esc_html__( '%d abilities are currently registered and available via MCP:', 'jazzsequence-mcp-abilities' ),
-					count( $abilities )
-				);
-				?>
-			</p>
-			<?php foreach ( $by_category as $category => $category_abilities ) : ?>
-				<h3><?php echo esc_html( $category ); ?></h3>
-				<table class="wp-list-table widefat fixed striped">
-					<thead>
-						<tr>
-							<th style="width:30%"><?php esc_html_e( 'Ability', 'jazzsequence-mcp-abilities' ); ?></th>
-							<th><?php esc_html_e( 'Description', 'jazzsequence-mcp-abilities' ); ?></th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ( $category_abilities as $ability ) : ?>
-							<tr>
-								<td><code><?php echo esc_html( $ability['name'] ); ?></code></td>
-								<td><?php echo esc_html( $ability['data']['description'] ?? '' ); ?></td>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
-			<?php endforeach; ?>
+			<p><?php esc_html_e( 'The WordPress Abilities API is not available. Please ensure WordPress 6.9+ is installed.', 'jazzsequence-mcp-abilities' ); ?></p>
 		<?php else : ?>
-			<p><?php esc_html_e( 'No abilities are currently registered.', 'jazzsequence-mcp-abilities' ); ?></p>
+			<?php
+			$abilities = wp_get_abilities();
+			if ( ! is_array( $abilities ) ) {
+				$abilities = is_object( $abilities ) && is_iterable( $abilities ) ? iterator_to_array( $abilities ) : [];
+			}
+
+			if ( ! empty( $abilities ) ) :
+				$by_category = [];
+				foreach ( $abilities as $ability_name => $ability ) {
+					$ability_arr = is_array( $ability ) ? $ability : (array) $ability;
+					$category    = $ability_arr['category'] ?? 'uncategorized';
+
+					$by_category[ $category ][] = [
+						'name' => $ability_name,
+						'data' => $ability_arr,
+					];
+				}
+				?>
+				<p>
+					<?php
+					printf(
+						/* translators: %d: number of abilities */
+						esc_html__( '%d abilities are currently registered and available via MCP:', 'jazzsequence-mcp-abilities' ),
+						count( $abilities )
+					);
+					?>
+				</p>
+				<?php foreach ( $by_category as $category => $category_abilities ) : ?>
+					<h3><?php echo esc_html( $category ); ?></h3>
+					<table class="wp-list-table widefat fixed striped">
+						<thead>
+							<tr>
+								<th style="width:30%"><?php esc_html_e( 'Ability', 'jazzsequence-mcp-abilities' ); ?></th>
+								<th><?php esc_html_e( 'Description', 'jazzsequence-mcp-abilities' ); ?></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ( $category_abilities as $ability ) : ?>
+								<tr>
+									<td><code><?php echo esc_html( $ability['name'] ); ?></code></td>
+									<td><?php echo esc_html( $ability['data']['description'] ?? '' ); ?></td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				<?php endforeach; ?>
+			<?php else : ?>
+				<p><?php esc_html_e( 'No abilities are currently registered.', 'jazzsequence-mcp-abilities' ); ?></p>
+			<?php endif; ?>
 		<?php endif; ?>
 	</div>
 </div>
