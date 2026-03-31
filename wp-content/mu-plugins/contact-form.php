@@ -150,6 +150,20 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 			continue;
 		}
 
+		/*
+		 * Resolve merge tags in action settings before processing.
+		 * This matches NF's own submission controller and ensures tags like
+		 * {field:email} in reply_to are replaced with actual values before
+		 * the Email action validates them.
+		 */
+		$action_settings = apply_filters(
+			'ninja_forms_run_action_settings',
+			$action_settings,
+			$form_id,
+			$action_obj->get_id(),
+			$data['settings'] ?? []
+		);
+
 		$result = $action_class->process( $action_settings, $form_id, $data );
 
 		if ( is_array( $result ) ) {
