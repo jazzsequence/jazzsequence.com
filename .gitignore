@@ -12,6 +12,7 @@ wp-content/mu-plugins/*
 !wp-content/mu-plugins/not-so-autoload.php
 !wp-content/mu-plugins/redirects.php
 !wp-content/mu-plugins/headless-revalidation.php
+!wp-content/mu-plugins/contact-form.php
 !wp-content/mu-plugins/hide-update-nag.php
 !wp-content/mu-plugins/disallow-updates.php
 wp-content/plugins/*
