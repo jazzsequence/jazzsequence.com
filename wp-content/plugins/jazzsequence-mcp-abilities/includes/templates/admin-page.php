@@ -178,13 +178,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h2><?php esc_html_e( 'Registered Abilities', 'jazzsequence-mcp-abilities' ); ?></h2>
 
 		<?php
-		<?php
 		// wp_get_abilities() is available in WordPress 6.9+ Abilities API.
 		if ( ! function_exists( 'wp_get_abilities' ) ) :
 			?>
 			<p><?php esc_html_e( 'The WordPress Abilities API is not available. Please ensure WordPress 6.9+ is installed.', 'jazzsequence-mcp-abilities' ); ?></p>
-		<?php else : ?>
 			<?php
+		else :
+
 			$abilities = wp_get_abilities();
 			if ( ! is_array( $abilities ) ) {
 				$abilities = is_object( $abilities ) && is_iterable( $abilities ) ? iterator_to_array( $abilities ) : [];
