@@ -185,7 +185,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$by_category = [];
 			foreach ( $abilities as $ability_name => $ability ) {
 				$category                      = $ability['category'] ?? 'uncategorized';
-				$by_category[ $category ][]    = [ 'name' => $ability_name, 'data' => $ability ];
+				$by_category[ $category ][] = [
+					'name' => $ability_name,
+					'data' => $ability,
+				];
 			}
 			?>
 			<p>
