@@ -47,7 +47,7 @@ function jazz_register_contact_endpoint(): void {
 					'required'          => true,
 					'type'              => 'string',
 					'sanitize_callback' => 'sanitize_email',
-					'validate_callback' => 'is_email',
+					'validate_callback' => fn( $v ) => is_email( $v ),
 				],
 				'message' => [
 					'required'          => true,

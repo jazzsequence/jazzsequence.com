@@ -169,7 +169,8 @@ class Test_Contact_Form_Endpoint extends WP_UnitTestCase {
 	public function test_unauthenticated_request_is_rejected(): void {
 		wp_set_current_user( 0 );
 		$request = new WP_REST_Request( 'POST', '/jazz-nextjs/v1/contact' );
-		$request->set_json_params( $this->valid );
+		$request->set_body( wp_json_encode( $this->valid ) );
+		$request->set_header( 'content-type', 'application/json' );
 		$response = rest_get_server()->dispatch( $request );
 		$this->assertEquals( 401, $response->get_status() );
 	}
