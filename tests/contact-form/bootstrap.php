@@ -23,12 +23,27 @@ if ( ! $_tests_dir ) {
 require_once $_tests_dir . '/includes/functions.php';
 
 /**
- * Load the contact form mu-plugin for testing.
+ * Load the contact form mu-plugin and Ninja Forms for testing.
+ *
+ * Ninja Forms is a Composer dependency of the project and is present at
+ * wp-content/plugins/ninja-forms/ — load it so the action pipeline tests run
+ * against the real plugin rather than stubs.
  */
 function _load_contact_form_plugin(): void {
 	require dirname( dirname( __DIR__ ) ) . '/wp-content/mu-plugins/contact-form.php';
 }
 
+/**
+ * Load Ninja Forms from the project's Composer-managed plugin directory.
+ */
+function _load_ninja_forms(): void {
+	$nf = dirname( dirname( __DIR__ ) ) . '/wp-content/plugins/ninja-forms/ninja-forms.php';
+	if ( file_exists( $nf ) ) {
+		require_once $nf;
+	}
+}
+
 tests_add_filter( 'muplugins_loaded', '_load_contact_form_plugin' );
+tests_add_filter( 'plugins_loaded', '_load_ninja_forms' );
 
 require $_tests_dir . '/includes/bootstrap.php';

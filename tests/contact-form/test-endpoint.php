@@ -136,10 +136,6 @@ class Test_Contact_Form_Endpoint extends WP_UnitTestCase {
 	 * every action before process() is invoked, matching NF's submission controller.
 	 */
 	public function test_action_settings_filter_fires_before_nf_actions(): void {
-		if ( ! class_exists( 'Ninja_Forms' ) ) {
-			$this->markTestSkipped( 'Ninja Forms is not available in this test environment.' );
-		}
-
 		$filter_call_count = 0;
 
 		add_filter(
@@ -195,7 +191,8 @@ class Test_Contact_Form_Endpoint extends WP_UnitTestCase {
 		wp_set_current_user( $admin );
 
 		$request = new WP_REST_Request( 'POST', '/jazz-nextjs/v1/contact' );
-		$request->set_json_params( $payload );
+		$request->set_body( wp_json_encode( $payload ) );
+			$request->set_header( 'content-type', 'application/json' );
 		$response = rest_get_server()->dispatch( $request );
 
 		wp_set_current_user( 0 );
