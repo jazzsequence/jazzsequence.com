@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Headless Contact Form
  * Plugin URI:  https://github.com/jazzsequence/jazz-nextjs
- * Description: REST endpoint for the Next.js contact form. Accepts submissions
- *              and processes them through Ninja Forms (save + email actions).
- * Version:     1.1.0
+ * Description: REST endpoint for the Next.js contact form. Processes submissions
+ *              through Ninja Forms' native action pipeline (save, email, etc.).
+ * Version:     1.3.0
  * Author:      Chris Reynolds
  *
  * Endpoint: POST /wp-json/jazz-nextjs/v1/contact
@@ -63,9 +63,8 @@ function jazz_register_contact_endpoint(): void {
 /**
  * Handle an incoming contact form submission.
  *
- * Builds the Ninja Forms data structure expected by its action pipeline and
- * calls each active action's process() method — saving the submission to the
- * NF backend and triggering email notification/confirmation.
+ * Builds the data structure Ninja Forms' action pipeline expects and calls
+ * each active action's process() method using Ninja_Forms()->actions[ $type ].
  *
  * @param WP_REST_Request $request The REST API request.
  * @return WP_REST_Response|WP_Error Success response or error on failure.
@@ -75,63 +74,83 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 	$email   = $request->get_param( 'email' );
 	$message = $request->get_param( 'message' );
 
+	$form_id     = JAZZ_CONTACT_FORM_ID;
 	$field_values = [
 		'name'    => $name,
 		'email'   => $email,
 		'message' => $message,
 	];
 
-	// Load form fields and build the data structure NF's action pipeline expects.
-	$form_fields = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_fields();
-	$fields_data = [];
+	// Load form fields and build the flat field arrays NF's action pipeline expects.
+	$form_fields   = Ninja_Forms()->form( $form_id )->get_fields();
+	$fields        = [];
+	$fields_by_key = [];
 
 	foreach ( $form_fields as $field_id => $field_obj ) {
-		$key      = $field_obj->get_setting( 'key' );
 		$settings = $field_obj->get_settings();
+		$key      = $settings['key'] ?? '';
+		$value    = $field_values[ $key ] ?? '';
 
-		// Inject the submitted value; leave blank for fields we don't populate (e.g. submit).
-		$settings['value'] = isset( $field_values[ $key ] ) ? $field_values[ $key ] : '';
+		// Flatten: NF merges settings into the top-level field array.
+		$field                     = array_merge( $settings, [
+			'id'    => $field_id,
+			'key'   => $key,
+			'value' => $value,
+		] );
+		$field['settings']['value'] = $value;
 
-		$fields_data[ $field_id ] = $settings;
+		$fields[ $field_id ]        = $field;
+		$fields_by_key[ $key ]      = $field;
 	}
 
-	// Build the complete form data array that NF action handlers expect.
-	$form_data = [
-		'id'       => JAZZ_CONTACT_FORM_ID,
-		'settings' => Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get(),
-		'fields'   => $fields_data,
-		'extra'    => [],
-		'errors'   => [
+	// Build the submission data array that NF action handlers receive.
+	$form_obj  = Ninja_Forms()->form( $form_id )->get();
+	$data      = [
+		'form_id'           => $form_id,
+		'settings'          => $form_obj->get_settings(),
+		'fields'            => $fields,
+		'fields_by_key'     => $fields_by_key,
+		'extra'             => [],
+		'errors'            => [
 			'fields' => [],
 			'form'   => [],
 		],
-		'response' => [],
+		'processed_actions' => [],
 	];
 
-	// Process each active action (save, email notification, confirmation, success message).
-	$actions = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_actions();
+	// Run each active action through its handler, matching the NF submission controller.
+	$actions = Ninja_Forms()->form( $form_id )->get_actions();
 
 	foreach ( $actions as $action_obj ) {
-		if ( ! $action_obj->get_setting( 'active' ) ) {
+		$action_settings = $action_obj->get_settings();
+
+		if ( empty( $action_settings['active'] ) ) {
 			continue;
 		}
 
-		$action_type = $action_obj->get_setting( 'type' );
+		$type = $action_settings['type'] ?? '';
 
-		// Retrieve the registered action handler for this type.
-		$action_controller = Ninja_Forms()->action_types->get( $action_type );
-
-		if ( ! $action_controller ) {
+		if ( ! $type || ! isset( Ninja_Forms()->actions[ $type ] ) ) {
 			continue;
 		}
 
-		$form_data = $action_controller->process( $action_obj->get_settings(), $form_data );
+		$action_class = Ninja_Forms()->actions[ $type ];
+
+		if ( ! method_exists( $action_class, 'process' ) ) {
+			continue;
+		}
+
+		$result = $action_class->process( $action_settings, $form_id, $data );
+
+		if ( is_array( $result ) ) {
+			$data = $result;
+		}
 	}
 
-	if ( ! empty( $form_data['errors']['fields'] ) || ! empty( $form_data['errors']['form'] ) ) {
+	if ( ! empty( $data['errors']['fields'] ) || ! empty( $data['errors']['form'] ) ) {
 		return new WP_Error(
 			'ninja_forms_error',
-			sprintf( 'Form submission failed: %s', wp_json_encode( $form_data['errors'] ) ),
+			sprintf( 'Form submission failed: %s', wp_json_encode( $data['errors'] ) ),
 			[ 'status' => 422 ]
 		);
 	}
