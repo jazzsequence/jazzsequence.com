@@ -75,4 +75,4 @@ audio/
 .mcp.json
 
 # Don't ignore CLAUDE.md
-!CLAUDE.md
+!CLAUDE.md.phpunit.result.cache
