@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44db9801b11e206cb2471a008e15b1bd",
+    "content-hash": "c17ef21353c60d6cd4d2ad1494d18080",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1954,7 +1954,7 @@
             "time": "2025-12-09T06:56:51+00:00"
         },
         {
-            "name": "wpackagist-plugin/akismet",
+            "name": "wp-plugin/akismet",
             "version": "5.6",
             "source": {
                 "type": "svn",
@@ -1966,31 +1966,56 @@
                 "url": "https://downloads.wordpress.org/plugin/akismet.5.6.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/akismet/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Automattic"
+                }
+            ],
+            "description": "The best anti-spam protection to block spam comments and spam in a contact form. The most trusted antispam solution for WordPress and WooCommerce.",
+            "homepage": "https://akismet.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/akismet/#developers",
+                "issues": "https://wordpress.org/support/plugin/akismet",
+                "source": "https://plugins.svn.wordpress.org/akismet"
+            },
+            "time": "2026-03-26T20:55:32+00:00"
         },
         {
-            "name": "wpackagist-plugin/altis-accelerate",
-            "version": "4.1.1",
+            "name": "wp-plugin/altis-accelerate",
+            "version": "4.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/4.1.1"
+                "reference": "tags/4.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.1.2.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/altis-accelerate/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Human Made"
+                }
+            ],
+            "description": "Stop guessing. Start converting. The native A/B testing and personalization platform for the WordPress Block Editor.",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/altis-accelerate/#developers",
+                "issues": "https://wordpress.org/support/plugin/altis-accelerate",
+                "source": "https://plugins.svn.wordpress.org/altis-accelerate"
+            },
+            "time": "2026-03-31T18:35:49+00:00"
         },
         {
-            "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
+            "name": "wp-plugin/amazon-s3-and-cloudfront",
             "version": "3.3.0",
             "source": {
                 "type": "svn",
@@ -2002,13 +2027,26 @@
                 "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.3.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "WP Engine"
+                }
+            ],
+            "description": "Copies files to Amazon S3, DigitalOcean Spaces or Google Cloud Storage as they are uploaded to the Media Library. Optionally configure Amazon CloudFro …",
+            "homepage": "https://deliciousbrains.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/#developers",
+                "issues": "https://wordpress.org/support/plugin/amazon-s3-and-cloudfront",
+                "source": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/autoblue",
+            "name": "wp-plugin/autoblue",
             "version": "1.0.0",
             "source": {
                 "type": "svn",
@@ -2020,13 +2058,26 @@
                 "url": "https://downloads.wordpress.org/plugin/autoblue.1.0.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/autoblue/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Daniel Post"
+                }
+            ],
+            "description": "With Autoblue, you can automatically share new posts to Bluesky from your WordPress site.",
+            "homepage": "https://autoblue.co",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/autoblue/#developers",
+                "issues": "https://wordpress.org/support/plugin/autoblue",
+                "source": "https://plugins.svn.wordpress.org/autoblue"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/bv-pantheon-migration",
+            "name": "wp-plugin/bv-pantheon-migration",
             "version": "5.88",
             "source": {
                 "type": "svn",
@@ -2038,13 +2089,26 @@
                 "url": "https://downloads.wordpress.org/plugin/bv-pantheon-migration.5.88.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/bv-pantheon-migration/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Pantheon Systems"
+                }
+            ],
+            "description": "The easiest way to migrate your site to Pantheon",
+            "homepage": "https://pantheon.io",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/bv-pantheon-migration/#developers",
+                "issues": "https://wordpress.org/support/plugin/bv-pantheon-migration",
+                "source": "https://plugins.svn.wordpress.org/bv-pantheon-migration"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/glotpress",
+            "name": "wp-plugin/glotpress",
             "version": "4.0.3",
             "source": {
                 "type": "svn",
@@ -2056,31 +2120,57 @@
                 "url": "https://downloads.wordpress.org/plugin/glotpress.4.0.3.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/glotpress/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "The GlotPress Community"
+                }
+            ],
+            "description": "GlotPress is a WordPress plugin to let you set up your own collaborative, web-based software translation tool.",
+            "homepage": "https://wordpress.org/plugins/glotpress/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/glotpress/#developers",
+                "issues": "https://wordpress.org/support/plugin/glotpress",
+                "source": "https://plugins.svn.wordpress.org/glotpress"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "22.7.1",
+            "name": "wp-plugin/gutenberg",
+            "version": "22.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/22.7.1"
+                "reference": "tags/22.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.22.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.22.8.2.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Matias Ventura"
+                }
+            ],
+            "description": "The Gutenberg plugin adds editing, customization, and site building to WordPress. Use it to test beta features before their official release.",
+            "homepage": "https://github.com/WordPress/gutenberg",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/gutenberg/#developers",
+                "issues": "https://wordpress.org/support/plugin/gutenberg",
+                "source": "https://plugins.svn.wordpress.org/gutenberg"
+            },
+            "time": "2026-03-30T09:50:51+00:00"
         },
         {
-            "name": "wpackagist-plugin/hello-ziggy",
+            "name": "wp-plugin/hello-ziggy",
             "version": "2.1.1",
             "source": {
                 "type": "svn",
@@ -2092,13 +2182,25 @@
                 "url": "https://downloads.wordpress.org/plugin/hello-ziggy.2.1.1.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/hello-ziggy/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Chris Reynolds"
+                }
+            ],
+            "description": "Instead of \"Hello Dolly\", this plugin will display a random lyric from David Bowie's \"Ziggy Stardust\".",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/hello-ziggy/#developers",
+                "issues": "https://wordpress.org/support/plugin/hello-ziggy",
+                "source": "https://plugins.svn.wordpress.org/hello-ziggy"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/litespeed-cache",
+            "name": "wp-plugin/litespeed-cache",
             "version": "7.8.0.1",
             "source": {
                 "type": "svn",
@@ -2110,13 +2212,26 @@
                 "url": "https://downloads.wordpress.org/plugin/litespeed-cache.7.8.0.1.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/litespeed-cache/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "LiteSpeed Technologies"
+                }
+            ],
+            "description": "All-in-one unbeatable acceleration & PageSpeed improvement: caching, image/CSS/JS optimization...",
+            "homepage": "https://www.litespeedtech.com/products/cache-plugins/wordpress-acceleration",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/litespeed-cache/#developers",
+                "issues": "https://wordpress.org/support/plugin/litespeed-cache",
+                "source": "https://plugins.svn.wordpress.org/litespeed-cache"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/ninja-forms",
+            "name": "wp-plugin/ninja-forms",
             "version": "3.14.2",
             "source": {
                 "type": "svn",
@@ -2128,13 +2243,26 @@
                 "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.2.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ninja-forms/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Kevin Stover"
+                }
+            ],
+            "description": "The 100% beginner friendly WordPress form builder. Drag & drop form fields to build beautiful, professional contact forms in minutes.",
+            "homepage": "http://ninjaforms.com/?utm_source=WordPress&utm_medium=readme",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/ninja-forms/#developers",
+                "issues": "https://wordpress.org/support/plugin/ninja-forms",
+                "source": "https://plugins.svn.wordpress.org/ninja-forms"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/organize-series",
+            "name": "wp-plugin/organize-series",
             "version": "3.1.0",
             "source": {
                 "type": "svn",
@@ -2146,13 +2274,26 @@
                 "url": "https://downloads.wordpress.org/plugin/organize-series.3.1.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/organize-series/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "PublishPress"
+                }
+            ],
+            "description": "PublishPress Series is the publishing plugin that allows you to organize posts into issues or series. This is ideal for magazines, newspapers, writers …",
+            "homepage": "https://publishpress.com/publishpress-series/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/organize-series/#developers",
+                "issues": "https://wordpress.org/support/plugin/organize-series",
+                "source": "https://plugins.svn.wordpress.org/organize-series"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/pantheon-content-publisher",
+            "name": "wp-plugin/pantheon-content-publisher",
             "version": "1.3.5",
             "source": {
                 "type": "svn",
@@ -2164,13 +2305,26 @@
                 "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.5.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/pantheon-content-publisher/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Pantheon Systems"
+                }
+            ],
+            "description": "The Pantheon Content Publisher plugin for WordPress enables seamless content publishing from Google Drive and Google Docs directly to WordPress sites.",
+            "homepage": "https://wordpress.org/plugins/pantheon-content-publisher/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/pantheon-content-publisher/#developers",
+                "issues": "https://wordpress.org/support/plugin/pantheon-content-publisher",
+                "source": "https://plugins.svn.wordpress.org/pantheon-content-publisher"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/patchstack",
+            "name": "wp-plugin/patchstack",
             "version": "2.3.5",
             "source": {
                 "type": "svn",
@@ -2182,13 +2336,26 @@
                 "url": "https://downloads.wordpress.org/plugin/patchstack.2.3.5.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/patchstack/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Patchstack"
+                }
+            ],
+            "description": "Patchstack automatically identifies and mitigates security vulnerabilities in WordPress plugins, themes, and core.",
+            "homepage": "https://patchstack.com/?utm_medium=wp&utm_source=dashboard&utm_campaign=patchstack%20plugin",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/patchstack/#developers",
+                "issues": "https://wordpress.org/support/plugin/patchstack",
+                "source": "https://plugins.svn.wordpress.org/patchstack"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/plugins-garbage-collector",
+            "name": "wp-plugin/plugins-garbage-collector",
             "version": "0.14",
             "source": {
                 "type": "svn",
@@ -2200,13 +2367,26 @@
                 "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.14.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/plugins-garbage-collector/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Vladimir Garagulya"
+                }
+            ],
+            "description": "Find unused database tables from deactivated or deleted plugins. You can delete unused database tables to reduce database volume and enhance site perf …",
+            "homepage": "http://www.shinephp.com/plugins-garbage-collector-wordpress-plugin/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/plugins-garbage-collector/#developers",
+                "issues": "https://wordpress.org/support/plugin/plugins-garbage-collector",
+                "source": "https://plugins.svn.wordpress.org/plugins-garbage-collector"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/progress-bar",
+            "name": "wp-plugin/progress-bar",
             "version": "2.2.4",
             "source": {
                 "type": "svn",
@@ -2218,13 +2398,26 @@
                 "url": "https://downloads.wordpress.org/plugin/progress-bar.2.2.4.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/progress-bar/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Chris Reynolds"
+                }
+            ],
+            "description": "A simple progress bar shortcode that can be styled with CSS",
+            "homepage": "https://github.com/jazzsequence/progress-bar",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/progress-bar/#developers",
+                "issues": "https://wordpress.org/support/plugin/progress-bar",
+                "source": "https://plugins.svn.wordpress.org/progress-bar"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/query-monitor",
+            "name": "wp-plugin/query-monitor",
             "version": "3.20.4",
             "source": {
                 "type": "svn",
@@ -2236,13 +2429,26 @@
                 "url": "https://downloads.wordpress.org/plugin/query-monitor.3.20.4.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/query-monitor/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "Query Monitor is the developer tools panel for WordPress and WooCommerce.",
+            "homepage": "https://querymonitor.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/query-monitor/#developers",
+                "issues": "https://wordpress.org/support/plugin/query-monitor",
+                "source": "https://plugins.svn.wordpress.org/query-monitor"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "name": "wp-plugin/regenerate-thumbnails",
             "version": "3.1.6",
             "source": {
                 "type": "svn",
@@ -2254,31 +2460,53 @@
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.1.6.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Alex Mills"
+                }
+            ],
+            "description": "Regenerate the thumbnails for one or more of your image uploads. Useful when changing their sizes or your theme.",
+            "homepage": "https://alex.blog/wordpress-plugins/regenerate-thumbnails/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/regenerate-thumbnails/#developers",
+                "issues": "https://wordpress.org/support/plugin/regenerate-thumbnails",
+                "source": "https://plugins.svn.wordpress.org/regenerate-thumbnails"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/storyftw",
-            "version": "0.1.4",
+            "name": "wp-plugin/storyftw",
+            "version": "dev-trunk",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/storyftw/",
                 "reference": "trunk"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/storyftw.zip?timestamp=1425145416"
-            },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/storyftw/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Justin Sternberg"
+                }
+            ],
+            "description": "story|ftw is a full screen, mobile first storytelling plugin. It can do text, images, gifs, video backgrounds plus a whole lot more.",
+            "homepage": "http://storyftw.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/storyftw/#developers",
+                "issues": "https://wordpress.org/support/plugin/storyftw",
+                "source": "https://plugins.svn.wordpress.org/storyftw"
+            },
+            "time": "2015-02-28T17:43:00+00:00"
         },
         {
-            "name": "wpackagist-plugin/support-webp",
+            "name": "wp-plugin/support-webp",
             "version": "1.1.0",
             "source": {
                 "type": "svn",
@@ -2290,13 +2518,26 @@
                 "url": "https://downloads.wordpress.org/plugin/support-webp.1.1.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/support-webp/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Sayedul Sayem"
+                }
+            ],
+            "description": "This plugin will help you to upload webp format image in WordPress media library regardless of the theme. That is, it works with every theme.",
+            "homepage": "https://wordpress.org/plugins/support-webp/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/support-webp/#developers",
+                "issues": "https://wordpress.org/support/plugin/support-webp",
+                "source": "https://plugins.svn.wordpress.org/support-webp"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/term-management-tools",
+            "name": "wp-plugin/term-management-tools",
             "version": "2.0.2",
             "source": {
                 "type": "svn",
@@ -2308,13 +2549,26 @@
                 "url": "https://downloads.wordpress.org/plugin/term-management-tools.2.0.2.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/term-management-tools/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "scribu"
+                }
+            ],
+            "description": "Allows you to merge terms, move terms between taxonomies, and set term parents, individually or in bulk.",
+            "homepage": "https://www.codenamemiked.com/plugins/term-management-tools/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/term-management-tools/#developers",
+                "issues": "https://wordpress.org/support/plugin/term-management-tools",
+                "source": "https://plugins.svn.wordpress.org/term-management-tools"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/wp-crontrol",
+            "name": "wp-plugin/wp-crontrol",
             "version": "1.21.0",
             "source": {
                 "type": "svn",
@@ -2326,13 +2580,26 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.21.0.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "WP Crontrol enables you to take control of the cron events on your WordPress website.",
+            "homepage": "https://wp-crontrol.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wp-crontrol/#developers",
+                "issues": "https://wordpress.org/support/plugin/wp-crontrol",
+                "source": "https://plugins.svn.wordpress.org/wp-crontrol"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
-            "name": "wpackagist-plugin/wp-mail-smtp",
+            "name": "wp-plugin/wp-mail-smtp",
             "version": "4.7.1",
             "source": {
                 "type": "svn",
@@ -2344,10 +2611,257 @@
                 "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.7.1.zip"
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "composer/installers": "~1.0|~2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Syed Balkhi"
+                }
+            ],
+            "description": "Make email delivery easy for WordPress. Connect with SMTP, Gmail, Outlook, SendGrid, Mailgun, SES, Zoho, + more. Rated #1 WordPress SMTP Email plugin.",
+            "homepage": "https://wpmailsmtp.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wp-mail-smtp/#developers",
+                "issues": "https://wordpress.org/support/plugin/wp-mail-smtp",
+                "source": "https://plugins.svn.wordpress.org/wp-mail-smtp"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/museum-core",
+            "version": "2.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/museum-core/",
+                "reference": "2.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/museum-core.2.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "A simple WordPress theme/framework with support for post formats, thumbnails, background, header, menus and more...",
+            "homepage": "https://wordpress.org/themes/museum-core/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/museum-core/#developers",
+                "issues": "https://wordpress.org/support/theme/museum-core",
+                "source": "https://themes.svn.wordpress.org/museum-core"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/ryu",
+            "version": "1.4.7",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/ryu/",
+                "reference": "1.4.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/ryu.1.4.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Ryu is a clutter-free theme for personal bloggers. It has great readability with a large font size, and the one-column layout is perfect for displaying large images. Optional widgets are located at the top panel with social media links and a search field. Background color for an image post will automatically match the uploaded image in the post.",
+            "homepage": "https://wordpress.org/themes/ryu/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/ryu/#developers",
+                "issues": "https://wordpress.org/support/theme/ryu",
+                "source": "https://themes.svn.wordpress.org/ryu"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentynineteen",
+            "version": "3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentynineteen/",
+                "reference": "3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.3.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.",
+            "homepage": "https://wordpress.org/themes/twentynineteen/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentynineteen/#developers",
+                "issues": "https://wordpress.org/support/theme/twentynineteen",
+                "source": "https://themes.svn.wordpress.org/twentynineteen"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentyseventeen",
+            "version": "4.0",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentyseventeen/",
+                "reference": "4.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.4.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.",
+            "homepage": "https://wordpress.org/themes/twentyseventeen/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentyseventeen/#developers",
+                "issues": "https://wordpress.org/support/theme/twentyseventeen",
+                "source": "https://themes.svn.wordpress.org/twentyseventeen"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentytwenty",
+            "version": "3.0",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwenty/",
+                "reference": "3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwenty.3.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.",
+            "homepage": "https://wordpress.org/themes/twentytwenty/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwenty/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwenty",
+                "source": "https://themes.svn.wordpress.org/twentytwenty"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentytwentyfive",
+            "version": "1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentyfive/",
+                "reference": "1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible design options, supported by a variety of patterns for different page types, such as services and landing pages, making it ideal for building personal blogs, professional portfolios, online magazines, or business websites. Its templates cater to various blog styles, from text-focused to image-heavy layouts. Additionally, it supports international typography and diverse color palettes, ensuring accessibility and customization for users worldwide.",
+            "homepage": "https://wordpress.org/themes/twentytwentyfive/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwentyfive/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwentyfive",
+                "source": "https://themes.svn.wordpress.org/twentytwentyfive"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentytwentyone",
+            "version": "2.7",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentyone/",
+                "reference": "2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.",
+            "homepage": "https://wordpress.org/themes/twentytwentyone/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwentyone/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwentyone",
+                "source": "https://themes.svn.wordpress.org/twentytwentyone"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentytwentythree",
+            "version": "1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentythree/",
+                "reference": "1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentythree.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community. Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.",
+            "homepage": "https://wordpress.org/themes/twentytwentythree/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwentythree/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwentythree",
+                "source": "https://themes.svn.wordpress.org/twentytwentythree"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-theme/twentytwentytwo",
+            "version": "2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentytwo/",
+                "reference": "2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.2.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://wp-packages.org/downloads",
+            "description": "Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a truly unique website. The theme’s subtle styles are inspired by the diversity and versatility of birds: its typography is lightweight yet strong, its color palette is drawn from nature, and its layout elements sit gently on the page. The true richness of Twenty Twenty-Two lies in its opportunity for customization. The theme is built to take advantage of the Site Editor features introduced in WordPress 5.9, which means that colors, typography, and the layout of every single page on your site can be customized to suit your vision. It also includes dozens of block patterns, opening the door to a wide range of professionally designed layouts in just a few clicks. Whether you’re building a single-page website, a blog, a business website, or a portfolio, Twenty Twenty-Two will help you create a site that is uniquely yours.",
+            "homepage": "https://wordpress.org/themes/twentytwentytwo/",
+            "support": {
+                "changelog": "https://wordpress.org/themes/twentytwentytwo/#developers",
+                "issues": "https://wordpress.org/support/theme/twentytwentytwo",
+                "source": "https://themes.svn.wordpress.org/twentytwentytwo"
+            },
+            "time": "2026-03-23T19:23:21+00:00"
         },
         {
             "name": "wpackagist-plugin/wp-syntax",
@@ -2360,168 +2874,6 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
-        },
-        {
-            "name": "wpackagist-theme/museum-core",
-            "version": "2.1.6",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/museum-core/",
-                "reference": "2.1.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/museum-core.2.1.6.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/museum-core/"
-        },
-        {
-            "name": "wpackagist-theme/ryu",
-            "version": "1.4.7",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/ryu/",
-                "reference": "1.4.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/ryu.1.4.7.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/ryu/"
-        },
-        {
-            "name": "wpackagist-theme/twentynineteen",
-            "version": "3.2",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.3.2.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentynineteen/"
-        },
-        {
-            "name": "wpackagist-theme/twentyseventeen",
-            "version": "4.0",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "4.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.4.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentyseventeen/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwenty",
-            "version": "3.0",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwenty/",
-                "reference": "3.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwenty.3.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwenty/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentyfive",
-            "version": "1.4",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentyfive/",
-                "reference": "1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyfive.1.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentyfive/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentyone",
-            "version": "2.7",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "2.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.2.7.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentyone/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentythree",
-            "version": "1.6",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentythree/",
-                "reference": "1.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentythree.1.6.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentythree/"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentytwo",
-            "version": "2.1",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentytwo/",
-                "reference": "2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.2.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentytwentytwo/"
         },
         {
             "name": "yoast/duplicate-post",
