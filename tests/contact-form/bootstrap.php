@@ -35,6 +35,10 @@ function _load_contact_form_plugin(): void {
 
 /**
  * Load Ninja Forms from the project's Composer-managed plugin directory.
+ *
+ * Must load at muplugins_loaded (not plugins_loaded) so that NF's own
+ * plugins_loaded callback — which registers action types in Ninja_Forms()->actions
+ * — fires during the plugins_loaded hook rather than being registered too late.
  */
 function _load_ninja_forms(): void {
 	$nf = dirname( dirname( __DIR__ ) ) . '/wp-content/plugins/ninja-forms/ninja-forms.php';
@@ -44,7 +48,7 @@ function _load_ninja_forms(): void {
 }
 
 tests_add_filter( 'muplugins_loaded', '_load_contact_form_plugin' );
-tests_add_filter( 'plugins_loaded', '_load_ninja_forms' );
+tests_add_filter( 'muplugins_loaded', '_load_ninja_forms' );
 
 /**
  * Run NF's activation routine after init so database tables and a test form exist.

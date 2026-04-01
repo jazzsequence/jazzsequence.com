@@ -124,6 +124,44 @@ class Test_Contact_Form_Endpoint extends WP_UnitTestCase {
 
 	/*
 	 * -------------------------------------------------------------------------
+	 * NF environment diagnostics
+	 * -------------------------------------------------------------------------
+	 */
+
+	/**
+	 * NF is loaded and form 1 has actions — prerequisite for the filter test.
+	 */
+	public function test_nf_form_has_actions(): void {
+		$this->assertTrue( class_exists( 'Ninja_Forms' ), 'Ninja Forms class must exist' );
+
+		$forms    = Ninja_Forms()->form()->get_forms();
+		$form_ids = array_map( fn( $f ) => $f->get_id(), $forms );
+		$this->assertNotEmpty( $form_ids, 'At least one NF form must exist after activation' );
+		$this->assertContains(
+			JAZZ_CONTACT_FORM_ID,
+			$form_ids,
+			'Form ' . JAZZ_CONTACT_FORM_ID . ' must exist. Found form IDs: ' . implode( ', ', $form_ids )
+		);
+
+		$actions = Ninja_Forms()->form( JAZZ_CONTACT_FORM_ID )->get_actions();
+		$this->assertGreaterThan(
+			0,
+			count( $actions ),
+			'Form ' . JAZZ_CONTACT_FORM_ID . ' must have at least one action'
+		);
+
+		$active_types = [];
+		foreach ( $actions as $action ) {
+			$settings = $action->get_settings();
+			if ( ! empty( $settings['active'] ) && isset( Ninja_Forms()->actions[ $settings['type'] ] ) ) {
+				$active_types[] = $settings['type'];
+			}
+		}
+		$this->assertNotEmpty( $active_types, 'At least one action must be active and have a registered handler' );
+	}
+
+	/*
+	 * -------------------------------------------------------------------------
 	 * NF action pipeline — merge tag resolution regression test
 	 * -------------------------------------------------------------------------
 	 */
