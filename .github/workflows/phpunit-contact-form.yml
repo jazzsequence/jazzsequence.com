@@ -1,9 +1,10 @@
-name: PHPUnit — jazzsequence-mcp-abilities
+name: PHPUnit — contact form
 
 on:
   pull_request:
     paths:
-      - 'wp-content/plugins/jazzsequence-mcp-abilities/**'
+      - 'wp-content/mu-plugins/contact-form.php'
+      - 'tests/contact-form/**'
 
 jobs:
   phpunit:
@@ -26,7 +27,6 @@ jobs:
     env:
       WP_TESTS_DIR: /tmp/wordpress-tests-lib
       WP_CORE_DIR: /tmp/wordpress
-      PLUGIN_DIR: wp-content/plugins/jazzsequence-mcp-abilities
 
     steps:
       - uses: actions/checkout@v6
@@ -39,19 +39,11 @@ jobs:
           coverage: none
           tools: wp-cli
 
-      - name: Cache plugin Composer dependencies
-        uses: actions/cache@v5
-        with:
-          path: ${{ env.PLUGIN_DIR }}/vendor
-          key: composer-plugin-${{ hashFiles(format('{0}/composer.lock', env.PLUGIN_DIR)) }}
-          restore-keys: composer-plugin-
-
       - name: Install SVN
         run: sudo apt-get install -y subversion
 
-      - name: Install plugin Composer dependencies
+      - name: Install root Composer dependencies
         run: composer install --no-interaction --prefer-dist
-        working-directory: ${{ env.PLUGIN_DIR }}
 
       - name: Download latest stable WordPress
         run: |
@@ -61,7 +53,6 @@ jobs:
           WP_BRANCH=$(echo "$WP_VERSION" | cut -d. -f1,2)
           echo "WP_VERSION=$WP_VERSION" >> "$GITHUB_ENV"
           echo "WP_BRANCH=$WP_BRANCH" >> "$GITHUB_ENV"
-          echo "Installed WordPress $WP_VERSION (branch: $WP_BRANCH)"
 
       - name: Install WordPress test library
         run: |
@@ -95,5 +86,4 @@ jobs:
           EOF
 
       - name: Run PHPUnit
-        run: vendor/bin/phpunit --testdox
-        working-directory: ${{ env.PLUGIN_DIR }}
+        run: vendor/bin/phpunit --configuration tests/contact-form/phpunit.xml --testdox

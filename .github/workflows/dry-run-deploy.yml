@@ -28,6 +28,9 @@ jobs:
       - name: Setup auth.json
         run: composer config --auth http-basic.objectcache.pro token ${{ secrets.OBJECTCACHE_PRO_TOKEN }}
 
+      - name: Install SVN
+        run: sudo apt-get install -y subversion
+
       - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 

@@ -76,3 +76,4 @@ audio/
 
 # Don't ignore CLAUDE.md
 !CLAUDE.md
+.phpunit.result.cache
