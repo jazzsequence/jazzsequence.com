@@ -46,6 +46,9 @@ jobs:
           key: composer-plugin-${{ hashFiles(format('{0}/composer.lock', env.PLUGIN_DIR)) }}
           restore-keys: composer-plugin-
 
+      - name: Install SVN
+        run: sudo apt-get install -y subversion
+
       - name: Install plugin Composer dependencies
         run: composer install --no-interaction --prefer-dist
         working-directory: ${{ env.PLUGIN_DIR }}
