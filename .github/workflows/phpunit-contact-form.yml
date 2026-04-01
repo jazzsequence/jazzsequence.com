@@ -39,6 +39,9 @@ jobs:
           coverage: none
           tools: wp-cli
 
+      - name: Install SVN
+        run: sudo apt-get install -y subversion
+
       - name: Install root Composer dependencies
         run: composer install --no-interaction --prefer-dist
 
