@@ -137,7 +137,9 @@
 	"require-dev": {
 		"johnbillion/query-monitor": "*",
 		"johnbillion/wp-crontrol": "^1.16",
-		"pantheon-systems/pantheon-wp-coding-standards": "^3.0"
+		"pantheon-systems/pantheon-wp-coding-standards": "^3.0",
+		"phpunit/phpunit": "^9.5",
+		"yoast/phpunit-polyfills": "^1.0"
 	},
 	"config": {
 		"allow-plugins": {
