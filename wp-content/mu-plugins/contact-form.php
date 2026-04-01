@@ -73,6 +73,16 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 	$name    = $request->get_param( 'name' );
 	$email   = $request->get_param( 'email' );
 	$message = $request->get_param( 'message' );
+	$website = $request->get_param( 'website' );
+
+	/*
+	 * Honeypot: the Next.js form renders a hidden `website` field that no real
+	 * user fills in. Bots that auto-fill it are silently accepted (200) without
+	 * any actual processing, so they believe the submission succeeded.
+	 */
+	if ( ! empty( $website ) ) {
+		return new WP_REST_Response( [ 'success' => true ], 200 );
+	}
 
 	$form_id     = JAZZ_CONTACT_FORM_ID;
 	$field_values = [
@@ -149,6 +159,29 @@ function jazz_handle_contact_submission( WP_REST_Request $request ): WP_REST_Res
 		if ( ! method_exists( $action_class, 'process' ) ) {
 			continue;
 		}
+
+		/*
+		 * Apply the action class's own setting defaults for any keys not stored in
+		 * the DB (e.g. settings added to NF after the contact form was created, or
+		 * keys that only appear when the admin UI explicitly saves them). This prevents
+		 * PHP 8 "undefined array key" warnings inside NF's action process() methods.
+		 */
+		$action_defaults = [];
+		foreach ( $action_class->get_settings() as $setting_config ) {
+			if ( isset( $setting_config['name'], $setting_config['value'] ) ) {
+				$action_defaults[ $setting_config['name'] ] = $setting_config['value'];
+			}
+		}
+		$action_settings += $action_defaults;
+
+		/*
+		 * NF's contact form template stores payment_total as an empty string on
+		 * every action, but never stores payment_total_type (a payments-extension
+		 * setting). NF's merge tag resolver accesses payment_total_type whenever
+		 * payment_total is set, without an isset guard. Default the key to prevent
+		 * a PHP 8 undefined-key warning.
+		 */
+		$action_settings += [ 'payment_total_type' => '' ];
 
 		/*
 		 * Resolve merge tags in action settings before processing.
