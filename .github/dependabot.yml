@@ -6,8 +6,15 @@ updates:
     interval: daily
     time: "12:00"
   open-pull-requests-limit: 10
+  target-branch: dev
+  groups:
+    production-dependencies:
+      dependency-type: production
+    development-dependencies:
+      dependency-type: development
 - package-ecosystem: github-actions
   directory: "/"
+  target-branch: dev
   schedule:
     interval: daily
   open-pull-requests-limit: 10
