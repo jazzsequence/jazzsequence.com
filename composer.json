@@ -20,21 +20,6 @@
 			}
 		},
 		{
-			"type": "package",
-			"package": {
-				"name": "wpackagist-plugin/wpmovielibrary",
-				"version": "2.1.4.8",
-				"type": "wordpress-plugin",
-				"dist": {
-					"url": "https://downloads.wordpress.org/plugin/wpmovielibrary.2.1.4.8.zip",
-					"type": "zip"
-				},
-				"require": {
-					"composer/installers": "~1.0"
-				}
-			}
-		},
-		{
 			"type": "vcs",
 			"url": "git@github.com:jazzsequence/jz-222.git"
 		},
@@ -45,10 +30,6 @@
 		{
 			"type": "composer",
 			"url": "https://repo.wp-packages.org"
-		},
-		{
-			"type": "composer",
-			"url": "https://wp-composer.com"
 		},
 		{
 			"type": "composer",
