@@ -54,7 +54,6 @@
 		"humanmade/wordpress-importer": "dev-master",
 		"humanmade/wp-seo": "*",
 		"jazzsequence/address-book": "*",
-		"jazzsequence/artists": "*",
 		"jazzsequence/dashboard-changelog": "*",
 		"jazzsequence/games-collector": "^2.0",
 		"jazzsequence/jz-222": "dev-main",
