@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c17ef21353c60d6cd4d2ad1494d18080",
+    "content-hash": "5ab815b4f776d321b954c33e0ae07aa0",
     "packages": [
         {
             "name": "10up/simple-local-avatars",
@@ -1218,30 +1218,6 @@
                 "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.5"
             },
             "time": "2025-07-01T14:52:16+00:00"
-        },
-        {
-            "name": "jazzsequence/artists",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazzsequence/artists.git",
-                "reference": "ff352d7b8c7d302966d00b9fe0cc3c043bfaaa27"
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Reynolds",
-                    "homepage": "https://jazzsequence.com"
-                }
-            ],
-            "description": "A WordPress plugin for music artists, to be used in conjunction with Releases",
-            "support": {
-                "issues": "https://github.com/jazzsequence/artists/issues",
-                "source": "https://github.com/jazzsequence/artists"
-            }
         },
         {
             "name": "jazzsequence/dashboard-changelog",
@@ -3211,16 +3187,16 @@
         },
         {
             "name": "johnbillion/query-monitor",
-            "version": "3.20.4",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnbillion/query-monitor.git",
-                "reference": "19a230464200294ae0448e5d3487be5537de0622"
+                "reference": "eaa67a8f5e6ca24cceb4d4daf9cc27c32cc8f501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/19a230464200294ae0448e5d3487be5537de0622",
-                "reference": "19a230464200294ae0448e5d3487be5537de0622",
+                "url": "https://api.github.com/repos/johnbillion/query-monitor/zipball/eaa67a8f5e6ca24cceb4d4daf9cc27c32cc8f501",
+                "reference": "eaa67a8f5e6ca24cceb4d4daf9cc27c32cc8f501",
                 "shasum": ""
             },
             "require": {
@@ -3228,24 +3204,18 @@
                 "php": ">=7.4.0"
             },
             "require-dev": {
-                "behat/gherkin": "< 4.13.0",
-                "codeception/module-asserts": "^1.0",
-                "codeception/module-db": "^1.0",
-                "codeception/module-webdriver": "^1.0",
-                "codeception/util-universalframework": "^1.0",
                 "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
                 "guzzlehttp/guzzle": "^7.0",
-                "johnbillion/plugin-infrastructure": "1.2.2",
-                "johnbillion/wp-compat": "0.3.1",
-                "lucatume/wp-browser": "3.2.3",
+                "johnbillion/plugin-infrastructure": "2.9.0",
+                "johnbillion/wp-compat": "1.4.0",
+                "php-stubs/wordpress-stubs": "6.9.0",
+                "php-stubs/wp-cli-stubs": "2.12.0",
                 "phpcompatibility/phpcompatibility-wp": "2.1.5",
-                "phpstan/phpstan": "1.12.11",
-                "phpstan/phpstan-deprecation-rules": "1.2.1",
-                "phpstan/phpstan-phpunit": "1.4.1",
-                "roots/wordpress-core-installer": "1.100.0",
-                "roots/wordpress-full": "*",
+                "phpstan/phpstan": "2.1.46",
+                "phpstan/phpstan-deprecation-rules": "2.0.4",
+                "phpstan/phpstan-phpunit": "2.0.16",
                 "squizlabs/php_codesniffer": "3.11.1",
-                "szepeviktor/phpstan-wordpress": "1.3.5",
+                "szepeviktor/phpstan-wordpress": "2.0.3",
                 "wp-coding-standards/wpcs": "2.3.0"
             },
             "type": "wordpress-plugin",
@@ -3283,7 +3253,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-19T17:07:45+00:00"
+            "time": "2026-04-11T11:49:51+00:00"
         },
         {
             "name": "johnbillion/wp-crontrol",
@@ -4673,6 +4643,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-10-26T13:08:54+00:00"
         },
         {
@@ -4728,6 +4699,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T05:30:19+00:00"
         },
         {
@@ -5892,26 +5864,26 @@
         },
         {
             "name": "yoast/phpunit-polyfills",
-            "version": "1.1.5",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Yoast/PHPUnit-Polyfills.git",
-                "reference": "41aaac462fbd80feb8dd129e489f4bbc53fe26b0"
+                "reference": "134921bfca9b02d8f374c48381451da1d98402f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/41aaac462fbd80feb8dd129e489f4bbc53fe26b0",
-                "reference": "41aaac462fbd80feb8dd129e489f4bbc53fe26b0",
+                "url": "https://api.github.com/repos/Yoast/PHPUnit-Polyfills/zipball/134921bfca9b02d8f374c48381451da1d98402f9",
+                "reference": "134921bfca9b02d8f374c48381451da1d98402f9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
+                "php": ">=7.1",
+                "phpunit/phpunit": "^7.5 || ^8.0 || ^9.0 || ^11.0 || ^12.0"
             },
             "require-dev": {
                 "php-parallel-lint/php-console-highlighter": "^1.0.0",
                 "php-parallel-lint/php-parallel-lint": "^1.4.0",
-                "yoast/yoastcs": "^3.2.0"
+                "yoast/yoastcs": "^3.1.0"
             },
             "type": "library",
             "extra": {
@@ -5951,7 +5923,7 @@
                 "security": "https://github.com/Yoast/PHPUnit-Polyfills/security/policy",
                 "source": "https://github.com/Yoast/PHPUnit-Polyfills"
             },
-            "time": "2025-08-10T04:54:36+00:00"
+            "time": "2025-02-09T18:58:54+00:00"
         }
     ],
     "aliases": [
@@ -5974,5 +5946,5 @@
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
