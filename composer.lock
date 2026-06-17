@@ -2166,15 +2166,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.3.2",
+            "version": "23.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.3.2"
+                "reference": "tags/23.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2193,7 +2193,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-06-04T14:35:51+00:00"
+            "time": "2026-06-17T08:51:03+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
