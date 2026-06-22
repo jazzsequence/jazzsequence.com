@@ -2166,15 +2166,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.3.2",
+            "version": "23.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.3.2"
+                "reference": "tags/23.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2193,7 +2193,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-06-04T14:35:51+00:00"
+            "time": "2026-06-17T08:51:03+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2444,15 +2444,15 @@
         },
         {
             "name": "wp-plugin/query-monitor",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/4.0.6"
+                "reference": "tags/4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2471,7 +2471,7 @@
                 "issues": "https://wordpress.org/support/plugin/query-monitor",
                 "source": "https://plugins.svn.wordpress.org/query-monitor"
             },
-            "time": "2026-04-11T11:56:17+00:00"
+            "time": "2026-06-20T20:20:53+00:00"
         },
         {
             "name": "wp-plugin/regenerate-thumbnails",
