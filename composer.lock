@@ -96,25 +96,24 @@
         },
         {
             "name": "altis/cms",
-            "version": "26.0.8",
+            "version": "27.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "0f443b77c37a12afe6c7d8390c7c93cd01d98751"
+                "reference": "ba14104b53881dd6096e89ea073d66772c4db736"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/0f443b77c37a12afe6c7d8390c7c93cd01d98751",
-                "reference": "0f443b77c37a12afe6c7d8390c7c93cd01d98751",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/ba14104b53881dd6096e89ea073d66772c4db736",
+                "reference": "ba14104b53881dd6096e89ea073d66772c4db736",
                 "shasum": ""
             },
             "require": {
                 "10up/simple-local-avatars": "~2.7.11",
                 "altis/cms-installer": "^0.4.4",
-                "humanmade/altis-reusable-blocks": "~0.2.4",
-                "humanmade/asset-loader": "^0.6.4 || ^0.8.0",
+                "humanmade/asset-loader": "^0.8.0",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "6.9.4",
+                "johnpbloch/wordpress": "7.0.0",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -124,7 +123,6 @@
                     "install-overrides": [
                         "10up/simple-local-avatars",
                         "stuttter/wp-user-signups",
-                        "humanmade/altis-reusable-blocks",
                         "humanmade/asset-loader"
                     ]
                 }
@@ -159,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/26.0.8"
+                "source": "https://github.com/humanmade/altis-cms/tree/27.0.0"
             },
-            "time": "2026-05-27T09:02:23+00:00"
+            "time": "2026-06-08T15:57:26+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -583,46 +581,6 @@
             "time": "2018-06-28T20:32:51+00:00"
         },
         {
-            "name": "humanmade/altis-reusable-blocks",
-            "version": "v0.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/humanmade/altis-reusable-blocks.git",
-                "reference": "722da82ad03cc6ccc3903ddba6dbc5a19c8cbdf7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-reusable-blocks/zipball/722da82ad03cc6ccc3903ddba6dbc5a19c8cbdf7",
-                "reference": "722da82ad03cc6ccc3903ddba6dbc5a19c8cbdf7",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.7",
-                "humanmade/asset-loader": "^0.5.0 || ^0.6.1",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "automattic/vipwpcs": "^2.0",
-                "brain/monkey": "^2.3",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                "mockery/mockery": "^1.2",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "phpunit/phpunit": "^7.5",
-                "squizlabs/php_codesniffer": "^3.4"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Adds functionality to reusable blocks to enhance their usage.",
-            "support": {
-                "issues": "https://github.com/humanmade/altis-reusable-blocks/issues",
-                "source": "https://github.com/humanmade/altis-reusable-blocks/tree/v0.2.4"
-            },
-            "time": "2022-12-13T13:36:34+00:00"
-        },
-        {
             "name": "humanmade/amf-unsplash",
             "version": "0.3.0",
             "source": {
@@ -660,25 +618,27 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.6.4",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "1cc2bdcae19b2c6a4900df3cf827ab573ed0beac"
+                "reference": "f91409a9a8fae5981a65e3017dbd58175b5bcac4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/1cc2bdcae19b2c6a4900df3cf827ab573ed0beac",
-                "reference": "1cc2bdcae19b2c6a4900df3cf827ab573ed0beac",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/f91409a9a8fae5981a65e3017dbd58175b5bcac4",
+                "reference": "f91409a9a8fae5981a65e3017dbd58175b5bcac4",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "require-dev": {
-                "10up/wp_mock": "^0.4.2",
-                "humanmade/coding-standards": "^1.1.0",
-                "phpunit/phpunit": "^7.5"
+                "10up/wp_mock": "^1.1.0",
+                "automattic/vipwpcs": "^3.0",
+                "phpunit/phpunit": "^9.5",
+                "staabm/annotate-pull-request-from-checkstyle": "^1.8",
+                "wp-coding-standards/wpcs": "^3.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -688,9 +648,9 @@
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
                 "issues": "https://github.com/humanmade/asset-loader/issues",
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.6.4"
+                "source": "https://github.com/humanmade/asset-loader/tree/v0.8.0"
             },
-            "time": "2023-12-05T15:10:30+00:00"
+            "time": "2026-02-20T18:39:50+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
@@ -2012,15 +1972,15 @@
         },
         {
             "name": "wp-plugin/altis-accelerate",
-            "version": "4.2.2",
+            "version": "4.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/4.2.2"
+                "reference": "tags/4.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.2.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2038,7 +1998,7 @@
                 "issues": "https://wordpress.org/support/plugin/altis-accelerate",
                 "source": "https://plugins.svn.wordpress.org/altis-accelerate"
             },
-            "time": "2026-06-11T18:00:46+00:00"
+            "time": "2026-06-22T16:01:23+00:00"
         },
         {
             "name": "wp-plugin/amazon-s3-and-cloudfront",
@@ -2166,15 +2126,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.3.2",
+            "version": "23.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.3.2"
+                "reference": "tags/23.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2193,7 +2153,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-06-04T14:35:51+00:00"
+            "time": "2026-06-17T08:51:03+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2258,15 +2218,15 @@
         },
         {
             "name": "wp-plugin/ninja-forms",
-            "version": "3.14.6",
+            "version": "3.14.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.14.6"
+                "reference": "tags/3.14.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2285,7 +2245,7 @@
                 "issues": "https://wordpress.org/support/plugin/ninja-forms",
                 "source": "https://plugins.svn.wordpress.org/ninja-forms"
             },
-            "time": "2026-06-08T14:06:53+00:00"
+            "time": "2026-06-22T14:45:51+00:00"
         },
         {
             "name": "wp-plugin/organize-series",
@@ -2444,15 +2404,15 @@
         },
         {
             "name": "wp-plugin/query-monitor",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/4.0.6"
+                "reference": "tags/4.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2471,7 +2431,7 @@
                 "issues": "https://wordpress.org/support/plugin/query-monitor",
                 "source": "https://plugins.svn.wordpress.org/query-monitor"
             },
-            "time": "2026-04-11T11:56:17+00:00"
+            "time": "2026-06-20T20:20:53+00:00"
         },
         {
             "name": "wp-plugin/regenerate-thumbnails",
@@ -2626,15 +2586,15 @@
         },
         {
             "name": "wp-plugin/wp-mail-smtp",
-            "version": "4.8.0",
+            "version": "4.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.8.0"
+                "reference": "tags/4.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.8.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.9.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2653,7 +2613,7 @@
                 "issues": "https://wordpress.org/support/plugin/wp-mail-smtp",
                 "source": "https://plugins.svn.wordpress.org/wp-mail-smtp"
             },
-            "time": "2026-04-16T15:16:32+00:00"
+            "time": "2026-06-25T08:56:20+00:00"
         },
         {
             "name": "wp-theme/museum-core",
