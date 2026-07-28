@@ -53,16 +53,16 @@
         },
         {
             "name": "altis/browser-security",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-browser-security.git",
-                "reference": "d0326418a717e85f5d3fffcde99104fd39b40e24"
+                "reference": "82f1080b215528964074376a8519d63e41b691e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-browser-security/zipball/d0326418a717e85f5d3fffcde99104fd39b40e24",
-                "reference": "d0326418a717e85f5d3fffcde99104fd39b40e24",
+                "url": "https://api.github.com/repos/humanmade/altis-browser-security/zipball/82f1080b215528964074376a8519d63e41b691e4",
+                "reference": "82f1080b215528964074376a8519d63e41b691e4",
                 "shasum": ""
             },
             "require": {
@@ -90,22 +90,22 @@
             "description": "Browser security utilities for WordPress/Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-browser-security/issues",
-                "source": "https://github.com/humanmade/altis-browser-security/tree/2.2.0"
+                "source": "https://github.com/humanmade/altis-browser-security/tree/2.2.1"
             },
-            "time": "2026-02-24T16:35:17+00:00"
+            "time": "2026-05-22T16:25:44+00:00"
         },
         {
             "name": "altis/cms",
-            "version": "27.0.1",
+            "version": "27.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "05af7fa5bbc82adb7f4c06b528977cde6750ca74"
+                "reference": "1df9e270e03652d592251431cc28e4af412285b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/05af7fa5bbc82adb7f4c06b528977cde6750ca74",
-                "reference": "05af7fa5bbc82adb7f4c06b528977cde6750ca74",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1df9e270e03652d592251431cc28e4af412285b5",
+                "reference": "1df9e270e03652d592251431cc28e4af412285b5",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^0.8.0",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.0.0",
+                "johnpbloch/wordpress": "7.0.2",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/27.0.1"
+                "source": "https://github.com/humanmade/altis-cms/tree/27.0.3"
             },
-            "time": "2026-06-25T17:26:25+00:00"
+            "time": "2026-07-17T19:34:30+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -1724,16 +1724,16 @@
         },
         {
             "name": "pfefferle/wordpress-activitypub",
-            "version": "9.0.2",
+            "version": "9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/wordpress-activitypub.git",
-                "reference": "280a7b795b4a6154262fcf8900f90f96f3ef6316"
+                "reference": "535cba0834d3974e58f2a4a8fc28715d2e3b3e79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/280a7b795b4a6154262fcf8900f90f96f3ef6316",
-                "reference": "280a7b795b4a6154262fcf8900f90f96f3ef6316",
+                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/535cba0834d3974e58f2a4a8fc28715d2e3b3e79",
+                "reference": "535cba0834d3974e58f2a4a8fc28715d2e3b3e79",
                 "shasum": ""
             },
             "require": {
@@ -1741,7 +1741,7 @@
                 "php": ">=7.4"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "6.0.16",
+                "automattic/jetpack-changelogger": "6.0.17",
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
                 "dms/phpunit-arraysubset-asserts": "^0.5.0",
                 "phpcompatibility/php-compatibility": "*",
@@ -1774,9 +1774,9 @@
             "description": "The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.",
             "support": {
                 "issues": "https://github.com/Automattic/wordpress-activitypub/issues",
-                "source": "https://github.com/Automattic/wordpress-activitypub/tree/9.0.2"
+                "source": "https://github.com/Automattic/wordpress-activitypub/tree/9.1.0"
             },
-            "time": "2026-06-29T08:21:15+00:00"
+            "time": "2026-07-22T15:55:45+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1972,15 +1972,15 @@
         },
         {
             "name": "wp-plugin/altis-accelerate",
-            "version": "4.3.1",
+            "version": "4.3.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/altis-accelerate/",
-                "reference": "tags/4.3.1"
+                "reference": "tags/4.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/altis-accelerate.4.3.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -1998,7 +1998,7 @@
                 "issues": "https://wordpress.org/support/plugin/altis-accelerate",
                 "source": "https://plugins.svn.wordpress.org/altis-accelerate"
             },
-            "time": "2026-06-26T14:45:41+00:00"
+            "time": "2026-07-10T18:31:04+00:00"
         },
         {
             "name": "wp-plugin/amazon-s3-and-cloudfront",
@@ -2126,15 +2126,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.4.0",
+            "version": "23.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.4.0"
+                "reference": "tags/23.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.4.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.6.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2153,7 +2153,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-06-17T08:51:03+00:00"
+            "time": "2026-07-28T09:20:55+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2218,15 +2218,15 @@
         },
         {
             "name": "wp-plugin/ninja-forms",
-            "version": "3.14.7",
+            "version": "3.14.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.14.7"
+                "reference": "tags/3.14.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.11.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2245,7 +2245,7 @@
                 "issues": "https://wordpress.org/support/plugin/ninja-forms",
                 "source": "https://plugins.svn.wordpress.org/ninja-forms"
             },
-            "time": "2026-06-22T14:45:51+00:00"
+            "time": "2026-07-27T11:50:43+00:00"
         },
         {
             "name": "wp-plugin/organize-series",
@@ -2311,15 +2311,15 @@
         },
         {
             "name": "wp-plugin/patchstack",
-            "version": "2.3.6",
+            "version": "2.3.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/patchstack/",
-                "reference": "tags/2.3.6"
+                "reference": "tags/2.3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/patchstack.2.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/patchstack.2.3.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2338,7 +2338,7 @@
                 "issues": "https://wordpress.org/support/plugin/patchstack",
                 "source": "https://plugins.svn.wordpress.org/patchstack"
             },
-            "time": "2026-04-22T07:15:45+00:00"
+            "time": "2026-07-28T07:56:08+00:00"
         },
         {
             "name": "wp-plugin/plugins-garbage-collector",
