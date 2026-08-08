@@ -41,6 +41,7 @@ auth.json
 
 # Backup files
 index.php.tmp
+index.php.bak
 wp-config.php.bak
 
 # Don't ignore packages
