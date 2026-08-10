@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "27.0.3",
+            "version": "27.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5"
+                "reference": "a4e72ee25646aa594d4e42f56948b8c9d8be36be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1df9e270e03652d592251431cc28e4af412285b5",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/a4e72ee25646aa594d4e42f56948b8c9d8be36be",
+                "reference": "a4e72ee25646aa594d4e42f56948b8c9d8be36be",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^0.8.0",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.0.2",
+                "johnpbloch/wordpress": "7.0.3",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/27.0.3"
+                "source": "https://github.com/humanmade/altis-cms/tree/27.0.4"
             },
-            "time": "2026-07-17T19:34:30+00:00"
+            "time": "2026-08-07T11:36:39+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -2126,15 +2126,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.7.0",
+            "version": "23.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.7.0"
+                "reference": "tags/23.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2153,7 +2153,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-08-05T15:16:43+00:00"
+            "time": "2026-08-07T01:21:16+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
