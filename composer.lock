@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "27.0.3",
+            "version": "27.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5"
+                "reference": "a4e72ee25646aa594d4e42f56948b8c9d8be36be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1df9e270e03652d592251431cc28e4af412285b5",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/a4e72ee25646aa594d4e42f56948b8c9d8be36be",
+                "reference": "a4e72ee25646aa594d4e42f56948b8c9d8be36be",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^0.8.0",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.0.2",
+                "johnpbloch/wordpress": "7.0.3",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/27.0.3"
+                "source": "https://github.com/humanmade/altis-cms/tree/27.0.4"
             },
-            "time": "2026-07-17T19:34:30+00:00"
+            "time": "2026-08-07T11:36:39+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -2126,15 +2126,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.7.0",
+            "version": "23.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.7.0"
+                "reference": "tags/23.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2153,7 +2153,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-08-05T15:16:43+00:00"
+            "time": "2026-08-11T10:01:23+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2218,15 +2218,15 @@
         },
         {
             "name": "wp-plugin/ninja-forms",
-            "version": "3.14.11",
+            "version": "3.14.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.14.11"
+                "reference": "tags/3.14.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.12.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2245,7 +2245,7 @@
                 "issues": "https://wordpress.org/support/plugin/ninja-forms",
                 "source": "https://plugins.svn.wordpress.org/ninja-forms"
             },
-            "time": "2026-07-27T11:50:43+00:00"
+            "time": "2026-08-10T14:46:36+00:00"
         },
         {
             "name": "wp-plugin/organize-series",
@@ -2342,15 +2342,15 @@
         },
         {
             "name": "wp-plugin/plugins-garbage-collector",
-            "version": "0.14",
+            "version": "0.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/plugins-garbage-collector/",
-                "reference": "tags/0.14"
+                "reference": "tags/0.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.15.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2362,14 +2362,14 @@
                     "name": "Vladimir Garagulya"
                 }
             ],
-            "description": "Find unused database tables from deactivated or deleted plugins. You can delete unused database tables to reduce database volume and enhance site perf …",
-            "homepage": "http://www.shinephp.com/plugins-garbage-collector-wordpress-plugin/",
+            "description": "Find and delete unused database tables belong to deactivated or deleted plugins directly from WP dashboard.",
+            "homepage": "https://www.shinephp.com/plugins-garbage-collector-wordpress-plugin/",
             "support": {
                 "changelog": "https://wordpress.org/plugins/plugins-garbage-collector/#developers",
                 "issues": "https://wordpress.org/support/plugin/plugins-garbage-collector",
                 "source": "https://plugins.svn.wordpress.org/plugins-garbage-collector"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-12T10:21:01+00:00"
         },
         {
             "name": "wp-plugin/progress-bar",
