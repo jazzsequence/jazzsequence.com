@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "27.0.3",
+            "version": "27.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5"
+                "reference": "1f1d5b0ff28fa4ea4729a87ced0e80dd287d396f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1df9e270e03652d592251431cc28e4af412285b5",
-                "reference": "1df9e270e03652d592251431cc28e4af412285b5",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/1f1d5b0ff28fa4ea4729a87ced0e80dd287d396f",
+                "reference": "1f1d5b0ff28fa4ea4729a87ced0e80dd287d396f",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^0.8.0",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.0.2",
+                "johnpbloch/wordpress": "7.0.4",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/27.0.3"
+                "source": "https://github.com/humanmade/altis-cms/tree/27.0.5"
             },
-            "time": "2026-07-17T19:34:30+00:00"
+            "time": "2026-08-13T10:32:29+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -261,6 +261,70 @@
                 "source": "https://github.com/humanmade/altis-workflow/tree/15.0.1"
             },
             "time": "2026-04-22T14:47:03+00:00"
+        },
+        {
+            "name": "automattic/jetpack-autoloader",
+            "version": "v5.0.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Automattic/jetpack-autoloader.git",
+                "reference": "d11b2d621035dcb920abce8ae09bebd5da5f9ff8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/d11b2d621035dcb920abce8ae09bebd5da5f9ff8",
+                "reference": "d11b2d621035dcb920abce8ae09bebd5da5f9ff8",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.2",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "automattic/phpunit-select-config": "^1.0.9",
+                "composer/composer": "^2.2",
+                "yoast/phpunit-polyfills": "^4.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin",
+                "autotagger": true,
+                "mirror-repo": "Automattic/jetpack-autoloader",
+                "branch-alias": {
+                    "dev-trunk": "5.0.x-dev"
+                },
+                "changelogger": {
+                    "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
+                },
+                "version-constants": {
+                    "::VERSION": "src/AutoloadGenerator.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\Jetpack\\Autoloader\\": "src"
+                },
+                "classmap": [
+                    "src/AutoloadGenerator.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Creates a custom autoloader for a plugin or theme.",
+            "keywords": [
+                "autoload",
+                "autoloader",
+                "composer",
+                "jetpack",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v5.0.23"
+            },
+            "time": "2026-08-11T18:32:06+00:00"
         },
         {
             "name": "cmb2/cmb2",
@@ -1724,16 +1788,16 @@
         },
         {
             "name": "pfefferle/wordpress-activitypub",
-            "version": "9.2.1",
+            "version": "9.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/wordpress-activitypub.git",
-                "reference": "b29971ecfe0daf5bcfc71d8440d51a0f2708330a"
+                "reference": "84ea1a461431719c50b322255ad8ebff7ab5e608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/b29971ecfe0daf5bcfc71d8440d51a0f2708330a",
-                "reference": "b29971ecfe0daf5bcfc71d8440d51a0f2708330a",
+                "url": "https://api.github.com/repos/Automattic/wordpress-activitypub/zipball/84ea1a461431719c50b322255ad8ebff7ab5e608",
+                "reference": "84ea1a461431719c50b322255ad8ebff7ab5e608",
                 "shasum": ""
             },
             "require": {
@@ -1774,9 +1838,9 @@
             "description": "The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.",
             "support": {
                 "issues": "https://github.com/Automattic/wordpress-activitypub/issues",
-                "source": "https://github.com/Automattic/wordpress-activitypub/tree/9.2.1"
+                "source": "https://github.com/Automattic/wordpress-activitypub/tree/9.2.2"
             },
-            "time": "2026-08-03T11:14:27+00:00"
+            "time": "2026-08-11T18:52:53+00:00"
         },
         {
             "name": "stuttter/wp-user-signups",
@@ -1817,52 +1881,47 @@
         },
         {
             "name": "wordpress/mcp-adapter",
-            "version": "v0.5.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WordPress/mcp-adapter.git",
-                "reference": "7bfc49f46b3ea7544dded49d5a606089f825a80b"
+                "url": "https://github.com/WordPress/mcp-adapter",
+                "reference": "23cb53e0b82f39238eec1c38cb055e28aa30fa7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/mcp-adapter/zipball/7bfc49f46b3ea7544dded49d5a606089f825a80b",
-                "reference": "7bfc49f46b3ea7544dded49d5a606089f825a80b",
+                "url": "https://api.github.com/repos/WordPress/mcp-adapter/zipball/23cb53e0b82f39238eec1c38cb055e28aa30fa7c",
+                "reference": "23cb53e0b82f39238eec1c38cb055e28aa30fa7c",
                 "shasum": ""
             },
             "require": {
+                "automattic/jetpack-autoloader": "^5.0",
                 "ext-json": "*",
                 "php": "^7.4 || ^8.0",
                 "wordpress/php-mcp-schema": "^0.1.0"
             },
             "require-dev": {
-                "automattic/vipwpcs": "^3.0",
+                "automattic/vipwpcs": "^3.1",
                 "php-stubs/wordpress-stubs": "^6.9",
                 "php-stubs/wp-cli-stubs": "^2.12",
-                "phpcompatibility/php-compatibility": "10.x-dev as 9.99.99",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "phpcompatibility/phpcompatibility-wp": "^3.0.0-alpha",
                 "phpstan/extension-installer": "^1.3",
-                "phpstan/php-8-stubs": "^0.4.24",
-                "phpstan/phpstan": "^2.1.22",
-                "phpstan/phpstan-deprecation-rules": "^2.0.3",
+                "phpstan/php-8-stubs": "^0.4.36",
+                "phpstan/phpstan": "^2.2.6",
+                "phpstan/phpstan-deprecation-rules": "^2.0.5",
                 "phpunit/phpunit": "^9.6",
                 "slevomat/coding-standard": "^8.0",
                 "szepeviktor/phpstan-wordpress": "^2.0",
-                "wp-phpunit/wp-phpunit": "^6.5",
-                "wpackagist-plugin/plugin-check": "^1.6",
+                "wp-phpunit/wp-phpunit": "^7.0",
                 "yoast/phpunit-polyfills": "^4.0"
             },
             "type": "wordpress-plugin",
-            "extra": {
-                "installer-paths": {
-                    "vendor/{$vendor}/{$name}/": [
-                        "wpackagist-plugin/plugin-check"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "WP\\MCP\\": "includes/"
-                }
+                },
+                "exclude-from-classmap": [
+                    "tests/phpunit/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1890,20 +1949,20 @@
                 "issues": "https://github.com/wordpress/mcp-adapter/issues",
                 "source": "https://github.com/wordpress/mcp-adapter"
             },
-            "time": "2026-04-14T12:12:58+00:00"
+            "time": "2026-08-13T05:16:13+00:00"
         },
         {
             "name": "wordpress/php-mcp-schema",
-            "version": "v0.1.2",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/php-mcp-schema",
-                "reference": "95df8a50a3bd54f6b7c4869c6e2185db380d4d63"
+                "reference": "b2fcf97aa023ce46e9f03493c194a72d5a46bea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/php-mcp-schema/zipball/95df8a50a3bd54f6b7c4869c6e2185db380d4d63",
-                "reference": "95df8a50a3bd54f6b7c4869c6e2185db380d4d63",
+                "url": "https://api.github.com/repos/WordPress/php-mcp-schema/zipball/b2fcf97aa023ce46e9f03493c194a72d5a46bea2",
+                "reference": "b2fcf97aa023ce46e9f03493c194a72d5a46bea2",
                 "shasum": ""
             },
             "require": {
@@ -1937,7 +1996,7 @@
                 "php",
                 "schema"
             ],
-            "time": "2026-06-05T08:26:32+00:00"
+            "time": "2026-08-10T09:12:14+00:00"
         },
         {
             "name": "wp-plugin/akismet",
@@ -2064,15 +2123,15 @@
         },
         {
             "name": "wp-plugin/bv-pantheon-migration",
-            "version": "5.88",
+            "version": "6.65",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/bv-pantheon-migration/",
-                "reference": "tags/5.88"
+                "reference": "tags/6.65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/bv-pantheon-migration.5.88.zip"
+                "url": "https://downloads.wordpress.org/plugin/bv-pantheon-migration.6.65.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2091,19 +2150,19 @@
                 "issues": "https://wordpress.org/support/plugin/bv-pantheon-migration",
                 "source": "https://plugins.svn.wordpress.org/bv-pantheon-migration"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-14T19:06:45+00:00"
         },
         {
             "name": "wp-plugin/glotpress",
-            "version": "4.0.3",
+            "version": "4.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/glotpress/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/glotpress.4.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/glotpress.4.1.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2122,19 +2181,19 @@
                 "issues": "https://wordpress.org/support/plugin/glotpress",
                 "source": "https://plugins.svn.wordpress.org/glotpress"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-17T09:31:05+00:00"
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.7.0",
+            "version": "23.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.7.0"
+                "reference": "tags/23.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.7.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2153,7 +2212,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-08-05T15:16:43+00:00"
+            "time": "2026-08-11T10:01:23+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2218,15 +2277,15 @@
         },
         {
             "name": "wp-plugin/ninja-forms",
-            "version": "3.14.11",
+            "version": "3.15.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.14.11"
+                "reference": "tags/3.15.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.14.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.15.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2245,7 +2304,7 @@
                 "issues": "https://wordpress.org/support/plugin/ninja-forms",
                 "source": "https://plugins.svn.wordpress.org/ninja-forms"
             },
-            "time": "2026-07-27T11:50:43+00:00"
+            "time": "2026-08-12T12:41:40+00:00"
         },
         {
             "name": "wp-plugin/organize-series",
@@ -2280,15 +2339,15 @@
         },
         {
             "name": "wp-plugin/pantheon-content-publisher",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-content-publisher/",
-                "reference": "tags/1.3.5"
+                "reference": "tags/1.3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2307,7 +2366,7 @@
                 "issues": "https://wordpress.org/support/plugin/pantheon-content-publisher",
                 "source": "https://plugins.svn.wordpress.org/pantheon-content-publisher"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-14T15:16:53+00:00"
         },
         {
             "name": "wp-plugin/patchstack",
@@ -2342,15 +2401,15 @@
         },
         {
             "name": "wp-plugin/plugins-garbage-collector",
-            "version": "0.14",
+            "version": "0.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/plugins-garbage-collector/",
-                "reference": "tags/0.14"
+                "reference": "tags/0.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/plugins-garbage-collector.0.15.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2362,14 +2421,14 @@
                     "name": "Vladimir Garagulya"
                 }
             ],
-            "description": "Find unused database tables from deactivated or deleted plugins. You can delete unused database tables to reduce database volume and enhance site perf …",
-            "homepage": "http://www.shinephp.com/plugins-garbage-collector-wordpress-plugin/",
+            "description": "Find and delete unused database tables belong to deactivated or deleted plugins directly from WP dashboard.",
+            "homepage": "https://www.shinephp.com/plugins-garbage-collector-wordpress-plugin/",
             "support": {
                 "changelog": "https://wordpress.org/plugins/plugins-garbage-collector/#developers",
                 "issues": "https://wordpress.org/support/plugin/plugins-garbage-collector",
                 "source": "https://plugins.svn.wordpress.org/plugins-garbage-collector"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-08-12T10:21:01+00:00"
         },
         {
             "name": "wp-plugin/progress-bar",
