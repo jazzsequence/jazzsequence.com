@@ -153,6 +153,19 @@
 		],
 		"phpcs": "vendor/bin/phpcs -s .",
 		"phpcbf": "vendor/bin/phpcbf .",
-		"dry-run-release": "bash bin/dry-run-release.sh"
+		"dry-run-release": "bash bin/dry-run-release.sh",
+		"test": [
+			"@test:contact-form",
+			"@test:rest-cache"
+		],
+		"test:contact-form": "vendor/bin/phpunit --configuration tests/contact-form/phpunit.xml --testdox",
+		"test:mcp-abilities": "vendor/bin/phpunit --configuration wp-content/plugins/jazzsequence-mcp-abilities/phpunit.xml --testdox",
+		"test:rest-cache": "vendor/bin/phpunit --configuration tests/rest-cache/phpunit.xml --testdox"
+	},
+	"scripts-descriptions": {
+		"test": "Run the PHPUnit suites. Needs a WordPress test library: set WP_TESTS_DIR, or install one at /tmp/wordpress-tests-lib.",
+		"test:contact-form": "PHPUnit: contact form mu-plugin.",
+		"test:mcp-abilities": "PHPUnit: MCP abilities plugin.",
+		"test:rest-cache": "PHPUnit: REST cache headers mu-plugin."
 	}
 }
