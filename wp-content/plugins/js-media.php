@@ -95,8 +95,13 @@ function create_media_post_type() {
  * removed in wp-admin take effect without a deploy and without this list being
  * kept in step.
  *
+ * Mirrors the vocabulary jazzsequence.com actually uses. It seeded 'talk'
+ * originally; that term was replaced with 'video' in wp-admin, and the list
+ * lagged — so a fresh install would have been seeded a type the site does not
+ * use while missing one it does.
+ *
  * Non-hierarchical deliberately: an item can legitimately be more than one of
- * these. A conference talk released as a podcast episode is both, and a
+ * these. A livestream later published as a podcast episode is both, and a
  * single-select field would force a lie.
  *
  * @return array<string, string> Slug => label.
@@ -105,7 +110,7 @@ function get_seed_media_types() {
 	return [
 		'podcast'      => __( 'Podcast', 'js-media' ),
 		'livestream'   => __( 'Livestream', 'js-media' ),
-		'talk'         => __( 'Talk', 'js-media' ),
+		'video'        => __( 'Video', 'js-media' ),
 		'presentation' => __( 'Presentation', 'js-media' ),
 	];
 }
