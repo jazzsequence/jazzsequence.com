@@ -89,7 +89,7 @@ function create_media_post_type() {
 }
 
 /**
- * Terms created on first install. NOT the vocabulary.
+ * Terms created on first install.
  *
  * Used only by ensure_default_media_types() to give a fresh site something to
  * work with. Everything else reads the taxonomy, so terms added, renamed or
