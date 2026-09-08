@@ -20,9 +20,12 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 	/**
 	 * Dispatch a request through the real REST server and return the response.
 	 *
-	 * Goes through rest_do_request rather than calling the filter directly, so
-	 * the guards are exercised against a genuinely dispatched request — a filter
-	 * called with a hand-built request can pass while the real path fails.
+	 * Dispatches for real, then applies rest_post_dispatch the way the server
+	 * does. That second step is not optional: WP_REST_Server applies the filter
+	 * inside serve_request() (class-wp-rest-server.php:464), NOT inside
+	 * dispatch(), so rest_do_request() alone never fires it. Testing through
+	 * rest_do_request without this produced four failures against a plugin that
+	 * was working correctly.
 	 *
 	 * @param string $route  REST route.
 	 * @param array  $params Query parameters.
@@ -34,7 +37,9 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 		foreach ( $params as $key => $value ) {
 			$request->set_param( $key, $value );
 		}
-		return rest_do_request( $request );
+		$response = rest_do_request( $request );
+
+		return apply_filters( 'rest_post_dispatch', rest_ensure_response( $response ), rest_get_server(), $request );
 	}
 
 	/**

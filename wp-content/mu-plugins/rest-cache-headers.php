@@ -152,9 +152,19 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 		return false;
 	}
 
+	/*
+	 * Collection endpoints type `status` as an array — /wp/v2/posts defaults it
+	 * to array( 'publish' ), not the string. Comparing it to a string is always
+	 * unequal, which rejected every collection request and made this plugin
+	 * silently inert. Caught by running the suite, not by reading it.
+	 */
 	$status = $request->get_param( 'status' );
-	if ( ! empty( $status ) && 'publish' !== $status ) {
-		return false;
+	if ( ! empty( $status ) ) {
+		foreach ( (array) $status as $status_value ) {
+			if ( 'publish' !== $status_value ) {
+				return false;
+			}
+		}
 	}
 
 	$route = $request->get_route();
