@@ -2,7 +2,7 @@
 /**
  * Plugin Name: jazzsequence Media
  * Description: A plugin to manage and display video content on the jazzsequence.com.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Chris Reynolds
  * Author URI: https://jazzsequence.com
  * License: MIT
@@ -11,11 +11,6 @@
  */
 
 namespace Jazzsequence\Media;
-
-/**
- * Bumping this re-runs the default term seed, so a later release can add types.
- */
-const MEDIA_TYPES_SEED_VERSION = '1.2.0';
 
 /**
  * Kick it off.
@@ -94,7 +89,12 @@ function create_media_post_type() {
 }
 
 /**
- * Default media type terms.
+ * Terms created on first install.
+ *
+ * Used only by ensure_default_media_types() to give a fresh site something to
+ * work with. Everything else reads the taxonomy, so terms added, renamed or
+ * removed in wp-admin take effect without a deploy and without this list being
+ * kept in step.
  *
  * Non-hierarchical deliberately: an item can legitimately be more than one of
  * these. A conference talk released as a podcast episode is both, and a
@@ -102,7 +102,7 @@ function create_media_post_type() {
  *
  * @return array<string, string> Slug => label.
  */
-function get_default_media_types() {
+function get_seed_media_types() {
 	return [
 		'podcast'      => __( 'Podcast', 'js-media' ),
 		'livestream'   => __( 'Livestream', 'js-media' ),
@@ -151,21 +151,20 @@ function create_media_type_taxonomy() {
 }
 
 /**
- * Create the default type terms once.
+ * Give a site with no terms something to start from. Runs once, ever.
  *
- * Guarded by an option rather than checking each term on every request: this
- * runs on init, and four term_exists() lookups per page load buys nothing. The
- * guard stores the plugin version so a later release can add terms by bumping it.
+ * Strictly one-shot. Once the option is set the vocabulary belongs to wp-admin,
+ * and re-running this would resurrect terms that were deliberately deleted.
+ * Adding a type is an editor action, not a release.
  *
  * @return void
  */
 function ensure_default_media_types() {
-	$seeded = get_option( 'js_media_types_seeded' );
-	if ( MEDIA_TYPES_SEED_VERSION === $seeded ) {
+	if ( get_option( 'js_media_types_seeded' ) ) {
 		return;
 	}
 
-	foreach ( get_default_media_types() as $slug => $label ) {
+	foreach ( get_seed_media_types() as $slug => $label ) {
 		if ( term_exists( $slug, 'media_type' ) ) {
 			continue;
 		}
@@ -173,7 +172,7 @@ function ensure_default_media_types() {
 		wp_insert_term( $label, 'media_type', [ 'slug' => $slug ] );
 	}
 
-	update_option( 'js_media_types_seeded', MEDIA_TYPES_SEED_VERSION, false );
+	update_option( 'js_media_types_seeded', '1', false );
 }
 
 /**
@@ -801,10 +800,10 @@ function render_media_sources_page() {
 			$source_type = isset( $_POST['js_media_source_type'] ) ? sanitize_key( wp_unslash( $_POST['js_media_source_type'] ) ) : '';
 
 			/*
-			 * Only accept a type we actually registered — a stale or hand-edited
-			 * value would otherwise create a term on import.
+			 * Only accept a term that exists — a stale or hand-edited value would
+			 * otherwise create a term on import.
 			 */
-			if ( ! array_key_exists( $source_type, get_default_media_types() ) ) {
+			if ( $source_type && ! term_exists( $source_type, 'media_type' ) ) {
 				$source_type = '';
 			}
 
@@ -840,6 +839,18 @@ function render_media_sources_page() {
 	}
 
 	$sources = get_media_sources();
+
+	// The taxonomy is the vocabulary: terms added or renamed in wp-admin show up here.
+	$media_type_terms = get_terms(
+		[
+			'taxonomy'   => 'media_type',
+			'hide_empty' => false,
+		]
+	);
+	if ( is_wp_error( $media_type_terms ) ) {
+		$media_type_terms = [];
+	}
+	$type_labels = wp_list_pluck( $media_type_terms, 'name', 'slug' );
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Media Sources', 'js-media' ); ?></h1>
@@ -862,8 +873,8 @@ function render_media_sources_page() {
 					<td>
 						<select name="js_media_source_type" id="js_media_source_type">
 							<option value=""><?php esc_html_e( '— none —', 'js-media' ); ?></option>
-							<?php foreach ( get_default_media_types() as $slug => $label ) : ?>
-								<option value="<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $label ); ?></option>
+							<?php foreach ( $media_type_terms as $term ) : ?>
+								<option value="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></option>
 							<?php endforeach; ?>
 						</select>
 						<p class="description"><?php esc_html_e( 'Items imported from this source are assigned this type automatically.', 'js-media' ); ?></p>
@@ -893,9 +904,8 @@ function render_media_sources_page() {
 						<td><code><?php echo esc_html( $source['url'] ); ?></code></td>
 						<td>
 							<?php
-							$types      = get_default_media_types();
 							$source_key = isset( $source['type'] ) ? $source['type'] : '';
-							echo esc_html( isset( $types[ $source_key ] ) ? $types[ $source_key ] : '—' );
+							echo esc_html( isset( $type_labels[ $source_key ] ) ? $type_labels[ $source_key ] : '—' );
 							?>
 						</td>
 						<td>
