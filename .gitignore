@@ -15,6 +15,7 @@ wp-content/mu-plugins/*
 !wp-content/mu-plugins/contact-form.php
 !wp-content/mu-plugins/hide-update-nag.php
 !wp-content/mu-plugins/disallow-updates.php
+!wp-content/mu-plugins/rest-cache-headers.php
 wp-content/plugins/*
 !wp-content/plugins/js-*
 !wp-content/plugins/autoblue/**/*
