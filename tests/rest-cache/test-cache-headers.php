@@ -124,7 +124,7 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 		$cacheable = 0;
 		$ttl_seen  = null;
 		add_action(
-			'litespeed_control_set_cacheable',
+			'litespeed_control_force_cacheable',
 			static function () use ( &$cacheable ) {
 				$cacheable++;
 			}
@@ -147,7 +147,7 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 
 		$cacheable = 0;
 		add_action(
-			'litespeed_control_set_cacheable',
+			'litespeed_control_force_cacheable',
 			static function () use ( &$cacheable ) {
 				$cacheable++;
 			}
@@ -232,6 +232,55 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 				"{$method} must not be cacheable"
 			);
 		}
+	}
+
+	/*
+	 * -------------------------------------------------------------------------
+	 * Forcing, and the guard that makes it safe
+	 * -------------------------------------------------------------------------
+	 */
+
+	/**
+	 * Any cookie at all disqualifies the request.
+	 */
+	public function test_a_request_with_cookies_is_never_forced() {
+		/*
+		 * This plugin overrides a no-cache decision whose cause is unknown. The
+		 * no-cookie rule is what bounds that: a cookieless request cannot carry a
+		 * session, so the response cannot be user-specific.
+		 */
+		$_COOKIE['wordpress_logged_in_abc'] = 'whatever';
+
+		$request = new WP_REST_Request( 'GET', '/wp/v2/posts' );
+		$reason  = jazzsequence_rest_cache_skip_reason( $request );
+
+		unset( $_COOKIE['wordpress_logged_in_abc'] );
+
+		$this->assertSame( 'cookies', $reason );
+	}
+
+	/**
+	 * The decision is reported on the response so a failed deploy is diagnosable.
+	 */
+	public function test_reports_its_decision_on_the_response() {
+		self::factory()->post->create( [ 'post_status' => 'publish' ] );
+
+		$response = $this->dispatch( '/wp/v2/posts' );
+		$headers  = $response->get_headers();
+
+		$this->assertSame( 'cacheable', $headers['X-JS-REST-Cache'] ?? '' );
+	}
+
+	/**
+	 * A skipped request reports which rule skipped it, not just that it skipped.
+	 */
+	public function test_reports_the_reason_it_skipped() {
+		wp_set_current_user( self::factory()->user->create( [ 'role' => 'editor' ] ) );
+
+		$response = $this->dispatch( '/wp/v2/posts' );
+		$headers  = $response->get_headers();
+
+		$this->assertSame( 'skip:logged-in', $headers['X-JS-REST-Cache'] ?? '' );
 	}
 
 	/*
