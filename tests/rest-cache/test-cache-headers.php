@@ -43,6 +43,47 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Reset the cross-request cacheable flag between tests.
+	 */
+	public function set_up() {
+		parent::set_up();
+		unset( $GLOBALS['jazzsequence_rest_cacheable'] );
+	}
+
+	/*
+	 * -------------------------------------------------------------------------
+	 * Overrides that made this inert in production
+	 * -------------------------------------------------------------------------
+	 */
+
+	/**
+	 * Core stamps nocache_headers() over Cache-Control unless told not to.
+	 *
+	 * This is why the first release of this plugin did nothing: every public REST
+	 * read still came back `no-cache, no-store, private`. Headers alone are not
+	 * enough, and no amount of asserting on the response object would have shown
+	 * it — the override happens after the filter returns.
+	 */
+	public function test_suppresses_core_nocache_for_a_cacheable_response() {
+		self::factory()->post->create( [ 'post_status' => 'publish' ] );
+
+		$this->dispatch( '/wp/v2/posts' );
+
+		$this->assertFalse( apply_filters( 'rest_send_nocache_headers', true ) );
+	}
+
+	/**
+	 * A request that was never cacheable must not have nocache suppressed.
+	 */
+	public function test_leaves_core_nocache_alone_for_a_private_response() {
+		wp_set_current_user( self::factory()->user->create( [ 'role' => 'editor' ] ) );
+
+		$this->dispatch( '/wp/v2/posts' );
+
+		$this->assertTrue( apply_filters( 'rest_send_nocache_headers', true ) );
+	}
+
+	/**
 	 * Cache-Control value from a response, or empty string.
 	 *
 	 * @param WP_REST_Response $response Response.
@@ -70,17 +111,51 @@ class Test_Rest_Cache_Headers extends WP_UnitTestCase {
 		$this->assertStringContainsString( 's-maxage=', $this->cache_control( $response ) );
 	}
 
-	public function test_sends_the_litespeed_header_too() {
+	public function test_signals_litespeed_through_its_action_api() {
 		/*
-		 * Cache-Control alone is inert on this stack — LiteSpeed does not cache
-		 * REST off it. If this regresses, the plugin silently stops working.
+		 * Setting X-LiteSpeed-Cache-Control by hand does not work — LiteSpeed
+		 * computes its own and overwrote it with no-cache, which is one of the two
+		 * reasons the first release of this plugin was inert. The supported route
+		 * is its action API (litespeed-cache/src/api.cls.php:82,86). LiteSpeed is
+		 * not loaded in tests, so a listener stands in for it.
 		 */
 		self::factory()->post->create( [ 'post_status' => 'publish' ] );
 
-		$response = $this->dispatch( '/wp/v2/posts' );
-		$headers  = $response->get_headers();
+		$cacheable = 0;
+		$ttl_seen  = null;
+		add_action(
+			'litespeed_control_set_cacheable',
+			static function () use ( &$cacheable ) {
+				$cacheable++;
+			}
+		);
+		add_action(
+			'litespeed_control_set_ttl',
+			static function ( $ttl ) use ( &$ttl_seen ) {
+				$ttl_seen = $ttl;
+			}
+		);
 
-		$this->assertArrayHasKey( 'X-LiteSpeed-Cache-Control', $headers );
+		$this->dispatch( '/wp/v2/posts' );
+
+		$this->assertSame( 1, $cacheable, 'LiteSpeed was not told the response is cacheable' );
+		$this->assertSame( jazzsequence_rest_cache_ttl(), $ttl_seen );
+	}
+
+	public function test_does_not_signal_litespeed_for_a_private_response() {
+		wp_set_current_user( self::factory()->user->create( [ 'role' => 'editor' ] ) );
+
+		$cacheable = 0;
+		add_action(
+			'litespeed_control_set_cacheable',
+			static function () use ( &$cacheable ) {
+				$cacheable++;
+			}
+		);
+
+		$this->dispatch( '/wp/v2/posts' );
+
+		$this->assertSame( 0, $cacheable );
 	}
 
 	public function test_browsers_still_revalidate() {
