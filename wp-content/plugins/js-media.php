@@ -2,7 +2,7 @@
 /**
  * Plugin Name: jazzsequence Media
  * Description: A plugin to manage and display video content on the jazzsequence.com.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Chris Reynolds
  * Author URI: https://jazzsequence.com
  * License: MIT
@@ -18,7 +18,6 @@ namespace Jazzsequence\Media;
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\create_media_post_type' );
 	add_action( 'init', __NAMESPACE__ . '\\create_media_type_taxonomy' );
-	add_action( 'init', __NAMESPACE__ . '\\ensure_default_media_types', 11 );
 	add_action( 'init', __NAMESPACE__ . '\\register_media_url_meta' );
 	add_action( 'rest_api_init', __NAMESPACE__ . '\\register_media_rest_fields' );
 	add_action( 'init', __NAMESPACE__ . '\\ensure_media_import_schedule' );
@@ -91,8 +90,8 @@ function create_media_post_type() {
 /**
  * Terms created on first install.
  *
- * Used only by ensure_default_media_types() to give a fresh site something to
- * work with. Everything else reads the taxonomy, so terms added, renamed or
+ * Used only by seed_media_types_on_activation() to give a fresh site something
+ * to work with. Everything else reads the taxonomy, so terms added, renamed or
  * removed in wp-admin take effect without a deploy and without this list being
  * kept in step.
  *
@@ -151,28 +150,44 @@ function create_media_type_taxonomy() {
 }
 
 /**
- * Give a site with no terms something to start from. Runs once, ever.
+ * Give a site with no media types something to start from.
  *
- * Strictly one-shot. Once the option is set the vocabulary belongs to wp-admin,
- * and re-running this would resurrect terms that were deliberately deleted.
- * Adding a type is an editor action, not a release.
+ * Activation only. Seeding is a first-install courtesy, not a thing worth
+ * asking about on every request — the old init callback read an option that is
+ * stored with autoload off, so it cost a database hit per request to decide to
+ * do nothing.
+ *
+ * The taxonomy itself is the guard: if any term exists the vocabulary already
+ * belongs to wp-admin, and re-seeding would resurrect terms that were
+ * deliberately deleted. Adding a type is an editor action, not a release.
+ *
+ * activate_plugin() include_once's this file and fires the activation hook in
+ * the same request, long after plugins_loaded — so bootstrap() has not run and
+ * the init callbacks never registered anything. The taxonomy has to be
+ * registered here or get_terms() and wp_insert_term() both fail with
+ * invalid_taxonomy.
  *
  * @return void
  */
-function ensure_default_media_types() {
-	if ( get_option( 'js_media_types_seeded' ) ) {
+function seed_media_types_on_activation() {
+	create_media_type_taxonomy();
+
+	$existing = get_terms(
+		[
+			'taxonomy'   => 'media_type',
+			'hide_empty' => false,
+			'number'     => 1,
+			'fields'     => 'ids',
+		]
+	);
+
+	if ( is_wp_error( $existing ) || ! empty( $existing ) ) {
 		return;
 	}
 
 	foreach ( get_seed_media_types() as $slug => $label ) {
-		if ( term_exists( $slug, 'media_type' ) ) {
-			continue;
-		}
-
 		wp_insert_term( $label, 'media_type', [ 'slug' => $slug ] );
 	}
-
-	update_option( 'js_media_types_seeded', '1', false );
 }
 
 /**
@@ -1218,3 +1233,4 @@ function remote_media_exists( $remote_id, $media_url ) {
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
+register_activation_hook( __FILE__, __NAMESPACE__ . '\\seed_media_types_on_activation' );
