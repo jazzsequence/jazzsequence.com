@@ -121,7 +121,8 @@
 			"altis/cms-installer": true,
 			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"johnpbloch/wordpress-core-installer": true
+			"johnpbloch/wordpress-core-installer": true,
+            "automattic/jetpack-autoloader": true
 		},
 		"optimize-autoloader": true,
 		"sort-packages": true,
