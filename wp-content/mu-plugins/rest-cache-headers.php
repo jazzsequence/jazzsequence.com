@@ -180,12 +180,24 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 /**
  * Attach cache headers to eligible REST responses.
  *
- * Two headers, because two different caches have to agree:
+ * Setting headers is necessary but NOT sufficient, and shipping it as though it
+ * were made this plugin completely inert in production on 2026-09-08 — public
+ * REST reads still came back `no-cache, no-store, private`. Two other things
+ * overrule a response header, and both are handled here:
  *
- *   Cache-Control            — understood by any upstream proxy or CDN.
- *   X-LiteSpeed-Cache-Control — LiteSpeed does not cache REST off Cache-Control
- *                               alone, so without this the change would be inert
- *                               on this stack, which is the one that matters.
+ *  1. WordPress itself. serve_request() applies `rest_send_nocache_headers`
+ *     (class-wp-rest-server.php:487) and calls nocache_headers() if it is true,
+ *     which stamps over Cache-Control. It defaults to is_user_logged_in(), but
+ *     other code filters it — so it has to be answered explicitly. This filter
+ *     runs at line 464, BEFORE that check, which is what makes the flag below
+ *     work at all.
+ *
+ *  2. LiteSpeed. It computes its own X-LiteSpeed-Cache-Control and overwrote the
+ *     hand-set one with `no-cache`. The supported route is its action API —
+ *     litespeed_control_set_cacheable / litespeed_control_set_ttl
+ *     (litespeed-cache/src/api.cls.php:82,86).
+ *
+ * Cache-Control is still sent for any upstream proxy or CDN that reads it.
  *
  * `max-age=0` keeps browsers revalidating while shared caches use `s-maxage`, so
  * a person refreshing sees current data even while a build is being served from
@@ -221,8 +233,40 @@ function jazzsequence_rest_cache_headers( $response, $server, $request ) {
 	$stale = $ttl * 10;
 
 	$response->header( 'Cache-Control', sprintf( 'public, max-age=0, s-maxage=%d, stale-while-revalidate=%d', $ttl, $stale ) );
-	$response->header( 'X-LiteSpeed-Cache-Control', sprintf( 'public,max-age=%d', $ttl ) );
+
+	// Read by the rest_send_nocache_headers filter below, which core evaluates later.
+	$GLOBALS['jazzsequence_rest_cacheable'] = true;
+
+	/*
+	 * LiteSpeed's own API. Without these it computes no-cache for REST and
+	 * overwrites anything set by hand, which is exactly what happened the first
+	 * time this shipped.
+	 */
+	if ( has_action( 'litespeed_control_set_cacheable' ) ) {
+		do_action( 'litespeed_control_set_cacheable' );
+		do_action( 'litespeed_control_set_ttl', $ttl );
+	}
 
 	return $response;
 }
 add_filter( 'rest_post_dispatch', 'jazzsequence_rest_cache_headers', 10, 3 );
+
+/**
+ * Stop WordPress stamping no-cache over a response we just marked cacheable.
+ *
+ * WP_REST_Server::serve_request() calls nocache_headers() when this is true, and those
+ * headers replace Cache-Control outright. The default is is_user_logged_in(),
+ * but it is filtered elsewhere in core and by plugins, so an anonymous request
+ * can still arrive here as true — it did in production.
+ *
+ * Only ever answers for a request already judged cacheable by the dispatch
+ * filter above, which runs first. Everything else keeps core's behaviour, so
+ * this cannot widen what gets cached.
+ *
+ * @param bool $send_no_cache_headers Whether core intends to send them.
+ * @return bool
+ */
+function jazzsequence_rest_allow_cache_headers( $send_no_cache_headers ) {
+	return ! empty( $GLOBALS['jazzsequence_rest_cacheable'] ) ? false : $send_no_cache_headers;
+}
+add_filter( 'rest_send_nocache_headers', 'jazzsequence_rest_allow_cache_headers' );
