@@ -13,16 +13,6 @@
 namespace Jazzsequence\Media;
 
 /**
- * Bumping this re-runs the default term seed, so a later release can add types.
- *
- * Deliberately NOT tracking the plugin header version. Production's vocabulary
- * has already diverged from the seed list by design (no 'talk'; 'video' added
- * in wp-admin), so bumping this would re-create terms that were removed on
- * purpose. Bump it only to introduce a genuinely new default.
- */
-const MEDIA_TYPES_SEED_VERSION = '1.2.0';
-
-/**
  * Kick it off.
  */
 function bootstrap() {
@@ -102,9 +92,9 @@ function create_media_post_type() {
  * Terms created on first install. NOT the vocabulary.
  *
  * Used only by ensure_default_media_types() to give a fresh site something to
- * work with. Everything else reads get_media_type_terms(), so terms added,
- * renamed or removed in wp-admin take effect without a deploy and without this
- * list being kept in step.
+ * work with. Everything else reads the taxonomy, so terms added, renamed or
+ * removed in wp-admin take effect without a deploy and without this list being
+ * kept in step.
  *
  * Non-hierarchical deliberately: an item can legitimately be more than one of
  * these. A conference talk released as a podcast episode is both, and a
@@ -119,27 +109,6 @@ function get_seed_media_types() {
 		'talk'         => __( 'Talk', 'js-media' ),
 		'presentation' => __( 'Presentation', 'js-media' ),
 	];
-}
-
-/**
- * The current media_type vocabulary, read from the taxonomy.
- *
- * This — not the seed list — is the source of truth anywhere a type is offered,
- * validated or displayed. Terms are editable in wp-admin, which is the entire
- * reason this is a taxonomy rather than a fixed meta field; reading the seed
- * list instead would mean a term added or renamed there never reaches the UI.
- *
- * @return \WP_Term[] Terms, or an empty array if the taxonomy is unavailable.
- */
-function get_media_type_terms() {
-	$terms = get_terms(
-		[
-			'taxonomy'   => 'media_type',
-			'hide_empty' => false,
-		]
-	);
-
-	return is_wp_error( $terms ) ? [] : $terms;
 }
 
 /**
@@ -182,17 +151,16 @@ function create_media_type_taxonomy() {
 }
 
 /**
- * Create the default type terms once.
+ * Give a site with no terms something to start from. Runs once, ever.
  *
- * Guarded by an option rather than checking each term on every request: this
- * runs on init, and four term_exists() lookups per page load buys nothing. The
- * guard stores the plugin version so a later release can add terms by bumping it.
+ * Strictly one-shot. Once the option is set the vocabulary belongs to wp-admin,
+ * and re-running this would resurrect terms that were deliberately deleted.
+ * Adding a type is an editor action, not a release.
  *
  * @return void
  */
 function ensure_default_media_types() {
-	$seeded = get_option( 'js_media_types_seeded' );
-	if ( MEDIA_TYPES_SEED_VERSION === $seeded ) {
+	if ( get_option( 'js_media_types_seeded' ) ) {
 		return;
 	}
 
@@ -204,7 +172,7 @@ function ensure_default_media_types() {
 		wp_insert_term( $label, 'media_type', [ 'slug' => $slug ] );
 	}
 
-	update_option( 'js_media_types_seeded', MEDIA_TYPES_SEED_VERSION, false );
+	update_option( 'js_media_types_seeded', '1', false );
 }
 
 /**
@@ -871,6 +839,18 @@ function render_media_sources_page() {
 	}
 
 	$sources = get_media_sources();
+
+	// The taxonomy is the vocabulary: terms added or renamed in wp-admin show up here.
+	$media_type_terms = get_terms(
+		[
+			'taxonomy'   => 'media_type',
+			'hide_empty' => false,
+		]
+	);
+	if ( is_wp_error( $media_type_terms ) ) {
+		$media_type_terms = [];
+	}
+	$type_labels = wp_list_pluck( $media_type_terms, 'name', 'slug' );
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Media Sources', 'js-media' ); ?></h1>
@@ -893,7 +873,7 @@ function render_media_sources_page() {
 					<td>
 						<select name="js_media_source_type" id="js_media_source_type">
 							<option value=""><?php esc_html_e( '— none —', 'js-media' ); ?></option>
-							<?php foreach ( get_media_type_terms() as $term ) : ?>
+							<?php foreach ( $media_type_terms as $term ) : ?>
 								<option value="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></option>
 							<?php endforeach; ?>
 						</select>
@@ -918,10 +898,7 @@ function render_media_sources_page() {
 					</tr>
 				</thead>
 				<tbody>
-				<?php
-				$type_labels = wp_list_pluck( get_media_type_terms(), 'name', 'slug' );
-				foreach ( $sources as $source ) :
-					?>
+				<?php foreach ( $sources as $source ) : ?>
 					<tr>
 						<td><?php echo esc_html( $source['name'] ); ?></td>
 						<td><code><?php echo esc_html( $source['url'] ); ?></code></td>
