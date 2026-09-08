@@ -117,8 +117,23 @@ function jazzsequence_rest_cacheable_routes(): array {
  * @return bool
  */
 function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bool {
+	return '' === jazzsequence_rest_cache_skip_reason( $request );
+}
+
+/**
+ * Why this request may not be cached, or '' if it may.
+ *
+ * Returns a reason rather than a bool so the decision can be reported on the
+ * response itself. Without that, a release that does not work tells you only
+ * that it did not work — and the next question costs another release. Four in
+ * one day is how that ends up going.
+ *
+ * @param \WP_REST_Request $request The request.
+ * @return string Empty string when cacheable, otherwise a short reason.
+ */
+function jazzsequence_rest_cache_skip_reason( \WP_REST_Request $request ): string {
 	if ( 'GET' !== $request->get_method() ) {
-		return false;
+		return 'method';
 	}
 
 	/*
@@ -126,7 +141,7 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 	 * would be a disclosure bug, not a performance trade.
 	 */
 	if ( is_user_logged_in() ) {
-		return false;
+		return 'logged-in';
 	}
 
 	/*
@@ -135,21 +150,34 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 	 * or nonce request must never be served from a shared cache.
 	 */
 	if ( ! empty( $request->get_header( 'authorization' ) ) ) {
-		return false;
+		return 'authorization';
 	}
 
 	if ( ! empty( $request->get_param( '_wpnonce' ) ) || ! empty( $request->get_header( 'x_wp_nonce' ) ) ) {
-		return false;
+		return 'nonce';
+	}
+
+	/*
+	 * No cookies at all. Stricter than the checks above and deliberately so:
+	 * this plugin FORCES LiteSpeed to cache, overriding a no-cache decision whose
+	 * cause is not known. A request carrying no cookies cannot be carrying a
+	 * session, a comment author, a WooCommerce cart or anything else
+	 * user-specific, so the response is public by construction rather than by
+	 * assumption. If the override is ever wrong, it can only be wrong about
+	 * anonymous traffic.
+	 */
+	if ( ! empty( $_COOKIE ) ) {
+		return 'cookies';
 	}
 
 	// 'edit' exposes unpublished and private fields.
 	if ( 'edit' === $request->get_param( 'context' ) ) {
-		return false;
+		return 'context-edit';
 	}
 
 	// Explicit status/password queries can surface non-public content.
 	if ( ! empty( $request->get_param( 'password' ) ) ) {
-		return false;
+		return 'password';
 	}
 
 	/*
@@ -162,7 +190,7 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 	if ( ! empty( $status ) ) {
 		foreach ( (array) $status as $status_value ) {
 			if ( 'publish' !== $status_value ) {
-				return false;
+				return 'status';
 			}
 		}
 	}
@@ -170,11 +198,11 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
 	$route = $request->get_route();
 	foreach ( jazzsequence_rest_cacheable_routes() as $prefix ) {
 		if ( 0 === strpos( $route, $prefix ) ) {
-			return true;
+			return '';
 		}
 	}
 
-	return false;
+	return 'route';
 }
 
 /**
@@ -192,12 +220,28 @@ function jazzsequence_rest_request_is_cacheable( \WP_REST_Request $request ): bo
  *     runs at line 464, BEFORE that check, which is what makes the flag below
  *     work at all.
  *
- *  2. LiteSpeed. It computes its own X-LiteSpeed-Cache-Control and overwrote the
- *     hand-set one with `no-cache`. The supported route is its action API —
- *     litespeed_control_set_cacheable / litespeed_control_set_ttl
- *     (litespeed-cache/src/api.cls.php:82,86).
+ *  2. LiteSpeed, and this is the one that actually decides. At output
+ *     (core.cls.php:601) it overwrites Cache-Control with WordPress's own
+ *     nocache string whenever Control::is_cacheable() is false — which is why
+ *     setting a response header could never work here on its own.
  *
- * Cache-Control is still sent for any upstream proxy or CDN that reads it.
+ *     is_cacheable() is:
+ *         if ( is_public_forced() )    return true;
+ *         if ( is_forced_cacheable() ) return true;
+ *         return ! isset_notcacheable() && ( $_control & BM_CACHEABLE );
+ *
+ *     So `set_cacheable` only ORs in a bit that the final AND can veto, and
+ *     something sets the notcacheable bit for every /wp/v2/* route. Only
+ *     `force_cacheable` short-circuits ahead of that veto, so that is what this
+ *     fires. Every admin exclusion was verified empty on production
+ *     (cache-exc, cache-priv_uri, cache-exc_roles, cache-exc_cookies), and
+ *     cache-rest is on with a 604800 TTL, so the veto is programmatic rather
+ *     than configured. Its origin is NOT known — which is why the guard below
+ *     is stricter than it would otherwise need to be.
+ *
+ * Cache-Control is still sent for any upstream proxy or CDN that reads it. Note
+ * that Cloudflare on the Free plan cannot help here on its own: Origin Cache
+ * Control is forced on below Enterprise, so it obeys the origin's no-store.
  *
  * `max-age=0` keeps browsers revalidating while shared caches use `s-maxage`, so
  * a person refreshing sees current data even while a build is being served from
@@ -223,10 +267,19 @@ function jazzsequence_rest_cache_headers( $response, $server, $request ) {
 	 * failure in front of every subsequent request — the opposite of the goal.
 	 */
 	if ( 200 !== $response->get_status() ) {
+		$response->header( 'X-JS-REST-Cache', 'skip:status-' . $response->get_status() );
 		return $response;
 	}
 
-	if ( ! jazzsequence_rest_request_is_cacheable( $request ) ) {
+	/*
+	 * Always report the decision. If this release does not work, the response
+	 * says why — which is the difference between one more release and several.
+	 * Safe to expose: it names a rule, never any request or user data.
+	 */
+	$skip = jazzsequence_rest_cache_skip_reason( $request );
+	$response->header( 'X-JS-REST-Cache', '' === $skip ? 'cacheable' : 'skip:' . $skip );
+
+	if ( '' !== $skip ) {
 		return $response;
 	}
 
@@ -242,8 +295,8 @@ function jazzsequence_rest_cache_headers( $response, $server, $request ) {
 	 * overwrites anything set by hand, which is exactly what happened the first
 	 * time this shipped.
 	 */
-	if ( has_action( 'litespeed_control_set_cacheable' ) ) {
-		do_action( 'litespeed_control_set_cacheable' );
+	if ( has_action( 'litespeed_control_force_cacheable' ) ) {
+		do_action( 'litespeed_control_force_cacheable' );
 		do_action( 'litespeed_control_set_ttl', $ttl );
 	}
 
