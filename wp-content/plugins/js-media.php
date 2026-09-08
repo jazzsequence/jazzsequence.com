@@ -2,7 +2,7 @@
 /**
  * Plugin Name: jazzsequence Media
  * Description: A plugin to manage and display video content on the jazzsequence.com.
- * Version: 1.1.2
+ * Version: 1.2.0
  * Author: Chris Reynolds
  * Author URI: https://jazzsequence.com
  * License: MIT
@@ -13,10 +13,17 @@
 namespace Jazzsequence\Media;
 
 /**
+ * Bumping this re-runs the default term seed, so a later release can add types.
+ */
+const MEDIA_TYPES_SEED_VERSION = '1.2.0';
+
+/**
  * Kick it off.
  */
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\create_media_post_type' );
+	add_action( 'init', __NAMESPACE__ . '\\create_media_type_taxonomy' );
+	add_action( 'init', __NAMESPACE__ . '\\ensure_default_media_types', 11 );
 	add_action( 'init', __NAMESPACE__ . '\\register_media_url_meta' );
 	add_action( 'rest_api_init', __NAMESPACE__ . '\\register_media_rest_fields' );
 	add_action( 'init', __NAMESPACE__ . '\\ensure_media_import_schedule' );
@@ -84,6 +91,89 @@ function create_media_post_type() {
 	];
 
 	register_post_type( 'media', $args );
+}
+
+/**
+ * Default media type terms.
+ *
+ * Non-hierarchical deliberately: an item can legitimately be more than one of
+ * these. A conference talk released as a podcast episode is both, and a
+ * single-select field would force a lie.
+ *
+ * @return array<string, string> Slug => label.
+ */
+function get_default_media_types() {
+	return [
+		'podcast'      => __( 'Podcast', 'js-media' ),
+		'livestream'   => __( 'Livestream', 'js-media' ),
+		'talk'         => __( 'Talk', 'js-media' ),
+		'presentation' => __( 'Presentation', 'js-media' ),
+	];
+}
+
+/**
+ * Register the 'media_type' taxonomy for the media CPT.
+ *
+ * @return void
+ */
+function create_media_type_taxonomy() {
+	$labels = [
+		'name'              => __( 'Media Types', 'js-media' ),
+		'singular_name'     => __( 'Media Type', 'js-media' ),
+		'menu_name'         => __( 'Types', 'js-media' ),
+		'all_items'         => __( 'All Types', 'js-media' ),
+		'edit_item'         => __( 'Edit Type', 'js-media' ),
+		'view_item'         => __( 'View Type', 'js-media' ),
+		'update_item'       => __( 'Update Type', 'js-media' ),
+		'add_new_item'      => __( 'Add New Type', 'js-media' ),
+		'new_item_name'     => __( 'New Type Name', 'js-media' ),
+		'search_items'      => __( 'Search Types', 'js-media' ),
+		'not_found'         => __( 'No types found.', 'js-media' ),
+		'back_to_items'     => __( '← Go to Types', 'js-media' ),
+	];
+
+	register_taxonomy(
+		'media_type',
+		[ 'media' ],
+		[
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'hierarchical'       => false,
+			'show_ui'            => true,
+			'show_admin_column'  => true,
+			'show_in_rest'       => true,
+			'rest_base'          => 'media-type',
+			'query_var'          => true,
+			'rewrite'            => [ 'slug' => 'media-type' ],
+		]
+	);
+}
+
+/**
+ * Create the default type terms once.
+ *
+ * Guarded by an option rather than checking each term on every request: this
+ * runs on init, and four term_exists() lookups per page load buys nothing. The
+ * guard stores the plugin version so a later release can add terms by bumping it.
+ *
+ * @return void
+ */
+function ensure_default_media_types() {
+	$seeded = get_option( 'js_media_types_seeded' );
+	if ( MEDIA_TYPES_SEED_VERSION === $seeded ) {
+		return;
+	}
+
+	foreach ( get_default_media_types() as $slug => $label ) {
+		if ( term_exists( $slug, 'media_type' ) ) {
+			continue;
+		}
+
+		wp_insert_term( $label, 'media_type', [ 'slug' => $slug ] );
+	}
+
+	update_option( 'js_media_types_seeded', MEDIA_TYPES_SEED_VERSION, false );
 }
 
 /**
@@ -223,6 +313,41 @@ function get_media_oembed_data( $media_url ) {
  * @return void
  */
 function register_media_rest_fields() {
+	register_rest_field(
+		'media',
+		'media_types',
+		[
+			'get_callback' => static function ( $post ) {
+				$terms = get_the_terms( $post['id'], 'media_type' );
+				if ( ! $terms || is_wp_error( $terms ) ) {
+					return [];
+				}
+
+				return array_map(
+					static function ( $term ) {
+						return [
+							'slug' => $term->slug,
+							'name' => $term->name,
+						];
+					},
+					$terms
+				);
+			},
+			'schema' => [
+				'description' => 'Media type terms assigned to this item.',
+				'type'        => 'array',
+				'items'       => [
+					'type'       => 'object',
+					'properties' => [
+						'slug' => [ 'type' => 'string' ],
+						'name' => [ 'type' => 'string' ],
+					],
+				],
+				'context'     => [ 'view', 'edit' ],
+			],
+		]
+	);
+
 	register_rest_field(
 		'media',
 		'media_url',
@@ -673,6 +798,15 @@ function render_media_sources_page() {
 		if ( 'add' === $action ) {
 			$source_url  = isset( $_POST['js_media_source_url'] ) ? esc_url_raw( wp_unslash( $_POST['js_media_source_url'] ) ) : '';
 			$source_name = isset( $_POST['js_media_source_name'] ) ? sanitize_text_field( wp_unslash( $_POST['js_media_source_name'] ) ) : '';
+			$source_type = isset( $_POST['js_media_source_type'] ) ? sanitize_key( wp_unslash( $_POST['js_media_source_type'] ) ) : '';
+
+			/*
+			 * Only accept a type we actually registered — a stale or hand-edited
+			 * value would otherwise create a term on import.
+			 */
+			if ( ! array_key_exists( $source_type, get_default_media_types() ) ) {
+				$source_type = '';
+			}
 
 			if ( $source_url && $source_name ) {
 				$sources   = get_media_sources();
@@ -680,6 +814,7 @@ function render_media_sources_page() {
 					'id'   => uniqid( '', true ),
 					'url'  => $source_url,
 					'name' => $source_name,
+					'type' => $source_type,
 				];
 
 				update_option( 'js_media_sources', $sources, false );
@@ -722,6 +857,18 @@ function render_media_sources_page() {
 					<th scope="row"><label for="js_media_source_url"><?php esc_html_e( 'Source URL (RSS or WP REST)', 'js-media' ); ?></label></th>
 					<td><input name="js_media_source_url" id="js_media_source_url" type="url" class="regular-text" required /></td>
 				</tr>
+				<tr>
+					<th scope="row"><label for="js_media_source_type"><?php esc_html_e( 'Media Type', 'js-media' ); ?></label></th>
+					<td>
+						<select name="js_media_source_type" id="js_media_source_type">
+							<option value=""><?php esc_html_e( '— none —', 'js-media' ); ?></option>
+							<?php foreach ( get_default_media_types() as $slug => $label ) : ?>
+								<option value="<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $label ); ?></option>
+							<?php endforeach; ?>
+						</select>
+						<p class="description"><?php esc_html_e( 'Items imported from this source are assigned this type automatically.', 'js-media' ); ?></p>
+					</td>
+				</tr>
 			</table>
 			<?php submit_button( __( 'Add Source', 'js-media' ) ); ?>
 		</form>
@@ -735,6 +882,7 @@ function render_media_sources_page() {
 					<tr>
 						<th><?php esc_html_e( 'Name', 'js-media' ); ?></th>
 						<th><?php esc_html_e( 'URL', 'js-media' ); ?></th>
+						<th><?php esc_html_e( 'Type', 'js-media' ); ?></th>
 						<th><?php esc_html_e( 'Actions', 'js-media' ); ?></th>
 					</tr>
 				</thead>
@@ -743,6 +891,13 @@ function render_media_sources_page() {
 					<tr>
 						<td><?php echo esc_html( $source['name'] ); ?></td>
 						<td><code><?php echo esc_html( $source['url'] ); ?></code></td>
+						<td>
+							<?php
+							$types      = get_default_media_types();
+							$source_key = isset( $source['type'] ) ? $source['type'] : '';
+							echo esc_html( isset( $types[ $source_key ] ) ? $types[ $source_key ] : '—' );
+							?>
+						</td>
 						<td>
 							<form method="post" style="display:inline">
 								<?php wp_nonce_field( 'js_media_sources_action', 'js_media_sources_nonce' ); ?>
@@ -842,7 +997,7 @@ function import_media_from_source( $source ) {
 			)
 		);
 
-		wp_insert_post(
+		$post_id = wp_insert_post(
 			[
 				'post_type'     => 'media',
 				'post_status'   => 'publish',
@@ -862,6 +1017,15 @@ function import_media_from_source( $source ) {
 				],
 			]
 		);
+
+		/*
+		 * Assign the source's type. wp_set_object_terms rather than tax_input on
+		 * the insert: tax_input is capability-checked against the current user,
+		 * and this runs unattended from cron where there is no user.
+		 */
+		if ( $post_id && ! is_wp_error( $post_id ) && ! empty( $source['type'] ) ) {
+			wp_set_object_terms( $post_id, $source['type'], 'media_type', false );
+		}
 	}
 }
 
