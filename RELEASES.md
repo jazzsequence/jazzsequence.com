@@ -19,7 +19,7 @@ Before merging a release PR, the `version.json` file must be bumped appropriatel
 * Major site updates should be Y.x.x major updates.
 
 ## PR Grooming for Release Categorization
-The `.github/releases.yml` file handles custom categorization of PRs in the auto-generated release notes based on labels applied to the PR. These _must_ also be used to determine the version number of the release. The following labels are used:
+The `.github/release.yml` file handles custom categorization of PRs in the auto-generated release notes based on labels applied to the PR. These _must_ also be used to determine the version number of the release. The following labels are used:
 
 * *Major Updates*
 	- `major`
