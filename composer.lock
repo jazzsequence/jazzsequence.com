@@ -1209,16 +1209,16 @@
         },
         {
             "name": "jazzsequence/address-book",
-            "version": "0.3.5",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jazzsequence/Address-Book.git",
-                "reference": "b779c6ede862a0fc895fa68a342ed55dc818aa82"
+                "reference": "d6df18678561c24e7eb69ece749fb374506548b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jazzsequence/Address-Book/zipball/b779c6ede862a0fc895fa68a342ed55dc818aa82",
-                "reference": "b779c6ede862a0fc895fa68a342ed55dc818aa82",
+                "url": "https://api.github.com/repos/jazzsequence/Address-Book/zipball/d6df18678561c24e7eb69ece749fb374506548b2",
+                "reference": "d6df18678561c24e7eb69ece749fb374506548b2",
                 "shasum": ""
             },
             "require": {
@@ -1239,9 +1239,9 @@
             "description": "A WordPress plugin for storing and maintaining addresses.",
             "support": {
                 "issues": "https://github.com/jazzsequence/Address-Book/issues",
-                "source": "https://github.com/jazzsequence/Address-Book/tree/0.3.5"
+                "source": "https://github.com/jazzsequence/Address-Book/tree/0.4.0"
             },
-            "time": "2025-07-01T14:52:16+00:00"
+            "time": "2026-09-09T22:13:04+00:00"
         },
         {
             "name": "jazzsequence/dashboard-changelog",
@@ -6015,5 +6015,5 @@
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
