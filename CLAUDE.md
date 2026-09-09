@@ -73,8 +73,9 @@ composer shellcheck
 # Test release dry-run functionality
 composer dry-run-release
 
-# Run Bats tests
-cd bin && bats tests/*.bats
+# Run Bats tests. WORKSPACE_PATH and VERSION are required -- the tests shell out to
+# "$WORKSPACE_PATH"/bin/create_release.sh, so without them the run exits 127, not a real failure.
+cd bin && WORKSPACE_PATH="$(git rev-parse --show-toplevel)" VERSION="$(jq -r .version ../version.json)" bats tests/*.bats
 ```
 
 ### Release Management
