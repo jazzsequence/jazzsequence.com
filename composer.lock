@@ -96,24 +96,24 @@
         },
         {
             "name": "altis/cms",
-            "version": "27.0.6",
+            "version": "28.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "371db3fe5bdb5b6cbefb19d72c71a0875ab857f1"
+                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/371db3fe5bdb5b6cbefb19d72c71a0875ab857f1",
-                "reference": "371db3fe5bdb5b6cbefb19d72c71a0875ab857f1",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
+                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
                 "shasum": ""
             },
             "require": {
                 "10up/simple-local-avatars": "~2.7.11",
                 "altis/cms-installer": "^0.4.4",
-                "humanmade/asset-loader": "^0.8.0",
+                "humanmade/asset-loader": "^1.0.2",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.0.4",
+                "johnpbloch/wordpress": "7.1.0",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/27.0.6"
+                "source": "https://github.com/humanmade/altis-cms/tree/28.0.0"
             },
-            "time": "2026-09-03T16:29:40+00:00"
+            "time": "2026-09-03T14:15:07+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -682,16 +682,16 @@
         },
         {
             "name": "humanmade/asset-loader",
-            "version": "v0.8.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/asset-loader.git",
-                "reference": "f91409a9a8fae5981a65e3017dbd58175b5bcac4"
+                "reference": "4aa6f509e5023fe0e25f3e60b2582fe61af6da18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/f91409a9a8fae5981a65e3017dbd58175b5bcac4",
-                "reference": "f91409a9a8fae5981a65e3017dbd58175b5bcac4",
+                "url": "https://api.github.com/repos/humanmade/asset-loader/zipball/4aa6f509e5023fe0e25f3e60b2582fe61af6da18",
+                "reference": "4aa6f509e5023fe0e25f3e60b2582fe61af6da18",
                 "shasum": ""
             },
             "require": {
@@ -712,9 +712,9 @@
             "description": "Utilities to seamlessly consume Webpack-bundled assets in WordPress themes & plugins.",
             "support": {
                 "issues": "https://github.com/humanmade/asset-loader/issues",
-                "source": "https://github.com/humanmade/asset-loader/tree/v0.8.0"
+                "source": "https://github.com/humanmade/asset-loader/tree/v1.0.2"
             },
-            "time": "2026-02-20T18:39:50+00:00"
+            "time": "2026-08-12T10:55:35+00:00"
         },
         {
             "name": "humanmade/asset-manager-framework",
@@ -1844,21 +1844,24 @@
         },
         {
             "name": "stuttter/wp-user-signups",
-            "version": "5.0.2",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stuttter/wp-user-signups.git",
-                "reference": "4ab0f705428c7997bdcd61eee9d34b7a5aeaee54"
+                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/4ab0f705428c7997bdcd61eee9d34b7a5aeaee54",
-                "reference": "4ab0f705428c7997bdcd61eee9d34b7a5aeaee54",
+                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
+                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.0",
-                "php": ">=5.2"
+                "composer/installers": "^1.12 || ^2.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.48 || ^9.6"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1875,9 +1878,9 @@
             "homepage": "https://github.com/stuttter/wp-user-signups",
             "support": {
                 "issues": "https://github.com/stuttter/wp-user-signups/issues",
-                "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.2"
+                "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.4"
             },
-            "time": "2021-05-29T20:49:58+00:00"
+            "time": "2026-09-10T19:31:20+00:00"
         },
         {
             "name": "wordpress/mcp-adapter",
@@ -6015,5 +6018,5 @@
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
