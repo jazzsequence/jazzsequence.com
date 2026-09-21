@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "28.0.0",
+            "version": "28.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8"
+                "reference": "70ecb64aa6197c935c183064acbcc719b1b046a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
-                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/70ecb64aa6197c935c183064acbcc719b1b046a7",
+                "reference": "70ecb64aa6197c935c183064acbcc719b1b046a7",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^1.0.2",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.1.0",
+                "johnpbloch/wordpress": "7.1.1",
                 "php": ">=8.2",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/28.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/28.0.1"
             },
-            "time": "2026-09-03T14:15:07+00:00"
+            "time": "2026-09-17T22:51:58+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -1844,24 +1844,24 @@
         },
         {
             "name": "stuttter/wp-user-signups",
-            "version": "5.0.4",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stuttter/wp-user-signups.git",
-                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b"
+                "reference": "013766196f2aea50c4336cd666cd5776874635bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
-                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
+                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/013766196f2aea50c4336cd666cd5776874635bb",
+                "reference": "013766196f2aea50c4336cd666cd5776874635bb",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.12 || ^2.0",
-                "php": ">=7.2"
+                "php": ">=7.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.48 || ^9.6"
+                "phpunit/phpunit": "^9.6"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1878,9 +1878,9 @@
             "homepage": "https://github.com/stuttter/wp-user-signups",
             "support": {
                 "issues": "https://github.com/stuttter/wp-user-signups/issues",
-                "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.4"
+                "source": "https://github.com/stuttter/wp-user-signups/tree/5.1.1"
             },
-            "time": "2026-09-10T19:31:20+00:00"
+            "time": "2026-09-16T07:27:33+00:00"
         },
         {
             "name": "wordpress/mcp-adapter",
@@ -2064,15 +2064,15 @@
         },
         {
             "name": "wp-plugin/amazon-s3-and-cloudfront",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/3.4.2"
+                "reference": "tags/3.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.4.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2091,7 +2091,7 @@
                 "issues": "https://wordpress.org/support/plugin/amazon-s3-and-cloudfront",
                 "source": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront"
             },
-            "time": "2026-09-07T15:41:10+00:00"
+            "time": "2026-09-21T08:26:09+00:00"
         },
         {
             "name": "wp-plugin/autoblue",
@@ -2188,15 +2188,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.9.1",
+            "version": "24.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.9.1"
+                "reference": "tags/24.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.24.0.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2215,7 +2215,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-09-07T11:31:25+00:00"
+            "time": "2026-09-16T10:41:38+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2312,15 +2312,15 @@
         },
         {
             "name": "wp-plugin/organize-series",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/3.1.3"
+                "reference": "tags/3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.3.1.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.3.1.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2339,19 +2339,19 @@
                 "issues": "https://wordpress.org/support/plugin/organize-series",
                 "source": "https://plugins.svn.wordpress.org/organize-series"
             },
-            "time": "2026-09-08T15:11:53+00:00"
+            "time": "2026-09-15T18:21:17+00:00"
         },
         {
             "name": "wp-plugin/pantheon-content-publisher",
-            "version": "1.3.6",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-content-publisher/",
-                "reference": "tags/1.3.6"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2370,7 +2370,7 @@
                 "issues": "https://wordpress.org/support/plugin/pantheon-content-publisher",
                 "source": "https://plugins.svn.wordpress.org/pantheon-content-publisher"
             },
-            "time": "2026-08-14T15:16:53+00:00"
+            "time": "2026-09-17T19:26:49+00:00"
         },
         {
             "name": "wp-plugin/patchstack",
