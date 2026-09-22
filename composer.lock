@@ -96,16 +96,16 @@
         },
         {
             "name": "altis/cms",
-            "version": "28.0.0",
+            "version": "28.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/altis-cms.git",
-                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8"
+                "reference": "0f035e4834e95291f8b108ef4dacdcca88a15646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
-                "reference": "2d1253e27fe37b78a0a0be77c54f9a7727175ee8",
+                "url": "https://api.github.com/repos/humanmade/altis-cms/zipball/0f035e4834e95291f8b108ef4dacdcca88a15646",
+                "reference": "0f035e4834e95291f8b108ef4dacdcca88a15646",
                 "shasum": ""
             },
             "require": {
@@ -113,8 +113,8 @@
                 "altis/cms-installer": "^0.4.4",
                 "humanmade/asset-loader": "^1.0.2",
                 "humanmade/clean-html": "^2.0.0",
-                "johnpbloch/wordpress": "7.1.0",
                 "php": ">=8.2",
+                "roots/wordpress": "7.1.1",
                 "stuttter/wp-user-signups": "^5.0.2"
             },
             "type": "library",
@@ -157,9 +157,9 @@
             "description": "CMS Module for Altis",
             "support": {
                 "issues": "https://github.com/humanmade/altis-cms/issues",
-                "source": "https://github.com/humanmade/altis-cms/tree/28.0.0"
+                "source": "https://github.com/humanmade/altis-cms/tree/28.0.2"
             },
-            "time": "2026-09-03T14:15:07+00:00"
+            "time": "2026-09-18T15:42:01+00:00"
         },
         {
             "name": "altis/cms-installer",
@@ -1843,25 +1843,206 @@
             "time": "2026-09-02T13:36:43+00:00"
         },
         {
-            "name": "stuttter/wp-user-signups",
-            "version": "5.0.4",
+            "name": "roots/wordpress",
+            "version": "7.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/stuttter/wp-user-signups.git",
-                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b"
+                "url": "https://github.com/roots/wordpress.git",
+                "reference": "eb3d108f216618a858dcaed691e00e68f0ccff9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
-                "reference": "ea63b85121414d93f930a3b8c2cdc68f0e3d053b",
+                "url": "https://api.github.com/repos/roots/wordpress/zipball/eb3d108f216618a858dcaed691e00e68f0ccff9f",
+                "reference": "eb3d108f216618a858dcaed691e00e68f0ccff9f",
+                "shasum": ""
+            },
+            "require": {
+                "roots/wordpress-core-installer": "^4.0",
+                "roots/wordpress-no-content": "self.version"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-2.0-or-later"
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress/issues",
+                "source": "https://github.com/roots/wordpress/tree/7.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-22T13:26:54+00:00"
+        },
+        {
+            "name": "roots/wordpress-core-installer",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wordpress-core-installer.git",
+                "reference": "85d3589252eb93eee836facf33b54ce30c565bea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wordpress-core-installer/zipball/85d3589252eb93eee836facf33b54ce30c565bea",
+                "reference": "85d3589252eb93eee836facf33b54ce30c565bea",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": ">=7.2.24"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.6"
+            },
+            "replace": {
+                "johnpbloch/wordpress-core-installer": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Roots\\Composer\\WordPressCorePlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roots\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John P. Bloch",
+                    "email": "me@johnpbloch.com"
+                },
+                {
+                    "name": "Roots",
+                    "email": "team@roots.io"
+                }
+            ],
+            "description": "A Composer custom installer to handle installing WordPress as a dependency",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/roots/wordpress-core-installer/issues",
+                "source": "https://github.com/roots/wordpress-core-installer/tree/v4.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-22T03:17:23+00:00"
+        },
+        {
+            "name": "roots/wordpress-no-content",
+            "version": "7.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/WordPress.git",
+                "reference": "7.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/release/wordpress-7.1.1-no-content.zip",
+                "reference": "7.1.1",
+                "shasum": "bb9a161c407ea4bde3f52510d231c93a14e45506"
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "provide": {
+                "wordpress/core-implementation": "7.1.1"
+            },
+            "suggest": {
+                "ext-curl": "Performs remote request operations.",
+                "ext-dom": "Used to validate Text Widget content and to automatically configuring IIS7+.",
+                "ext-exif": "Works with metadata stored in images.",
+                "ext-fileinfo": "Used to detect mimetype of file uploads.",
+                "ext-hash": "Used for hashing, including passwords and update packages.",
+                "ext-imagick": "Provides better image quality for media uploads.",
+                "ext-json": "Used for communications with other servers.",
+                "ext-libsodium": "Validates Signatures and provides securely random bytes.",
+                "ext-mbstring": "Used to properly handle UTF8 text.",
+                "ext-mysqli": "Connects to MySQL for database interactions.",
+                "ext-openssl": "Permits SSL-based connections to other hosts.",
+                "ext-pcre": "Increases performance of pattern matching in code searches.",
+                "ext-xml": "Used for XML parsing, such as from a third-party site.",
+                "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "https://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "rss": "https://wordpress.org/news/feed/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
+            "funding": [
+                {
+                    "url": "https://wordpressfoundation.org/donate/",
+                    "type": "other"
+                }
+            ],
+            "time": "2026-09-17T19:19:18+00:00"
+        },
+        {
+            "name": "stuttter/wp-user-signups",
+            "version": "5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stuttter/wp-user-signups.git",
+                "reference": "013766196f2aea50c4336cd666cd5776874635bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stuttter/wp-user-signups/zipball/013766196f2aea50c4336cd666cd5776874635bb",
+                "reference": "013766196f2aea50c4336cd666cd5776874635bb",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.12 || ^2.0",
-                "php": ">=7.2"
+                "php": ">=7.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.48 || ^9.6"
+                "phpunit/phpunit": "^9.6"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1878,9 +2059,9 @@
             "homepage": "https://github.com/stuttter/wp-user-signups",
             "support": {
                 "issues": "https://github.com/stuttter/wp-user-signups/issues",
-                "source": "https://github.com/stuttter/wp-user-signups/tree/5.0.4"
+                "source": "https://github.com/stuttter/wp-user-signups/tree/5.1.1"
             },
-            "time": "2026-09-10T19:31:20+00:00"
+            "time": "2026-09-16T07:27:33+00:00"
         },
         {
             "name": "wordpress/mcp-adapter",
@@ -2064,15 +2245,15 @@
         },
         {
             "name": "wp-plugin/amazon-s3-and-cloudfront",
-            "version": "3.4.2",
+            "version": "3.4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/3.4.2"
+                "reference": "tags/3.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.3.4.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2091,7 +2272,7 @@
                 "issues": "https://wordpress.org/support/plugin/amazon-s3-and-cloudfront",
                 "source": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront"
             },
-            "time": "2026-09-07T15:41:10+00:00"
+            "time": "2026-09-21T08:26:09+00:00"
         },
         {
             "name": "wp-plugin/autoblue",
@@ -2188,15 +2369,15 @@
         },
         {
             "name": "wp-plugin/gutenberg",
-            "version": "23.9.1",
+            "version": "24.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/23.9.1"
+                "reference": "tags/24.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.23.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.24.0.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2215,7 +2396,7 @@
                 "issues": "https://wordpress.org/support/plugin/gutenberg",
                 "source": "https://plugins.svn.wordpress.org/gutenberg"
             },
-            "time": "2026-09-07T11:31:25+00:00"
+            "time": "2026-09-16T10:41:38+00:00"
         },
         {
             "name": "wp-plugin/hello-ziggy",
@@ -2281,15 +2462,15 @@
         },
         {
             "name": "wp-plugin/ninja-forms",
-            "version": "3.15.3",
+            "version": "3.15.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.15.3"
+                "reference": "tags/3.15.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.15.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.15.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2301,26 +2482,26 @@
                     "name": "Kevin Stover"
                 }
             ],
-            "description": "The 100% beginner friendly WordPress form builder. Drag & drop form fields to build beautiful, professional contact forms in minutes.",
-            "homepage": "http://ninjaforms.com/?utm_source=WordPress&utm_medium=readme",
+            "description": "Free WordPress form builder with calculations, signatures, star ratings, unlimited submissions stored on your site, and an AI form builder.",
+            "homepage": "https://ninjaforms.com/?utm_source=WordPress.org&utm_medium=Plugin+header",
             "support": {
                 "changelog": "https://wordpress.org/plugins/ninja-forms/#developers",
                 "issues": "https://wordpress.org/support/plugin/ninja-forms",
                 "source": "https://plugins.svn.wordpress.org/ninja-forms"
             },
-            "time": "2026-09-07T16:06:20+00:00"
+            "time": "2026-09-21T14:14:05+00:00"
         },
         {
             "name": "wp-plugin/organize-series",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/organize-series/",
-                "reference": "tags/3.1.3"
+                "reference": "tags/3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/organize-series.3.1.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/organize-series.3.1.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2339,19 +2520,19 @@
                 "issues": "https://wordpress.org/support/plugin/organize-series",
                 "source": "https://plugins.svn.wordpress.org/organize-series"
             },
-            "time": "2026-09-08T15:11:53+00:00"
+            "time": "2026-09-15T18:21:17+00:00"
         },
         {
             "name": "wp-plugin/pantheon-content-publisher",
-            "version": "1.3.6",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-content-publisher/",
-                "reference": "tags/1.3.6"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.3.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-content-publisher.1.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -2370,7 +2551,7 @@
                 "issues": "https://wordpress.org/support/plugin/pantheon-content-publisher",
                 "source": "https://plugins.svn.wordpress.org/pantheon-content-publisher"
             },
-            "time": "2026-08-14T15:16:53+00:00"
+            "time": "2026-09-17T19:26:49+00:00"
         },
         {
             "name": "wp-plugin/patchstack",
